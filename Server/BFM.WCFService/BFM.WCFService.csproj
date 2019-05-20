@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4CD2665-8AAF-4B31-8F87-F0D4DCBE5E59}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFM.WCFService</RootNamespace>
+    <AssemblyName>BFM.WCFService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MySql.Data.6.8.8\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MySql.Data.Entity.6.8.8\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Oracle.ManagedDataAccess.18.3.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Oracle.ManagedDataAccess.EntityFramework.18.3.0\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQLService.svc" />
+    <Content Include="SDMService.svc" />
+    <Content Include="TMSService.svc" />
+    <Content Include="PLMService.svc" />
+    <Content Include="EAMService.svc" />
+    <Content Include="WMSService.svc" />
+    <Content Include="FMSService.svc" />
+    <Content Include="RSMService.svc" />
+    <Content Include="QMSService.svc" />
+    <Content Include="DAService.svc" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ISQLService.cs" />
+    <Compile Include="SDMService.svc.cs">
+      <DependentUpon>SDMService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SDMService\SysDepartment.cs" />
+    <Compile Include="SQLService.svc.cs">
+      <DependentUpon>SQLService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FMSService\FmsActionFormulaDetail.cs" />
+    <Compile Include="FMSService\FmsActionFormulaMain.cs" />
+    <Compile Include="WMSService\WmsInventory.cs" />
+    <Compile Include="PLMService\MesProductProcess.cs" />
+    <Compile Include="QMSService\QmsCheckMaster.cs" />
+    <Compile Include="QMSService\QmsRoutingCheck.cs" />
+    <Compile Include="QMSService\QmsCheckParam.cs" />
+    <Compile Include="FMSService\FmsTagCalculation.cs" />
+    <Compile Include="SDMService\SysAppInfo.cs" />
+    <Compile Include="DAService\DAStatusRecord.cs" />
+    <Compile Include="DAService\DAAlarmRecord.cs" />
+    <Compile Include="DAService\DAProductRecord.cs" />
+    <Compile Include="DAService.svc.cs">
+      <DependentUpon>DAService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="DAService\DAMachineRealTimeInfo.cs" />
+    <Compile Include="DAService\IDAService.cs" />
+    <Compile Include="QMSService.svc.cs">
+      <DependentUpon>QMSService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="QMSService\QmsTest.cs" />
+    <Compile Include="QMSService\IQMSService.cs" />
+    <Compile Include="RSMService\RsEquipMaster.cs" />
+    <Compile Include="RSMService\RsWorkCenter.cs" />
+    <Compile Include="RSMService\RsRoutingItem.cs" />
+    <Compile Include="RSMService\RsRoutingEquip.cs" />
+    <Compile Include="RSMService\RsRoutingCheck.cs" />
+    <Compile Include="RSMService\RsRoutingParam.cs" />
+    <Compile Include="RSMService\RsRoutingTools.cs" />
+    <Compile Include="RSMService\RsRoutingDetail.cs" />
+    <Compile Include="RSMService\RsRoutingHead.cs" />
+    <Compile Include="RSMService\RsBom.cs" />
+    <Compile Include="RSMService\RsLineProduct.cs" />
+    <Compile Include="RSMService\RsItemMaster.cs" />
+    <Compile Include="RSMService\RsLineStation.cs" />
+    <Compile Include="RSMService\RsLine.cs" />
+    <Compile Include="RSMService\RsWorkShop.cs" />
+    <Compile Include="RSMService.svc.cs">
+      <DependentUpon>RSMService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="RSMService\RsFactory.cs" />
+    <Compile Include="RSMService\IRSMService.cs" />
+    <Compile Include="FMSService\FmsActionControl.cs" />
+    <Compile Include="FMSService\FmsSamplingRecord.cs" />
+    <Compile Include="FMSService\FmsStateResultRecord.cs" />
+    <Compile Include="FMSService\FmsAssetTagSetting.cs" />
+    <Compile Include="FMSService.svc.cs">
+      <DependentUpon>FMSService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="FMSService\FmsAssetCommParam.cs" />
+    <Compile Include="FMSService\IFMSService.cs" />
+    <Compile Include="WMSService\WmsInvOperate.cs" />
+    <Compile Include="WMSService\WmsAllocationInfo.cs" />
+    <Compile Include="WMSService.svc.cs">
+      <DependentUpon>WMSService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WMSService\WmsAreaInfo.cs" />
+    <Compile Include="WMSService\IWMSService.cs" />
+    <Compile Include="EAMService\RsMaintainRecord.cs" />
+    <Compile Include="EAMService\RmRepairRecord.cs" />
+    <Compile Include="EAMService\RsMaintainStandardsRelate.cs" />
+    <Compile Include="EAMService\RsMaintainStandardsDetail.cs" />
+    <Compile Include="EAMService\RsMaintainStandards.cs" />
+    <Compile Include="EAMService\AmPartsMasterN.cs" />
+    <Compile Include="EAMService.svc.cs">
+      <DependentUpon>EAMService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="EAMService\AmAssetMasterN.cs" />
+    <Compile Include="EAMService\IEAMService.cs" />
+    <Compile Include="PLMService\TestEFCodeFirst.cs" />
+    <Compile Include="PLMService\MesProcessCtrol.cs" />
+    <Compile Include="PLMService\MesJobOrder.cs" />
+    <Compile Include="PLMService\PmTaskLine.cs" />
+    <Compile Include="PLMService\PmTaskMaster.cs" />
+    <Compile Include="PLMService.svc.cs">
+      <DependentUpon>PLMService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="PLMService\PmPlanMaster.cs" />
+    <Compile Include="PLMService\IPLMService.cs" />
+    <Compile Include="TMSService.svc.cs">
+      <DependentUpon>TMSService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="TMSService\TmsDeviceToolsPos.cs" />
+    <Compile Include="TMSService\TmsToolsMaster.cs" />
+    <Compile Include="TMSService\TmsToolsType.cs" />
+    <Compile Include="TMSService\ITMSService.cs" />
+    <Compile Include="SDMService\ISDMService.cs" />
+    <Compile Include="SDMService\SysAttachInfo.cs" />
+    <Compile Include="SDMService\RsWorkSchedule.cs" />
+    <Compile Include="SDMService\SysUserMenu.cs" />
+    <Compile Include="SDMService\SysMenuPurview.cs" />
+    <Compile Include="SDMService\SysRolePurview.cs" />
+    <Compile Include="SDMService\SysUserPurview.cs" />
+    <Compile Include="SDMService\SysRoleUser.cs" />
+    <Compile Include="SDMService\SysMenuItem.cs" />
+    <Compile Include="SDMService\SysPurview.cs" />
+    <Compile Include="SDMService\SysRole.cs" />
+    <Compile Include="SDMService\SysUser.cs" />
+    <Compile Include="SDMService\SysEnumItems.cs" />
+    <Compile Include="SDMService\SysEnumMain.cs" />
+    <Compile Include="SDMService\SysTableNOSetting.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\BFM.Common.Base\BFM.Common.Base.csproj">
+      <Project>{31B1498B-91FB-43B4-B4E7-EE3911072D93}</Project>
+      <Name>BFM.Common.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\BFM.Common.DataBaseAsset\BFM.Common.DataBaseAsset.csproj">
+      <Project>{B2AC3987-C931-4015-A46E-16B8786856F0}</Project>
+      <Name>BFM.Common.DataBaseAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.ContractModel\BFM.ContractModel.csproj">
+      <Project>{D65E3C3E-0F32-426B-A60C-42485AD5110E}</Project>
+      <Name>BFM.ContractModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.BLL\BFM.BLL.csproj">
+      <Project>{d9188889-f01a-474a-bad1-68fe41a13988}</Project>
+      <Name>BFM.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>20709</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/wcfservice</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,172 @@
+2019-03-27 10:38:58.2028 | error:GetRawMaterial   error
+message: The underlying provider failed on Open.
+StackTrace:   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 157
+InnerException:Timeout in IO operation 
+2019-03-27 10:39:02.0730 | error:GetRawMaterial   error
+message: The underlying provider failed on Open.
+StackTrace:   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 157
+InnerException:Timeout in IO operation 
+2019-03-27 10:39:02.0730 | error:GetRawMaterial   error
+message: The underlying provider failed on Open.
+StackTrace:   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 157
+InnerException:Timeout in IO operation 
+2019-03-27 10:52:14.1120 | error:GetRawMaterialInfo   error
+message: 写入数据库失败，
+错误为：Message:An error occurred while updating the entries. See the inner exception for details.
+StackTrace:   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.SaveChanges() 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 126
+InnerException:An error occurred while updating the entries. See the inner exception for details.
+StackTrace:   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.SaveChanges() 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 133
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.Add(T t) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 21
+   在 BFM.BLL.Model.FDIGetMaterialInfoBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetMaterialInfo>.Add(FDIGetMaterialInfo t)
+   在 BFM.WebService.FDIService.AddFDIGetMaterialInfo(FDIGetMaterialInfo mFDIGetMaterialInfo) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetMaterialInfo.cs:行号 86
+   在 BFM.WebService.FDIService.GetMaterialInfo(String jsMaterialInfo) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 79
+InnerException: 
+2019-03-27 11:03:36.7856 | error:GetRawMaterial   error
+message: The underlying provider failed on Open.
+StackTrace:   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 157
+InnerException:无法从传输连接中读取数据: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。。 
+2019-03-27 11:06:22.7644 | error:GetRawMaterial   error
+message: The underlying provider failed on Open.
+StackTrace:   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 157
+InnerException:无法从传输连接中读取数据: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。。 
+2019-03-27 11:07:08.8933 | error:GetRawMaterial   error
+message: The underlying provider failed on Open.
+StackTrace:   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 157
+InnerException:无法从传输连接中读取数据: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。。 
+2019-03-27 11:08:04.2614 | error:GetRawMaterial   error
+message: The underlying provider failed on Open.
+StackTrace:   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 157
+InnerException:无法从传输连接中读取数据: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。。 
+2019-03-27 11:10:43.8600 | error:GetRawMaterial   error
+message: The underlying provider failed on Open.
+StackTrace:   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 157
+InnerException:无法从传输连接中读取数据: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。。 
+2019-03-27 11:12:01.3259 | error:GetRawMaterial   error
+message: The underlying provider failed on Open.
+StackTrace:   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 157
+InnerException:无法从传输连接中读取数据: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。。 
+2019-03-27 11:13:46.8698 | error:GetRawMaterial   error
+message: The underlying provider failed on Open.
+StackTrace:   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 157
+InnerException:无法从传输连接中读取数据: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。。 

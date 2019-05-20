@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4c96324d-2eb5-4700-baee-a41e870c3545" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/BFM.WCFService/RSMService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RSMService.disco" MetadataType="Disco" ID="bda3cb74-fcf7-4b80-9afd-78abbd2918ab" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/RSMService.svc?disco" />
+    <MetadataFile FileName="RSMService.xsd" MetadataType="Schema" ID="09f796b9-f8e1-4007-ba0f-7f8169976bb3" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/RSMService.svc?xsd=xsd2" />
+    <MetadataFile FileName="RSMService1.xsd" MetadataType="Schema" ID="f6716274-c8c6-4201-ae65-1b035137c0df" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/RSMService.svc?xsd=xsd3" />
+    <MetadataFile FileName="RSMService2.xsd" MetadataType="Schema" ID="f57e402c-3e93-49b3-8bb9-502fd00f145b" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/RSMService.svc?xsd=xsd1" />
+    <MetadataFile FileName="RSMService.wsdl" MetadataType="Wsdl" ID="c2dd3c7c-bdd4-4aaf-b25d-368e63a934da" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/RSMService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="RSMService1.wsdl" MetadataType="Wsdl" ID="78a4b144-113d-40b6-8990-9b2a7d928792" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/RSMService.svc?wsdl" />
+    <MetadataFile FileName="RSMService3.xsd" MetadataType="Schema" ID="17b6ec12-5ffe-4661-8fd5-ab27b4180a28" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/RSMService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

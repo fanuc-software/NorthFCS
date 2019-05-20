@@ -1,0 +1,66 @@
+﻿        private void GetFunctionList()
+        {
+		    string sSelectPKNO = "";
+            Dictionary<string, string> cmpWhere = new Dictionary<string, string>();
+            if (!string.IsNullOrEmpty(CBaseData.BelongCompPKNO))
+            {
+                cmpWhere.Add("BelongCompanyPKNO", CBaseData.BelongCompPKNO);
+            }
+            string jsCmpWhere = JsonSerializer.GetJsonString(cmpWhere);
+            List<SysFuncInfo> funcs = ws.UseService(s => s.GetAllSysFuncInfo(jsCmpWhere));
+
+            List<SysFuncInfo> rootFuncs = funcs.Where(c => c.ParentPKNO == "0").OrderBy(c => c.iSeq).ToList();
+
+            tvFuncList.Items.Clear();
+            foreach (SysFuncInfo func in rootFuncs)
+            {
+                MenuTreeViewItem viewItem = new MenuTreeViewItem
+                {
+                    Header = func.FuncName,
+                    AssemblyName = func.ModelNameSpace,
+                    TypeName = func.ModelClassName,
+                    PKNO = func.PKNO,
+                    FuncType = func.FuncType,
+                };
+
+                AddAllItems(viewItem, func.PKNO, funcs, sSelectPKNO);
+
+                if (sSelectPKNO == func.PKNO)
+                {
+                    viewItem.IsSelected = true;
+                }
+
+                tvFuncList.Items.Add(viewItem);
+
+                if (viewItem.FuncType == 1 || viewItem.FuncType == 11)
+                {
+                    viewItem.IsExpanded = true;
+                }
+            }
+        }
+
+			
+        private void AddAllItems(MenuTreeViewItem parentItem, string funcPKNO, List<SysFuncInfo> funcs, string sSelectPKNO)
+        {
+            List<SysFuncInfo> temp = funcs.Where(s => s.ParentPKNO == funcPKNO).OrderBy(c => c.iSeq).ToList();
+            foreach (SysFuncInfo func in temp)
+            {
+                MenuTreeViewItem viewItem = new MenuTreeViewItem
+                {
+                    Header = func.FuncName,
+                    AssemblyName = func.ModelNameSpace,
+                    TypeName = func.ModelClassName,
+                    PKNO = func.PKNO,
+                    FuncType = func.FuncType,
+                };
+
+                parentItem.Items.Add(viewItem);
+
+                AddAllItems(viewItem, func.PKNO, funcs, sSelectPKNO);
+
+                if (sSelectPKNO == func.PKNO)
+                {
+                    viewItem.IsSelected = true;
+                }
+            }
+        }

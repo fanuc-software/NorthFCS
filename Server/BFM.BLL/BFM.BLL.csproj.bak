@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9188889-F01A-474A-BAD1-68FE41A13988}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFM.BLL</RootNamespace>
+    <AssemblyName>BFM.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Container\BLLContainer.cs" />
+    <Compile Include="IBLL\IQmsCheckMasterBLL.cs" />
+    <Compile Include="IBLL\IQmsCheckParamBLL.cs" />
+    <Compile Include="IBLL\IQmsRoutingCheckBLL.cs" />
+    <Compile Include="IBLL\ISysDepartmentBLL.cs" />
+    <Compile Include="IBLL\ITestEFCodeFirstBLL.cs" />
+    <Compile Include="Model\QmsCheckMasterBLL.cs" />
+    <Compile Include="Model\QmsCheckParamBLL.cs" />
+    <Compile Include="Model\QmsRoutingCheckBLL.cs" />
+    <Compile Include="Model\SysDepartmentBLL.cs" />
+    <Compile Include="Model\TestEFCodeFirstBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\FmsActionFormulaDetailBLL.cs" />
+    <Compile Include="IBLL\IFmsActionFormulaDetailBLL.cs" />
+    <Compile Include="Model\FmsActionFormulaMainBLL.cs" />
+    <Compile Include="IBLL\IFmsActionFormulaMainBLL.cs" />
+    <Compile Include="Model\WmsInventoryBLL.cs" />
+    <Compile Include="IBLL\IWmsInventoryBLL.cs" />
+    <Compile Include="Model\MesProductProcessBLL.cs" />
+    <Compile Include="IBLL\IMesProductProcessBLL.cs" />
+    <Compile Include="Model\FmsTagCalculationBLL.cs" />
+    <Compile Include="IBLL\IFmsTagCalculationBLL.cs" />
+    <Compile Include="Model\SysAppInfoBLL.cs" />
+    <Compile Include="IBLL\ISysAppInfoBLL.cs" />
+    <Compile Include="Model\DAStatusRecordBLL.cs" />
+    <Compile Include="IBLL\IDAStatusRecordBLL.cs" />
+    <Compile Include="Model\DAAlarmRecordBLL.cs" />
+    <Compile Include="IBLL\IDAAlarmRecordBLL.cs" />
+    <Compile Include="Model\DAProductRecordBLL.cs" />
+    <Compile Include="IBLL\IDAProductRecordBLL.cs" />
+    <Compile Include="Model\DAMachineRealTimeInfoBLL.cs" />
+    <Compile Include="IBLL\IDAMachineRealTimeInfoBLL.cs" />
+    <Compile Include="Model\QmsTestBLL.cs" />
+    <Compile Include="IBLL\IQmsTestBLL.cs" />
+    <Compile Include="Model\RsEquipMasterBLL.cs" />
+    <Compile Include="IBLL\IRsEquipMasterBLL.cs" />
+    <Compile Include="Model\RsWorkCenterBLL.cs" />
+    <Compile Include="IBLL\IRsWorkCenterBLL.cs" />
+    <Compile Include="Model\RsRoutingItemBLL.cs" />
+    <Compile Include="IBLL\IRsRoutingItemBLL.cs" />
+    <Compile Include="Model\RsRoutingEquipBLL.cs" />
+    <Compile Include="IBLL\IRsRoutingEquipBLL.cs" />
+    <Compile Include="Model\RsRoutingCheckBLL.cs" />
+    <Compile Include="IBLL\IRsRoutingCheckBLL.cs" />
+    <Compile Include="Model\RsRoutingParamBLL.cs" />
+    <Compile Include="IBLL\IRsRoutingParamBLL.cs" />
+    <Compile Include="Model\RsRoutingToolsBLL.cs" />
+    <Compile Include="IBLL\IRsRoutingToolsBLL.cs" />
+    <Compile Include="Model\RsRoutingDetailBLL.cs" />
+    <Compile Include="IBLL\IRsRoutingDetailBLL.cs" />
+    <Compile Include="Model\RsRoutingHeadBLL.cs" />
+    <Compile Include="IBLL\IRsRoutingHeadBLL.cs" />
+    <Compile Include="Model\RsBomBLL.cs" />
+    <Compile Include="IBLL\IRsBomBLL.cs" />
+    <Compile Include="Model\RsLineProductBLL.cs" />
+    <Compile Include="IBLL\IRsLineProductBLL.cs" />
+    <Compile Include="Model\RsItemMasterBLL.cs" />
+    <Compile Include="IBLL\IRsItemMasterBLL.cs" />
+    <Compile Include="Model\RsLineStationBLL.cs" />
+    <Compile Include="IBLL\IRsLineStationBLL.cs" />
+    <Compile Include="Model\RsLineBLL.cs" />
+    <Compile Include="IBLL\IRsLineBLL.cs" />
+    <Compile Include="Model\RsWorkShopBLL.cs" />
+    <Compile Include="IBLL\IRsWorkShopBLL.cs" />
+    <Compile Include="Model\RsFactoryBLL.cs" />
+    <Compile Include="IBLL\IRsFactoryBLL.cs" />
+    <Compile Include="Model\WmsInvOperateBLL.cs" />
+    <Compile Include="IBLL\IWmsInvOperateBLL.cs" />
+    <Compile Include="Model\WmsAllocationInfoBLL.cs" />
+    <Compile Include="IBLL\IWmsAllocationInfoBLL.cs" />
+    <Compile Include="Model\WmsAreaInfoBLL.cs" />
+    <Compile Include="IBLL\IWmsAreaInfoBLL.cs" />
+    <Compile Include="Model\FmsActionControlBLL.cs" />
+    <Compile Include="IBLL\IFmsActionControlBLL.cs" />
+    <Compile Include="Model\FmsSamplingRecordBLL.cs" />
+    <Compile Include="IBLL\IFmsSamplingRecordBLL.cs" />
+    <Compile Include="Model\FmsStateResultRecordBLL.cs" />
+    <Compile Include="IBLL\IFmsStateResultRecordBLL.cs" />
+    <Compile Include="Model\FmsAssetTagSettingBLL.cs" />
+    <Compile Include="IBLL\IFmsAssetTagSettingBLL.cs" />
+    <Compile Include="Model\FmsAssetCommParamBLL.cs" />
+    <Compile Include="IBLL\IFmsAssetCommParamBLL.cs" />
+    <Compile Include="Model\RsMaintainRecordBLL.cs" />
+    <Compile Include="IBLL\IRsMaintainRecordBLL.cs" />
+    <Compile Include="Model\RmRepairRecordBLL.cs" />
+    <Compile Include="IBLL\IRmRepairRecordBLL.cs" />
+    <Compile Include="Model\RsMaintainStandardsRelateBLL.cs" />
+    <Compile Include="IBLL\IRsMaintainStandardsRelateBLL.cs" />
+    <Compile Include="Model\RsMaintainStandardsDetailBLL.cs" />
+    <Compile Include="IBLL\IRsMaintainStandardsDetailBLL.cs" />
+    <Compile Include="Model\RsMaintainStandardsBLL.cs" />
+    <Compile Include="IBLL\IRsMaintainStandardsBLL.cs" />
+    <Compile Include="Model\AmPartsMasterNBLL.cs" />
+    <Compile Include="IBLL\IAmPartsMasterNBLL.cs" />
+    <Compile Include="Model\AmAssetMasterNBLL.cs" />
+    <Compile Include="IBLL\IAmAssetMasterNBLL.cs" />
+    <Compile Include="Model\MesProcessCtrolBLL.cs" />
+    <Compile Include="IBLL\IMesProcessCtrolBLL.cs" />
+    <Compile Include="Model\MesJobOrderBLL.cs" />
+    <Compile Include="IBLL\IMesJobOrderBLL.cs" />
+    <Compile Include="Model\PmTaskLineBLL.cs" />
+    <Compile Include="IBLL\IPmTaskLineBLL.cs" />
+    <Compile Include="Model\PmTaskMasterBLL.cs" />
+    <Compile Include="IBLL\IPmTaskMasterBLL.cs" />
+    <Compile Include="Model\PmPlanMasterBLL.cs" />
+    <Compile Include="IBLL\IPmPlanMasterBLL.cs" />
+    <Compile Include="Model\TmsDeviceToolsPosBLL.cs" />
+    <Compile Include="IBLL\ITmsDeviceToolsPosBLL.cs" />
+    <Compile Include="Model\TmsToolsMasterBLL.cs" />
+    <Compile Include="IBLL\ITmsToolsMasterBLL.cs" />
+    <Compile Include="Model\TmsToolsTypeBLL.cs" />
+    <Compile Include="IBLL\ITmsToolsTypeBLL.cs" />
+    <Compile Include="Model\SysAttachInfoBLL.cs" />
+    <Compile Include="IBLL\ISysAttachInfoBLL.cs" />
+    <Compile Include="Model\RsWorkScheduleBLL.cs" />
+    <Compile Include="IBLL\IRsWorkScheduleBLL.cs" />
+    <Compile Include="Model\SysUserMenuBLL.cs" />
+    <Compile Include="IBLL\ISysUserMenuBLL.cs" />
+    <Compile Include="Model\SysMenuPurviewBLL.cs" />
+    <Compile Include="IBLL\ISysMenuPurviewBLL.cs" />
+    <Compile Include="Model\SysRolePurviewBLL.cs" />
+    <Compile Include="IBLL\ISysRolePurviewBLL.cs" />
+    <Compile Include="Model\SysUserPurviewBLL.cs" />
+    <Compile Include="IBLL\ISysUserPurviewBLL.cs" />
+    <Compile Include="Model\SysRoleUserBLL.cs" />
+    <Compile Include="IBLL\ISysRoleUserBLL.cs" />
+    <Compile Include="Model\SysPurviewBLL.cs" />
+    <Compile Include="IBLL\ISysPurviewBLL.cs" />
+    <Compile Include="Model\SysRoleBLL.cs" />
+    <Compile Include="IBLL\ISysRoleBLL.cs" />
+    <Compile Include="Model\SysUserBLL.cs" />
+    <Compile Include="IBLL\ISysUserBLL.cs" />
+    <Compile Include="Model\SysEnumItemsBLL.cs" />
+    <Compile Include="IBLL\ISysEnumItemsBLL.cs" />
+    <Compile Include="Model\SysEnumMainBLL.cs" />
+    <Compile Include="IBLL\ISysEnumMainBLL.cs" />
+    <Compile Include="Model\SysTableNOSettingBLL.cs" />
+    <Compile Include="IBLL\ISysTableNOSettingBLL.cs" />
+    <Compile Include="Model\SysMenuItemBLL.cs" />
+    <Compile Include="IBLL\ISysMenuItemBLL.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\BFM.Common.DataBaseAsset\BFM.Common.DataBaseAsset.csproj">
+      <Project>{B2AC3987-C931-4015-A46E-16B8786856F0}</Project>
+      <Name>BFM.Common.DataBaseAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.ContractModel\BFM.ContractModel.csproj">
+      <Project>{D65E3C3E-0F32-426B-A60C-42485AD5110E}</Project>
+      <Name>BFM.ContractModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.DAL\BFM.DAL.csproj">
+      <Project>{C8822FEE-4204-47B3-949A-DA472DA8EB03}</Project>
+      <Name>BFM.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

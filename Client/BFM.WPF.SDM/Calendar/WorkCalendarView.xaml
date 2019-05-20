@@ -1,0 +1,57 @@
+﻿<Page xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BFM.WPF.SDM.Calendar"
+        xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduler" x:Class="BFM.WPF.SDM.Calendar.WorkCalendarView"
+        mc:Ignorable="d"
+        Title="WorkCalendarView" FontSize="16" d:DesignWidth="574.971" d:DesignHeight="439.407">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="388*"/>
+
+        </Grid.ColumnDefinitions>
+        <dxe:DateNavigator Grid.Column="0" Margin="0,0,0,-0.4" >
+            <dxe:DateNavigator.StyleSettings>
+                <dxsch:SchedulerDateNavigatorStyleSettings SchedulerControl="{Binding ElementName=schedulerControl1}">
+                </dxsch:SchedulerDateNavigatorStyleSettings>
+            </dxe:DateNavigator.StyleSettings>
+        </dxe:DateNavigator>
+        <dxsch:SchedulerControl x:Name="schedulerControl1" EditAppointmentFormShowing="schedulerControl1_EditAppointmentFormShowing"  ActiveViewType="Month" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <dxsch:SchedulerControl.Storage>
+                <dxsch:SchedulerStorage x:Name="schedulerStorage"   AppointmentsInserted="schedulerStorage_AppointmentsInserted_1" EnableReminders="False" EnableTimeZones="False" EnableSmartFetch="False">
+                    <dxsch:SchedulerStorage.AppointmentStorage>
+                        <dxsch:AppointmentStorage>
+                            <dxsch:AppointmentStorage.Mappings>
+                                <dxsch:AppointmentMapping
+                                                    Start="MARK_STARTTIME"
+                                                    End="MARK_ENDTIME" 
+                                                   Label="Schedule_Lable" 
+                                                    
+                                                  />
+                            </dxsch:AppointmentStorage.Mappings>
+                        </dxsch:AppointmentStorage>
+                    </dxsch:SchedulerStorage.AppointmentStorage>
+                </dxsch:SchedulerStorage>
+            </dxsch:SchedulerControl.Storage>
+            <!--<dxsch:SchedulerControl.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="设置日程" Click="EditSchedul"/>                   
+                </ContextMenu>
+            </dxsch:SchedulerControl.ContextMenu>-->
+            <dxsch:SchedulerControl.FullWeekView>
+                <dxsch:FullWeekView Enabled="True"/>
+            </dxsch:SchedulerControl.FullWeekView>
+            <dxsch:SchedulerControl.WeekView>
+                <dxsch:WeekView Enabled="False"/>
+            </dxsch:SchedulerControl.WeekView>
+        </dxsch:SchedulerControl>
+
+
+
+   
+
+    </Grid>
+</Page>

@@ -1,0 +1,236 @@
+﻿<Page xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+       xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"  xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+      xmlns:local="clr-namespace:BFM.WPF.EAM.AM"
+          xmlns:Controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+      xmlns:ee="http://schemas.microsoft.com/expression/2010/effects" x:Class="BFM.WPF.EAM.AM.AmPartsMasterNView"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="AmPartsMasterNView" FontSize="14">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Row="0" DockPanel.Dock="Top" Height="50" Margin="15,0" Background="#eff0f3" CornerRadius="0,0,8,8">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2" Opacity="0.5" Direction="-90" BlurRadius="10" />
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <dxlc:LayoutGroup Grid.Column="1" Margin="10,10,0,0">
+                    <dxlc:LayoutItem Label="开始时间">
+                        <dxe:DateEdit  Margin="10,0,10,0" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="结束时间">
+                        <dxe:DateEdit    Margin="10,0,10,0"/>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="备件编号">
+                        <TextBox></TextBox>
+                    </dxlc:LayoutItem>
+
+                    <Controls:ImageButtonWithIcon DockPanel.Dock="Left" x:Name="bSearch4" Content="查询" Icon="/BFM.WPF.EAM;component/Images/26.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/26.ico"  Width="100" Height="40"   Margin="20,-10,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+                </dxlc:LayoutGroup>
+            </Grid>
+
+
+        </Border>
+        <DockPanel Grid.Row="1">
+            <Controls:ImageButtonWithIcon Content="增加" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/1.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/1.ico"  Width="100" Height="40" Click="BtnAdd_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="修改" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/16.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/16.ico"  Width="100" Height="40" Click="BtnMod_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="删除" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/24.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/24.ico"  Width="100" Height="40" Click="BtnDel_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="入库" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico"  Width="100" Height="40" Click="BtnIn_Click" Margin="10,0,0,0" VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="出库" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico"  Width="100" Height="40" Click="BtnOut_Click" Margin="10,0,0,0" VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+
+            <Controls:ImageButtonWithIcon Content="保存"  DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/21.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/21.ico"  Width="100" Height="40" Click="BtnSave_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="取消"   DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/23.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/23.ico"  Width="100" Height="40" Click="BtnCancel_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+
+        </DockPanel>
+
+        <Grid Grid.Row="2">
+
+            <Grid x:Name="MenuContent">
+                <!--<Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="21*"/>
+                    <ColumnDefinition Width="19*"/>
+                </Grid.ColumnDefinitions>-->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <dxlc:LayoutControl x:Name="gbItem" Margin="0" Padding="0" IsCollapsed="True" Orientation="Vertical">
+                    <dxlc:LayoutGroup Name="dictInfo" Visibility="Collapsed"  Header="基本信息" View="GroupBox" ItemLabelsAlignment="Local" IsCollapsible="False"  Orientation="Vertical">
+                        <dxlc:LayoutGroup>
+                            <dxlc:LayoutItem Label="备件编号">
+                                <TextBox Text="{Binding PARTS_CODE}"  Margin="10,0,10,0"/>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="备件名称">
+                                <TextBox Text="{Binding PARTS_NAME}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="备件规格">
+                                <TextBox Text="{Binding PARTS_NORM}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup>
+
+                            <dxlc:LayoutItem Label="备件型号">
+                                <TextBox Text="{Binding PARTS_MODEL}" Margin="10,0,10,0" />
+                                <!--<dxe:ComboBoxEdit x:Name="comboBoxDEPART_Name"  Text="{Binding PARTS_MODEL}" Margin="10,0,10,0"/>-->
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="备件类别">
+                                <!--<dxe:DateEdit DateTime="{Binding INSTALL_DATE}" Margin="10,0,10,0"/>-->
+                                <TextBox Text="{Binding PARTS_TYPE}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="制造厂商">
+                                <TextBox Text="{Binding SUPPLIER_NAME}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+
+                        <dxlc:LayoutGroup>
+                            <dxlc:LayoutItem Label="备件号">
+                                <TextBox Text="{Binding STANDARD_NO}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="设备类型">
+                                <Controls:BasicItemCombox  Text="{Binding EQUIP_TYPE}" Name="cmbTest"  EnumIdentify="设备管理.设备分类" />
+                                <!--<TextBox Text="{Binding EQUIP_TYPE}" Margin="10,0,10,0" />-->
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="项目图号">
+                                <TextBox Text="{Binding DRAWING_NO}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup>
+                            <dxlc:LayoutItem Label="备件数量">
+                                <TextBox Text="{Binding ITEM_QTY}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="安全库存量">
+                                <TextBox Text="{Binding ITEM_QTY}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="是否启用提醒">
+                             <CheckBox></CheckBox>
+                            </dxlc:LayoutItem>
+                        
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup>
+                           
+                            <dxlc:LayoutGroup>
+                                <dxlc:LayoutItem Label="低于安全库存预警">
+                                    <CheckBox></CheckBox>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="通知供应商接口开启">
+                                    <CheckBox></CheckBox>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutGroup>
+                                    <dxlc:LayoutItem Label="台账状态">
+                                        <Controls:BasicItemCombox SelectedValue="{Binding USE_FLAG}" Name="cmbState"  EnumIdentify="设备管理.台账状态" Margin="10,0,10,0"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="备注">
+                                        <TextBox  Text="{Binding REMARK}" Margin="10,0,10,0"/>
+                                    </dxlc:LayoutItem>
+                                </dxlc:LayoutGroup>
+                            </dxlc:LayoutGroup>
+                        </dxlc:LayoutGroup>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup x:Name="inbound" Header="备件入库信息" Visibility="Collapsed" View="GroupBox" ItemLabelsAlignment="Local"
+                              IsCollapsible="False" Background="White" Orientation="Vertical">
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="入库库区">
+                                <ComboBox Name="cmbInAreaInfo" SelectedValue="{Binding AREA_PKNO}" SelectedValuePath="PKNO" DisplayMemberPath="AREA_NAME" Margin="5,0,5,0" IsEditable="False" SelectionChanged="Selector_OnSelectionChanged" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="入库货位">
+                                <ComboBox Name="cmbInAllocation" SelectedValue="{Binding ALLOCATION_PKNO}" SelectedValuePath="PKNO" DisplayMemberPath="ALLOCATION_NAME" IsEditable="False" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="入库人员">
+                                <TextBox Text="{Binding OPERATE_PERSON}" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0" Height="60">
+                            <dxlc:LayoutItem Label="入库备注" Height="60"  VerticalAlignment="Stretch" >
+                                <TextBox Text="{Binding REMARK}" Margin="5,0,5,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup x:Name="outbound" Header="备件出库信息" Visibility="Collapsed" View="GroupBox" ItemLabelsAlignment="Local"
+                              IsCollapsible="False" Background="White" Orientation="Vertical">
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="出库去向">
+                                <ComboBox Name="cmbOutBound" SelectedValue="{Binding OUT_TARGET}" SelectedValuePath="Tag" Margin="5,0,5,0" IsEditable="False" SelectionChanged="OutBound_OnSelectionChanged" >
+                                    <ComboBoxItem Content="机床" Tag ="1" />
+                                    <ComboBoxItem Content="其他出库" Tag ="0" />
+                                </ComboBox>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="安装位置">
+                                <ComboBox x:Name="cmbOutPos" SelectedValue="{Binding INSTALL_POS}" SelectedValuePath="PKNO" DisplayMemberPath="ASSET_NAME" IsEditable="True" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="出库人员">
+                                <TextBox Text="{Binding OPERATE_PERSON}" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0" Height="60">
+                            <dxlc:LayoutItem Label="出库备注" Height="60" VerticalAlignment="Stretch" >
+                                <TextBox Text="{Binding REMARK}" Margin="5,0,5,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutControl>
+                <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                    <dxg:GridControl x:Name="gridItem"  IsEnabled="{Binding IsCollapsed, ElementName=gbItem, Mode=OneWay}" 
+                                      SelectionMode="Row" FontSize="16" MouseDoubleClick="gridItem_MouseDoubleClick" >
+                        <dxg:GridControl.View >
+                            <dxg:TableView  x:Name="view"  AllowPerPixelScrolling="True" ShowTotalSummary="False" ShowAutoFilterRow="True" ShowFilterPanelMode="Default"
+							   AllowEditing="True" ShowGroupPanel="False" ShowIndicator="True" ShowCheckBoxSelectorColumn="True" CheckBoxSelectorColumnWidth="40"
+								   ShowSearchPanelMode="Always" AutoWidth="True" NavigationStyle="Row" ShowFocusedRectangle="True" >
+                                <dxg:TableView.FormatConditions>
+                                    <dxg:FormatCondition FieldName="ACCT_STATE" Expression="[ACCT_STATE] = '未上账'" PredefinedFormatName="RedText" />
+                                    <dxg:FormatCondition FieldName="ACCT_STATE" Expression="[ACCT_STATE] = '已上账'" PredefinedFormatName="GreenText" />
+                                </dxg:TableView.FormatConditions>
+                            </dxg:TableView>
+                        </dxg:GridControl.View>
+                        <dxg:GridControl.Bands >
+                            <dxg:GridControlBand Header="基本信息"  HorizontalHeaderContentAlignment="Center"  >
+                                <dxg:GridColumn FieldName="PARTS_CODE" Header="备件编号" />
+                                <dxg:GridColumn FieldName="PARTS_NAME" Header="备件名称" />
+                                <dxg:GridColumn FieldName="PARTS_NORM" Header="备件规格" />
+                                <dxg:GridColumn FieldName="PARTS_MODEL" Header="备件型号"/>
+                                <dxg:GridColumn FieldName="PARTS_TYPE" Header="备件类别" />
+                                <dxg:GridColumn FieldName="STANDARD_NO" Header="备件号"/>
+                                <dxg:GridColumn FieldName="DRAWING_NO" Header="项目图号" />
+                                <dxg:GridColumn FieldName="EQUIP_TYPE" Header="设备类型" />
+                                <dxg:GridColumn FieldName="ITEM_QTY" Header="备件数量" />
+                                <dxg:GridColumn FieldName="SUPPLIER_NAME" Header="制造厂商" />
+                                <!--<dxg:GridColumn  Binding="{Binding Path=LAY_LOCATION, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='外键表名称;关联外键表字段;外键表显示字段名'}" Header="货位" />-->
+                                <dxg:GridColumn Binding="{Binding LAY_LOCATION, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='WMS_ALLOCATION_INFO;PKNO;ALLOCATION_NAME'}" Header="刀具位置详细" Width="100"/>
+                            </dxg:GridControlBand>
+
+                            <dxg:GridControlBand Header="状态" >
+                                <dxg:GridColumn Binding="{Binding USE_FLAG, ConverterParameter=设备管理.台账状态, Converter={StaticResource BasicInfoConverter}}" Header="台帐状态"/>
+
+                                <dxg:GridColumn FieldName="REMARK" Header="备注" SortOrder="Ascending" SortIndex="0" />
+                            </dxg:GridControlBand>
+                        </dxg:GridControl.Bands>
+                    </dxg:GridControl>
+                </Grid>
+            </Grid>
+
+        </Grid>
+
+
+    </Grid>
+
+
+
+
+</Page>

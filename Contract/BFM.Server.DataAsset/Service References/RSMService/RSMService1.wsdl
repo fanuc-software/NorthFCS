@@ -1,0 +1,1165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://fanuc.com.cn/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RSMService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://fanuc.com.cn/" location="http://localhost/BFM.WCFService/RSMService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IRSMService" type="i0:IRSMService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRsFactoryByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsFactoryByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsFactoryCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsFactoryCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsFactory">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsFactory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsFactory">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsFactory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsFactorys">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsFactorys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsFactory">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsFactory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsFactorys">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsFactorys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsFactoryById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsFactoryById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkShopByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsWorkShopByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkShopCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsWorkShopCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsWorkShop">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsWorkShop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsWorkShop">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsWorkShop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsWorkShops">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsWorkShops" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsWorkShop">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsWorkShop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkShops">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsWorkShops" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkShopById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsWorkShopById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsLineByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsLineCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsLine">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsLine">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsLines">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsLines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsLine">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLines">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsLines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsLineById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineStationByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsLineStationByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineStationCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsLineStationCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsLineStation">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsLineStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsLineStation">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsLineStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsLineStations">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsLineStations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsLineStation">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsLineStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineStations">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsLineStations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineStationById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsLineStationById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsItemMasterByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsItemMasterByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsItemMasterCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsItemMasterCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsItemMaster">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsItemMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsItemMaster">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsItemMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsItemMasters">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsItemMasters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsItemMaster">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsItemMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsItemMasters">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsItemMasters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsItemMasterById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsItemMasterById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineProductByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsLineProductByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineProductCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsLineProductCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsLineProduct">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsLineProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsLineProduct">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsLineProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsLineProducts">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsLineProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsLineProduct">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsLineProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineProducts">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsLineProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineProductById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsLineProductById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsBomByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsBomByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsBomCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsBomCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsBom">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsBom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsBom">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsBom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsBoms">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsBoms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsBom">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsBom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsBoms">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsBoms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsBomById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsBomById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingHeadByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingHeadByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingHeadCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingHeadCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingHead">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsRoutingHead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingHead">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsRoutingHead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingHeads">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingHeads" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingHead">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingHead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingHeads">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingHeads" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingHeadById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingHeadById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingDetailByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingDetailByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingDetailCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingDetailCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingDetail">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsRoutingDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingDetail">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsRoutingDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingDetails">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingDetail">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingDetails">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingDetailById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingDetailById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingToolsByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingToolsByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingToolsCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingToolsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingTools">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsRoutingTools" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingTools">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsRoutingTools" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingToolss">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingToolss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingTools">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingTools" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingToolss">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingToolss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingToolsById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingToolsById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingParamByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingParamByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingParamCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingParamCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingParam">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsRoutingParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingParam">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsRoutingParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingParams">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingParam">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingParams">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingParamById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingParamById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingCheckByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingCheckByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingCheckCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingCheckCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingCheck">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsRoutingCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingCheck">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsRoutingCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingChecks">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingChecks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingCheck">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingChecks">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingChecks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingCheckById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingCheckById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingEquipByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingEquipByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingEquipCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingEquipCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingEquip">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsRoutingEquip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingEquip">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsRoutingEquip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingEquips">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingEquips" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingEquip">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingEquip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingEquips">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingEquips" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingEquipById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingEquipById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingItemByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingItemByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingItemCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingItemCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingItem">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsRoutingItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingItem">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsRoutingItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingItems">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingItem">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsRoutingItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingItems">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingItemById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsRoutingItemById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkCenterByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsWorkCenterByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkCenterCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsWorkCenterCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsWorkCenter">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsWorkCenter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsWorkCenter">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsWorkCenter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsWorkCenters">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsWorkCenters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsWorkCenter">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsWorkCenter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkCenters">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsWorkCenters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkCenterById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsWorkCenterById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsEquipMasterByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsEquipMasterByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsEquipMasterCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsEquipMasterCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsEquipMaster">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/AddRsEquipMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsEquipMaster">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/UpdateRsEquipMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsEquipMasters">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsEquipMasters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsEquipMaster">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/DelRsEquipMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsEquipMasters">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsEquipMasters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsEquipMasterById">
+      <soap:operation soapAction="http://fanuc.com.cn/IRSMService/GetRsEquipMasterById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RSMService">
+    <wsdl:port name="BasicHttpBinding_IRSMService" binding="tns:BasicHttpBinding_IRSMService">
+      <soap:address location="http://localhost/BFM.WCFService/RSMService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

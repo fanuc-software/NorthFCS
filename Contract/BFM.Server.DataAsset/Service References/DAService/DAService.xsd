@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BFM.ContractModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfDAMachineRealTimeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DAMachineRealTimeInfo" nillable="true" type="tns:DAMachineRealTimeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDAMachineRealTimeInfo" nillable="true" type="tns:ArrayOfDAMachineRealTimeInfo" />
+  <xs:complexType name="DAMachineRealTimeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DA_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FEED_RATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FEED_SPEED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAIN_PROG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SPINDLE_OVERRIDE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SPINDLE_SPPED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DAMachineRealTimeInfo" nillable="true" type="tns:DAMachineRealTimeInfo" />
+  <xs:complexType name="ArrayOfDAProductRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DAProductRecord" nillable="true" type="tns:DAProductRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDAProductRecord" nillable="true" type="tns:ArrayOfDAProductRecord" />
+  <xs:complexType name="DAProductRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="END_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PART_NUM" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="START_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TOTAL_PART_NUM" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DAProductRecord" nillable="true" type="tns:DAProductRecord" />
+  <xs:complexType name="ArrayOfDAAlarmRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DAAlarmRecord" nillable="true" type="tns:DAAlarmRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDAAlarmRecord" nillable="true" type="tns:ArrayOfDAAlarmRecord" />
+  <xs:complexType name="DAAlarmRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ALARM_CONTENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ALARM_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ALARM_STATUS" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ALARM_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="END_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="START_TIME" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DAAlarmRecord" nillable="true" type="tns:DAAlarmRecord" />
+  <xs:complexType name="ArrayOfDAStatusRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DAStatusRecord" nillable="true" type="tns:DAStatusRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDAStatusRecord" nillable="true" type="tns:ArrayOfDAStatusRecord" />
+  <xs:complexType name="DAStatusRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CTTIME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="END_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MAIN_PROG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RUN_STATUS" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="START_TIME" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DAStatusRecord" nillable="true" type="tns:DAStatusRecord" />
+</xs:schema>

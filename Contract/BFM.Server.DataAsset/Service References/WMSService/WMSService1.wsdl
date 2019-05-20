@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://fanuc.com.cn/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fanuc.com.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fanuc.com.cn/Imports">
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/WMSService.svc?xsd=xsd0" namespace="http://fanuc.com.cn/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/WMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/WMSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/WMSService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWMSService_GetWmsAreaInfoByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAreaInfoByPage" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAreaInfoByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAreaInfoByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAreaInfoCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAreaInfoCount" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAreaInfoCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAreaInfoCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_AddWmsAreaInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddWmsAreaInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_AddWmsAreaInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddWmsAreaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_UpdateWmsAreaInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWmsAreaInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_UpdateWmsAreaInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWmsAreaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsAreaInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsAreaInfos" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsAreaInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsAreaInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsAreaInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsAreaInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsAreaInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsAreaInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAreaInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAreaInfos" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAreaInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAreaInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAreaInfoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAreaInfoById" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAreaInfoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAreaInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAllocationInfoByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAllocationInfoByPage" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAllocationInfoByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAllocationInfoByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAllocationInfoCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAllocationInfoCount" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAllocationInfoCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAllocationInfoCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_AddWmsAllocationInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddWmsAllocationInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_AddWmsAllocationInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddWmsAllocationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_UpdateWmsAllocationInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWmsAllocationInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_UpdateWmsAllocationInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWmsAllocationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsAllocationInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsAllocationInfos" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsAllocationInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsAllocationInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsAllocationInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsAllocationInfo" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsAllocationInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsAllocationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAllocationInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAllocationInfos" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAllocationInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAllocationInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAllocationInfoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAllocationInfoById" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsAllocationInfoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsAllocationInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInvOperateByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInvOperateByPage" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInvOperateByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInvOperateByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInvOperateCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInvOperateCount" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInvOperateCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInvOperateCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_AddWmsInvOperate_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddWmsInvOperate" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_AddWmsInvOperate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddWmsInvOperateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_UpdateWmsInvOperate_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWmsInvOperate" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_UpdateWmsInvOperate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWmsInvOperateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsInvOperates_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsInvOperates" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsInvOperates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsInvOperatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsInvOperate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsInvOperate" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsInvOperate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsInvOperateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInvOperates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInvOperates" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInvOperates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInvOperatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInvOperateById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInvOperateById" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInvOperateById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInvOperateByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInventoryByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInventoryByPage" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInventoryByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInventoryByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInventoryCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInventoryCount" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInventoryCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInventoryCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_AddWmsInventory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddWmsInventory" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_AddWmsInventory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddWmsInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_UpdateWmsInventory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWmsInventory" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_UpdateWmsInventory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWmsInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsInventorys_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsInventorys" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsInventorys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsInventorysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsInventory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsInventory" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_DelWmsInventory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelWmsInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInventorys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInventorys" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInventorys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInventorysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInventoryById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInventoryById" />
+  </wsdl:message>
+  <wsdl:message name="IWMSService_GetWmsInventoryById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWmsInventoryByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWMSService">
+    <wsdl:operation name="GetWmsAreaInfoByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAreaInfoByPage" message="tns:IWMSService_GetWmsAreaInfoByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAreaInfoByPageResponse" message="tns:IWMSService_GetWmsAreaInfoByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsAreaInfoCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAreaInfoCount" message="tns:IWMSService_GetWmsAreaInfoCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAreaInfoCountResponse" message="tns:IWMSService_GetWmsAreaInfoCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddWmsAreaInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/AddWmsAreaInfo" message="tns:IWMSService_AddWmsAreaInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/AddWmsAreaInfoResponse" message="tns:IWMSService_AddWmsAreaInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWmsAreaInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/UpdateWmsAreaInfo" message="tns:IWMSService_UpdateWmsAreaInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/UpdateWmsAreaInfoResponse" message="tns:IWMSService_UpdateWmsAreaInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelWmsAreaInfos">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsAreaInfos" message="tns:IWMSService_DelWmsAreaInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsAreaInfosResponse" message="tns:IWMSService_DelWmsAreaInfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelWmsAreaInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsAreaInfo" message="tns:IWMSService_DelWmsAreaInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsAreaInfoResponse" message="tns:IWMSService_DelWmsAreaInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsAreaInfos">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAreaInfos" message="tns:IWMSService_GetWmsAreaInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAreaInfosResponse" message="tns:IWMSService_GetWmsAreaInfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsAreaInfoById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAreaInfoById" message="tns:IWMSService_GetWmsAreaInfoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAreaInfoByIdResponse" message="tns:IWMSService_GetWmsAreaInfoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsAllocationInfoByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAllocationInfoByPage" message="tns:IWMSService_GetWmsAllocationInfoByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAllocationInfoByPageResponse" message="tns:IWMSService_GetWmsAllocationInfoByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsAllocationInfoCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAllocationInfoCount" message="tns:IWMSService_GetWmsAllocationInfoCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAllocationInfoCountResponse" message="tns:IWMSService_GetWmsAllocationInfoCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddWmsAllocationInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/AddWmsAllocationInfo" message="tns:IWMSService_AddWmsAllocationInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/AddWmsAllocationInfoResponse" message="tns:IWMSService_AddWmsAllocationInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWmsAllocationInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/UpdateWmsAllocationInfo" message="tns:IWMSService_UpdateWmsAllocationInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/UpdateWmsAllocationInfoResponse" message="tns:IWMSService_UpdateWmsAllocationInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelWmsAllocationInfos">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsAllocationInfos" message="tns:IWMSService_DelWmsAllocationInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsAllocationInfosResponse" message="tns:IWMSService_DelWmsAllocationInfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelWmsAllocationInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsAllocationInfo" message="tns:IWMSService_DelWmsAllocationInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsAllocationInfoResponse" message="tns:IWMSService_DelWmsAllocationInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsAllocationInfos">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAllocationInfos" message="tns:IWMSService_GetWmsAllocationInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAllocationInfosResponse" message="tns:IWMSService_GetWmsAllocationInfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsAllocationInfoById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAllocationInfoById" message="tns:IWMSService_GetWmsAllocationInfoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsAllocationInfoByIdResponse" message="tns:IWMSService_GetWmsAllocationInfoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsInvOperateByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInvOperateByPage" message="tns:IWMSService_GetWmsInvOperateByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInvOperateByPageResponse" message="tns:IWMSService_GetWmsInvOperateByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsInvOperateCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInvOperateCount" message="tns:IWMSService_GetWmsInvOperateCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInvOperateCountResponse" message="tns:IWMSService_GetWmsInvOperateCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddWmsInvOperate">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/AddWmsInvOperate" message="tns:IWMSService_AddWmsInvOperate_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/AddWmsInvOperateResponse" message="tns:IWMSService_AddWmsInvOperate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWmsInvOperate">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/UpdateWmsInvOperate" message="tns:IWMSService_UpdateWmsInvOperate_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/UpdateWmsInvOperateResponse" message="tns:IWMSService_UpdateWmsInvOperate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelWmsInvOperates">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsInvOperates" message="tns:IWMSService_DelWmsInvOperates_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsInvOperatesResponse" message="tns:IWMSService_DelWmsInvOperates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelWmsInvOperate">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsInvOperate" message="tns:IWMSService_DelWmsInvOperate_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsInvOperateResponse" message="tns:IWMSService_DelWmsInvOperate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsInvOperates">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInvOperates" message="tns:IWMSService_GetWmsInvOperates_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInvOperatesResponse" message="tns:IWMSService_GetWmsInvOperates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsInvOperateById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInvOperateById" message="tns:IWMSService_GetWmsInvOperateById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInvOperateByIdResponse" message="tns:IWMSService_GetWmsInvOperateById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsInventoryByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInventoryByPage" message="tns:IWMSService_GetWmsInventoryByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInventoryByPageResponse" message="tns:IWMSService_GetWmsInventoryByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsInventoryCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInventoryCount" message="tns:IWMSService_GetWmsInventoryCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInventoryCountResponse" message="tns:IWMSService_GetWmsInventoryCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddWmsInventory">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/AddWmsInventory" message="tns:IWMSService_AddWmsInventory_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/AddWmsInventoryResponse" message="tns:IWMSService_AddWmsInventory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWmsInventory">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/UpdateWmsInventory" message="tns:IWMSService_UpdateWmsInventory_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/UpdateWmsInventoryResponse" message="tns:IWMSService_UpdateWmsInventory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelWmsInventorys">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsInventorys" message="tns:IWMSService_DelWmsInventorys_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsInventorysResponse" message="tns:IWMSService_DelWmsInventorys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelWmsInventory">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsInventory" message="tns:IWMSService_DelWmsInventory_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/DelWmsInventoryResponse" message="tns:IWMSService_DelWmsInventory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsInventorys">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInventorys" message="tns:IWMSService_GetWmsInventorys_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInventorysResponse" message="tns:IWMSService_GetWmsInventorys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWmsInventoryById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInventoryById" message="tns:IWMSService_GetWmsInventoryById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IWMSService/GetWmsInventoryByIdResponse" message="tns:IWMSService_GetWmsInventoryById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

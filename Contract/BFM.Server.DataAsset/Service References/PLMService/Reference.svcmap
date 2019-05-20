@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8b55816d-1298-49f6-b556-688d285174d7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/BFM.WCFService/PLMService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PLMService.xsd" MetadataType="Schema" ID="467223f6-dbea-4ebc-b22e-d7353580ae68" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/PLMService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PLMService.disco" MetadataType="Disco" ID="57e8a00b-7232-4aeb-ac6e-736666f5e754" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/PLMService.svc?disco" />
+    <MetadataFile FileName="PLMService.wsdl" MetadataType="Wsdl" ID="f372c0c7-35de-4793-b1fd-f43bb63292a9" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/PLMService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PLMService1.xsd" MetadataType="Schema" ID="81ee333d-b9e5-410e-8743-6cb8f3b89577" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/PLMService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PLMService2.xsd" MetadataType="Schema" ID="bf03a95d-d3c2-40f8-bd6d-06af2d54b3a0" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/PLMService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PLMService3.xsd" MetadataType="Schema" ID="290f535b-4707-4e36-a9fb-307f7c970970" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/PLMService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PLMService1.wsdl" MetadataType="Wsdl" ID="71279b9d-328a-4eb4-91bc-5e23fbed9af3" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/PLMService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

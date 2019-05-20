@@ -1,0 +1,14 @@
+﻿<Window x:Class="CSharp.WPF.FlowDesign.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Window3" Height="305.122" Width="534.695" Loaded="Window_Loaded">
+    <Grid>
+        <Button x:Name="button" Content="确定" HorizontalAlignment="Left" Margin="313,227,0,0" VerticalAlignment="Top" Width="94" Height="38" Click="button_Click"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="设备名称" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" Height="23" Margin="92,9,9.6,0" TextWrapping="Wrap" Text="加工中心" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

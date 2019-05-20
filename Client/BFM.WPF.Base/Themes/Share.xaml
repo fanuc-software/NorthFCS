@@ -1,0 +1,138 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+                    xmlns:controls1="clr-namespace:BFM.WPF.Base.Controls">
+    
+    <dxmvvm:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    <!--图片按钮-->
+    <ControlTemplate x:Key="ImageButtonTemplate" TargetType="{x:Type controls1:ImageButton}">
+        <Grid>
+            <Rectangle x:Name="bgrect" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="{Binding NormalImgPath, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock x:Name="btText" Text="{TemplateBinding Content}"  Foreground="{TemplateBinding Property=Foreground}" 
+                       Visibility="{Binding HasText, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="bgrect" Property="Fill">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="{Binding HoverImgPath, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill"  />
+                    </Setter.Value>
+                </Setter>
+                <Setter TargetName="btText" Property="Foreground" Value="{Binding HoveColor,RelativeSource={RelativeSource TemplatedParent}}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="bgrect" Property="Fill">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="{Binding PressedImgPath, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter TargetName="btText" Property="Foreground" Value="{Binding PressedColor,RelativeSource={RelativeSource TemplatedParent}}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="bgrect" Property="Fill">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="{Binding NormalImgPath, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter TargetName="btText" Property="Foreground" Value="{Binding DisableColor,RelativeSource={RelativeSource TemplatedParent}}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type controls1:ImageButton}">
+        <Setter Property="Template" Value="{StaticResource ImageButtonTemplate}"/>
+    </Style>
+
+    <!--有图标的按钮-->
+    <ControlTemplate x:Key="ImageButtonWithIcoTemplate" TargetType="{x:Type controls1:ImageButtonWithIcon}">
+        <Border x:Name="bbd" CornerRadius="3" BorderBrush="#428bca" BorderThickness="2" Background="#428bca" 
+                Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Center" HorizontalAlignment="Center">
+           <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image x:Name="Img" Width="36" Height="28"
+                       Stretch="Uniform" Source="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}"/>
+                <TextBlock x:Name="btText" Text="{TemplateBinding Content}"  
+                       Foreground="{TemplateBinding Property=Foreground}"
+                       VerticalAlignment="Center" FontSize="{TemplateBinding FontSize}" 
+                       FontFamily="{TemplateBinding FontFamily}" Margin="10,0,0,0"/>
+           </StackPanel>
+           
+        </Border>
+     
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="bbd" Property="BorderBrush" Value="#428bca"/>
+                <Setter TargetName="bbd" Property="Background" Value="#428bca"/>
+                <Setter Property="Foreground" Value="#81EE66"/>
+                <Setter TargetName="Img" Property="Source" Value="{Binding SelectedIcon, RelativeSource={RelativeSource TemplatedParent}}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="bbd" Property="BorderBrush" Value="#428bca"/>
+                <Setter TargetName="bbd" Property="Background" Value="#428bca"/>
+                <Setter Property="Foreground" Value="#81EE66"/>
+                <Setter TargetName="Img" Property="Source" Value="{Binding SelectedIcon, RelativeSource={RelativeSource TemplatedParent}}"/>
+            </Trigger>
+
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="bbd" Property="BorderBrush" Value="#808080"/>
+                <Setter TargetName="bbd" Property="Background" Value="#808080"/>
+                <Setter Property="Foreground" Value="#81EE66"/>
+                <Setter TargetName="Img" Property="Source" Value="{Binding SelectedIcon, RelativeSource={RelativeSource TemplatedParent}}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type controls1:ImageButtonWithIcon}">
+        <Setter Property="Foreground" Value="#EEF8FF"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Template" Value="{StaticResource ImageButtonWithIcoTemplate}"/>
+    </Style>
+
+    <Style x:Key="QueryStyle" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="92"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle x:Name="bgrect" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                            <Rectangle.Fill>
+                                <ImageBrush Stretch="Fill" ImageSource="/BFM.WPF.Base;component/Resources/queryBt.png"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <TextBlock x:Name="btText" Text="{TemplateBinding Content}"  Foreground="{TemplateBinding Property=Foreground}"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bgrect" Property="Fill">
+                                <Setter.Value>
+                                    <ImageBrush Stretch="Fill" ImageSource="/BFM.WPF.Base;component/Resources/queryBt_s.png" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="bgrect" Property="Fill">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/BFM.WPF.Base;component/Resources/queryBt_s.png" Stretch="Fill"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="bgrect" Property="Fill">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/BFM.WPF.Base;component/Resources/queryBt_s.png" Stretch="Fill"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BFM.ContractModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfTmsToolsType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TmsToolsType" nillable="true" type="tns:TmsToolsType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTmsToolsType" nillable="true" type="tns:ArrayOfTmsToolsType" />
+  <xs:complexType name="TmsToolsType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_PIC" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="TOOLS_TYPE_ASSIST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_TYPE_BASIC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_TYPE_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_TYPE_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_TYPE_PARAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_TYPE_SPECIFIED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_TYPE_TCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TmsToolsType" nillable="true" type="tns:TmsToolsType" />
+  <xs:complexType name="ArrayOfTmsToolsMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TmsToolsMaster" nillable="true" type="tns:TmsToolsMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTmsToolsMaster" nillable="true" type="tns:ArrayOfTmsToolsMaster" />
+  <xs:complexType name="TmsToolsMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPENSATION_ABRASION_DIAMETER" type="xs:decimal" />
+      <xs:element minOccurs="0" name="COMPENSATION_ABRASION_LENGTH" type="xs:decimal" />
+      <xs:element minOccurs="0" name="COMPENSATION_SHAPE_DIAMETER" type="xs:decimal" />
+      <xs:element minOccurs="0" name="COMPENSATION_SHAPE_LENGTH" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_LIFE_METHOD" type="xs:int" />
+      <xs:element minOccurs="0" name="TOOLS_LIFE_PLAN" type="xs:int" />
+      <xs:element minOccurs="0" name="TOOLS_LIFE_USED" type="xs:int" />
+      <xs:element minOccurs="0" name="TOOLS_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_PIC" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="TOOLS_POSITION" type="xs:int" />
+      <xs:element minOccurs="0" name="TOOLS_POSITION_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_TYPE_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TmsToolsMaster" nillable="true" type="tns:TmsToolsMaster" />
+  <xs:complexType name="ArrayOfTmsDeviceToolsPos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TmsDeviceToolsPos" nillable="true" type="tns:TmsDeviceToolsPos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTmsDeviceToolsPos" nillable="true" type="tns:ArrayOfTmsDeviceToolsPos" />
+  <xs:complexType name="TmsDeviceToolsPos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DEVICE_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEW_TOOLS_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POS_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_POS_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_STATE" type="xs:int" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TmsDeviceToolsPos" nillable="true" type="tns:TmsDeviceToolsPos" />
+</xs:schema>

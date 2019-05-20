@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://fanuc.com.cn/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fanuc.com.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fanuc.com.cn/Imports">
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/SQLService.svc?xsd=xsd0" namespace="http://fanuc.com.cn/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/SQLService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/SQLService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/SQLService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/SQLService.svc?xsd=xsd4" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISQLService_GetServerTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerTime" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetServerTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetDataBaseTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataBaseTime" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetDataBaseTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataBaseTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_RowCountWithEF_InputMessage">
+    <wsdl:part name="parameters" element="tns:RowCountWithEF" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_RowCountWithEF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RowCountWithEFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetScalarWithEF_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScalarWithEF" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetScalarWithEF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScalarWithEFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetFirstRowWithEF_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFirstRowWithEF" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetFirstRowWithEF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFirstRowWithEFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetJsonDataWithEF_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJsonDataWithEF" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetJsonDataWithEF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJsonDataWithEFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetDataTableWithEF_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataTableWithEF" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetDataTableWithEF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataTableWithEFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_ExecuteSqlWithEF_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSqlWithEF" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_ExecuteSqlWithEF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSqlWithEFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_ExecuteSqlsWithEF_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSqlsWithEF" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_ExecuteSqlsWithEF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSqlsWithEFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetScalar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScalar" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetScalar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScalarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetFirstRow_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFirstRow" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetFirstRow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFirstRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetJsonData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJsonData" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetJsonData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJsonDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetDataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetDataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetDataTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataTable" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_GetDataTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_ExecuteSqlByParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSqlByParam" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_ExecuteSqlByParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSqlByParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_ExecuteSql_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSql" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_ExecuteSql_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_ExecuteSqls_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSqls" />
+  </wsdl:message>
+  <wsdl:message name="ISQLService_ExecuteSqls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSqlsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISQLService">
+    <wsdl:operation name="GetServerTime">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/GetServerTime" message="tns:ISQLService_GetServerTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/GetServerTimeResponse" message="tns:ISQLService_GetServerTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataBaseTime">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/GetDataBaseTime" message="tns:ISQLService_GetDataBaseTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/GetDataBaseTimeResponse" message="tns:ISQLService_GetDataBaseTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RowCountWithEF">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/RowCountWithEF" message="tns:ISQLService_RowCountWithEF_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/RowCountWithEFResponse" message="tns:ISQLService_RowCountWithEF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScalarWithEF">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/GetScalarWithEF" message="tns:ISQLService_GetScalarWithEF_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/GetScalarWithEFResponse" message="tns:ISQLService_GetScalarWithEF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstRowWithEF">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/GetFirstRowWithEF" message="tns:ISQLService_GetFirstRowWithEF_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/GetFirstRowWithEFResponse" message="tns:ISQLService_GetFirstRowWithEF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJsonDataWithEF">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/GetJsonDataWithEF" message="tns:ISQLService_GetJsonDataWithEF_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/GetJsonDataWithEFResponse" message="tns:ISQLService_GetJsonDataWithEF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTableWithEF">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/GetDataTableWithEF" message="tns:ISQLService_GetDataTableWithEF_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/GetDataTableWithEFResponse" message="tns:ISQLService_GetDataTableWithEF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSqlWithEF">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/ExecuteSqlWithEF" message="tns:ISQLService_ExecuteSqlWithEF_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/ExecuteSqlWithEFResponse" message="tns:ISQLService_ExecuteSqlWithEF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSqlsWithEF">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/ExecuteSqlsWithEF" message="tns:ISQLService_ExecuteSqlsWithEF_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/ExecuteSqlsWithEFResponse" message="tns:ISQLService_ExecuteSqlsWithEF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScalar">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/GetScalar" message="tns:ISQLService_GetScalar_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/GetScalarResponse" message="tns:ISQLService_GetScalar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirstRow">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/GetFirstRow" message="tns:ISQLService_GetFirstRow_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/GetFirstRowResponse" message="tns:ISQLService_GetFirstRow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJsonData">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/GetJsonData" message="tns:ISQLService_GetJsonData_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/GetJsonDataResponse" message="tns:ISQLService_GetJsonData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSet">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/GetDataSet" message="tns:ISQLService_GetDataSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/GetDataSetResponse" message="tns:ISQLService_GetDataSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTable">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/GetDataTable" message="tns:ISQLService_GetDataTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/GetDataTableResponse" message="tns:ISQLService_GetDataTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSqlByParam">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/ExecuteSqlByParam" message="tns:ISQLService_ExecuteSqlByParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/ExecuteSqlByParamResponse" message="tns:ISQLService_ExecuteSqlByParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSql">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/ExecuteSql" message="tns:ISQLService_ExecuteSql_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/ExecuteSqlResponse" message="tns:ISQLService_ExecuteSql_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSqls">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISQLService/ExecuteSqls" message="tns:ISQLService_ExecuteSqls_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISQLService/ExecuteSqlsResponse" message="tns:ISQLService_ExecuteSqls_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

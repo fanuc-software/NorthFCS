@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://fanuc.com.cn/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fanuc.com.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fanuc.com.cn/Imports">
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/PLMService.svc?xsd=xsd0" namespace="http://fanuc.com.cn/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/PLMService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/PLMService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/PLMService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPLMService_GetPmPlanMasterByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmPlanMasterByPage" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmPlanMasterByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmPlanMasterByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmPlanMasterCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmPlanMasterCount" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmPlanMasterCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmPlanMasterCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddPmPlanMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPmPlanMaster" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddPmPlanMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPmPlanMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdatePmPlanMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePmPlanMaster" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdatePmPlanMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePmPlanMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelPmPlanMasters_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelPmPlanMasters" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelPmPlanMasters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelPmPlanMastersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelPmPlanMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelPmPlanMaster" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelPmPlanMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelPmPlanMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmPlanMasters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmPlanMasters" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmPlanMasters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmPlanMastersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmPlanMasterById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmPlanMasterById" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmPlanMasterById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmPlanMasterByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskMasterByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskMasterByPage" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskMasterByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskMasterByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskMasterCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskMasterCount" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskMasterCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskMasterCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddPmTaskMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPmTaskMaster" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddPmTaskMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPmTaskMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdatePmTaskMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePmTaskMaster" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdatePmTaskMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePmTaskMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelPmTaskMasters_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelPmTaskMasters" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelPmTaskMasters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelPmTaskMastersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelPmTaskMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelPmTaskMaster" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelPmTaskMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelPmTaskMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskMasters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskMasters" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskMasters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskMastersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskMasterById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskMasterById" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskMasterById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskMasterByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskLineByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskLineByPage" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskLineByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskLineByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskLineCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskLineCount" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskLineCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskLineCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddPmTaskLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPmTaskLine" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddPmTaskLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPmTaskLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdatePmTaskLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePmTaskLine" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdatePmTaskLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePmTaskLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelPmTaskLines_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelPmTaskLines" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelPmTaskLines_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelPmTaskLinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelPmTaskLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelPmTaskLine" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelPmTaskLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelPmTaskLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskLines_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskLines" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskLines_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskLinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskLineById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskLineById" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetPmTaskLineById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPmTaskLineByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesJobOrderByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesJobOrderByPage" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesJobOrderByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesJobOrderByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesJobOrderCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesJobOrderCount" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesJobOrderCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesJobOrderCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddMesJobOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMesJobOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddMesJobOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMesJobOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdateMesJobOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMesJobOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdateMesJobOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMesJobOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelMesJobOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelMesJobOrders" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelMesJobOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelMesJobOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelMesJobOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelMesJobOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelMesJobOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelMesJobOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesJobOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesJobOrders" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesJobOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesJobOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesJobOrderById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesJobOrderById" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesJobOrderById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesJobOrderByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProcessCtrolByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProcessCtrolByPage" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProcessCtrolByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProcessCtrolByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProcessCtrolCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProcessCtrolCount" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProcessCtrolCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProcessCtrolCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddMesProcessCtrol_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMesProcessCtrol" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddMesProcessCtrol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMesProcessCtrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdateMesProcessCtrol_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMesProcessCtrol" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdateMesProcessCtrol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMesProcessCtrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelMesProcessCtrols_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelMesProcessCtrols" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelMesProcessCtrols_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelMesProcessCtrolsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelMesProcessCtrol_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelMesProcessCtrol" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelMesProcessCtrol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelMesProcessCtrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProcessCtrols_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProcessCtrols" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProcessCtrols_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProcessCtrolsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProcessCtrolById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProcessCtrolById" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProcessCtrolById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProcessCtrolByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetTestEFCodeFirstByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestEFCodeFirstByPage" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetTestEFCodeFirstByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestEFCodeFirstByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetTestEFCodeFirstCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestEFCodeFirstCount" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetTestEFCodeFirstCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestEFCodeFirstCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddTestEFCodeFirst_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTestEFCodeFirst" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddTestEFCodeFirst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTestEFCodeFirstResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdateTestEFCodeFirst_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTestEFCodeFirst" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdateTestEFCodeFirst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTestEFCodeFirstResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelTestEFCodeFirsts_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelTestEFCodeFirsts" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelTestEFCodeFirsts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelTestEFCodeFirstsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelTestEFCodeFirst_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelTestEFCodeFirst" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelTestEFCodeFirst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelTestEFCodeFirstResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetTestEFCodeFirsts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestEFCodeFirsts" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetTestEFCodeFirsts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestEFCodeFirstsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetTestEFCodeFirstById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestEFCodeFirstById" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetTestEFCodeFirstById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestEFCodeFirstByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProductProcessByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProductProcessByPage" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProductProcessByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProductProcessByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProductProcessCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProductProcessCount" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProductProcessCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProductProcessCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddMesProductProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMesProductProcess" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_AddMesProductProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMesProductProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdateMesProductProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMesProductProcess" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_UpdateMesProductProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMesProductProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelMesProductProcesss_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelMesProductProcesss" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelMesProductProcesss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelMesProductProcesssResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelMesProductProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelMesProductProcess" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_DelMesProductProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelMesProductProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProductProcesss_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProductProcesss" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProductProcesss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProductProcesssResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProductProcessById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProductProcessById" />
+  </wsdl:message>
+  <wsdl:message name="IPLMService_GetMesProductProcessById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesProductProcessByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPLMService">
+    <wsdl:operation name="GetPmPlanMasterByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmPlanMasterByPage" message="tns:IPLMService_GetPmPlanMasterByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmPlanMasterByPageResponse" message="tns:IPLMService_GetPmPlanMasterByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPmPlanMasterCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmPlanMasterCount" message="tns:IPLMService_GetPmPlanMasterCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmPlanMasterCountResponse" message="tns:IPLMService_GetPmPlanMasterCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPmPlanMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/AddPmPlanMaster" message="tns:IPLMService_AddPmPlanMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/AddPmPlanMasterResponse" message="tns:IPLMService_AddPmPlanMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePmPlanMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/UpdatePmPlanMaster" message="tns:IPLMService_UpdatePmPlanMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/UpdatePmPlanMasterResponse" message="tns:IPLMService_UpdatePmPlanMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelPmPlanMasters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelPmPlanMasters" message="tns:IPLMService_DelPmPlanMasters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelPmPlanMastersResponse" message="tns:IPLMService_DelPmPlanMasters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelPmPlanMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelPmPlanMaster" message="tns:IPLMService_DelPmPlanMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelPmPlanMasterResponse" message="tns:IPLMService_DelPmPlanMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPmPlanMasters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmPlanMasters" message="tns:IPLMService_GetPmPlanMasters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmPlanMastersResponse" message="tns:IPLMService_GetPmPlanMasters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPmPlanMasterById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmPlanMasterById" message="tns:IPLMService_GetPmPlanMasterById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmPlanMasterByIdResponse" message="tns:IPLMService_GetPmPlanMasterById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPmTaskMasterByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskMasterByPage" message="tns:IPLMService_GetPmTaskMasterByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskMasterByPageResponse" message="tns:IPLMService_GetPmTaskMasterByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPmTaskMasterCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskMasterCount" message="tns:IPLMService_GetPmTaskMasterCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskMasterCountResponse" message="tns:IPLMService_GetPmTaskMasterCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPmTaskMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/AddPmTaskMaster" message="tns:IPLMService_AddPmTaskMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/AddPmTaskMasterResponse" message="tns:IPLMService_AddPmTaskMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePmTaskMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/UpdatePmTaskMaster" message="tns:IPLMService_UpdatePmTaskMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/UpdatePmTaskMasterResponse" message="tns:IPLMService_UpdatePmTaskMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelPmTaskMasters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelPmTaskMasters" message="tns:IPLMService_DelPmTaskMasters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelPmTaskMastersResponse" message="tns:IPLMService_DelPmTaskMasters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelPmTaskMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelPmTaskMaster" message="tns:IPLMService_DelPmTaskMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelPmTaskMasterResponse" message="tns:IPLMService_DelPmTaskMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPmTaskMasters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskMasters" message="tns:IPLMService_GetPmTaskMasters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskMastersResponse" message="tns:IPLMService_GetPmTaskMasters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPmTaskMasterById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskMasterById" message="tns:IPLMService_GetPmTaskMasterById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskMasterByIdResponse" message="tns:IPLMService_GetPmTaskMasterById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPmTaskLineByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskLineByPage" message="tns:IPLMService_GetPmTaskLineByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskLineByPageResponse" message="tns:IPLMService_GetPmTaskLineByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPmTaskLineCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskLineCount" message="tns:IPLMService_GetPmTaskLineCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskLineCountResponse" message="tns:IPLMService_GetPmTaskLineCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPmTaskLine">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/AddPmTaskLine" message="tns:IPLMService_AddPmTaskLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/AddPmTaskLineResponse" message="tns:IPLMService_AddPmTaskLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePmTaskLine">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/UpdatePmTaskLine" message="tns:IPLMService_UpdatePmTaskLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/UpdatePmTaskLineResponse" message="tns:IPLMService_UpdatePmTaskLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelPmTaskLines">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelPmTaskLines" message="tns:IPLMService_DelPmTaskLines_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelPmTaskLinesResponse" message="tns:IPLMService_DelPmTaskLines_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelPmTaskLine">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelPmTaskLine" message="tns:IPLMService_DelPmTaskLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelPmTaskLineResponse" message="tns:IPLMService_DelPmTaskLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPmTaskLines">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskLines" message="tns:IPLMService_GetPmTaskLines_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskLinesResponse" message="tns:IPLMService_GetPmTaskLines_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPmTaskLineById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskLineById" message="tns:IPLMService_GetPmTaskLineById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetPmTaskLineByIdResponse" message="tns:IPLMService_GetPmTaskLineById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesJobOrderByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesJobOrderByPage" message="tns:IPLMService_GetMesJobOrderByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesJobOrderByPageResponse" message="tns:IPLMService_GetMesJobOrderByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesJobOrderCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesJobOrderCount" message="tns:IPLMService_GetMesJobOrderCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesJobOrderCountResponse" message="tns:IPLMService_GetMesJobOrderCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMesJobOrder">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/AddMesJobOrder" message="tns:IPLMService_AddMesJobOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/AddMesJobOrderResponse" message="tns:IPLMService_AddMesJobOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMesJobOrder">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/UpdateMesJobOrder" message="tns:IPLMService_UpdateMesJobOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/UpdateMesJobOrderResponse" message="tns:IPLMService_UpdateMesJobOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelMesJobOrders">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelMesJobOrders" message="tns:IPLMService_DelMesJobOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelMesJobOrdersResponse" message="tns:IPLMService_DelMesJobOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelMesJobOrder">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelMesJobOrder" message="tns:IPLMService_DelMesJobOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelMesJobOrderResponse" message="tns:IPLMService_DelMesJobOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesJobOrders">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesJobOrders" message="tns:IPLMService_GetMesJobOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesJobOrdersResponse" message="tns:IPLMService_GetMesJobOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesJobOrderById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesJobOrderById" message="tns:IPLMService_GetMesJobOrderById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesJobOrderByIdResponse" message="tns:IPLMService_GetMesJobOrderById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesProcessCtrolByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProcessCtrolByPage" message="tns:IPLMService_GetMesProcessCtrolByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProcessCtrolByPageResponse" message="tns:IPLMService_GetMesProcessCtrolByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesProcessCtrolCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProcessCtrolCount" message="tns:IPLMService_GetMesProcessCtrolCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProcessCtrolCountResponse" message="tns:IPLMService_GetMesProcessCtrolCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMesProcessCtrol">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/AddMesProcessCtrol" message="tns:IPLMService_AddMesProcessCtrol_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/AddMesProcessCtrolResponse" message="tns:IPLMService_AddMesProcessCtrol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMesProcessCtrol">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/UpdateMesProcessCtrol" message="tns:IPLMService_UpdateMesProcessCtrol_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/UpdateMesProcessCtrolResponse" message="tns:IPLMService_UpdateMesProcessCtrol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelMesProcessCtrols">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelMesProcessCtrols" message="tns:IPLMService_DelMesProcessCtrols_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelMesProcessCtrolsResponse" message="tns:IPLMService_DelMesProcessCtrols_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelMesProcessCtrol">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelMesProcessCtrol" message="tns:IPLMService_DelMesProcessCtrol_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelMesProcessCtrolResponse" message="tns:IPLMService_DelMesProcessCtrol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesProcessCtrols">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProcessCtrols" message="tns:IPLMService_GetMesProcessCtrols_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProcessCtrolsResponse" message="tns:IPLMService_GetMesProcessCtrols_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesProcessCtrolById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProcessCtrolById" message="tns:IPLMService_GetMesProcessCtrolById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProcessCtrolByIdResponse" message="tns:IPLMService_GetMesProcessCtrolById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestEFCodeFirstByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetTestEFCodeFirstByPage" message="tns:IPLMService_GetTestEFCodeFirstByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetTestEFCodeFirstByPageResponse" message="tns:IPLMService_GetTestEFCodeFirstByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestEFCodeFirstCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetTestEFCodeFirstCount" message="tns:IPLMService_GetTestEFCodeFirstCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetTestEFCodeFirstCountResponse" message="tns:IPLMService_GetTestEFCodeFirstCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTestEFCodeFirst">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/AddTestEFCodeFirst" message="tns:IPLMService_AddTestEFCodeFirst_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/AddTestEFCodeFirstResponse" message="tns:IPLMService_AddTestEFCodeFirst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTestEFCodeFirst">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/UpdateTestEFCodeFirst" message="tns:IPLMService_UpdateTestEFCodeFirst_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/UpdateTestEFCodeFirstResponse" message="tns:IPLMService_UpdateTestEFCodeFirst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelTestEFCodeFirsts">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelTestEFCodeFirsts" message="tns:IPLMService_DelTestEFCodeFirsts_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelTestEFCodeFirstsResponse" message="tns:IPLMService_DelTestEFCodeFirsts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelTestEFCodeFirst">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelTestEFCodeFirst" message="tns:IPLMService_DelTestEFCodeFirst_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelTestEFCodeFirstResponse" message="tns:IPLMService_DelTestEFCodeFirst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestEFCodeFirsts">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetTestEFCodeFirsts" message="tns:IPLMService_GetTestEFCodeFirsts_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetTestEFCodeFirstsResponse" message="tns:IPLMService_GetTestEFCodeFirsts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestEFCodeFirstById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetTestEFCodeFirstById" message="tns:IPLMService_GetTestEFCodeFirstById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetTestEFCodeFirstByIdResponse" message="tns:IPLMService_GetTestEFCodeFirstById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesProductProcessByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProductProcessByPage" message="tns:IPLMService_GetMesProductProcessByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProductProcessByPageResponse" message="tns:IPLMService_GetMesProductProcessByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesProductProcessCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProductProcessCount" message="tns:IPLMService_GetMesProductProcessCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProductProcessCountResponse" message="tns:IPLMService_GetMesProductProcessCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMesProductProcess">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/AddMesProductProcess" message="tns:IPLMService_AddMesProductProcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/AddMesProductProcessResponse" message="tns:IPLMService_AddMesProductProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMesProductProcess">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/UpdateMesProductProcess" message="tns:IPLMService_UpdateMesProductProcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/UpdateMesProductProcessResponse" message="tns:IPLMService_UpdateMesProductProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelMesProductProcesss">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelMesProductProcesss" message="tns:IPLMService_DelMesProductProcesss_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelMesProductProcesssResponse" message="tns:IPLMService_DelMesProductProcesss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelMesProductProcess">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/DelMesProductProcess" message="tns:IPLMService_DelMesProductProcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/DelMesProductProcessResponse" message="tns:IPLMService_DelMesProductProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesProductProcesss">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProductProcesss" message="tns:IPLMService_GetMesProductProcesss_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProductProcesssResponse" message="tns:IPLMService_GetMesProductProcesss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesProductProcessById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProductProcessById" message="tns:IPLMService_GetMesProductProcessById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IPLMService/GetMesProductProcessByIdResponse" message="tns:IPLMService_GetMesProductProcessById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ece8dafa-f76f-4a0c-8c48-bf2731da31cb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/BFM.WCFService/FMSService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FMSService.xsd" MetadataType="Schema" ID="674ef153-7964-49cb-8f17-7df15e271fb5" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/FMSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FMSService1.xsd" MetadataType="Schema" ID="d73c07ee-fe67-498d-b49a-05a775755b5d" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/FMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FMSService2.xsd" MetadataType="Schema" ID="909f7a52-0b00-4c70-99a0-c619eadb71c4" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/FMSService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FMSService.wsdl" MetadataType="Wsdl" ID="d53ccfb2-6f0b-4dd0-b325-007de2202b84" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/FMSService.svc?wsdl" />
+    <MetadataFile FileName="FMSService.disco" MetadataType="Disco" ID="e1e34a87-b649-41ae-a50e-f9c3d0fe9329" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/FMSService.svc?disco" />
+    <MetadataFile FileName="FMSService3.xsd" MetadataType="Schema" ID="6980f71f-bc2e-44f9-b7f2-9007fb21f59d" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/FMSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FMSService1.wsdl" MetadataType="Wsdl" ID="7eef5f4f-d576-480b-b4f5-0a15df53d43b" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/FMSService.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

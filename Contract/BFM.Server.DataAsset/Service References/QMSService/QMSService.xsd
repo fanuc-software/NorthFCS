@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BFM.ContractModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfQmsTest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QmsTest" nillable="true" type="tns:QmsTest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQmsTest" nillable="true" type="tns:ArrayOfQmsTest" />
+  <xs:complexType name="QmsTest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEST_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEST_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QmsTest" nillable="true" type="tns:QmsTest" />
+  <xs:complexType name="ArrayOfQmsCheckParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QmsCheckParam" nillable="true" type="tns:QmsCheckParam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQmsCheckParam" nillable="true" type="tns:ArrayOfQmsCheckParam" />
+  <xs:complexType name="QmsCheckParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CHECK_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHECK_DESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHECK_DEVICE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHECK_DEVICE_PIC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHECK_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHECK_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHECK_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MAX_SIZE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MIN_SIZE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QmsCheckParam" nillable="true" type="tns:QmsCheckParam" />
+  <xs:complexType name="ArrayOfQmsRoutingCheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QmsRoutingCheck" nillable="true" type="tns:QmsRoutingCheck" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQmsRoutingCheck" nillable="true" type="tns:ArrayOfQmsRoutingCheck" />
+  <xs:complexType name="QmsRoutingCheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CHECK_PARAM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHECK_TYPE" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CHK_FREQ_UNIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHK_FREQ_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHK_MODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHK_OBJ_UNIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COLLECTION_FLAG" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REC_MODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QmsRoutingCheck" nillable="true" type="tns:QmsRoutingCheck" />
+  <xs:complexType name="ArrayOfQmsCheckMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QmsCheckMaster" nillable="true" type="tns:QmsCheckMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQmsCheckMaster" nillable="true" type="tns:ArrayOfQmsCheckMaster" />
+  <xs:complexType name="QmsCheckMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CHECK_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHECK_PARAM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHECK_RESULT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHECK_STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHECK_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHK_MODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROUTING_CHECK_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TASKLINE_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QmsCheckMaster" nillable="true" type="tns:QmsCheckMaster" />
+</xs:schema>

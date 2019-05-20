@@ -1,0 +1,130 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  
+      xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"  
+      xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"  
+      xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"  
+      xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+      xmlns:local="clr-namespace:BFM.WPF.RSM.Routing"
+      xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+       xmlns:Controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+    x:Class="BFM.WPF.RSM.Routing.RoutingView"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+    FontSize="14"
+      Title="RoutingView">
+
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Row="0" DockPanel.Dock="Top" Height="50" Margin="15,0" Background="#eff0f3" CornerRadius="0,0,8,8">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2" Opacity="0.5" Direction="-90" BlurRadius="10" />
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <dxlc:LayoutGroup Grid.Column="1" Margin="10,10,0,0">
+                    <dxlc:LayoutItem Label="开始时间">
+                        <dxe:DateEdit  Margin="10,0,10,0" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="结束时间">
+                        <dxe:DateEdit    Margin="10,0,10,0"/>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="权限名称">
+                        <TextBox></TextBox>
+                    </dxlc:LayoutItem>
+
+                    <Controls:ImageButtonWithIcon DockPanel.Dock="Left" x:Name="bSearch4" Content="查询" Icon="/BFM.WPF.EAM;component/Images/26.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/26.ico"  Width="100" Height="40"   Margin="20,-10,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+                </dxlc:LayoutGroup>
+
+
+            </Grid>
+
+
+        </Border>
+        <DockPanel Grid.Row="1">
+            <Controls:ImageButtonWithIcon Content="增加" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico"  Width="100" Height="40" Click="BtnAdd_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="修改" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico"  Width="100" Height="40" Click="BtnMod_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="删除" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/24.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/24.ico"  Width="100" Height="40" Click="BtnDel_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="保存"  DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/21.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/21.ico"  Width="100" Height="40" Click="BtnSave_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="取消"   DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/23.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/23.ico"  Width="100" Height="40" Click="BtnCancel_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="上传"   DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/6.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/6.ico"  Width="100" Height="40" Click="Btn_File" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+
+        </DockPanel>
+
+
+
+        <Grid Grid.Row="2" >
+            <Grid x:Name="MenuContent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <dxlc:LayoutControl x:Name="gbItem" Margin="0" Padding="0" 
+                                    IsCollapsed="True" Visibility="Collapsed"  >
+                    <dxlc:LayoutGroup Header="工厂信息" x:Name="dictInfo" View="GroupBox" ItemLabelsAlignment="Local"
+                              IsCollapsible="False" Background="White" Orientation="Vertical">
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="工艺路线名称" >
+                                <TextBox Text="{Binding ROUTING_NAME}"  Margin="10,0,10,0"/>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="工艺路线缩写">
+                                <TextBox Text="{Binding ROUTING_ABV}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="是否启用" >
+                                <TextBox Text="{Binding USE_FLAG}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="对应产品" >
+
+                                <TextBox Name="txt_Item" Text="{Binding PKNO, ConverterParameter=RS_ROUTING_ITEM;ROUTING_PKNO;ITEM_PKNO;RS_ITEM_MASTER;PKNO;ITEM_NAME, Converter={StaticResource ForeignInfoConverter}}"   Margin="10,0,10,0" PreviewMouseDoubleClick="TextBox_PreviewMouseDoubleClick" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0" Height="80">
+                            <dxlc:LayoutItem Label="备注" Height="80"  VerticalAlignment="Stretch" >
+                                <TextBox Text="{Binding REMARK}" Margin="10,0,10,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutControl>
+
+                <Grid Grid.Row="1">
+                    <dxg:GridControl x:Name="gridItem" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" 
+                                      SelectionMode="Row" FontSize="16" MouseDoubleClick="gridItem_MouseDoubleClick" >
+                        <dxg:GridControl.View>
+                            <dxg:TreeListView AllowEditing="False" NavigationStyle="Row" />
+                        </dxg:GridControl.View>
+                        <dxg:GridColumn FieldName="ROUTING_NAME" Header="工艺路线名称" Width="200"/>
+                        <dxg:GridColumn FieldName="ROUTING_ABV" Header="工艺路线缩写" Width="120"/>
+                        <dxg:GridColumn FieldName="USE_FLAG" Header="是否启用" Width="100"/>
+                        <!--<dxg:GridColumn FieldName="BYTE_CONTENT"    Header="图片" Width="*">
+
+                            <dxg:GridColumn.EditSettings >
+                                <dxe:ImageEditSettings >
+                                </dxe:ImageEditSettings>
+                            </dxg:GridColumn.EditSettings>
+
+                        </dxg:GridColumn>-->
+                        <dxg:GridColumn FieldName="REMARK" Header="备注" Width="*"/>
+                    </dxg:GridControl>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Page>

@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol">
+    <!--GroupBox-->
+    <Style TargetType="dxlc:GroupBox">
+        <Setter Property="NormalTemplate" >
+            <Setter.Value>
+                <ControlTemplate TargetType="dxlc:GroupBox">
+                    <dx:Container>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="LayoutStates">
+                                <VisualState x:Name="NormalLayout" />
+                                <VisualState x:Name="MinimizedLayout">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TitleStretcher" Storyboard.TargetProperty="Visibility" Duration="0">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SeparatorElement" Storyboard.TargetProperty="Visibility" Duration="0">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Visibility" Duration="0">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MaximizedLayout" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="BorderElement" Background="White" BorderBrush="{TemplateBinding SeparatorBrush}" BorderThickness="2" CornerRadius="5" dx:BorderExtensions.ClipChild="True">
+                            <dxlc:LayoutControl Orientation="Vertical" Padding="0" ItemSpace="0" ScrollBars="None" dx:DXSerializer.Enabled="False">
+                                <dxlc:LayoutGroup Background="#e6f0f9" Padding="2" ItemSpace="0" Visibility="{TemplateBinding TitleVisibility}">
+                                    <Rectangle x:Name="TitleStretcher" Width="0" Visibility="Collapsed" />
+                                    <dx:DXContentPresenter x:Name="DXContentPresenter1" Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" Margin="10,5,0,5" VerticalAlignment="Center" Foreground="Black" FontSize="18"/>
+                                    <dxlc:GroupBoxButton x:Name="MinimizeElement" Margin="2,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{TemplateBinding MinimizeElementVisibility}" />
+                                    <dxlc:GroupBoxButton x:Name="MaximizeElement" Margin="2,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{TemplateBinding MaximizeElementVisibility}" />
+                                </dxlc:LayoutGroup>
+                                <Rectangle x:Name="SeparatorElement" Height="1" Fill="{TemplateBinding SeparatorBrush}" Visibility="{TemplateBinding TitleVisibility}" />
+                                <dx:DXContentPresenter x:Name="ContentElement" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding CurrentContentTemplate}" Margin="{TemplateBinding Padding}" />
+                            </dxlc:LayoutControl>
+                        </Border>
+                    </dx:Container>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                            <Setter Property="Margin" TargetName="DXContentPresenter1" Value="12" />
+                            <Setter Property="Margin" TargetName="ContentElement" Value="12" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="dxlc:LayoutItem">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Margin" Value="0"/>
+    </Style>
+</ResourceDictionary>

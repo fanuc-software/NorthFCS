@@ -1,0 +1,151 @@
+﻿<Page x:Class="BFM.WPF.RSM.Product.ItemMasterView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+      xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+      xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+      xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+      xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"    
+     xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+         xmlns:Controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+      xmlns:local="clr-namespace:BFM.WPF.RSM.Product"
+      xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="ItemMasterView">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Row="0" DockPanel.Dock="Top" Height="50" Margin="15,0" Background="#eff0f3" CornerRadius="0,0,8,8">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2" Opacity="0.5" Direction="-90" BlurRadius="10" />
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <dxlc:LayoutGroup Grid.Column="1" Margin="10,10,0,0">
+                    <dxlc:LayoutItem Label="开始时间">
+                        <dxe:DateEdit  Margin="10,0,10,0" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="结束时间">
+                        <dxe:DateEdit    Margin="10,0,10,0"/>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="产品名称/图号">
+                        <TextBox></TextBox>
+                    </dxlc:LayoutItem>
+
+                    <Controls:ImageButtonWithIcon DockPanel.Dock="Left" x:Name="bSearch4" Content="查询" Icon="/BFM.WPF.EAM;component/Images/26.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/26.ico"  Width="100" Height="40"   Margin="20,-10,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+                </dxlc:LayoutGroup>
+
+
+            </Grid>
+
+
+        </Border>
+        <DockPanel Grid.Row="1">
+            <Controls:ImageButtonWithIcon Content="增加" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico"  Width="100" Height="40" Click="BtnAdd_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="修改" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico"  Width="100" Height="40" Click="BtnMod_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="删除" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/24.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/24.ico"  Width="100" Height="40" Click="BtnDel_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="导入" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico"  Width="100" Height="40" Click="BtnImprot_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="导出" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico"  Width="100" Height="40" Click="BtnImprot_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="保存"  DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/21.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/21.ico"  Width="100" Height="40" Click="BtnSave_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="取消"   DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/23.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/23.ico"  Width="100" Height="40" Click="BtnCancel_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+
+        </DockPanel>
+
+
+
+        <Grid Grid.Row="2" >
+            <Grid x:Name="MenuContent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <dxlc:LayoutControl x:Name="gbItem" Margin="0" Padding="0" 
+                                    IsCollapsed="True" Visibility="Visible"  >
+                    <dxlc:LayoutGroup Header="产品信息" x:Name="dictInfo" View="GroupBox" ItemLabelsAlignment="Local"
+                              IsCollapsible="False" Background="White" Orientation="Vertical">
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="产品名称">
+                                <TextBox Text="{Binding ITEM_NAME}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="产品图号" >
+                                <TextBox Text="{Binding DRAWING_NO}"  Margin="10,0,10,0"/>
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="产品规格" >
+                                <TextBox Text="{Binding ITEM_SPECS}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="产品型号" >
+                                <TextBox Text="{Binding ITEM_NORM}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="产品类型" >
+                                <ComboBox x:Name="comboNorm" SelectedValue="{Binding NORM_CLASS}" SelectedValuePath="Tag" Margin="10,0,10,0" >
+                                    <ComboBoxItem Content="原料" Tag ="1" />
+                                    <ComboBoxItem Content="成品" Tag ="10" />
+                                    <ComboBoxItem Content="刀具" Tag ="101" />
+                                </ComboBox>
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="工艺路线号" >
+                                <ComboBox x:Name="combo_routing" DisplayMemberPath="ROUTING_NAME" Margin="10,0,10,0" />
+                                <!--<TextBox x:Name="txt_routing" Text="{Binding ROUTING_NO}" Margin="10,0,10,0" />-->
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="关重件" >
+                                <TextBox Text="{Binding KEY_PART_NORM}" Margin="10,0,10,0" />
+                                <!--<TextBox x:Name="txt_routing" Text="{Binding ROUTING_NO}" Margin="10,0,10,0" />-->
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="理论重量" >
+                                <TextBox Text="{Binding THEORETICAL_WEIGHT}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0" Height="80">
+                            <dxlc:LayoutItem Label="备注" VerticalAlignment="Stretch" >
+                                <TextBox Text="{Binding REMARK}" Margin="10,0,10,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutControl>
+
+
+
+                <Grid Grid.Row="1">
+                    <dxg:GridControl x:Name="gridItem" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" 
+                                      SelectionMode="Row"   MouseDoubleClick="gridItem_MouseDoubleClick" >
+                        <dxg:GridControl.View>
+                            <dxg:TableView ShowGroupPanel="False" AllowEditing="False" NavigationStyle="Row"/>
+                        </dxg:GridControl.View>
+                        <dxg:GridColumn FieldName="ITEM_NAME" Header="产品名称" Width="100"/>
+                        <dxg:GridColumn FieldName="ITEM_SPECS" Header="产品规格" Width="100"/>
+                        <dxg:GridColumn FieldName="DRAWING_NO" Header="图号" Width="120"/>
+                        <dxg:GridColumn FieldName="ITEM_NORM" Header="产品型号" Width="100"/>
+                        <dxg:GridColumn Binding="{Binding NORM_CLASS, Converter={StaticResource EnumInfoConverter}, ConverterParameter='1:原料;2:半成品;10:成品;101:刀具'}" Header="产品类型" Width="100"/>
+                        <!--<dxg:GridColumn FieldName="NORM_CLASS" Header="产品分类" Width="100"/>-->
+                        <dxg:GridColumn FieldName="KEY_PART_NORM" Header="关重件" Width="100"/>
+                        <dxg:GridColumn FieldName="THEORETICAL_WEIGHT" Header="理论重量" Width="100"/>
+                        <dxg:GridColumn FieldName="ROUTING_NO" Header="工艺路线号" Width="100"/>
+                        <dxg:GridColumn FieldName="REMARK" Header="备注" Width="*"/>
+                    </dxg:GridControl>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+
+
+
+</Page>

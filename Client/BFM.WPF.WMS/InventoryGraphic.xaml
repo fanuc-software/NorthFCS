@@ -1,0 +1,193 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BFM.WPF.WMS"
+      xmlns:controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+      xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+      xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+      xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+      x:Class="BFM.WPF.WMS.InventoryGraphic"
+      mc:Ignorable="d" Loaded="InventoryGraphic_OnLoaded"
+      Unloaded="InventoryGraphic_OnUnloaded"
+      d:DesignHeight="2500" d:DesignWidth="1200"
+      Title="轮毂库存作业" ForceCursor="True" >
+
+    <Grid Background="White" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <controls:SingleRowShelf x:Name="myShelf" Margin="5" Background="Gray" Grid.Row="0"
+                                     TotalColumn="{Binding TotalColumn}" TotalLayer="{Binding TotalLayer}" 
+                                     MyMouseClickEvent="MyShelf_MyMouseClickEvent" />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <dxlc:LayoutControl Margin="0" Padding="0" IsCollapsed="True" Orientation="Vertical">
+                <dxlc:LayoutGroup Margin="5">
+                    <Grid Height="50">
+                        <DockPanel >
+                            <controls:ImageButtonWithIcon Content="入料架" IsEnabled="{Binding Path=ActionType, Converter={StaticResource ToBoolConverter}, ConverterParameter='11'}" Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico" HorizontalAlignment="Left" Width="95" FontSize="12" Height="40" Click="BtnIn_Click" Margin="1" />
+                            <controls:ImageButtonWithIcon Content="出料架" IsEnabled="{Binding Path=ActionType, Converter={StaticResource ToBoolConverter}, ConverterParameter='13'}" Icon="/BFM.WPF.SDM;component/Images/24.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/24.ico" HorizontalAlignment="Left" Width="95" FontSize="12" Height="40" Click="BtnOut_Click" Margin="1" />
+                            <controls:ImageButtonWithIcon Content="成品转换" IsEnabled="{Binding Path=ActionType, Converter={StaticResource ToBoolConverter}, ConverterParameter='13'}" Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico" HorizontalAlignment="Left" Width="102" FontSize="12" Height="40" Click="BtnChange_Click" Margin="1" />
+                            <controls:ImageButtonWithIcon Content="清空货位" Icon="/BFM.WPF.SDM;component/Images/24.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/24.ico" HorizontalAlignment="Left" Width="102" FontSize="12" Height="40" Click="BtnDel_Click" Margin="1" />
+                            <controls:ImageButtonWithIcon Content="添加库存" IsEnabled="{Binding Path=ActionType, Converter={StaticResource ToBoolConverter}, ConverterParameter='11'}" Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico" HorizontalAlignment="Left" Width="102" FontSize="12" Height="40" Click="BtnAdd_Click" Margin="1" />
+                            <controls:ImageButtonWithIcon Content="手动任务" IsEnabled="{Binding Path=ActionType, Converter={StaticResource ToBoolConverter}, ConverterParameter='11;12;13'}" Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico" HorizontalAlignment="Left" Width="105" FontSize="12" Height="40" Click="BtnProcess_Click" Margin="1" />
+                            <controls:ImageButtonWithIcon Content="保存" Icon="/BFM.WPF.EAM;component/Images/21.ico" IsEnabled="{Binding Path=ActionType, Converter={StaticResource ToBoolConverter}, ConverterParameter='1;2;3;4;5;6;7'}" SelectedIcon="/BFM.WPF.EAM;component/Images/21.ico" HorizontalAlignment="Left" Width="80" FontSize="12" Height="40" Click="BtnSave_Click" Margin="1" />
+                            <controls:ImageButtonWithIcon Content="取消" Icon="/BFM.WPF.EAM;component/Images/23.ico" IsEnabled="{Binding Path=ActionType, Converter={StaticResource ToBoolConverter}, ConverterParameter='1;2;3;4;5;6;7'}" SelectedIcon="/BFM.WPF.EAM;component/Images/23.ico" HorizontalAlignment="Left" Width="80" FontSize="12" Height="40" Click="BtnCancel_Click" Margin="1" />
+                            <controls:ImageButtonWithIcon Content="演示 1" Icon="/BFM.WPF.EAM;component/Images/1.ico"  SelectedIcon="/BFM.WPF.EAM;component/Images/1.ico" HorizontalAlignment="Left" Width="90" FontSize="12" Height="40" Click="bBeginShow_Click" Margin="1" />
+                            <controls:ImageButtonWithIcon Content="循环演示" Icon="/BFM.WPF.EAM;component/Images/1.ico"  SelectedIcon="/BFM.WPF.EAM;component/Images/1.ico" HorizontalAlignment="Left" Width="102" FontSize="12" Height="40" Click="bAllowRun_Click" Margin="1" />
+                            <controls:ImageButtonWithIcon Content="结束循环" Icon="/BFM.WPF.EAM;component/Images/1.ico"  SelectedIcon="/BFM.WPF.EAM;component/Images/1.ico" HorizontalAlignment="Left" Width="102" FontSize="12" Height="40" Click="bStopAllow_Click" Margin="1" />
+                        </DockPanel>
+                    </Grid>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Header="原料入库详细信息" Margin="0" View="GroupBox" Orientation="Vertical" 
+                                  Visibility="{Binding Path=ActionType, Converter={StaticResource ToVisibilityConverter}, ConverterParameter='1'}">
+                    <dxlc:LayoutGroup Margin="0,5,0,0">
+                        <dxlc:LayoutItem Label="原料信息" >
+                            <ComboBox x:Name="cmbInRaw" SelectedValuePath="PKNO" DisplayMemberPath="ITEM_NAME"  Margin="10,0,10,0"/>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="原料型号" >
+                            <TextBox Text="{Binding ITEM_NORM}" DataContext="{Binding SelectedItem, ElementName=cmbInRaw}" Margin="10,0,10,0" IsReadOnly="True"/>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup Margin="0,5,0,0" Height="80">
+                        <dxlc:LayoutItem Label="备注"  VerticalAlignment="Stretch" >
+                            <TextBox x:Name="TbInRemark" Margin="10,0,10,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Name="gProcess"  Header="手动添加作业任务准备详细信息" Margin="0" View="GroupBox" Orientation="Vertical"  
+                                  Visibility="{Binding Path=ActionType, Converter={StaticResource ToVisibilityConverter}, ConverterParameter='2;6;7'}">
+                    <dxlc:LayoutGroup Margin="0,5,0,0" IsEnabled="False" Background="LightGray">
+                        <dxlc:LayoutItem Label="成品货位" >
+                            <ComboBox x:Name="cmbProductAlloc" SelectedValuePath="PKNO" DisplayMemberPath="ALLOCATION_NAME"  Margin="10,0,10,0" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="成品信息" >
+                            <ComboBox x:Name="cmbChangeProduct" SelectedValuePath="ITEM_PKNO" DisplayMemberPath="CHILD_NAME" Margin="10,0,10,0"/>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup Margin="0,5,0,0">
+                        <Grid Height="30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <dxlc:LayoutItem Label="工艺参数" >
+                                <ComboBox x:Name="cmbPrcessParam" SelectedValuePath="Tag" Margin="10,0,10,0" SelectionChanged="CmbPrcessParam_OnSelectionChanged" >
+                                    <ComboBoxItem Name="BoxItem1" Content="1 只上料，不检测，不上架" Tag ="1"/>
+                                    <ComboBoxItem Name="BoxItem2" Content="2 先下料后上料，首件检测（不上架）" Tag ="2"/>
+                                    <ComboBoxItem Name="BoxItem3" Content="3 先下料后上料，中间件检测（上架）" Tag ="3"/>
+                                    <ComboBoxItem Name="BoxItem4" Content="4 只下料，首件检测（不上架）" Tag ="4"/>
+                                    <ComboBoxItem Name="BoxItem5" Content="5 只下料，中间件检测（上架）" Tag ="5"/>
+                                    <ComboBoxItem Name="BoxItem6" Content="6 只从三坐标上架" Tag ="6"/>
+                                </ComboBox>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Grid.Column="1" Label="加工机床   " Name="ItemProcessDevice" >
+                                <ComboBox Name="cmbProcessDevice" SelectedValuePath="ASSET_CODE" DisplayMemberPath="ASSET_NAME" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Grid.Column="2" Label="加工程序号" Name="ItemProgramNO" >
+                                <TextBox x:Name="TbProgramNO" Text="{Binding ALLOCATION_NAME}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                        </Grid>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup Margin="0,5,0,0">
+                        <dxlc:LayoutItem Label="机床轮毂" Name="ItemDevice" >
+                            <ComboBox x:Name="cmbDevice" SelectedValuePath="PKNO" DisplayMemberPath="ITEM_NAME" Margin="10,0,10,0" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="三坐标轮毂" Name="ItemCheck" >
+                            <ComboBox x:Name="cmbCheck" SelectedValuePath="PKNO" DisplayMemberPath="ITEM_NAME" Margin="10,0,10,0" />
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup Margin="0,5,0,0" Height="80">
+                        <dxlc:LayoutItem Label="备注"  VerticalAlignment="Stretch" >
+                            <TextBox x:Name="TbProcessRemark" Margin="10,0,10,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" />
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Header="成品出库" Margin="0" View="GroupBox" Orientation="Vertical" 
+                                  Visibility="{Binding Path=ActionType, Converter={StaticResource ToVisibilityConverter}, ConverterParameter='3'}">
+                    <dxlc:LayoutGroup Margin="0,5,0,0">
+                        <dxlc:LayoutItem Label="成品信息" >
+                            <TextBox Text="{Binding CurAlloItemName}" IsReadOnly="True"  Margin="10,0,10,0"/>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="原料型号" >
+                            <TextBox Text="{Binding CurAlloItemNorm}" Margin="10,0,10,0" IsReadOnly="True"/>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup Margin="0,5,0,0" Height="80">
+                        <dxlc:LayoutItem Label="备注"  VerticalAlignment="Stretch" >
+                            <TextBox Margin="10,0,10,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Header="成品转换" Margin="0" View="GroupBox" Orientation="Vertical" 
+                                  Visibility="{Binding Path=ActionType, Converter={StaticResource ToVisibilityConverter}, ConverterParameter='4'}">
+                    <dxlc:LayoutGroup Margin="0,5,0,0">
+                        <dxlc:LayoutItem Label="原料信息" >
+                            <ComboBox x:Name="cmbChangeRaw" SelectedValuePath="ITEM_PKNO" DisplayMemberPath="CHILD_NAME" Margin="10,0,10,0"/>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="原料型号" >
+                            <TextBox Text="{Binding ITEM_NORM}" DataContext="{Binding SelectedItem, ElementName=cmbChangeRaw}" Margin="10,0,10,0" IsReadOnly="True"/>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup Margin="0,5,0,0" Height="80">
+                        <dxlc:LayoutItem Label="备注"  VerticalAlignment="Stretch" >
+                            <TextBox x:Name="tbChangeRemark" Margin="10,0,10,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Header="库存增加详细信息" Margin="0" View="GroupBox" Orientation="Vertical" 
+                                  Visibility="{Binding Path=ActionType, Converter={StaticResource ToVisibilityConverter}, ConverterParameter='5'}">
+                    <dxlc:LayoutGroup Margin="0,5,0,0">
+                        <dxlc:LayoutItem Label="物料信息" >
+                            <ComboBox x:Name="cmbAddItem" SelectedValuePath="PKNO" DisplayMemberPath="ITEM_NAME"  Margin="10,0,10,0"/>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="物料型号" >
+                            <TextBox Text="{Binding ITEM_NORM}" DataContext="{Binding SelectedItem, ElementName=cmbAddItem}" Margin="10,0,10,0" IsReadOnly="True"/>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup Margin="0,5,0,0" Height="80">
+                        <dxlc:LayoutItem Label="备注"  VerticalAlignment="Stretch" >
+                            <TextBox x:Name="TbAddRemark" Margin="10,0,10,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Header="库存信息" View="GroupBox" ItemLabelsAlignment="Local" Orientation="Vertical">
+                    <dxlc:LayoutGroup Margin="0">
+                        <dxlc:LayoutItem Label="货位名称" >
+                            <TextBox Text="{Binding CurAlloName}" Margin="10,0,10,0" IsReadOnly="True"/>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="列" Width="200">
+                            <TextBox Text="{Binding CurAlloCol}" Margin="10,0,10,0" IsReadOnly="True"/>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="层" Width="200">
+                            <TextBox Text="{Binding CurAlloLay}" Margin="10,0,10,0" IsReadOnly="True"/>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup Margin="0,5,0,0">
+                        <dxlc:LayoutItem Label="库存物料" >
+                            <TextBox Text="{Binding CurAlloItemName}" Margin="10,0,10,0" IsReadOnly="True"/>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="属性" Width="200">
+                            <TextBox Text="{Binding CurAlloItemType}" Margin="10,0,10,0" IsReadOnly="True"/>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="数量" Width="200">
+                            <TextBox Text="{Binding CurAlloNumber}" Margin="10,0,10,0" IsReadOnly="True"/>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup Margin="0,5,0,0" Height="200">
+                        <dxlc:LayoutItem Label="备注"  VerticalAlignment="Stretch" >
+                            <TextBox Text="{Binding CurInvRemark}" Margin="10,0,10,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutGroup>
+            </dxlc:LayoutControl>
+        </Grid>
+    </Grid>
+</Page>

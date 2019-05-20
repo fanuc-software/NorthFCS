@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://fanuc.com.cn/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fanuc.com.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fanuc.com.cn/Imports">
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/SDMService.svc?xsd=xsd0" namespace="http://fanuc.com.cn/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/SDMService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/SDMService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/SDMService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISDMService_GetSysTableNOSettingByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysTableNOSettingByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysTableNOSettingByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysTableNOSettingByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysTableNOSettingCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysTableNOSettingCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysTableNOSettingCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysTableNOSettingCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysTableNOSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysTableNOSetting" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysTableNOSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysTableNOSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysTableNOSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysTableNOSetting" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysTableNOSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysTableNOSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysTableNOSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysTableNOSettings" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysTableNOSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysTableNOSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysTableNOSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysTableNOSetting" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysTableNOSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysTableNOSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysTableNOSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysTableNOSettings" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysTableNOSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysTableNOSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysTableNOSettingById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysTableNOSettingById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysTableNOSettingById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysTableNOSettingByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumMainByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumMainByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumMainByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumMainByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumMainCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumMainCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumMainCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumMainCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysEnumMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysEnumMain" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysEnumMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysEnumMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysEnumMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysEnumMain" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysEnumMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysEnumMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysEnumMains_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysEnumMains" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysEnumMains_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysEnumMainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysEnumMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysEnumMain" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysEnumMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysEnumMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumMains_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumMains" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumMains_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumMainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumMainById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumMainById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumMainById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumMainByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumItemsByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumItemsByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumItemsByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumItemsByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumItemsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumItemsCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumItemsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumItemsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysEnumItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysEnumItems" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysEnumItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysEnumItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysEnumItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysEnumItems" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysEnumItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysEnumItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysEnumItemss_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysEnumItemss" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysEnumItemss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysEnumItemssResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysEnumItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysEnumItems" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysEnumItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysEnumItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumItemss_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumItemss" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumItemss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumItemssResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumItemsById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumItemsById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysEnumItemsById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysEnumItemsByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysUser" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysUser" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysUsers" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysUser" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUsers" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysRole" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysRole" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysRoles" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysRole" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoles" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysPurviewByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysPurviewByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysPurviewByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysPurviewByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysPurviewCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysPurviewCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysPurviewCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysPurviewCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysPurview_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysPurview" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysPurview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysPurviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysPurview_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysPurview" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysPurview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysPurviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysPurviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysPurviews" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysPurviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysPurviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysPurview_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysPurview" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysPurview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysPurviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysPurviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysPurviews" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysPurviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysPurviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysPurviewById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysPurviewById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysPurviewById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysPurviewByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuItemByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuItemByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuItemByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuItemByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuItemCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuItemCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuItemCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuItemCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysMenuItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysMenuItem" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysMenuItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysMenuItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysMenuItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysMenuItem" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysMenuItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysMenuItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysMenuItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysMenuItems" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysMenuItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysMenuItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysMenuItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysMenuItem" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysMenuItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysMenuItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuItems" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuItemById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuItemById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuItemById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuItemByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleUserByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleUserByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleUserByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleUserByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleUserCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleUserCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleUserCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleUserCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysRoleUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysRoleUser" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysRoleUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysRoleUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysRoleUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysRoleUser" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysRoleUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysRoleUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysRoleUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysRoleUsers" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysRoleUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysRoleUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysRoleUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysRoleUser" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysRoleUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysRoleUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleUsers" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleUserById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleUserById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRoleUserById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRoleUserByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserPurviewByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserPurviewByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserPurviewByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserPurviewByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserPurviewCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserPurviewCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserPurviewCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserPurviewCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysUserPurview_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysUserPurview" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysUserPurview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysUserPurviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysUserPurview_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysUserPurview" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysUserPurview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysUserPurviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysUserPurviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysUserPurviews" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysUserPurviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysUserPurviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysUserPurview_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysUserPurview" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysUserPurview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysUserPurviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserPurviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserPurviews" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserPurviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserPurviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserPurviewById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserPurviewById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserPurviewById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserPurviewByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRolePurviewByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRolePurviewByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRolePurviewByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRolePurviewByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRolePurviewCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRolePurviewCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRolePurviewCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRolePurviewCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysRolePurview_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysRolePurview" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysRolePurview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysRolePurviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysRolePurview_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysRolePurview" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysRolePurview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysRolePurviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysRolePurviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysRolePurviews" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysRolePurviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysRolePurviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysRolePurview_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysRolePurview" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysRolePurview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysRolePurviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRolePurviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRolePurviews" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRolePurviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRolePurviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRolePurviewById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRolePurviewById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysRolePurviewById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysRolePurviewByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuPurviewByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuPurviewByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuPurviewByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuPurviewByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuPurviewCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuPurviewCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuPurviewCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuPurviewCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysMenuPurview_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysMenuPurview" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysMenuPurview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysMenuPurviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysMenuPurview_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysMenuPurview" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysMenuPurview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysMenuPurviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysMenuPurviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysMenuPurviews" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysMenuPurviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysMenuPurviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysMenuPurview_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysMenuPurview" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysMenuPurview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysMenuPurviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuPurviews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuPurviews" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuPurviews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuPurviewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuPurviewById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuPurviewById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysMenuPurviewById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysMenuPurviewByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserMenuByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserMenuByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserMenuByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserMenuByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserMenuCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserMenuCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserMenuCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserMenuCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysUserMenu_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysUserMenu" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysUserMenu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysUserMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysUserMenu_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysUserMenu" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysUserMenu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysUserMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysUserMenus_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysUserMenus" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysUserMenus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysUserMenusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysUserMenu_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysUserMenu" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysUserMenu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysUserMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserMenus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserMenus" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserMenus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserMenusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserMenuById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserMenuById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysUserMenuById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysUserMenuByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetRsWorkScheduleByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkScheduleByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetRsWorkScheduleByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkScheduleByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetRsWorkScheduleCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkScheduleCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetRsWorkScheduleCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkScheduleCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddRsWorkSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsWorkSchedule" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddRsWorkSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsWorkScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateRsWorkSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsWorkSchedule" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateRsWorkSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsWorkScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelRsWorkSchedules_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsWorkSchedules" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelRsWorkSchedules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsWorkSchedulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelRsWorkSchedule_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsWorkSchedule" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelRsWorkSchedule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsWorkScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetRsWorkSchedules_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkSchedules" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetRsWorkSchedules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkSchedulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetRsWorkScheduleById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkScheduleById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetRsWorkScheduleById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkScheduleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAttachInfoByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAttachInfoByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAttachInfoByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAttachInfoByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAttachInfoCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAttachInfoCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAttachInfoCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAttachInfoCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysAttachInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysAttachInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysAttachInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysAttachInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysAttachInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysAttachInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysAttachInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysAttachInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysAttachInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysAttachInfos" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysAttachInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysAttachInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysAttachInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysAttachInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysAttachInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysAttachInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAttachInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAttachInfos" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAttachInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAttachInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAttachInfoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAttachInfoById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAttachInfoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAttachInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAppInfoByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAppInfoByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAppInfoByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAppInfoByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAppInfoCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAppInfoCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAppInfoCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAppInfoCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysAppInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysAppInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysAppInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysAppInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysAppInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysAppInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysAppInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysAppInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysAppInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysAppInfos" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysAppInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysAppInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysAppInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysAppInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysAppInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysAppInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAppInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAppInfos" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAppInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAppInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAppInfoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAppInfoById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysAppInfoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysAppInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysDepartmentByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysDepartmentByPage" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysDepartmentByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysDepartmentByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysDepartmentCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysDepartmentCount" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysDepartmentCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysDepartmentCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysDepartment" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_AddSysDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSysDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysDepartment" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_UpdateSysDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSysDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysDepartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysDepartments" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysDepartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysDepartment" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_DelSysDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSysDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysDepartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysDepartments" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysDepartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysDepartmentById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysDepartmentById" />
+  </wsdl:message>
+  <wsdl:message name="ISDMService_GetSysDepartmentById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSysDepartmentByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISDMService">
+    <wsdl:operation name="GetSysTableNOSettingByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysTableNOSettingByPage" message="tns:ISDMService_GetSysTableNOSettingByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysTableNOSettingByPageResponse" message="tns:ISDMService_GetSysTableNOSettingByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysTableNOSettingCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysTableNOSettingCount" message="tns:ISDMService_GetSysTableNOSettingCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysTableNOSettingCountResponse" message="tns:ISDMService_GetSysTableNOSettingCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysTableNOSetting">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysTableNOSetting" message="tns:ISDMService_AddSysTableNOSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysTableNOSettingResponse" message="tns:ISDMService_AddSysTableNOSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysTableNOSetting">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysTableNOSetting" message="tns:ISDMService_UpdateSysTableNOSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysTableNOSettingResponse" message="tns:ISDMService_UpdateSysTableNOSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysTableNOSettings">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysTableNOSettings" message="tns:ISDMService_DelSysTableNOSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysTableNOSettingsResponse" message="tns:ISDMService_DelSysTableNOSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysTableNOSetting">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysTableNOSetting" message="tns:ISDMService_DelSysTableNOSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysTableNOSettingResponse" message="tns:ISDMService_DelSysTableNOSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysTableNOSettings">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysTableNOSettings" message="tns:ISDMService_GetSysTableNOSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysTableNOSettingsResponse" message="tns:ISDMService_GetSysTableNOSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysTableNOSettingById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysTableNOSettingById" message="tns:ISDMService_GetSysTableNOSettingById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysTableNOSettingByIdResponse" message="tns:ISDMService_GetSysTableNOSettingById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysEnumMainByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumMainByPage" message="tns:ISDMService_GetSysEnumMainByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumMainByPageResponse" message="tns:ISDMService_GetSysEnumMainByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysEnumMainCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumMainCount" message="tns:ISDMService_GetSysEnumMainCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumMainCountResponse" message="tns:ISDMService_GetSysEnumMainCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysEnumMain">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysEnumMain" message="tns:ISDMService_AddSysEnumMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysEnumMainResponse" message="tns:ISDMService_AddSysEnumMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysEnumMain">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysEnumMain" message="tns:ISDMService_UpdateSysEnumMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysEnumMainResponse" message="tns:ISDMService_UpdateSysEnumMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysEnumMains">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysEnumMains" message="tns:ISDMService_DelSysEnumMains_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysEnumMainsResponse" message="tns:ISDMService_DelSysEnumMains_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysEnumMain">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysEnumMain" message="tns:ISDMService_DelSysEnumMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysEnumMainResponse" message="tns:ISDMService_DelSysEnumMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysEnumMains">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumMains" message="tns:ISDMService_GetSysEnumMains_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumMainsResponse" message="tns:ISDMService_GetSysEnumMains_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysEnumMainById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumMainById" message="tns:ISDMService_GetSysEnumMainById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumMainByIdResponse" message="tns:ISDMService_GetSysEnumMainById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysEnumItemsByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumItemsByPage" message="tns:ISDMService_GetSysEnumItemsByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumItemsByPageResponse" message="tns:ISDMService_GetSysEnumItemsByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysEnumItemsCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumItemsCount" message="tns:ISDMService_GetSysEnumItemsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumItemsCountResponse" message="tns:ISDMService_GetSysEnumItemsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysEnumItems">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysEnumItems" message="tns:ISDMService_AddSysEnumItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysEnumItemsResponse" message="tns:ISDMService_AddSysEnumItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysEnumItems">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysEnumItems" message="tns:ISDMService_UpdateSysEnumItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysEnumItemsResponse" message="tns:ISDMService_UpdateSysEnumItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysEnumItemss">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysEnumItemss" message="tns:ISDMService_DelSysEnumItemss_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysEnumItemssResponse" message="tns:ISDMService_DelSysEnumItemss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysEnumItems">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysEnumItems" message="tns:ISDMService_DelSysEnumItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysEnumItemsResponse" message="tns:ISDMService_DelSysEnumItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysEnumItemss">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumItemss" message="tns:ISDMService_GetSysEnumItemss_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumItemssResponse" message="tns:ISDMService_GetSysEnumItemss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysEnumItemsById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumItemsById" message="tns:ISDMService_GetSysEnumItemsById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysEnumItemsByIdResponse" message="tns:ISDMService_GetSysEnumItemsById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysUserByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserByPage" message="tns:ISDMService_GetSysUserByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserByPageResponse" message="tns:ISDMService_GetSysUserByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysUserCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserCount" message="tns:ISDMService_GetSysUserCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserCountResponse" message="tns:ISDMService_GetSysUserCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysUser">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysUser" message="tns:ISDMService_AddSysUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysUserResponse" message="tns:ISDMService_AddSysUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysUser">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysUser" message="tns:ISDMService_UpdateSysUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysUserResponse" message="tns:ISDMService_UpdateSysUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysUsers">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysUsers" message="tns:ISDMService_DelSysUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysUsersResponse" message="tns:ISDMService_DelSysUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysUser">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysUser" message="tns:ISDMService_DelSysUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysUserResponse" message="tns:ISDMService_DelSysUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysUsers">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUsers" message="tns:ISDMService_GetSysUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUsersResponse" message="tns:ISDMService_GetSysUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysUserById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserById" message="tns:ISDMService_GetSysUserById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserByIdResponse" message="tns:ISDMService_GetSysUserById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysRoleByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleByPage" message="tns:ISDMService_GetSysRoleByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleByPageResponse" message="tns:ISDMService_GetSysRoleByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysRoleCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleCount" message="tns:ISDMService_GetSysRoleCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleCountResponse" message="tns:ISDMService_GetSysRoleCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysRole">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysRole" message="tns:ISDMService_AddSysRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysRoleResponse" message="tns:ISDMService_AddSysRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysRole">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysRole" message="tns:ISDMService_UpdateSysRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysRoleResponse" message="tns:ISDMService_UpdateSysRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysRoles">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysRoles" message="tns:ISDMService_DelSysRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysRolesResponse" message="tns:ISDMService_DelSysRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysRole">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysRole" message="tns:ISDMService_DelSysRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysRoleResponse" message="tns:ISDMService_DelSysRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysRoles">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoles" message="tns:ISDMService_GetSysRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRolesResponse" message="tns:ISDMService_GetSysRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysRoleById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleById" message="tns:ISDMService_GetSysRoleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleByIdResponse" message="tns:ISDMService_GetSysRoleById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysPurviewByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysPurviewByPage" message="tns:ISDMService_GetSysPurviewByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysPurviewByPageResponse" message="tns:ISDMService_GetSysPurviewByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysPurviewCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysPurviewCount" message="tns:ISDMService_GetSysPurviewCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysPurviewCountResponse" message="tns:ISDMService_GetSysPurviewCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysPurview">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysPurview" message="tns:ISDMService_AddSysPurview_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysPurviewResponse" message="tns:ISDMService_AddSysPurview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysPurview">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysPurview" message="tns:ISDMService_UpdateSysPurview_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysPurviewResponse" message="tns:ISDMService_UpdateSysPurview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysPurviews">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysPurviews" message="tns:ISDMService_DelSysPurviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysPurviewsResponse" message="tns:ISDMService_DelSysPurviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysPurview">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysPurview" message="tns:ISDMService_DelSysPurview_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysPurviewResponse" message="tns:ISDMService_DelSysPurview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysPurviews">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysPurviews" message="tns:ISDMService_GetSysPurviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysPurviewsResponse" message="tns:ISDMService_GetSysPurviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysPurviewById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysPurviewById" message="tns:ISDMService_GetSysPurviewById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysPurviewByIdResponse" message="tns:ISDMService_GetSysPurviewById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysMenuItemByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuItemByPage" message="tns:ISDMService_GetSysMenuItemByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuItemByPageResponse" message="tns:ISDMService_GetSysMenuItemByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysMenuItemCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuItemCount" message="tns:ISDMService_GetSysMenuItemCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuItemCountResponse" message="tns:ISDMService_GetSysMenuItemCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysMenuItem">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysMenuItem" message="tns:ISDMService_AddSysMenuItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysMenuItemResponse" message="tns:ISDMService_AddSysMenuItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysMenuItem">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysMenuItem" message="tns:ISDMService_UpdateSysMenuItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysMenuItemResponse" message="tns:ISDMService_UpdateSysMenuItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysMenuItems">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysMenuItems" message="tns:ISDMService_DelSysMenuItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysMenuItemsResponse" message="tns:ISDMService_DelSysMenuItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysMenuItem">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysMenuItem" message="tns:ISDMService_DelSysMenuItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysMenuItemResponse" message="tns:ISDMService_DelSysMenuItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysMenuItems">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuItems" message="tns:ISDMService_GetSysMenuItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuItemsResponse" message="tns:ISDMService_GetSysMenuItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysMenuItemById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuItemById" message="tns:ISDMService_GetSysMenuItemById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuItemByIdResponse" message="tns:ISDMService_GetSysMenuItemById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysRoleUserByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleUserByPage" message="tns:ISDMService_GetSysRoleUserByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleUserByPageResponse" message="tns:ISDMService_GetSysRoleUserByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysRoleUserCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleUserCount" message="tns:ISDMService_GetSysRoleUserCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleUserCountResponse" message="tns:ISDMService_GetSysRoleUserCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysRoleUser">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysRoleUser" message="tns:ISDMService_AddSysRoleUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysRoleUserResponse" message="tns:ISDMService_AddSysRoleUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysRoleUser">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysRoleUser" message="tns:ISDMService_UpdateSysRoleUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysRoleUserResponse" message="tns:ISDMService_UpdateSysRoleUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysRoleUsers">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysRoleUsers" message="tns:ISDMService_DelSysRoleUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysRoleUsersResponse" message="tns:ISDMService_DelSysRoleUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysRoleUser">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysRoleUser" message="tns:ISDMService_DelSysRoleUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysRoleUserResponse" message="tns:ISDMService_DelSysRoleUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysRoleUsers">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleUsers" message="tns:ISDMService_GetSysRoleUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleUsersResponse" message="tns:ISDMService_GetSysRoleUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysRoleUserById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleUserById" message="tns:ISDMService_GetSysRoleUserById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRoleUserByIdResponse" message="tns:ISDMService_GetSysRoleUserById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysUserPurviewByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserPurviewByPage" message="tns:ISDMService_GetSysUserPurviewByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserPurviewByPageResponse" message="tns:ISDMService_GetSysUserPurviewByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysUserPurviewCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserPurviewCount" message="tns:ISDMService_GetSysUserPurviewCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserPurviewCountResponse" message="tns:ISDMService_GetSysUserPurviewCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysUserPurview">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysUserPurview" message="tns:ISDMService_AddSysUserPurview_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysUserPurviewResponse" message="tns:ISDMService_AddSysUserPurview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysUserPurview">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysUserPurview" message="tns:ISDMService_UpdateSysUserPurview_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysUserPurviewResponse" message="tns:ISDMService_UpdateSysUserPurview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysUserPurviews">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysUserPurviews" message="tns:ISDMService_DelSysUserPurviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysUserPurviewsResponse" message="tns:ISDMService_DelSysUserPurviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysUserPurview">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysUserPurview" message="tns:ISDMService_DelSysUserPurview_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysUserPurviewResponse" message="tns:ISDMService_DelSysUserPurview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysUserPurviews">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserPurviews" message="tns:ISDMService_GetSysUserPurviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserPurviewsResponse" message="tns:ISDMService_GetSysUserPurviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysUserPurviewById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserPurviewById" message="tns:ISDMService_GetSysUserPurviewById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserPurviewByIdResponse" message="tns:ISDMService_GetSysUserPurviewById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysRolePurviewByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRolePurviewByPage" message="tns:ISDMService_GetSysRolePurviewByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRolePurviewByPageResponse" message="tns:ISDMService_GetSysRolePurviewByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysRolePurviewCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRolePurviewCount" message="tns:ISDMService_GetSysRolePurviewCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRolePurviewCountResponse" message="tns:ISDMService_GetSysRolePurviewCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysRolePurview">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysRolePurview" message="tns:ISDMService_AddSysRolePurview_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysRolePurviewResponse" message="tns:ISDMService_AddSysRolePurview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysRolePurview">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysRolePurview" message="tns:ISDMService_UpdateSysRolePurview_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysRolePurviewResponse" message="tns:ISDMService_UpdateSysRolePurview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysRolePurviews">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysRolePurviews" message="tns:ISDMService_DelSysRolePurviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysRolePurviewsResponse" message="tns:ISDMService_DelSysRolePurviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysRolePurview">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysRolePurview" message="tns:ISDMService_DelSysRolePurview_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysRolePurviewResponse" message="tns:ISDMService_DelSysRolePurview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysRolePurviews">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRolePurviews" message="tns:ISDMService_GetSysRolePurviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRolePurviewsResponse" message="tns:ISDMService_GetSysRolePurviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysRolePurviewById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRolePurviewById" message="tns:ISDMService_GetSysRolePurviewById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysRolePurviewByIdResponse" message="tns:ISDMService_GetSysRolePurviewById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysMenuPurviewByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuPurviewByPage" message="tns:ISDMService_GetSysMenuPurviewByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuPurviewByPageResponse" message="tns:ISDMService_GetSysMenuPurviewByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysMenuPurviewCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuPurviewCount" message="tns:ISDMService_GetSysMenuPurviewCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuPurviewCountResponse" message="tns:ISDMService_GetSysMenuPurviewCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysMenuPurview">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysMenuPurview" message="tns:ISDMService_AddSysMenuPurview_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysMenuPurviewResponse" message="tns:ISDMService_AddSysMenuPurview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysMenuPurview">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysMenuPurview" message="tns:ISDMService_UpdateSysMenuPurview_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysMenuPurviewResponse" message="tns:ISDMService_UpdateSysMenuPurview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysMenuPurviews">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysMenuPurviews" message="tns:ISDMService_DelSysMenuPurviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysMenuPurviewsResponse" message="tns:ISDMService_DelSysMenuPurviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysMenuPurview">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysMenuPurview" message="tns:ISDMService_DelSysMenuPurview_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysMenuPurviewResponse" message="tns:ISDMService_DelSysMenuPurview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysMenuPurviews">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuPurviews" message="tns:ISDMService_GetSysMenuPurviews_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuPurviewsResponse" message="tns:ISDMService_GetSysMenuPurviews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysMenuPurviewById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuPurviewById" message="tns:ISDMService_GetSysMenuPurviewById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysMenuPurviewByIdResponse" message="tns:ISDMService_GetSysMenuPurviewById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysUserMenuByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserMenuByPage" message="tns:ISDMService_GetSysUserMenuByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserMenuByPageResponse" message="tns:ISDMService_GetSysUserMenuByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysUserMenuCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserMenuCount" message="tns:ISDMService_GetSysUserMenuCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserMenuCountResponse" message="tns:ISDMService_GetSysUserMenuCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysUserMenu">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysUserMenu" message="tns:ISDMService_AddSysUserMenu_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysUserMenuResponse" message="tns:ISDMService_AddSysUserMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysUserMenu">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysUserMenu" message="tns:ISDMService_UpdateSysUserMenu_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysUserMenuResponse" message="tns:ISDMService_UpdateSysUserMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysUserMenus">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysUserMenus" message="tns:ISDMService_DelSysUserMenus_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysUserMenusResponse" message="tns:ISDMService_DelSysUserMenus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysUserMenu">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysUserMenu" message="tns:ISDMService_DelSysUserMenu_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysUserMenuResponse" message="tns:ISDMService_DelSysUserMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysUserMenus">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserMenus" message="tns:ISDMService_GetSysUserMenus_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserMenusResponse" message="tns:ISDMService_GetSysUserMenus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysUserMenuById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserMenuById" message="tns:ISDMService_GetSysUserMenuById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysUserMenuByIdResponse" message="tns:ISDMService_GetSysUserMenuById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkScheduleByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetRsWorkScheduleByPage" message="tns:ISDMService_GetRsWorkScheduleByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetRsWorkScheduleByPageResponse" message="tns:ISDMService_GetRsWorkScheduleByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkScheduleCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetRsWorkScheduleCount" message="tns:ISDMService_GetRsWorkScheduleCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetRsWorkScheduleCountResponse" message="tns:ISDMService_GetRsWorkScheduleCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsWorkSchedule">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddRsWorkSchedule" message="tns:ISDMService_AddRsWorkSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddRsWorkScheduleResponse" message="tns:ISDMService_AddRsWorkSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsWorkSchedule">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateRsWorkSchedule" message="tns:ISDMService_UpdateRsWorkSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateRsWorkScheduleResponse" message="tns:ISDMService_UpdateRsWorkSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsWorkSchedules">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelRsWorkSchedules" message="tns:ISDMService_DelRsWorkSchedules_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelRsWorkSchedulesResponse" message="tns:ISDMService_DelRsWorkSchedules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsWorkSchedule">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelRsWorkSchedule" message="tns:ISDMService_DelRsWorkSchedule_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelRsWorkScheduleResponse" message="tns:ISDMService_DelRsWorkSchedule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkSchedules">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetRsWorkSchedules" message="tns:ISDMService_GetRsWorkSchedules_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetRsWorkSchedulesResponse" message="tns:ISDMService_GetRsWorkSchedules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkScheduleById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetRsWorkScheduleById" message="tns:ISDMService_GetRsWorkScheduleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetRsWorkScheduleByIdResponse" message="tns:ISDMService_GetRsWorkScheduleById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysAttachInfoByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAttachInfoByPage" message="tns:ISDMService_GetSysAttachInfoByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAttachInfoByPageResponse" message="tns:ISDMService_GetSysAttachInfoByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysAttachInfoCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAttachInfoCount" message="tns:ISDMService_GetSysAttachInfoCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAttachInfoCountResponse" message="tns:ISDMService_GetSysAttachInfoCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysAttachInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysAttachInfo" message="tns:ISDMService_AddSysAttachInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysAttachInfoResponse" message="tns:ISDMService_AddSysAttachInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysAttachInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysAttachInfo" message="tns:ISDMService_UpdateSysAttachInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysAttachInfoResponse" message="tns:ISDMService_UpdateSysAttachInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysAttachInfos">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysAttachInfos" message="tns:ISDMService_DelSysAttachInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysAttachInfosResponse" message="tns:ISDMService_DelSysAttachInfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysAttachInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysAttachInfo" message="tns:ISDMService_DelSysAttachInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysAttachInfoResponse" message="tns:ISDMService_DelSysAttachInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysAttachInfos">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAttachInfos" message="tns:ISDMService_GetSysAttachInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAttachInfosResponse" message="tns:ISDMService_GetSysAttachInfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysAttachInfoById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAttachInfoById" message="tns:ISDMService_GetSysAttachInfoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAttachInfoByIdResponse" message="tns:ISDMService_GetSysAttachInfoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysAppInfoByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAppInfoByPage" message="tns:ISDMService_GetSysAppInfoByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAppInfoByPageResponse" message="tns:ISDMService_GetSysAppInfoByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysAppInfoCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAppInfoCount" message="tns:ISDMService_GetSysAppInfoCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAppInfoCountResponse" message="tns:ISDMService_GetSysAppInfoCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysAppInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysAppInfo" message="tns:ISDMService_AddSysAppInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysAppInfoResponse" message="tns:ISDMService_AddSysAppInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysAppInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysAppInfo" message="tns:ISDMService_UpdateSysAppInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysAppInfoResponse" message="tns:ISDMService_UpdateSysAppInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysAppInfos">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysAppInfos" message="tns:ISDMService_DelSysAppInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysAppInfosResponse" message="tns:ISDMService_DelSysAppInfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysAppInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysAppInfo" message="tns:ISDMService_DelSysAppInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysAppInfoResponse" message="tns:ISDMService_DelSysAppInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysAppInfos">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAppInfos" message="tns:ISDMService_GetSysAppInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAppInfosResponse" message="tns:ISDMService_GetSysAppInfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysAppInfoById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAppInfoById" message="tns:ISDMService_GetSysAppInfoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysAppInfoByIdResponse" message="tns:ISDMService_GetSysAppInfoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysDepartmentByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysDepartmentByPage" message="tns:ISDMService_GetSysDepartmentByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysDepartmentByPageResponse" message="tns:ISDMService_GetSysDepartmentByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysDepartmentCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysDepartmentCount" message="tns:ISDMService_GetSysDepartmentCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysDepartmentCountResponse" message="tns:ISDMService_GetSysDepartmentCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSysDepartment">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysDepartment" message="tns:ISDMService_AddSysDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/AddSysDepartmentResponse" message="tns:ISDMService_AddSysDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSysDepartment">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysDepartment" message="tns:ISDMService_UpdateSysDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/UpdateSysDepartmentResponse" message="tns:ISDMService_UpdateSysDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysDepartments">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysDepartments" message="tns:ISDMService_DelSysDepartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysDepartmentsResponse" message="tns:ISDMService_DelSysDepartments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSysDepartment">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysDepartment" message="tns:ISDMService_DelSysDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/DelSysDepartmentResponse" message="tns:ISDMService_DelSysDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysDepartments">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysDepartments" message="tns:ISDMService_GetSysDepartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysDepartmentsResponse" message="tns:ISDMService_GetSysDepartments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysDepartmentById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysDepartmentById" message="tns:ISDMService_GetSysDepartmentById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ISDMService/GetSysDepartmentByIdResponse" message="tns:ISDMService_GetSysDepartmentById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

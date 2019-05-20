@@ -1,0 +1,98 @@
+﻿<Page xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"  xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"  xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"  x:Class="BFM.WPF.EAM.RM.RepairMasterView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:core="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:lc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+          xmlns:controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+      xmlns:local="clr-namespace:BFM.WPF.EAM.RM"
+      mc:Ignorable="d" 
+      xmlns:Controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="RepairMasterView" FontSize="16">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+       
+        <!--<Grid Grid.Row="0">
+            <dxb:ToolBarControl UseWholeRow="False" IsCollapsed="False" BarItemDisplayMode="ContentAndGlyph" AllowCollapse="True" Height="50" >
+                <dxb:BarButtonItem Content="保存" IsEnabled="{Binding IsVisible, ElementName=gbItem}" Glyph="{dx:DXImage Image=Save_16x16.png}" LargeGlyph="{dx:DXImage Image=Save_32x32.png}" RibbonStyle="Large" ItemClick="BtnSave_Click" />
+            </dxb:ToolBarControl>
+        </Grid>-->
+        <lc:LayoutControl Grid.Row="0" x:Name="gridLayout" Orientation="Vertical" Padding="0" Margin="0,5.6,0,0">
+            <lc:LayoutGroup Orientation="Vertical" x:Name="BasicLayout"  Header="基本信息" 
+                                      View="GroupBox" ItemLabelsAlignment="Local" IsCollapsible="True" VerticalAlignment="Top">
+                <lc:LayoutGroup Orientation="Horizontal" Margin="0,20">
+                    <lc:LayoutItem Label="故障设备">
+                        <dxe:ComboBoxEdit x:Name="cmbErrorAsset" DisplayMember="ASSET_NAME"                                  
+                                        ValueMember="ASSET_CODE"  FontSize="16" Margin="25,0" 
+                                       />
+                    </lc:LayoutItem>
+                    <lc:LayoutItem Label="故障单号">
+                        <dxe:TextEdit  x:Name="ORDER_ID"  Margin="25,0" Foreground="#737a81" FontSize="16" Height="32"/>
+                    </lc:LayoutItem>
+                  
+                </lc:LayoutGroup>
+
+            </lc:LayoutGroup>
+            <lc:LayoutGroup Orientation="Vertical" x:Name="ErrorLayout"  Header="故障信息"  
+                                      View="GroupBox" ItemLabelsAlignment="Local" IsCollapsible="True" VerticalAlignment="Top">
+                <lc:LayoutGroup Orientation="Horizontal" Margin="0,15" >
+                    <lc:LayoutItem Label="故障分类">
+                        <controls:BasicItemCombox Name="cmbType" Margin="25,0"  EnumIdentify="基础信息.故障分类" Height="32" />
+                    
+                    </lc:LayoutItem>
+                    <lc:LayoutItem Label="故障代号">
+                        <controls:BasicItemCombox  Name="cmbCode" Margin="25,0"  EnumIdentify="基础信息.故障代码" Height="32" />
+                    </lc:LayoutItem>
+
+
+                </lc:LayoutGroup>
+                <lc:LayoutGroup Orientation="Horizontal"  Margin="0,0,0,20">
+                    <lc:LayoutItem Label="故障名称" >
+
+                        <dxe:TextEdit  x:Name="FAULT_NAME" Text="{Binding FAULT_NAME}" Margin="25,0" Foreground="#737a81" FontSize="16" Height="32"/>
+                    </lc:LayoutItem>
+                    <lc:LayoutItem Label="故障内容">
+                        <dxe:TextEdit   x:Name="FAULT_CONTENT" Text="{Binding FAULT_CONTENT}" Margin="25,0" Foreground="#737a81" FontSize="16" Height="32"/>
+                    </lc:LayoutItem>
+                </lc:LayoutGroup>
+                <lc:LayoutGroup Orientation="Horizontal"  Margin="0,10">
+                    <lc:LayoutItem Label="报修人">
+                        <dxe:TextEdit Text="{Binding FAULT_WARRANTY}" Margin="25,0" Foreground="#737a81" FontSize="16" Height="32"/>
+                    </lc:LayoutItem>
+                    <lc:LayoutItem Label="报修日期">
+                        <dxe:DateEdit Text="{Binding FAULT_OCCURRENCE_TIME}" Margin="25,0" Foreground="#737a81" FontSize="16"/>
+                    </lc:LayoutItem>
+                </lc:LayoutGroup>
+            </lc:LayoutGroup>
+            <lc:LayoutGroup Margin="0,5,0,0"  x:Name="BasicLayout2"  Header="维修信息" View="GroupBox" ItemLabelsAlignment="Local" IsCollapsible="True"  Orientation="Vertical" IsCollapsed="False" VerticalAlignment="Stretch">
+                <lc:LayoutGroup Orientation="Horizontal"  Margin="0,10">
+                    <lc:LayoutItem Label="维修人  ">
+                        <dxe:TextEdit Text="{Binding FAULT_REPAIRER}" Margin="25,0" Foreground="#737a81" FontSize="16" Height="32"/>
+                    </lc:LayoutItem>
+                    <lc:LayoutItem Label="维修日期">
+                        <dxe:DateEdit Text="{Binding FAULT_REPAIR_TIME}" Margin="25,0" Foreground="#737a81" FontSize="16" Height="32"/>
+                    </lc:LayoutItem>
+                </lc:LayoutGroup>
+                <lc:LayoutGroup Orientation="Horizontal"  Margin="0,10">
+                    <lc:LayoutItem Label="维修结果">
+                        <dxe:TextEdit Text="{Binding FAULT_REPAIR_RESULT}" Margin="25,0" Foreground="#737a81" FontSize="16" Height="32">
+                        </dxe:TextEdit>
+                    </lc:LayoutItem>
+                </lc:LayoutGroup>
+                <lc:LayoutGroup Orientation="Horizontal" Margin="0,10">
+                    <lc:LayoutItem Label="过程描述" VerticalAlignment="Stretch">                   
+                        <dxe:TextEdit Text="{Binding FAULT_REPAIR_CONTENT}" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Margin="25,0" Foreground="#737a81" FontSize="16" VerticalContentAlignment="Top" Padding="5"/>
+                    </lc:LayoutItem>
+                </lc:LayoutGroup>
+                <Controls:ImageButtonWithIcon Content="提交" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/21.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/21.ico"  Width="100" Height="40" Click="BtnSave_Click" Margin="642,0,-622,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            </lc:LayoutGroup>
+        </lc:LayoutControl>
+    </Grid>
+</Page>

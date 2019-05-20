@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36F7E0E2-EE4A-48B5-9891-5B434D37516A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFM.WPF.FMS</RootNamespace>
+    <AssemblyName>BFM.WPF.FMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.CodeView.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="OpcRcw.Comn, Version=1.10.2.0, Culture=neutral, PublicKeyToken=9a40e993cbface53, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>D:\Git\MyGit\MyCCodes\XL.CSharp.OPC.Core\DLL\OpcRcw.Comn.dll</HintPath>
+    </Reference>
+    <Reference Include="OpcRcw.Da, Version=3.0.3.0, Culture=neutral, PublicKeyToken=9a40e993cbface53, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasicData\ActionControl.xaml.cs">
+      <DependentUpon>ActionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BasicData\AssetTagSetting.xaml.cs">
+      <DependentUpon>AssetTagSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BasicData\AssetTagSetting_New.xaml.cs">
+      <DependentUpon>AssetTagSetting_New.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BasicData\VirtualTag\VirtualTagCalcu.xaml.cs">
+      <DependentUpon>VirtualTagCalcu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CNCDataBack.xaml.cs">
+      <DependentUpon>CNCDataBack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CNCProgramView.xaml.cs">
+      <DependentUpon>CNCProgramView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmProductionView.xaml.cs">
+      <DependentUpon>ConfirmProductionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceDataMoniter.xaml.cs">
+      <DependentUpon>DeviceDataMoniter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceMonitor.cs" />
+    <Compile Include="DeviceProcessControl.cs" />
+    <Compile Include="Expand\FMSControlService.cs" />
+    <Compile Include="Expand\JobTaskProxy.cs" />
+    <Compile Include="Expand\JobTaskProxyRun.cs" />
+    <Compile Include="FuZhou\ProcessCheckMoniter.cs" />
+    <Compile Include="Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessControl\ActionFomulaDetail.xaml.cs">
+      <DependentUpon>ActionFomulaDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessControl\ActionFomulaDetail_In.xaml.cs">
+      <DependentUpon>ActionFomulaDetail_In.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessControl\ActionFomulaMain.xaml.cs">
+      <DependentUpon>ActionFomulaMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessControl\PrepareProcess_ShangHai.xaml.cs">
+      <DependentUpon>PrepareProcess_ShangHai.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessControl\PrepareProcess_FuZhou.xaml.cs">
+      <DependentUpon>PrepareProcess_FuZhou.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessControl\ProcessActionSetting.xaml.cs">
+      <DependentUpon>ProcessActionSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessControl\DeviceSelect.xaml.cs">
+      <DependentUpon>DeviceSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessControl\ToolsPrepare.xaml.cs">
+      <DependentUpon>ToolsPrepare.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessControl\ToolsExchangeMang.xaml.cs">
+      <DependentUpon>ToolsExchangeMang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessControl\PrepareProcess.xaml.cs">
+      <DependentUpon>PrepareProcess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessParamReplace.cs" />
+    <Compile Include="VersionInfo.cs" />
+    <Page Include="BasicData\ActionControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BasicData\AssetTagSetting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BasicData\AssetCommParamSetting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BasicData\AssetTagSetting_New.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BasicData\VirtualTag\VirtualTagCalcu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CNCDataBack.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CNCProgramView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ConfirmProductionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DeviceDataMoniter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="BasicData\AssetCommParamSetting.xaml.cs">
+      <DependentUpon>AssetCommParamSetting.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProcessControl\ActionFomulaDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProcessControl\ActionFomulaDetail_In.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProcessControl\ActionFomulaMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProcessControl\PrepareProcess_ShangHai.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProcessControl\PrepareProcess_FuZhou.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProcessControl\ProcessActionSetting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProcessControl\DeviceSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProcessControl\ToolsPrepare.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProcessControl\ToolsExchangeMang.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProcessControl\PrepareProcess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.AmAssetMasterN.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.AmPartsMasterN.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsAssetCommParam.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsAssetTagSetting.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsSamplingRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsStateResultRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RmRepairRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainStandards.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainStandardsDetail.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainStandardsRelate.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\BFM.Common.Base\BFM.Common.Base.csproj">
+      <Project>{31B1498B-91FB-43B4-B4E7-EE3911072D93}</Project>
+      <Name>BFM.Common.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\BFM.Common.DeviceAsset\BFM.Common.DeviceAsset.csproj">
+      <Project>{DFF3AF8F-434D-43D8-BA91-4F0BF47B8E40}</Project>
+      <Name>BFM.Common.DeviceAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\BFM.OPC.Client.Core\BFM.OPC.Client.Core.csproj">
+      <Project>{e844e70c-1a0d-4dd0-91bc-64386d174e66}</Project>
+      <Name>BFM.OPC.Client.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.ContractModel\BFM.ContractModel.csproj">
+      <Project>{d65e3c3e-0f32-426b-a60c-42485ad5110e}</Project>
+      <Name>BFM.ContractModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.Server.DataAsset\BFM.Server.DataAsset.csproj">
+      <Project>{533CD39A-C244-47C7-A11A-0AA70BF3D551}</Project>
+      <Name>BFM.Server.DataAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Test\HslCommunication\HslCommunication_Net45\HslCommunication_Net45.csproj">
+      <Project>{7f8029da-1b94-4b1d-b91f-5b21dbf2f3a2}</Project>
+      <Name>HslCommunication_Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.Base\BFM.WPF.Base.csproj">
+      <Project>{83ebfe28-d316-4272-81fc-fbb0033daf93}</Project>
+      <Name>BFM.WPF.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.FlowDesign\BFM.WPF.FlowDesign.csproj">
+      <Project>{2f851855-fb40-4872-bee5-ff9a415360d8}</Project>
+      <Name>BFM.WPF.FlowDesign</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.SDM\BFM.WPF.SDM.csproj">
+      <Project>{0F712DD6-1B1A-4C44-A3DC-887804AA3EDD}</Project>
+      <Name>BFM.WPF.SDM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="arrow_cmb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\question.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

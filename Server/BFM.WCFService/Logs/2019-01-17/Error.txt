@@ -1,0 +1,98 @@
+2019-01-17 11:50:33.8938 | error:写入数据库失败
+message: The changes to the database were committed successfully, but an error occurred while updating the object context. The ObjectContext might be in an inconsistent state. Inner exception message: Saving or accepting changes failed because more than one entity of type 'BFM.ContractModel.MesJobOrder' have the same primary key value. Ensure that explicitly set primary key values are unique. Ensure that database-generated primary keys are configured correctly in the database and in the Entity Framework model. Use the Entity Designer for Database First/Model First configuration. Use the 'HasDatabaseGeneratedOption" fluent API or 'DatabaseGeneratedAttribute' for Code First configuration.
+StackTrace:   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at BFM.Common.DataBaseAsset.EF.BaseDAL`1.SaveChanges() in E:\MES开发\MES 4.1\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:line 96
+InnerException:Saving or accepting changes failed because more than one entity of type 'BFM.ContractModel.MesJobOrder' have the same primary key value. Ensure that explicitly set primary key values are unique. Ensure that database-generated primary keys are configured correctly in the database and in the Entity Framework model. Use the Entity Designer for Database First/Model First configuration. Use the 'HasDatabaseGeneratedOption" fluent API or 'DatabaseGeneratedAttribute' for Code First configuration. 
+2019-01-17 11:53:25.4666 | error:写入数据库失败
+message: Unexpected connection state. When using a wrapping provider ensure that the StateChange event is implemented on the wrapped DbConnection.
+StackTrace:   at System.Data.Entity.Core.Objects.ObjectContext.EnsureContextIsEnlistedInCurrentTransaction[T](Transaction currentTransaction, Func`1 openConnection, T defaultValue)
+   at System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at BFM.Common.DataBaseAsset.EF.BaseDAL`1.SaveChanges() in E:\MES开发\MES 4.1\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:line 96
+InnerException: 
+2019-01-17 11:53:39.0540 | error:写入数据库失败
+message: An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+StackTrace:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at BFM.Common.DataBaseAsset.EF.BaseDAL`1.SaveChanges() in E:\MES开发\MES 4.1\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:line 96
+InnerException:There is already an open DataReader associated with this Connection which must be closed first. 
+2019-01-17 12:03:32.0889 | error:写入数据库失败
+message: Unexpected connection state. When using a wrapping provider ensure that the StateChange event is implemented on the wrapped DbConnection.
+StackTrace:   at System.Data.Entity.Core.Objects.ObjectContext.EnsureContextIsEnlistedInCurrentTransaction[T](Transaction currentTransaction, Func`1 openConnection, T defaultValue)
+   at System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at BFM.Common.DataBaseAsset.EF.BaseDAL`1.SaveChanges() in E:\MES开发\MES 4.1\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:line 101
+InnerException: 
+2019-01-17 12:06:53.9586 | error:写入数据库失败
+message: The changes to the database were committed successfully, but an error occurred while updating the object context. The ObjectContext might be in an inconsistent state. Inner exception message: Saving or accepting changes failed because more than one entity of type 'BFM.ContractModel.MesJobOrder' have the same primary key value. Ensure that explicitly set primary key values are unique. Ensure that database-generated primary keys are configured correctly in the database and in the Entity Framework model. Use the Entity Designer for Database First/Model First configuration. Use the 'HasDatabaseGeneratedOption" fluent API or 'DatabaseGeneratedAttribute' for Code First configuration.
+StackTrace:   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at BFM.Common.DataBaseAsset.EF.BaseDAL`1.SaveChanges() in E:\MES开发\MES 4.1\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:line 101
+InnerException:Saving or accepting changes failed because more than one entity of type 'BFM.ContractModel.MesJobOrder' have the same primary key value. Ensure that explicitly set primary key values are unique. Ensure that database-generated primary keys are configured correctly in the database and in the Entity Framework model. Use the Entity Designer for Database First/Model First configuration. Use the 'HasDatabaseGeneratedOption" fluent API or 'DatabaseGeneratedAttribute' for Code First configuration. 
+2019-01-17 12:07:03.6149 | error:写入数据库失败
+message: An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+StackTrace:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at BFM.Common.DataBaseAsset.EF.BaseDAL`1.SaveChanges() in E:\MES开发\MES 4.1\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:line 101
+InnerException:There is already an open DataReader associated with this Connection which must be closed first. 
+2019-01-17 12:13:01.4613 | error:写入数据库失败
+message: An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+StackTrace:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at BFM.Common.DataBaseAsset.EF.BaseDAL`1.SaveChanges() in E:\MES开发\MES 4.1\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:line 101
+InnerException:There is already an open DataReader associated with this Connection which must be closed first. 
+2019-01-17 12:13:33.8873 | error:写入数据库失败
+message: Unexpected connection state. When using a wrapping provider ensure that the StateChange event is implemented on the wrapped DbConnection.
+StackTrace:   at System.Data.Entity.Core.Objects.ObjectContext.EnsureContextIsEnlistedInCurrentTransaction[T](Transaction currentTransaction, Func`1 openConnection, T defaultValue)
+   at System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at BFM.Common.DataBaseAsset.EF.BaseDAL`1.SaveChanges() in E:\MES开发\MES 4.1\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:line 101
+InnerException: 
+2019-01-17 12:16:44.3921 | error:写入数据库失败
+message: The changes to the database were committed successfully, but an error occurred while updating the object context. The ObjectContext might be in an inconsistent state. Inner exception message: Saving or accepting changes failed because more than one entity of type 'BFM.ContractModel.MesJobOrder' have the same primary key value. Ensure that explicitly set primary key values are unique. Ensure that database-generated primary keys are configured correctly in the database and in the Entity Framework model. Use the Entity Designer for Database First/Model First configuration. Use the 'HasDatabaseGeneratedOption" fluent API or 'DatabaseGeneratedAttribute' for Code First configuration.
+StackTrace:   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at BFM.Common.DataBaseAsset.EF.BaseDAL`1.SaveChanges() in E:\MES开发\MES 4.1\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:line 101
+InnerException:Saving or accepting changes failed because more than one entity of type 'BFM.ContractModel.MesJobOrder' have the same primary key value. Ensure that explicitly set primary key values are unique. Ensure that database-generated primary keys are configured correctly in the database and in the Entity Framework model. Use the Entity Designer for Database First/Model First configuration. Use the 'HasDatabaseGeneratedOption" fluent API or 'DatabaseGeneratedAttribute' for Code First configuration. 
+2019-01-17 12:20:05.4349 | error:写入数据库失败
+message: The changes to the database were committed successfully, but an error occurred while updating the object context. The ObjectContext might be in an inconsistent state. Inner exception message: Saving or accepting changes failed because more than one entity of type 'BFM.ContractModel.MesJobOrder' have the same primary key value. Ensure that explicitly set primary key values are unique. Ensure that database-generated primary keys are configured correctly in the database and in the Entity Framework model. Use the Entity Designer for Database First/Model First configuration. Use the 'HasDatabaseGeneratedOption" fluent API or 'DatabaseGeneratedAttribute' for Code First configuration.
+StackTrace:   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at BFM.Common.DataBaseAsset.EF.BaseDAL`1.SaveChanges() in E:\MES开发\MES 4.1\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:line 101
+InnerException:Saving or accepting changes failed because more than one entity of type 'BFM.ContractModel.MesJobOrder' have the same primary key value. Ensure that explicitly set primary key values are unique. Ensure that database-generated primary keys are configured correctly in the database and in the Entity Framework model. Use the Entity Designer for Database First/Model First configuration. Use the 'HasDatabaseGeneratedOption" fluent API or 'DatabaseGeneratedAttribute' for Code First configuration. 
+2019-01-17 12:21:00.2407 | error:写入数据库失败
+message: An error occurred while starting a transaction on the provider connection. See the inner exception for details.
+StackTrace:   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   at System.Data.Entity.Core.EntityClient.EntityConnection.BeginTransaction()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at BFM.Common.DataBaseAsset.EF.BaseDAL`1.SaveChanges() in E:\MES开发\MES 4.1\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:line 101
+InnerException:There is already an open DataReader associated with this Connection which must be closed first. 

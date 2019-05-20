@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://fanuc.com.cn/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fanuc.com.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fanuc.com.cn/Imports">
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/QMSService.svc?xsd=xsd0" namespace="http://fanuc.com.cn/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/QMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/QMSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/QMSService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IQMSService_GetQmsTestByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsTestByPage" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsTestByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsTestByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsTestCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsTestCount" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsTestCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsTestCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_AddQmsTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddQmsTest" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_AddQmsTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddQmsTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_UpdateQmsTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQmsTest" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_UpdateQmsTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQmsTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsTests_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsTests" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsTests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsTestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsTest" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsTests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsTests" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsTests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsTestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsTestById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsTestById" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsTestById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsTestByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckParamByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckParamByPage" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckParamByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckParamByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckParamCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckParamCount" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckParamCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckParamCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_AddQmsCheckParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddQmsCheckParam" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_AddQmsCheckParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddQmsCheckParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_UpdateQmsCheckParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQmsCheckParam" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_UpdateQmsCheckParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQmsCheckParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsCheckParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsCheckParams" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsCheckParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsCheckParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsCheckParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsCheckParam" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsCheckParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsCheckParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckParams" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckParamById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckParamById" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckParamById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckParamByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsRoutingCheckByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsRoutingCheckByPage" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsRoutingCheckByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsRoutingCheckByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsRoutingCheckCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsRoutingCheckCount" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsRoutingCheckCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsRoutingCheckCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_AddQmsRoutingCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddQmsRoutingCheck" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_AddQmsRoutingCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddQmsRoutingCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_UpdateQmsRoutingCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQmsRoutingCheck" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_UpdateQmsRoutingCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQmsRoutingCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsRoutingChecks_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsRoutingChecks" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsRoutingChecks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsRoutingChecksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsRoutingCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsRoutingCheck" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsRoutingCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsRoutingCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsRoutingChecks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsRoutingChecks" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsRoutingChecks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsRoutingChecksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsRoutingCheckById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsRoutingCheckById" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsRoutingCheckById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsRoutingCheckByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckMasterByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckMasterByPage" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckMasterByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckMasterByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckMasterCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckMasterCount" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckMasterCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckMasterCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_AddQmsCheckMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddQmsCheckMaster" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_AddQmsCheckMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddQmsCheckMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_UpdateQmsCheckMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQmsCheckMaster" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_UpdateQmsCheckMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQmsCheckMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsCheckMasters_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsCheckMasters" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsCheckMasters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsCheckMastersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsCheckMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsCheckMaster" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_DelQmsCheckMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelQmsCheckMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckMasters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckMasters" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckMasters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckMastersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckMasterById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckMasterById" />
+  </wsdl:message>
+  <wsdl:message name="IQMSService_GetQmsCheckMasterById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQmsCheckMasterByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IQMSService">
+    <wsdl:operation name="GetQmsTestByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsTestByPage" message="tns:IQMSService_GetQmsTestByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsTestByPageResponse" message="tns:IQMSService_GetQmsTestByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsTestCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsTestCount" message="tns:IQMSService_GetQmsTestCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsTestCountResponse" message="tns:IQMSService_GetQmsTestCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQmsTest">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/AddQmsTest" message="tns:IQMSService_AddQmsTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/AddQmsTestResponse" message="tns:IQMSService_AddQmsTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQmsTest">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/UpdateQmsTest" message="tns:IQMSService_UpdateQmsTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/UpdateQmsTestResponse" message="tns:IQMSService_UpdateQmsTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelQmsTests">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsTests" message="tns:IQMSService_DelQmsTests_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsTestsResponse" message="tns:IQMSService_DelQmsTests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelQmsTest">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsTest" message="tns:IQMSService_DelQmsTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsTestResponse" message="tns:IQMSService_DelQmsTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsTests">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsTests" message="tns:IQMSService_GetQmsTests_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsTestsResponse" message="tns:IQMSService_GetQmsTests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsTestById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsTestById" message="tns:IQMSService_GetQmsTestById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsTestByIdResponse" message="tns:IQMSService_GetQmsTestById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsCheckParamByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckParamByPage" message="tns:IQMSService_GetQmsCheckParamByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckParamByPageResponse" message="tns:IQMSService_GetQmsCheckParamByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsCheckParamCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckParamCount" message="tns:IQMSService_GetQmsCheckParamCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckParamCountResponse" message="tns:IQMSService_GetQmsCheckParamCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQmsCheckParam">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/AddQmsCheckParam" message="tns:IQMSService_AddQmsCheckParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/AddQmsCheckParamResponse" message="tns:IQMSService_AddQmsCheckParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQmsCheckParam">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/UpdateQmsCheckParam" message="tns:IQMSService_UpdateQmsCheckParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/UpdateQmsCheckParamResponse" message="tns:IQMSService_UpdateQmsCheckParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelQmsCheckParams">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsCheckParams" message="tns:IQMSService_DelQmsCheckParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsCheckParamsResponse" message="tns:IQMSService_DelQmsCheckParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelQmsCheckParam">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsCheckParam" message="tns:IQMSService_DelQmsCheckParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsCheckParamResponse" message="tns:IQMSService_DelQmsCheckParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsCheckParams">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckParams" message="tns:IQMSService_GetQmsCheckParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckParamsResponse" message="tns:IQMSService_GetQmsCheckParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsCheckParamById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckParamById" message="tns:IQMSService_GetQmsCheckParamById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckParamByIdResponse" message="tns:IQMSService_GetQmsCheckParamById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsRoutingCheckByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsRoutingCheckByPage" message="tns:IQMSService_GetQmsRoutingCheckByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsRoutingCheckByPageResponse" message="tns:IQMSService_GetQmsRoutingCheckByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsRoutingCheckCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsRoutingCheckCount" message="tns:IQMSService_GetQmsRoutingCheckCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsRoutingCheckCountResponse" message="tns:IQMSService_GetQmsRoutingCheckCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQmsRoutingCheck">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/AddQmsRoutingCheck" message="tns:IQMSService_AddQmsRoutingCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/AddQmsRoutingCheckResponse" message="tns:IQMSService_AddQmsRoutingCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQmsRoutingCheck">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/UpdateQmsRoutingCheck" message="tns:IQMSService_UpdateQmsRoutingCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/UpdateQmsRoutingCheckResponse" message="tns:IQMSService_UpdateQmsRoutingCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelQmsRoutingChecks">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsRoutingChecks" message="tns:IQMSService_DelQmsRoutingChecks_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsRoutingChecksResponse" message="tns:IQMSService_DelQmsRoutingChecks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelQmsRoutingCheck">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsRoutingCheck" message="tns:IQMSService_DelQmsRoutingCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsRoutingCheckResponse" message="tns:IQMSService_DelQmsRoutingCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsRoutingChecks">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsRoutingChecks" message="tns:IQMSService_GetQmsRoutingChecks_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsRoutingChecksResponse" message="tns:IQMSService_GetQmsRoutingChecks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsRoutingCheckById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsRoutingCheckById" message="tns:IQMSService_GetQmsRoutingCheckById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsRoutingCheckByIdResponse" message="tns:IQMSService_GetQmsRoutingCheckById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsCheckMasterByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckMasterByPage" message="tns:IQMSService_GetQmsCheckMasterByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckMasterByPageResponse" message="tns:IQMSService_GetQmsCheckMasterByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsCheckMasterCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckMasterCount" message="tns:IQMSService_GetQmsCheckMasterCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckMasterCountResponse" message="tns:IQMSService_GetQmsCheckMasterCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQmsCheckMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/AddQmsCheckMaster" message="tns:IQMSService_AddQmsCheckMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/AddQmsCheckMasterResponse" message="tns:IQMSService_AddQmsCheckMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQmsCheckMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/UpdateQmsCheckMaster" message="tns:IQMSService_UpdateQmsCheckMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/UpdateQmsCheckMasterResponse" message="tns:IQMSService_UpdateQmsCheckMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelQmsCheckMasters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsCheckMasters" message="tns:IQMSService_DelQmsCheckMasters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsCheckMastersResponse" message="tns:IQMSService_DelQmsCheckMasters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelQmsCheckMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsCheckMaster" message="tns:IQMSService_DelQmsCheckMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/DelQmsCheckMasterResponse" message="tns:IQMSService_DelQmsCheckMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsCheckMasters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckMasters" message="tns:IQMSService_GetQmsCheckMasters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckMastersResponse" message="tns:IQMSService_GetQmsCheckMasters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQmsCheckMasterById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckMasterById" message="tns:IQMSService_GetQmsCheckMasterById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IQMSService/GetQmsCheckMasterByIdResponse" message="tns:IQMSService_GetQmsCheckMasterById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

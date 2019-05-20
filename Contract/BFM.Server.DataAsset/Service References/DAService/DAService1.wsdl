@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://fanuc.com.cn/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fanuc.com.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fanuc.com.cn/Imports">
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/DAService.svc?xsd=xsd0" namespace="http://fanuc.com.cn/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/DAService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/DAService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/DAService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDAService_GetDAMachineRealTimeInfoByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAMachineRealTimeInfoByPage" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAMachineRealTimeInfoByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAMachineRealTimeInfoByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAMachineRealTimeInfoCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAMachineRealTimeInfoCount" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAMachineRealTimeInfoCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAMachineRealTimeInfoCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_AddDAMachineRealTimeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDAMachineRealTimeInfo" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_AddDAMachineRealTimeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDAMachineRealTimeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_UpdateDAMachineRealTimeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDAMachineRealTimeInfo" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_UpdateDAMachineRealTimeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDAMachineRealTimeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAMachineRealTimeInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAMachineRealTimeInfos" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAMachineRealTimeInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAMachineRealTimeInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAMachineRealTimeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAMachineRealTimeInfo" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAMachineRealTimeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAMachineRealTimeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAMachineRealTimeInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAMachineRealTimeInfos" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAMachineRealTimeInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAMachineRealTimeInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAMachineRealTimeInfoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAMachineRealTimeInfoById" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAMachineRealTimeInfoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAMachineRealTimeInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAProductRecordByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAProductRecordByPage" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAProductRecordByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAProductRecordByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAProductRecordCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAProductRecordCount" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAProductRecordCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAProductRecordCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_AddDAProductRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDAProductRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_AddDAProductRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDAProductRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_UpdateDAProductRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDAProductRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_UpdateDAProductRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDAProductRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAProductRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAProductRecords" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAProductRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAProductRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAProductRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAProductRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAProductRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAProductRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAProductRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAProductRecords" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAProductRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAProductRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAProductRecordById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAProductRecordById" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAProductRecordById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAProductRecordByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAAlarmRecordByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAAlarmRecordByPage" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAAlarmRecordByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAAlarmRecordByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAAlarmRecordCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAAlarmRecordCount" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAAlarmRecordCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAAlarmRecordCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_AddDAAlarmRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDAAlarmRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_AddDAAlarmRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDAAlarmRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_UpdateDAAlarmRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDAAlarmRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_UpdateDAAlarmRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDAAlarmRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAAlarmRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAAlarmRecords" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAAlarmRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAAlarmRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAAlarmRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAAlarmRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAAlarmRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAAlarmRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAAlarmRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAAlarmRecords" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAAlarmRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAAlarmRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAAlarmRecordById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAAlarmRecordById" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAAlarmRecordById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAAlarmRecordByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAStatusRecordByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAStatusRecordByPage" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAStatusRecordByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAStatusRecordByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAStatusRecordCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAStatusRecordCount" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAStatusRecordCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAStatusRecordCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_AddDAStatusRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDAStatusRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_AddDAStatusRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDAStatusRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_UpdateDAStatusRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDAStatusRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_UpdateDAStatusRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDAStatusRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAStatusRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAStatusRecords" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAStatusRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAStatusRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAStatusRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAStatusRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_DelDAStatusRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelDAStatusRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAStatusRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAStatusRecords" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAStatusRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAStatusRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAStatusRecordById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAStatusRecordById" />
+  </wsdl:message>
+  <wsdl:message name="IDAService_GetDAStatusRecordById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDAStatusRecordByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDAService">
+    <wsdl:operation name="GetDAMachineRealTimeInfoByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAMachineRealTimeInfoByPage" message="tns:IDAService_GetDAMachineRealTimeInfoByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAMachineRealTimeInfoByPageResponse" message="tns:IDAService_GetDAMachineRealTimeInfoByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAMachineRealTimeInfoCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAMachineRealTimeInfoCount" message="tns:IDAService_GetDAMachineRealTimeInfoCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAMachineRealTimeInfoCountResponse" message="tns:IDAService_GetDAMachineRealTimeInfoCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDAMachineRealTimeInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/AddDAMachineRealTimeInfo" message="tns:IDAService_AddDAMachineRealTimeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/AddDAMachineRealTimeInfoResponse" message="tns:IDAService_AddDAMachineRealTimeInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDAMachineRealTimeInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/UpdateDAMachineRealTimeInfo" message="tns:IDAService_UpdateDAMachineRealTimeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/UpdateDAMachineRealTimeInfoResponse" message="tns:IDAService_UpdateDAMachineRealTimeInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelDAMachineRealTimeInfos">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/DelDAMachineRealTimeInfos" message="tns:IDAService_DelDAMachineRealTimeInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/DelDAMachineRealTimeInfosResponse" message="tns:IDAService_DelDAMachineRealTimeInfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelDAMachineRealTimeInfo">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/DelDAMachineRealTimeInfo" message="tns:IDAService_DelDAMachineRealTimeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/DelDAMachineRealTimeInfoResponse" message="tns:IDAService_DelDAMachineRealTimeInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAMachineRealTimeInfos">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAMachineRealTimeInfos" message="tns:IDAService_GetDAMachineRealTimeInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAMachineRealTimeInfosResponse" message="tns:IDAService_GetDAMachineRealTimeInfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAMachineRealTimeInfoById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAMachineRealTimeInfoById" message="tns:IDAService_GetDAMachineRealTimeInfoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAMachineRealTimeInfoByIdResponse" message="tns:IDAService_GetDAMachineRealTimeInfoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAProductRecordByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAProductRecordByPage" message="tns:IDAService_GetDAProductRecordByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAProductRecordByPageResponse" message="tns:IDAService_GetDAProductRecordByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAProductRecordCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAProductRecordCount" message="tns:IDAService_GetDAProductRecordCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAProductRecordCountResponse" message="tns:IDAService_GetDAProductRecordCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDAProductRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/AddDAProductRecord" message="tns:IDAService_AddDAProductRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/AddDAProductRecordResponse" message="tns:IDAService_AddDAProductRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDAProductRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/UpdateDAProductRecord" message="tns:IDAService_UpdateDAProductRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/UpdateDAProductRecordResponse" message="tns:IDAService_UpdateDAProductRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelDAProductRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/DelDAProductRecords" message="tns:IDAService_DelDAProductRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/DelDAProductRecordsResponse" message="tns:IDAService_DelDAProductRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelDAProductRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/DelDAProductRecord" message="tns:IDAService_DelDAProductRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/DelDAProductRecordResponse" message="tns:IDAService_DelDAProductRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAProductRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAProductRecords" message="tns:IDAService_GetDAProductRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAProductRecordsResponse" message="tns:IDAService_GetDAProductRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAProductRecordById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAProductRecordById" message="tns:IDAService_GetDAProductRecordById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAProductRecordByIdResponse" message="tns:IDAService_GetDAProductRecordById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAAlarmRecordByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAAlarmRecordByPage" message="tns:IDAService_GetDAAlarmRecordByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAAlarmRecordByPageResponse" message="tns:IDAService_GetDAAlarmRecordByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAAlarmRecordCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAAlarmRecordCount" message="tns:IDAService_GetDAAlarmRecordCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAAlarmRecordCountResponse" message="tns:IDAService_GetDAAlarmRecordCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDAAlarmRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/AddDAAlarmRecord" message="tns:IDAService_AddDAAlarmRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/AddDAAlarmRecordResponse" message="tns:IDAService_AddDAAlarmRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDAAlarmRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/UpdateDAAlarmRecord" message="tns:IDAService_UpdateDAAlarmRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/UpdateDAAlarmRecordResponse" message="tns:IDAService_UpdateDAAlarmRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelDAAlarmRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/DelDAAlarmRecords" message="tns:IDAService_DelDAAlarmRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/DelDAAlarmRecordsResponse" message="tns:IDAService_DelDAAlarmRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelDAAlarmRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/DelDAAlarmRecord" message="tns:IDAService_DelDAAlarmRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/DelDAAlarmRecordResponse" message="tns:IDAService_DelDAAlarmRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAAlarmRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAAlarmRecords" message="tns:IDAService_GetDAAlarmRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAAlarmRecordsResponse" message="tns:IDAService_GetDAAlarmRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAAlarmRecordById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAAlarmRecordById" message="tns:IDAService_GetDAAlarmRecordById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAAlarmRecordByIdResponse" message="tns:IDAService_GetDAAlarmRecordById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAStatusRecordByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAStatusRecordByPage" message="tns:IDAService_GetDAStatusRecordByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAStatusRecordByPageResponse" message="tns:IDAService_GetDAStatusRecordByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAStatusRecordCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAStatusRecordCount" message="tns:IDAService_GetDAStatusRecordCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAStatusRecordCountResponse" message="tns:IDAService_GetDAStatusRecordCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDAStatusRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/AddDAStatusRecord" message="tns:IDAService_AddDAStatusRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/AddDAStatusRecordResponse" message="tns:IDAService_AddDAStatusRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDAStatusRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/UpdateDAStatusRecord" message="tns:IDAService_UpdateDAStatusRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/UpdateDAStatusRecordResponse" message="tns:IDAService_UpdateDAStatusRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelDAStatusRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/DelDAStatusRecords" message="tns:IDAService_DelDAStatusRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/DelDAStatusRecordsResponse" message="tns:IDAService_DelDAStatusRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelDAStatusRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/DelDAStatusRecord" message="tns:IDAService_DelDAStatusRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/DelDAStatusRecordResponse" message="tns:IDAService_DelDAStatusRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAStatusRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAStatusRecords" message="tns:IDAService_GetDAStatusRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAStatusRecordsResponse" message="tns:IDAService_GetDAStatusRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDAStatusRecordById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IDAService/GetDAStatusRecordById" message="tns:IDAService_GetDAStatusRecordById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IDAService/GetDAStatusRecordByIdResponse" message="tns:IDAService_GetDAStatusRecordById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

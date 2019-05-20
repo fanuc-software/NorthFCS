@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8822FEE-4204-47B3-949A-DA472DA8EB03}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFM.DAL</RootNamespace>
+    <AssemblyName>BFM.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Container\DALContainer.cs" />
+    <Compile Include="IDAL\IQmsCheckMasterDAL.cs" />
+    <Compile Include="IDAL\IQmsCheckParamDAL.cs" />
+    <Compile Include="IDAL\IQmsRoutingCheckDAL.cs" />
+    <Compile Include="IDAL\ISysDepartmentDAL.cs" />
+    <Compile Include="IDAL\ITestEFCodeFirstDAL.cs" />
+    <Compile Include="Mapping\QmsCheckMasterMap.cs" />
+    <Compile Include="Mapping\QmsCheckParamMap.cs" />
+    <Compile Include="Mapping\QmsRoutingCheckMap.cs" />
+    <Compile Include="Mapping\SysDepartmentMap.cs" />
+    <Compile Include="Mapping\TestEFCodeFirstMap.cs" />
+    <Compile Include="Model\QmsCheckMasterDAL.cs" />
+    <Compile Include="Model\QmsCheckParamDAL.cs" />
+    <Compile Include="Model\QmsRoutingCheckDAL.cs" />
+    <Compile Include="Model\SysDepartmentDAL.cs" />
+    <Compile Include="Model\TestEFCodeFirstDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Mapping\FmsActionFormulaDetailMap.cs" />
+    <Compile Include="Model\FmsActionFormulaDetailDAL.cs" />
+    <Compile Include="IDAL\IFmsActionFormulaDetailDAL.cs" />
+    <Compile Include="Mapping\FmsActionFormulaMainMap.cs" />
+    <Compile Include="Model\FmsActionFormulaMainDAL.cs" />
+    <Compile Include="IDAL\IFmsActionFormulaMainDAL.cs" />
+    <Compile Include="Mapping\WmsInventoryMap.cs" />
+    <Compile Include="Model\WmsInventoryDAL.cs" />
+    <Compile Include="IDAL\IWmsInventoryDAL.cs" />
+    <Compile Include="Mapping\MesProductProcessMap.cs" />
+    <Compile Include="Model\MesProductProcessDAL.cs" />
+    <Compile Include="IDAL\IMesProductProcessDAL.cs" />
+    <Compile Include="Mapping\FmsTagCalculationMap.cs" />
+    <Compile Include="Model\FmsTagCalculationDAL.cs" />
+    <Compile Include="IDAL\IFmsTagCalculationDAL.cs" />
+    <Compile Include="Mapping\SysAppInfoMap.cs" />
+    <Compile Include="Model\SysAppInfoDAL.cs" />
+    <Compile Include="IDAL\ISysAppInfoDAL.cs" />
+    <Compile Include="Mapping\DAStatusRecordMap.cs" />
+    <Compile Include="Model\DAStatusRecordDAL.cs" />
+    <Compile Include="IDAL\IDAStatusRecordDAL.cs" />
+    <Compile Include="Mapping\DAAlarmRecordMap.cs" />
+    <Compile Include="Model\DAAlarmRecordDAL.cs" />
+    <Compile Include="IDAL\IDAAlarmRecordDAL.cs" />
+    <Compile Include="Mapping\DAProductRecordMap.cs" />
+    <Compile Include="Model\DAProductRecordDAL.cs" />
+    <Compile Include="IDAL\IDAProductRecordDAL.cs" />
+    <Compile Include="Mapping\DAMachineRealTimeInfoMap.cs" />
+    <Compile Include="Model\DAMachineRealTimeInfoDAL.cs" />
+    <Compile Include="IDAL\IDAMachineRealTimeInfoDAL.cs" />
+    <Compile Include="Mapping\QmsTestMap.cs" />
+    <Compile Include="Model\QmsTestDAL.cs" />
+    <Compile Include="IDAL\IQmsTestDAL.cs" />
+    <Compile Include="Mapping\RsEquipMasterMap.cs" />
+    <Compile Include="Model\RsEquipMasterDAL.cs" />
+    <Compile Include="IDAL\IRsEquipMasterDAL.cs" />
+    <Compile Include="Mapping\RsWorkCenterMap.cs" />
+    <Compile Include="Model\RsWorkCenterDAL.cs" />
+    <Compile Include="IDAL\IRsWorkCenterDAL.cs" />
+    <Compile Include="Mapping\RsRoutingItemMap.cs" />
+    <Compile Include="Model\RsRoutingItemDAL.cs" />
+    <Compile Include="IDAL\IRsRoutingItemDAL.cs" />
+    <Compile Include="Mapping\RsRoutingEquipMap.cs" />
+    <Compile Include="Model\RsRoutingEquipDAL.cs" />
+    <Compile Include="IDAL\IRsRoutingEquipDAL.cs" />
+    <Compile Include="Mapping\RsRoutingCheckMap.cs" />
+    <Compile Include="Model\RsRoutingCheckDAL.cs" />
+    <Compile Include="IDAL\IRsRoutingCheckDAL.cs" />
+    <Compile Include="Mapping\RsRoutingParamMap.cs" />
+    <Compile Include="Model\RsRoutingParamDAL.cs" />
+    <Compile Include="IDAL\IRsRoutingParamDAL.cs" />
+    <Compile Include="Mapping\RsRoutingToolsMap.cs" />
+    <Compile Include="Model\RsRoutingToolsDAL.cs" />
+    <Compile Include="IDAL\IRsRoutingToolsDAL.cs" />
+    <Compile Include="Mapping\RsRoutingDetailMap.cs" />
+    <Compile Include="Model\RsRoutingDetailDAL.cs" />
+    <Compile Include="IDAL\IRsRoutingDetailDAL.cs" />
+    <Compile Include="Mapping\RsRoutingHeadMap.cs" />
+    <Compile Include="Model\RsRoutingHeadDAL.cs" />
+    <Compile Include="IDAL\IRsRoutingHeadDAL.cs" />
+    <Compile Include="Mapping\RsBomMap.cs" />
+    <Compile Include="Model\RsBomDAL.cs" />
+    <Compile Include="IDAL\IRsBomDAL.cs" />
+    <Compile Include="Mapping\RsLineProductMap.cs" />
+    <Compile Include="Model\RsLineProductDAL.cs" />
+    <Compile Include="IDAL\IRsLineProductDAL.cs" />
+    <Compile Include="Mapping\RsItemMasterMap.cs" />
+    <Compile Include="Model\RsItemMasterDAL.cs" />
+    <Compile Include="IDAL\IRsItemMasterDAL.cs" />
+    <Compile Include="Mapping\RsLineStationMap.cs" />
+    <Compile Include="Model\RsLineStationDAL.cs" />
+    <Compile Include="IDAL\IRsLineStationDAL.cs" />
+    <Compile Include="Mapping\RsLineMap.cs" />
+    <Compile Include="Model\RsLineDAL.cs" />
+    <Compile Include="IDAL\IRsLineDAL.cs" />
+    <Compile Include="Mapping\RsWorkShopMap.cs" />
+    <Compile Include="Model\RsWorkShopDAL.cs" />
+    <Compile Include="IDAL\IRsWorkShopDAL.cs" />
+    <Compile Include="Mapping\RsFactoryMap.cs" />
+    <Compile Include="Model\RsFactoryDAL.cs" />
+    <Compile Include="IDAL\IRsFactoryDAL.cs" />
+    <Compile Include="Mapping\WmsInvOperateMap.cs" />
+    <Compile Include="Model\WmsInvOperateDAL.cs" />
+    <Compile Include="IDAL\IWmsInvOperateDAL.cs" />
+    <Compile Include="Mapping\WmsAllocationInfoMap.cs" />
+    <Compile Include="Model\WmsAllocationInfoDAL.cs" />
+    <Compile Include="IDAL\IWmsAllocationInfoDAL.cs" />
+    <Compile Include="Mapping\WmsAreaInfoMap.cs" />
+    <Compile Include="Model\WmsAreaInfoDAL.cs" />
+    <Compile Include="IDAL\IWmsAreaInfoDAL.cs" />
+    <Compile Include="Mapping\FmsActionControlMap.cs" />
+    <Compile Include="Model\FmsActionControlDAL.cs" />
+    <Compile Include="IDAL\IFmsActionControlDAL.cs" />
+    <Compile Include="Mapping\FmsSamplingRecordMap.cs" />
+    <Compile Include="Model\FmsSamplingRecordDAL.cs" />
+    <Compile Include="IDAL\IFmsSamplingRecordDAL.cs" />
+    <Compile Include="Mapping\FmsStateResultRecordMap.cs" />
+    <Compile Include="Model\FmsStateResultRecordDAL.cs" />
+    <Compile Include="IDAL\IFmsStateResultRecordDAL.cs" />
+    <Compile Include="Mapping\FmsAssetTagSettingMap.cs" />
+    <Compile Include="Model\FmsAssetTagSettingDAL.cs" />
+    <Compile Include="IDAL\IFmsAssetTagSettingDAL.cs" />
+    <Compile Include="Mapping\FmsAssetCommParamMap.cs" />
+    <Compile Include="Model\FmsAssetCommParamDAL.cs" />
+    <Compile Include="IDAL\IFmsAssetCommParamDAL.cs" />
+    <Compile Include="Mapping\RsMaintainRecordMap.cs" />
+    <Compile Include="Model\RsMaintainRecordDAL.cs" />
+    <Compile Include="IDAL\IRsMaintainRecordDAL.cs" />
+    <Compile Include="Mapping\RmRepairRecordMap.cs" />
+    <Compile Include="Model\RmRepairRecordDAL.cs" />
+    <Compile Include="IDAL\IRmRepairRecordDAL.cs" />
+    <Compile Include="Mapping\RsMaintainStandardsRelateMap.cs" />
+    <Compile Include="Model\RsMaintainStandardsRelateDAL.cs" />
+    <Compile Include="IDAL\IRsMaintainStandardsRelateDAL.cs" />
+    <Compile Include="Mapping\RsMaintainStandardsDetailMap.cs" />
+    <Compile Include="Model\RsMaintainStandardsDetailDAL.cs" />
+    <Compile Include="IDAL\IRsMaintainStandardsDetailDAL.cs" />
+    <Compile Include="Mapping\RsMaintainStandardsMap.cs" />
+    <Compile Include="Model\RsMaintainStandardsDAL.cs" />
+    <Compile Include="IDAL\IRsMaintainStandardsDAL.cs" />
+    <Compile Include="Mapping\AmPartsMasterNMap.cs" />
+    <Compile Include="Model\AmPartsMasterNDAL.cs" />
+    <Compile Include="IDAL\IAmPartsMasterNDAL.cs" />
+    <Compile Include="Mapping\AmAssetMasterNMap.cs" />
+    <Compile Include="Model\AmAssetMasterNDAL.cs" />
+    <Compile Include="IDAL\IAmAssetMasterNDAL.cs" />
+    <Compile Include="Mapping\MesProcessCtrolMap.cs" />
+    <Compile Include="Model\MesProcessCtrolDAL.cs" />
+    <Compile Include="IDAL\IMesProcessCtrolDAL.cs" />
+    <Compile Include="Mapping\MesJobOrderMap.cs" />
+    <Compile Include="Model\MesJobOrderDAL.cs" />
+    <Compile Include="IDAL\IMesJobOrderDAL.cs" />
+    <Compile Include="Mapping\PmTaskLineMap.cs" />
+    <Compile Include="Model\PmTaskLineDAL.cs" />
+    <Compile Include="IDAL\IPmTaskLineDAL.cs" />
+    <Compile Include="Mapping\PmTaskMasterMap.cs" />
+    <Compile Include="Model\PmTaskMasterDAL.cs" />
+    <Compile Include="IDAL\IPmTaskMasterDAL.cs" />
+    <Compile Include="Mapping\PmPlanMasterMap.cs" />
+    <Compile Include="Model\PmPlanMasterDAL.cs" />
+    <Compile Include="IDAL\IPmPlanMasterDAL.cs" />
+    <Compile Include="Mapping\TmsDeviceToolsPosMap.cs" />
+    <Compile Include="Model\TmsDeviceToolsPosDAL.cs" />
+    <Compile Include="IDAL\ITmsDeviceToolsPosDAL.cs" />
+    <Compile Include="Mapping\TmsToolsMasterMap.cs" />
+    <Compile Include="Model\TmsToolsMasterDAL.cs" />
+    <Compile Include="IDAL\ITmsToolsMasterDAL.cs" />
+    <Compile Include="Mapping\TmsToolsTypeMap.cs" />
+    <Compile Include="Model\TmsToolsTypeDAL.cs" />
+    <Compile Include="IDAL\ITmsToolsTypeDAL.cs" />
+    <Compile Include="Mapping\SysAttachInfoMap.cs" />
+    <Compile Include="Model\SysAttachInfoDAL.cs" />
+    <Compile Include="IDAL\ISysAttachInfoDAL.cs" />
+    <Compile Include="Mapping\RsWorkScheduleMap.cs" />
+    <Compile Include="Model\RsWorkScheduleDAL.cs" />
+    <Compile Include="IDAL\IRsWorkScheduleDAL.cs" />
+    <Compile Include="Mapping\SysUserMenuMap.cs" />
+    <Compile Include="Model\SysUserMenuDAL.cs" />
+    <Compile Include="IDAL\ISysUserMenuDAL.cs" />
+    <Compile Include="Mapping\SysMenuPurviewMap.cs" />
+    <Compile Include="Model\SysMenuPurviewDAL.cs" />
+    <Compile Include="IDAL\ISysMenuPurviewDAL.cs" />
+    <Compile Include="Mapping\SysRolePurviewMap.cs" />
+    <Compile Include="Model\SysRolePurviewDAL.cs" />
+    <Compile Include="IDAL\ISysRolePurviewDAL.cs" />
+    <Compile Include="Mapping\SysUserPurviewMap.cs" />
+    <Compile Include="Model\SysUserPurviewDAL.cs" />
+    <Compile Include="IDAL\ISysUserPurviewDAL.cs" />
+    <Compile Include="Mapping\SysRoleUserMap.cs" />
+    <Compile Include="Model\SysRoleUserDAL.cs" />
+    <Compile Include="IDAL\ISysRoleUserDAL.cs" />
+    <Compile Include="Mapping\SysPurviewMap.cs" />
+    <Compile Include="Model\SysPurviewDAL.cs" />
+    <Compile Include="IDAL\ISysPurviewDAL.cs" />
+    <Compile Include="Mapping\SysRoleMap.cs" />
+    <Compile Include="Model\SysRoleDAL.cs" />
+    <Compile Include="IDAL\ISysRoleDAL.cs" />
+    <Compile Include="Mapping\SysUserMap.cs" />
+    <Compile Include="Model\SysUserDAL.cs" />
+    <Compile Include="IDAL\ISysUserDAL.cs" />
+    <Compile Include="Mapping\SysEnumItemsMap.cs" />
+    <Compile Include="Model\SysEnumItemsDAL.cs" />
+    <Compile Include="IDAL\ISysEnumItemsDAL.cs" />
+    <Compile Include="Mapping\SysEnumMainMap.cs" />
+    <Compile Include="Model\SysEnumMainDAL.cs" />
+    <Compile Include="IDAL\ISysEnumMainDAL.cs" />
+    <Compile Include="Mapping\SysTableNOSettingMap.cs" />
+    <Compile Include="Model\SysTableNOSettingDAL.cs" />
+    <Compile Include="IDAL\ISysTableNOSettingDAL.cs" />
+    <Compile Include="Mapping\SysMenuItemMap.cs" />
+    <Compile Include="Model\SysMenuItemDAL.cs" />
+    <Compile Include="IDAL\ISysMenuItemDAL.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\BFM.Common.DataBaseAsset\BFM.Common.DataBaseAsset.csproj">
+      <Project>{B2AC3987-C931-4015-A46E-16B8786856F0}</Project>
+      <Name>BFM.Common.DataBaseAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.ContractModel\BFM.ContractModel.csproj">
+      <Project>{D65E3C3E-0F32-426B-A60C-42485AD5110E}</Project>
+      <Name>BFM.ContractModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

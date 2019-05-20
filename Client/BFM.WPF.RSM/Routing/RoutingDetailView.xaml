@@ -1,0 +1,193 @@
+﻿<Page x:Class="BFM.WPF.RSM.Routing.RoutingDetailView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+      xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  
+      xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"  
+      xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"  
+      xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+      xmlns:local="clr-namespace:BFM.WPF.RSM.Routing"
+      xmlns:controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+      mc:Ignorable="d" Background="White"
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="工序信息维护" FontSize="14">
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2">
+            <controls:ImageButtonWithIcon Content="添加工序" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico"  Width="120" Height="40" Click="BarItemShop_OnItemClick" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="保存"  DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/21.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/21.ico"  Width="120" Height="40" Click="BarItem_OnItemClick" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="工艺导出"  DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/23.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/23.ico"  Width="120" Height="40" Click="BarItem_OnItemClick" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+        </DockPanel>
+
+        <dxg:TreeListControl x:Name="treeList" Grid.Row="1" EnableSmartColumnsGeneration="True" SelectedItemChanged="treeList_SelectedItemChanged" >
+            <dxg:TreeListControl.ContextMenu>
+                <ContextMenu>
+                    <!--<MenuItem Header="新增" Click="MenuAdd_Click"/>
+                    <MenuItem Header="删除 " Click="MenuDelete_Click"/>-->
+                </ContextMenu>
+            </dxg:TreeListControl.ContextMenu>
+
+            <dxg:TreeListControl.View>
+                <dxg:TreeListView AutoExpandAllNodes="True"  AutoWidth="True" AllowEditing="False" NavigationStyle="Row"/>
+            </dxg:TreeListControl.View>
+            <dxg:TreeListColumn  Header="工艺" FieldName="NAME" />
+        </dxg:TreeListControl>
+
+
+        <dxlc:LayoutGroup x:Name="gbItemContent" Grid.Row="1" Grid.Column="1" Header="工序详细信息"  View="GroupBox" 
+                          ItemLabelsAlignment="Local" IsCollapsible="True" Orientation="Vertical" Visibility="Visible" >
+            <TabControl Margin="0">
+                <TabItem Header="工序基础信息" Margin="0">
+                    <Grid Margin="0">
+                        <dxlc:LayoutControl Orientation="Vertical" >
+                            <dxlc:LayoutGroup Margin="0,30,0,0" >
+                                <dxlc:LayoutItem Label="工序号" >
+                                    <TextBox Text="{Binding OP_NO}"  Margin="10,0,10,0"/>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="工序名称" >
+                                    <TextBox Text="{Binding OP_NAME}" Margin="10,0,10,0" />
+                                </dxlc:LayoutItem>
+                            </dxlc:LayoutGroup>
+                            <dxlc:LayoutGroup  Margin="0,50,0,0">
+                                <dxlc:LayoutItem Label="工序说明" >
+                                    <TextBox Text="{Binding OP_NOTE}" Margin="10,0,10,0" />
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="工装选择" >
+                                    <controls:BasicItemCombox Text="{Binding JOB_KIND}" EnumIdentify="工装维护.车床工装" Margin="10,0,10,0" />
+                                </dxlc:LayoutItem>
+                                
+                            </dxlc:LayoutGroup>
+                            <dxlc:LayoutGroup  Margin="0,50,0,0">
+                                <dxlc:LayoutItem Label="首末标识" >
+                                    <ComboBox SelectedValue="{Binding FIRST_LAST}" SelectedValuePath="Tag" Margin="10,0,10,0" >
+                                        <ComboBoxItem Content="非首尾" Tag="0" />
+                                        <ComboBoxItem Content="首" Tag="1" />
+                                        <ComboBoxItem Content="尾" Tag="2" />
+                                    </ComboBox>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="工序顺序" >
+                                    <TextBox Text="{Binding OP_INDEX}" Margin="10,0,10,0" />
+                                </dxlc:LayoutItem>
+                            </dxlc:LayoutGroup>
+                            <dxlc:LayoutGroup  Margin="0,50,0,0">
+                                <!--<dxlc:LayoutItem Label="设备组" >
+                                    <ComboBox x:Name="cmbDeviceInfo"  SelectedValue="{Binding WC_CODE}" SelectedValuePath="PKNO" DisplayMemberPath="ASSET_NAME" Margin="10,0,10,0" />
+                                </dxlc:LayoutItem>-->
+                                <dxlc:LayoutItem Label="设备组" >
+                                    <controls:BasicItemCombox Text="{Binding WC_CODE}" Name="cmbClass"  EnumIdentify="设备管理.设备分组" Margin="10,0,10,0"/>
+                                    <!--<ComboBox x:Name="cmbDeviceInfo"  SelectedValue="{Binding WC_CODE}" SelectedValuePath="PKNO" DisplayMemberPath="ASSET_GROUP" Margin="10,0,10,0" />-->
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="NC程序号" >
+                                    <ComboBox x:Name="cmbNCNo"  SelectedValue="{Binding NC_PRO_NAME}" Margin="10,0,10,0" />
+                                  
+                                </dxlc:LayoutItem>
+                            </dxlc:LayoutGroup>
+                            <!--<dxlc:LayoutGroup  Margin="0,50,0,0">
+                                <dxlc:LayoutItem Label="应用NC程序" >
+                                    <TextBox Text="{Binding NC_PRO_NAME}" Margin="10,0,10,0" />
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="应用刀具" >
+                                    <TextBox Text="{Binding CUTLER_EQUIP_XY}" Margin="10,0,10,0" />
+                                </dxlc:LayoutItem>
+                            </dxlc:LayoutGroup>-->
+                        </dxlc:LayoutControl >
+                    </Grid>
+                </TabItem>
+
+                <!--<TabItem Header="NC程序信息" Margin="0">
+                    <Grid Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <dxlc:LayoutControl Orientation="Vertical" >
+                            <dxlc:LayoutGroup  >
+                                <dxlc:LayoutItem Label="打开程序" >
+                                    <Grid >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition Width="40" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBox Name="tbNCPath" Margin="5,0" IsReadOnly="True"/>
+                                        <Button Grid.Column="1" Content="..." Margin="5,0" Click="btnOpenNC_OnClick"/>
+                                    </Grid>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="程序名称" >
+                                    <TextBox Text="{Binding NC_PRO_NAME}"  Margin="10,0,10,0"/>
+                                </dxlc:LayoutItem>
+                            </dxlc:LayoutGroup>
+                        </dxlc:LayoutControl >
+                        <TextBox Grid.Row="1" Text="{Binding NC_PRO_INFO}" Margin="10,0,10,0" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+                    </Grid>
+                </TabItem>-->
+                <TabItem Header="刀具需求表">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <DockPanel Grid.Row="0">
+                            <controls:ImageButtonWithIcon Content="新增" IsEnabled="{Binding IsEnabled, ElementName=gridTools}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico"  Width="100" Height="40" Click="BtnAdd_Click" Margin="0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+                            <controls:ImageButtonWithIcon Content="修改" IsEnabled="{Binding IsEnabled, ElementName=gridTools}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico"  Width="100" Height="40" Click="BtnMod_Click" Margin="10,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+                            <controls:ImageButtonWithIcon Content="删除" IsEnabled="{Binding IsEnabled, ElementName=gridTools}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/24.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/24.ico"  Width="100" Height="40" Click="BtnDel_Click" Margin="10,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+                            <controls:ImageButtonWithIcon Content="保存" DockPanel.Dock="Left" Icon="/BFM.WPF.EAM;component/Images/21.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/21.ico"  Width="100" Height="40" Click="BtnSave_Click" Margin="10,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+                            <controls:ImageButtonWithIcon Content="取消" DockPanel.Dock="Left" Icon="/BFM.WPF.EAM;component/Images/23.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/23.ico"  Width="100" Height="40" Click="BtnCancel_Click" Margin="10,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+                        </DockPanel>
+
+                        <dxlc:LayoutControl Grid.Row="1" x:Name="gbItem" Margin="0" Padding="0" IsCollapsed="True" Orientation="Vertical" >
+                            <dxlc:LayoutGroup x:Name="dictToolsInfo" Header="工序刀具需求详细" Visibility="Collapsed" View="GroupBox" ItemLabelsAlignment="Local"
+                                              IsCollapsible="False" Background="White" Orientation="Vertical">
+                                <dxlc:LayoutGroup Margin="0,5,0,0">
+                                    <dxlc:LayoutItem Label="NC程序刀号" >
+                                        <TextBox Text="{Binding TOOLS_NC_CODE, Mode=TwoWay}" Margin="5,0,5,0"/>
+                                    </dxlc:LayoutItem>
+                                    <dxlc:LayoutItem Label="刀具类型">
+                                        <ComboBox Name="cmbToolsType" SelectedValue="{Binding TOOLS_TYPE_PKNO}" 
+                                            DisplayMemberPath="TOOLS_TYPE_NAME"  SelectedValuePath="PKNO" Margin="5,0,5,0" />
+                                    </dxlc:LayoutItem>
+                                </dxlc:LayoutGroup>
+                                <dxlc:LayoutGroup Margin="0,5,0,0" Height="60">
+                                    <dxlc:LayoutItem Label="说明" Height="60"  VerticalAlignment="Stretch" >
+                                        <TextBox Text="{Binding INTROD}" Margin="5,0,5,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                                    </dxlc:LayoutItem>
+                                </dxlc:LayoutGroup>
+                                <dxlc:LayoutGroup Margin="0,5,0,0" Height="60">
+                                    <dxlc:LayoutItem Label="备注" Height="60"  VerticalAlignment="Stretch" >
+                                        <TextBox Text="{Binding REMARK}" Margin="5,0,5,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                                    </dxlc:LayoutItem>
+                                </dxlc:LayoutGroup>
+                            </dxlc:LayoutGroup>
+                        </dxlc:LayoutControl>
+
+                        <dxg:GridControl Grid.Row="2" x:Name="gridTools" SelectionMode="Row" FontSize="14" MouseDoubleClick="gridItem_MouseDoubleClick" >
+                            <dxg:GridControl.View>
+                                <dxg:TableView ShowGroupPanel="False" AllowEditing="False" NavigationStyle="Row"/>
+                            </dxg:GridControl.View>
+                            <dxg:GridColumn FieldName="TOOLS_NC_CODE" Header="NC程序刀号" Width="120"/>
+                            <dxg:GridColumn Binding="{Binding TOOLS_TYPE_PKNO, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='TMS_TOOLS_TYPE;PKNO;TOOLS_TYPE_NAME'}" Header="刀具类型" Width="120"/>
+                            <dxg:GridColumn FieldName="INTROD" Header="说明" Width="200"/>
+                            <dxg:GridColumn FieldName="REMARK" Header="备注" Width="200"/>
+                        </dxg:GridControl>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </dxlc:LayoutGroup>
+
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,63 @@
+﻿<Window xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+    xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+    xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion"
+    x:Class="BFM.WPF.MainUI.MainUI"
+    Title="" Height="600" Width="800" 
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
+    >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="83"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/background.png"/>
+        </Grid.Background>
+        <DockPanel x:Name="RootFrame" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <!--<DockPanel.Background>
+                <ImageBrush ImageSource="Images/background.png"/>
+            </DockPanel.Background>-->
+            <Grid  DockPanel.Dock="Top" Height="83" >
+                <!--<Grid.Background>
+                    <ImageBrush ImageSource="Images/header.png"/>
+                </Grid.Background>-->
+                <StackPanel Margin="0,0,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Image Source="Images/logo.png" VerticalAlignment="Bottom" Stretch="Uniform"/>
+                    <TextBlock Text="BFM-MES制造执行系统 v2.0" Foreground="#FFA2A9B1" FontSize="30" VerticalAlignment="Center" FontWeight="Bold"/>
+                </StackPanel>
+            </Grid>
+        </DockPanel>
+        
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" VerticalAlignment="Top" >
+            <dxb:BarContainerControl x:Name="barContainerControl" ContainerType="Top">
+                <!--<dxb:ToolBarControl x:Name="MainMeun" Caption="MainMeun" RotateWhenVertical="True">
+                </dxb:ToolBarControl>-->
+                <dxb:MainMenuControl x:Name="mainMenuControl" Caption="Main Menu" FontSize="13"  Margin="0">
+                </dxb:MainMenuControl>
+            </dxb:BarContainerControl>
+        </StackPanel>
+
+        <dxn:NavBarControl x:Name="navBarControl" Grid.Row="3" Grid.Column="0" FontSize="13" Margin="0 2 0 0" Width="200">
+            <dxn:NavBarControl.View >
+                <dxn:SideBarView ItemsPanelOrientation="Vertical" Orientation="Vertical"/>
+            </dxn:NavBarControl.View>
+            <dxn:NavBarGroup x:Name="navBarGroup1" Header="主菜单">
+            </dxn:NavBarGroup>
+        </dxn:NavBarControl>
+
+        <dx:DXTabControl x:Name="dxTabControl" Grid.Row="3" Grid.Column="1" TabHidden="dxTabControl_TabHidden" FontSize="12" />
+    </Grid>
+</Window>

@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F712DD6-1B1A-4C44-A3DC-887804AA3EDD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFM.WPF.SDM</RootNamespace>
+    <AssemblyName>BFM.WPF.SDM</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Accordion.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Charts.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.CodeView.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Core.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Printing.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Scheduler.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calendar\AppointMentEdit.xaml.cs">
+      <DependentUpon>AppointMentEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\WorkCalendarView.xaml.cs">
+      <DependentUpon>WorkCalendarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Department\DepartmentView.xaml.cs">
+      <DependentUpon>DepartmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Department\UserView.xaml.cs">
+      <DependentUpon>UserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DM\DocumentManageInvoke.cs" />
+    <Compile Include="DM\DocumentManageView.xaml.cs">
+      <DependentUpon>DocumentManageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnumMang\EnumMainEdit.xaml.cs">
+      <DependentUpon>EnumMainEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EnumMang\EnumView.xaml.cs">
+      <DependentUpon>EnumView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuItem\MenuItemView.xaml.cs">
+      <DependentUpon>MenuItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Purview\PurviewEdit.xaml.cs">
+      <DependentUpon>PurviewEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Purview\PurviewMenuView.xaml.cs">
+      <DependentUpon>PurviewMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Purview\PurviewView.xaml.cs">
+      <DependentUpon>PurviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TableNO\TableNOHelper.cs" />
+    <Compile Include="TableNO\TableNOSetting.xaml.cs">
+      <DependentUpon>TableNOSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VersionInfo.cs" />
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsBom.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsEquipMaster.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsFactory.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsItemMaster.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsLine.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsLineProduct.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsLineStation.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingCheck.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingDetail.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingEquip.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingHead.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingItem.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingParam.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingTools.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsWorkCenter.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsWorkSchedule.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsWorkShop.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.StruCompanyInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.StruDepartInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.StruPersonInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysAlterInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysAttachInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysDataBaseInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysEnumItems.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysEnumMain.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysFuncInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysLog.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysMenuItem.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysMenuPurview.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysPrintTemplate.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysPurview.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysRole.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysRoleInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysRolePurview.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysRoleRight.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysRoleUser.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysSystemInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysSystemParms.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysTableNO.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysTableNOSetting.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysUser.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysUserInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysUserMenu.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysUserPurview.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysUserRight.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysUserRole.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\BFM.Common.Base\BFM.Common.Base.csproj">
+      <Project>{31B1498B-91FB-43B4-B4E7-EE3911072D93}</Project>
+      <Name>BFM.Common.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.ContractModel\BFM.ContractModel.csproj">
+      <Project>{D65E3C3E-0F32-426B-A60C-42485AD5110E}</Project>
+      <Name>BFM.ContractModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.Server.DataAsset\BFM.Server.DataAsset.csproj">
+      <Project>{533CD39A-C244-47C7-A11A-0AA70BF3D551}</Project>
+      <Name>BFM.Server.DataAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.Base\BFM.WPF.Base.csproj">
+      <Project>{83ebfe28-d316-4272-81fc-fbb0033daf93}</Project>
+      <Name>BFM.WPF.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NotifyIconWpf\NotifyIconWpf.csproj">
+      <Project>{878673e3-59b0-4ff1-96f9-6388f5fad515}</Project>
+      <Name>NotifyIconWpf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="树形结构.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Calendar\AppointMentEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Calendar\WorkCalendarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Department\DepartmentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Department\UserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DM\DocumentManageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EnumMang\EnumMainEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EnumMang\EnumView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuItem\MenuItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Purview\PurviewEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Purview\PurviewMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Purview\PurviewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TableNO\TableNOSetting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DM\Icons\Bulb.ico" />
+    <Resource Include="DM\Icons\Computers.ico" />
+    <Resource Include="DM\Icons\Error.ico" />
+    <Resource Include="DM\Icons\Inactive.ico" />
+    <Resource Include="DM\Icons\NetDrives.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DM\Download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DM\logviewer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DM\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\21.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\23.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\26.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\6.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cc.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

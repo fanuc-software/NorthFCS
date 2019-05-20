@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HD.OPC.Client.Core.OpcServer" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAQAAAAAAAAAAABAAAEAAIAEAQAqABAAAAAABABASAA=</HashCode>
+      <FileName>OpcServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HD.OPC.Client.Core.OpcGroup" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAIABGAQwMFQSgiAQCAIgAQAADDAABAgAAACIAAhQAA=</HashCode>
+      <FileName>OpcGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HD.OPC.Client.Core.ConnectionPoint" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACAEAACAAAAAAAAAAACAAAAAAAAAAAAAQAI=</HashCode>
+      <FileName>ConnectionPoint.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HD.OPC.Client.Core.OpcCallback" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MABAACAAAAAABAAAACAEAEAACAQAIAAAAAAAACAhAAA=</HashCode>
+      <FileName>OpcCallback.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HD.OPC.Client.Core.ItemIdentifier">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAMBAAQAIAAAAQIQAAAAAAAAAAAAAAAAAAAAAAAAFA=</HashCode>
+      <FileName>OpcItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HD.OPC.Client.Core.ItemValue" Collapsed="true">
+    <Position X="5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIQBAAAAABAAAACAAAAAAQAAAAEAAAgQAAAABI=</HashCode>
+      <FileName>OpcItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HD.OPC.Client.Core.OpcItem" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAACAGAAAggEAICABIQAAABAAABAgKAAEBAgIAAA=</HashCode>
+      <FileName>OpcItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HD.OPC.Client.Core.ItemResult" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAIAAAAAAAAAEEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OpcItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HD.OPC.Client.Core.ItemValueResult" Collapsed="true">
+    <Position X="5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAIAAAAAAAAAEEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OpcItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HD.OPC.Client.Core.IdentifiedResult" Collapsed="true">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAIAAAAAAAAAEEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OpcItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HD.OPC.Client.Core.ServerStatus" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ABAAACAAwAAAAAgAAAAAAAAAYABBAAAAAABAgAEAMBA=</HashCode>
+      <FileName>ServerStatus.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="HD.OPC.Client.Core.GroupState" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAIABAAQAIEAAgAAQCAAAAQAACBAABAgAAAAAAAAABA=</HashCode>
+      <FileName>GroupState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="HD.OPC.Client.Core.IResult" Collapsed="true">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OpcItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,418 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+                    xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys"
+                    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                    xmlns:converter="clr-namespace:BFM.WPF.Base.Converter">
+    
+    <Style TargetType="{x:Type dxg:GridControl}">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    <SolidColorBrush x:Key="myBrush" Color="#e6f0f9"/>
+    <Style TargetType="dxg:TableView">
+        <Setter Property="RowMinHeight" Value="40"/>
+        <Setter Property="AllowEditing" Value="True"/>
+        <Setter Property="NavigationStyle" Value="Row"/>
+        <Setter Property="AutoWidth" Value="True"/>
+        <Setter Property="IndicatorWidth" Value="30"/>
+        <Setter Property="VerticalScrollbarVisibility" Value="Auto"/>
+        <Setter Property="ShowFocusedRectangle" Value="True"/>
+        <!--<Setter Property="AlternateRowBackground" Value="#262933"/>-->
+        <Setter Property="CellStyle">
+            <Setter.Value>
+                <!--单元格右边边框-->
+                <Style BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle,IsThemeIndependent=True}}" TargetType="{x:Type dxg:LightweightCellEditor}">
+                    <Setter Property="BorderBrush" Value="#b4b9c2"/>
+                    <Setter Property="Width" Value="1"/>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="AutoFilterRowCellStyle">
+            <Setter.Value>
+                <Style TargetType="dxg:FilterCellContentPresenter">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="BorderBrush" Value="#b4b9c2"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Foreground" Value="#737a81"/>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FocusedRowBorderTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border BorderBrush="#5589f3" BorderThickness="1"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="RowIndicatorContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Border x:Name="errorIndicatorBorder"
+                    Background="Transparent" BorderBrush="#b4b9c2" BorderThickness="0"
+                    dxg:ToolTipHelper.ShowTooltip="{Binding Path=(dxe:BaseEdit.HasValidationError)}"
+                    dxg:ToolTipHelper.Content="{Binding Path=(dxe:BaseEdit.ValidationError)}"
+                    dxg:ToolTipHelper.ContentTemplate="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=RowToolTipTemplate}}">
+                        <ContentPresenter x:Name="iconPresenter" Content="{Binding}">
+                            <ContentPresenter.ContentTemplate>
+                                <DataTemplate>
+                                    <Grid />
+                                </DataTemplate>
+                            </ContentPresenter.ContentTemplate>
+                        </ContentPresenter>
+                    </Border>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="Focused">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=FocusedIconTemplate}}" TargetName="iconPresenter" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="Changed">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=ChangedIconTemplate}}" TargetName="iconPresenter" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="NewItemRow">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=NewItemRowIconTemplate}}" TargetName="iconPresenter" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="Editing">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=EditingIconTemplate}}" TargetName="iconPresenter" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="Error">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=ErrorIconTemplate}}" TargetName="iconPresenter" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="FocusedError">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=FocusedErrorIconTemplate}}" TargetName="iconPresenter" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="AutoFilterRow">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=AutoFilterRowIconTemplate}}" TargetName="iconPresenter" />
+                            <Setter Property="Background" Value="{StaticResource myBrush}" TargetName="errorIndicatorBorder" />
+                            <!--<Setter Property="BorderBrush" Value="#444d58" TargetName="errorIndicatorBorder"/>
+                            <Setter Property="BorderThickness" Value="0,0,1,1" TargetName="errorIndicatorBorder"/>-->
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        
+        <!--<dxg:TableView.FocusedRowBorderTemplate>
+            <ControlTemplate>
+                <Border BorderBrush="Yellow" BorderThickness="2"/>
+            </ControlTemplate>
+        </dxg:TableView.FocusedRowBorderTemplate>-->
+    </Style>
+
+    <ControlTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=FilterRowTemplate,IsThemeIndependent=True}" TargetType="{x:Type ContentControl}" >
+        <Border BorderBrush="#e6f0f9" BorderThickness="0,0,0,1">
+            <Grid >
+                <Border x:Name="borderFocused" Background="#e6f0f9" SnapsToDevicePixels="True">
+                    <Border.Visibility>
+                        <Binding Path="SelectionState">
+                            <Binding.Converter>
+                                <dxg:SelectionStateToVisibilityConverter Value="Focused" />
+                            </Binding.Converter>
+                        </Binding>
+                    </Border.Visibility>
+                </Border>
+                <ContentControl HorizontalContentAlignment="Stretch">
+                    <ContentPresenter />
+                </ContentControl>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=SelectionState}" Value="Focused">
+                <Setter Property="Foreground" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=TextFocusedBrush}}" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--自动过滤行indicator样式-->
+    <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=AutoFilterRowIconTemplate,IsThemeIndependent=True}">
+        <!--<Path Stretch="Fill" Fill="#050D1A" Data="F1 M -9.93411e-009,0L 3,3L 3,7L 4,7L 4,3L 7,4.76837e-007L -9.93411e-009,0 Z " Margin="0,1,0,0" Width="7" Height="7" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
+        <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/BFM.WPF.Base;component/Resources/filterIcon.png" Width="12" Height="15"/>
+    </DataTemplate>
+
+    <Style x:Key="RowIndicatorStyleBase" TargetType="dxg:RowIndicator">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="AutoFilterRowContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=AutoFilterRowIconTemplate}}" />
+    </Style>
+    <ControlTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=FitColumnContentTemplate,IsThemeIndependent=True}">
+        <Border Name="fitColumnVerticalLine" Background="White" BorderThickness="0,0,0,0" BorderBrush="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" >
+            <Border.Opacity>
+                <Binding Path="View.ShowVerticalLines">
+                    <Binding.Converter>
+                        <dx:BoolToObjectConverter FalseValue="0" TrueValue="1" />
+                    </Binding.Converter>
+                </Binding>
+            </Border.Opacity>
+        </Border>
+    </ControlTemplate>
+    <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=RowTemplate,IsThemeIndependent=True}">
+        <Border BorderThickness="0,0,1,1" BorderBrush="#b4b9c2">
+            <ContentPresenter Content="{Binding DataContext, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{Binding Path=View.RowIndicatorContentTemplate}" />
+        </Border>
+    </DataTemplate>
+    <!--表头样式-->
+    <Style TargetType="dxg:GridColumnHeader">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="Black"/>
+        <!--<Setter Property="Background" Value="#2A3139"/>-->
+        <Setter Property="Height" Value="40"></Setter>
+    </Style>
+    
+    <Style TargetType="{x:Type dxg:BackgroundBorderControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxg:BackgroundBorderControl}">
+                    <Border Background="#e6f0f9" BorderBrush="#b4b9c2" BorderThickness="0,1,0,1" Margin="0,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--表头文本居中-->
+    <Style TargetType="{x:Type dxg:GridColumn}">
+        <Setter Property="HorizontalHeaderContentAlignment" Value="Center"/>
+        <!--<Setter Property="CellTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Margin="0"  HorizontalAlignment="Center" VerticalAlignment="Center"  Text="{Binding Path=Value}">
+                    </TextBlock>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>-->
+        <!--选择框-->
+        <!--CheckEdit样式-->
+        <Style.Triggers>
+            <Trigger Property="FieldName" Value="DX$CheckboxSelectorColumn">
+                <Setter Property="CellTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <dxe:CheckEdit Name="PART_Editor">
+                                <dxe:CheckEdit.Style>
+                                    <Style TargetType="{x:Type dxe:CheckEdit}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type dxe:CheckEdit}">
+                                                    <Grid Height="14" Width="14">
+                                                        <Grid.Background>
+                                                            <ImageBrush ImageSource="/BFM.WPF.Base;component/Resources/unchecked.png"/>
+                                                        </Grid.Background>
+                                                        <Image x:Name="PART_Editor" Source="/BFM.WPF.Base;component/Resources/checked.png" Visibility="Collapsed"/>
+                                                    </Grid>
+
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsChecked" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible" TargetName="PART_Editor"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </dxe:CheckEdit.Style>
+                            </dxe:CheckEdit>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <!--表格外边框-->
+    <ControlTemplate x:Key="{dxgt:GridControlThemeKey ResourceKey=BorderTemplate,IsThemeIndependent=True}" TargetType="{x:Type ContentControl}">
+        <Border Background="White" BorderBrush="#b4b9c2" CornerRadius="0">
+            <Border.BorderThickness>
+                <Binding Path="(dxg:GridBorderHelper.ShowBorder)" RelativeSource="{RelativeSource TemplatedParent}">
+                    <Binding.Converter>
+                        <dx:BoolToObjectConverter FalseValue="0" TrueValue="2" />
+                    </Binding.Converter>
+                </Binding>
+            </Border.BorderThickness>
+            <ContentPresenter />
+        </Border>
+    </ControlTemplate>
+    
+    <!--表头背景色-->
+    <ControlTemplate x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=ControlTemplate, IsThemeIndependent=True}" TargetType="{x:Type dxg:GridColumnHeaderBase}">
+        <dxg:ColumnHeaderDockPanel x:Name="PART_LayoutPanel" TextElement.Foreground="Black"
+                                   ContentMargin="{StaticResource {dxgt:GridColumnHeaderThemeKey ResourceKey=ContentMargin}}">
+            <Border x:Name="PART_Border" Background="#e6f0f9" BorderBrush="#b4b9c2" BorderThickness="0,1,1,1"/>
+        </dxg:ColumnHeaderDockPanel>
+    </ControlTemplate>
+
+ <!--行样式-->
+    <Style TargetType="dxg:RowControl">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="#3e3e3e"/>
+        <Setter Property="ShowVerticalLines" Value="True"/>
+        <Setter Property="ShowHorizontalLine" Value="True"/>
+        <Setter Property="BorderBrush" Value="#b4b9c2"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <!--<Condition Property="IsMouseOver" Value="True" />-->
+                    <Condition Property="IsFocused" Value="True" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="SelectionState" Value="Focused" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+            <!--<Trigger Property="SelectionState" Value="Selected">
+                <Setter Property="Foreground" Value="Black" />
+            </Trigger>
+ 
+            <Trigger Property="SelectionState" Value="FocusedAndSelected">
+                <Setter Property="Foreground" Value="Black" />
+            </Trigger>-->
+            <Trigger Property="SelectionState" Value="Focused">
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="/BFM.WPF.Base;component/Resources/gridSelected.png"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--行头背景 设为透明后显示的是row的背景颜色-->
+    <ControlTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=RowIndicatorTemplate,IsThemeIndependent=True}" TargetType="{x:Type dxg:RowIndicator}">
+        <Grid>
+            <Border x:Name="PART_ContentBorder" Background="#e6f0f9" BorderBrush="#b4b9c2" BorderThickness="0,0,1,1" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxgt:TableViewThemeKey ResourceKey=DataPresenterTemplate,IsThemeIndependent=True}" TargetType="{x:Type dxg:DataPresenter}">
+        <Border Background="White">
+            <ContentPresenter />
+        </Border>
+    </ControlTemplate>
+    <!--查找面板-->
+    <SolidColorBrush x:Key="{dxgt:TableViewThemeKey ResourceKey=SearchPanelBackground,IsThemeIndependent=True}" Color="Transparent" />
+    <SolidColorBrush x:Key="{dxgt:TableViewThemeKey ResourceKey=SearchPanelBorderBottomBrush,IsThemeIndependent=True}" Color="White" />
+   
+    <!--统计行-->
+    <ControlTemplate x:Key="{dxgt:TotalSummaryThemeKey ResourceKey=FootersContentTemplate,IsThemeIndependent=True}" TargetType="{x:Type ContentControl}">
+        <Grid>
+            <Border BorderBrush="#b4b9c2" Background="#e6f0f9">
+                <Border.BorderThickness>
+                    <Binding Path="View.IsRootView">
+                        <Binding.Converter>
+                            <dx:BoolToObjectConverter TrueValue="0,1,0,0" FalseValue="0,0,0,1" />
+                        </Binding.Converter>
+                    </Binding>
+                </Border.BorderThickness>
+            </Border>
+
+            <ContentPresenter Margin="0,3,0,2" />
+        </Grid>
+    </ControlTemplate>
+
+    <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=FixedSummaryFillBrush,IsThemeIndependent=True}" Color="#444d58" />
+
+    <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=TotalSummaryBorderBrush,IsThemeIndependent=True}" Color="#e6f0f9" />
+    <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=TotalSummaryBrush,IsThemeIndependent=True}" Color="#444d58" />
+
+
+
+    <!--搜索框-->
+    <!--<dxn:RenderTemplate x:Key="TextEditBorderTemplate">
+        <dxn:RenderPanel Name="PART_Root">
+            <dxn:RenderPanel Name="PART_Border">
+                <dxn:RenderBorder Background="Transparent" BorderBrush="#3D464F" BorderThickness="1" CornerRadius="3"/>
+            </dxn:RenderPanel>
+        </dxn:RenderPanel>
+    </dxn:RenderTemplate>
+
+    <ControlTemplate x:Key="{dxet:BaseEditThemeKey ResourceKey=TextEditBorderTemplate,IsThemeIndependent=True}" TargetType="ContentControl">
+        <Grid>
+            <dxn:Chrome RenderTemplate="{StaticResource TextEditBorderTemplate}" />
+            <ContentPresenter Margin="{StaticResource ResourceKey={dxet:InplaceBaseEditThemeKey ResourceKey=TextEditBorderThickness}}" />
+            <dxn:Chrome RenderTemplate="{StaticResource {dxet:InplaceBaseEditThemeKey ResourceKey=HoverBorderTemplate}}" 
+                                dxeh:ControlHelper.ShowFocusedState="{Binding Path=(dxeh:ControlHelper.ShowFocusedState), RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="False" />
+        </Grid>
+    </ControlTemplate>
+    
+    <Style x:Key="BaseTextStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Foreground" Value="#7B8289"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+    <Style x:Key="{dxet:TextEditThemeKey ResourceKey=TextStyle,IsThemeIndependent=true}" TargetType="{x:Type TextBox}" 
+           BasedOn="{StaticResource BaseTextStyle}">
+    </Style>-->
+
+
+    <!--RowIndicator-->
+    <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=FocusedIconTemplate,IsThemeIndependent=True}">
+        <!--<Path Stretch="Fill" Fill="#FF80838F" Data="F1 M 382,1021L 386,1025L 382,1029L 382,1021 Z" Margin="1,0,0,0" Width="4" Height="8" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
+        <Image Source="/BFM.WPF.Base;component/Resources/arrow.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="18" Height="18"/>
+    </DataTemplate>
+
+    <!--Band文本居中-->
+    <Style TargetType="{x:Type dxg:GridControlBand}">
+        <Setter Property="HorizontalHeaderContentAlignment" Value="Center"/>
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Border>
+                        <TextBlock Text="{Binding}" FontSize="16" Foreground="Black"/>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--Band边框及背景色-->
+    <ControlTemplate x:Key="Border" TargetType="{x:Type dxg:GridColumnHeaderBase}">
+        <dxg:ColumnHeaderDockPanel x:Name="PART_LayoutPanel" TextElement.Foreground="Black" ContentMargin="4,3,5,9" TextElement.FontSize="14">
+            <Border x:Name="PART_Border" BorderBrush="#b4b9c2" Background="#e6f0f9" BorderThickness="0,1,1,1" Margin="0,0,0,0" />
+        </dxg:ColumnHeaderDockPanel>
+    </ControlTemplate>
+    <Style TargetType="{x:Type dxg:BandHeaderControl}">
+        <Setter Property="Template" Value="{DynamicResource Border}" />
+        <Setter Property="DragElementTemplate" Value="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=DragElementTemplate}}" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    
+    <!--单元格缩略图-->
+    <converter:EqpImageConverter x:Key="eqpImageCvt"/>
+    <DataTemplate x:Key="eqpImageTemplate">
+        <Image x:Name="PART_Image" Height="35" Width="35"  Cursor="Hand" Source="{Binding Path=Value, Converter={StaticResource eqpImageCvt}}" HorizontalAlignment="Center">
+            <Image.ToolTip>
+                <ToolTip>
+                    <ToolTip.Template>
+                        <ControlTemplate TargetType="ToolTip">
+                            <Image Height="200" Width="200" Source="{Binding Path=Value}" />
+                        </ControlTemplate>
+                    </ToolTip.Template>
+                </ToolTip>
+            </Image.ToolTip>
+        </Image>
+    </DataTemplate>
+
+    <!--自动序号-->
+    <!--<DataTemplate x:Key="DataGridRowAutoIndex">
+        <DataTemplate.Resources>
+            <converter:DataGridRowConverter x:Key="DataGridRowConverter" />
+        </DataTemplate.Resources>
+        <TextBlock HorizontalAlignment="Center">
+            <TextBlock.Text>
+                <MultiBinding Converter="{StaticResource DataGridRowConverter}">
+                    <Binding />
+                    <Binding Path="ItemsSource" RelativeSource="{RelativeSource AncestorType={x:Type dxg:GridControl}}" />
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+    </DataTemplate>-->
+    <DataTemplate x:Key="RowIndicatorContentTemplate">
+        <DataTemplate.Resources>
+            <converter:DevDataGridRowConverter x:Key="DevDataGridRowConverter" />
+        </DataTemplate.Resources>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
+            <TextBlock Text="{Binding Path=RowHandle.Value, Converter={StaticResource DevDataGridRowConverter}}" TextAlignment="Center" />
+        </StackPanel>
+    </DataTemplate>
+
+
+</ResourceDictionary>

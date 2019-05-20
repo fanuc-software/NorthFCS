@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BFM.ContractModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfFmsAssetCommParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FmsAssetCommParam" nillable="true" type="tns:FmsAssetCommParam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFmsAssetCommParam" nillable="true" type="tns:ArrayOfFmsAssetCommParam" />
+  <xs:complexType name="FmsAssetCommParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSET_ATTRIBUTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMM_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="INTERFACE_TYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SAMPLING_COMPUTER_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SAMPLING_PERIOD" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TAG_ADDRESS_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FmsAssetCommParam" nillable="true" type="tns:FmsAssetCommParam" />
+  <xs:complexType name="ArrayOfFmsAssetTagSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FmsAssetTagSetting" nillable="true" type="tns:FmsAssetTagSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFmsAssetTagSetting" nillable="true" type="tns:ArrayOfFmsAssetTagSetting" />
+  <xs:complexType name="FmsAssetTagSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CUR_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RECORD_TYPE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SAMPLING_MODE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="STATE_MARK_TYPE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TAG_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TAG_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TAG_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TAG_VALUE_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VALUE_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VALUE_TYPE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VALUE_UNIT" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FmsAssetTagSetting" nillable="true" type="tns:FmsAssetTagSetting" />
+  <xs:complexType name="ArrayOfFmsStateResultRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FmsStateResultRecord" nillable="true" type="tns:FmsStateResultRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFmsStateResultRecord" nillable="true" type="tns:ArrayOfFmsStateResultRecord" />
+  <xs:complexType name="FmsStateResultRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BEGINT_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="END_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TAG_SETTING_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TAG_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TAG_VALUE_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FmsStateResultRecord" nillable="true" type="tns:FmsStateResultRecord" />
+  <xs:complexType name="ArrayOfFmsSamplingRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FmsSamplingRecord" nillable="true" type="tns:FmsSamplingRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFmsSamplingRecord" nillable="true" type="tns:ArrayOfFmsSamplingRecord" />
+  <xs:complexType name="FmsSamplingRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SAMPLING_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TAG_SETTING_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TAG_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TAG_VALUE_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FmsSamplingRecord" nillable="true" type="tns:FmsSamplingRecord" />
+  <xs:complexType name="ArrayOfFmsActionControl">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FmsActionControl" nillable="true" type="tns:FmsActionControl" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFmsActionControl" nillable="true" type="tns:ArrayOfFmsActionControl" />
+  <xs:complexType name="FmsActionControl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACTION_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ACTION_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXECUTE_PARAM1_TAG_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXECUTE_PARAM2_TAG_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXECUTE_TAG_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXECUTE_WRITE_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINISH_CONDITION_TAG_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINISH_CONDITION_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="START_CONDITION_TAG_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="START_CONDITION_VALUE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FmsActionControl" nillable="true" type="tns:FmsActionControl" />
+  <xs:complexType name="ArrayOfFmsTagCalculation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FmsTagCalculation" nillable="true" type="tns:FmsTagCalculation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFmsTagCalculation" nillable="true" type="tns:ArrayOfFmsTagCalculation" />
+  <xs:complexType name="FmsTagCalculation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CALCULATION_EXPRESSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CALCULATION_TYPE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESULT_TAG_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FmsTagCalculation" nillable="true" type="tns:FmsTagCalculation" />
+  <xs:complexType name="ArrayOfFmsActionFormulaMain">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FmsActionFormulaMain" nillable="true" type="tns:FmsActionFormulaMain" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFmsActionFormulaMain" nillable="true" type="tns:ArrayOfFmsActionFormulaMain" />
+  <xs:complexType name="FmsActionFormulaMain">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FORMULA_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FORMULA_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FORMULA_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FmsActionFormulaMain" nillable="true" type="tns:FmsActionFormulaMain" />
+  <xs:complexType name="ArrayOfFmsActionFormulaDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FmsActionFormulaDetail" nillable="true" type="tns:FmsActionFormulaDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFmsActionFormulaDetail" nillable="true" type="tns:ArrayOfFmsActionFormulaDetail" />
+  <xs:complexType name="FmsActionFormulaDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEGIN_ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BEGIN_POSITION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINISH_ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINISH_POSITION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FORMULA_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FORMULA_DETAIL_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PALLET_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_ACTION_PARAM1_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_ACTION_PARAM2_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_ACTION_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_ACTION_TYPE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PROCESS_DEVICE_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_INDEX" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PROCESS_PROGRAM_CONTENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_PROGRAM_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROUTING_DETAIL_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FmsActionFormulaDetail" nillable="true" type="tns:FmsActionFormulaDetail" />
+</xs:schema>

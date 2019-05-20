@@ -1,0 +1,116 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BFM.WPF.FMS"
+      xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" x:Class="BFM.WPF.FMS.Page1"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Page1">
+
+    <Grid Margin="0,0,-338,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="47"/>
+            <RowDefinition Height="253*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="button" Content="测试写" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Height="32"/>
+        <Button x:Name="button_Copy1" Content="测试读"  HorizontalAlignment="Left" Margin="90,10,0,0" VerticalAlignment="Top" Width="75" Click="button3_Click" Height="32" />
+        <Button x:Name="button_Copy" Content="一次" HorizontalAlignment="Left" Margin="170,10,0,0" VerticalAlignment="Top" Width="55" Click="button2_Click" Height="32"/>
+        <Grid Margin="0,47,0.2,0" Grid.RowSpan="2">
+
+            <dxg:GridControl x:Name="gridItem" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" 
+                                      SelectionMode="Row" FontSize="16">
+                <dxg:GridControl.View>
+                    <dxg:TableView ShowGroupPanel="False" AllowEditing="False" NavigationStyle="Row"/>
+                </dxg:GridControl.View>
+                <dxg:GridColumn FieldName="ASSET_CODE" Header="设备编号" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ASSET_NAME'}"
+                                Header="设备名称" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ASSET_LABEL'}"
+                                Header="资产编号" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ASSET_TYPE'}"
+                                Header="资产类型" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ASSET_CLASS'}"
+                                Header="资产小类" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ASSET_NORM'}"
+                                Header="规格" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ABC_TYPE'}"
+                                Header="ABC类" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;MANUCATURE_DATE'}"
+                                Header="制造日期" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;CREATION_DATE'}"
+                                Header="创建日期" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;USE_FLAG;基础信息;设备管理.台账状态;'}"
+                                Header="启用标识" Width="100"/>
+                <dxg:GridColumn FieldName="ASSET_ATTRIBUTE" Header="设备属性"/>
+                <dxg:GridColumn FieldName="INTERFACE_TYPE" Header="通讯接口类型" Width="80"/>
+                <dxg:GridColumn FieldName="SAMPLING_PERIOD" Header="采样周期(s)" Width="160"/>
+                <dxg:GridColumn FieldName="COMM_ADDRESS" Header="通讯地址" Width="*"/>
+                <dxg:GridColumn Binding="{Binding LAST_UPDATE_DATE, StringFormat='yyyy-MM-dd HH:mm:ss'}" Header="最后修改日期" Width="*"/>
+                <dxg:GridColumn FieldName="REMARK" Header="备注" Width="*"/>
+            </dxg:GridControl>
+            <dxg:GridControl x:Name="gridItem3" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" 
+                SelectionMode="Row" FontSize="16" Margin="0,155,0.3,0">
+                <dxg:GridControl.View>
+                    <dxg:TableView ShowGroupPanel="False" AllowEditing="False" NavigationStyle="Row"/>
+                </dxg:GridControl.View>
+                <dxg:GridColumn FieldName="ASSET_CODE" Header="设备编号" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ASSET_NAME'}"
+                                Header="设备名称" Width="100"/>
+                <dxg:GridColumn FieldName="TAG_NAME" Header="标签名称"/>
+                <dxg:GridColumn FieldName="TAG_VALUE" Header="当前值" Width="80"/>
+                <dxg:GridColumn FieldName="CREATION_DATE" Header="日期" Width="*"/>
+                <dxg:GridColumn FieldName="REMARK" Header="备注" Width="*"/>
+            </dxg:GridControl>
+        </Grid>
+        <Grid Margin="0,47,0.2,0" Grid.RowSpan="2" Grid.Column="2">
+
+            <dxg:GridControl x:Name="gridItem2" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" 
+                                      SelectionMode="Row" FontSize="16" Margin="0,0,0.3,0">
+                <dxg:GridControl.View>
+                    <dxg:TableView ShowGroupPanel="False" AllowEditing="False" NavigationStyle="Row"/>
+                </dxg:GridControl.View>
+                <dxg:GridColumn FieldName="ASSET_CODE" Header="设备编号" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ASSET_NAME'}"
+                                Header="设备名称" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=TAG_SETTING_PKNO, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='FMS_ASSET_TAG_SETTING;PKNO;ASSET_CODE;AM_ASSET_MASTER_N;ASSET_CODE;ASSET_NAME'}"
+                                Header="设备名称2" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ASSET_LABEL'}"
+                                Header="资产编号" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ASSET_TYPE'}"
+                                Header="资产类型" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ASSET_CLASS'}"
+                                Header="资产小类" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ASSET_NORM'}"
+                                Header="规格" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ABC_TYPE'}"
+                                Header="ABC类" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;MANUCATURE_DATE'}"
+                                Header="制造日期" Width="100"/>
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;CREATION_DATE'}"
+                                Header="创建日期" Width="100"/>
+                <dxg:GridColumn FieldName="TAG_SETTING_PKNO" Header="设备通讯标签编号"/>
+                <dxg:GridColumn FieldName="TAG_VALUE_NAME" Header="标签值名称" Width="80"/>
+                <dxg:GridColumn FieldName="TAG_VALUE" Header="标签值" Width="160"/>
+                <dxg:GridColumn FieldName="BEGINT_TIME" Header="开始时间" Width="*"/>
+                <dxg:GridColumn Binding="{Binding END_TIME, StringFormat='yyyy-MM-dd HH:mm:ss'}" Header="结束时间" Width="*"/>
+                <dxg:GridColumn FieldName="REMARK" Header="备注" Width="*"/>
+            </dxg:GridControl>
+
+        </Grid>
+        <Button x:Name="button_Copy2" Content="一次" HorizontalAlignment="Left" Margin="171.4,10,0,0" VerticalAlignment="Top" Width="48" Click="button4_Click" Height="32" Grid.Column="2"/>
+        <Button x:Name="button_Copy3" Content="测试写" HorizontalAlignment="Left" Margin="11.8,10,0,0" VerticalAlignment="Top" Width="75" Click="button22_Click" Height="32" Grid.Column="2"/>
+        <Button x:Name="button_Copy4" Content="测试读" HorizontalAlignment="Left" Margin="91.8,10,0,0" VerticalAlignment="Top" Width="75" Click="button32_Click" Height="32" Grid.Column="2"/>
+        <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Stretch" Grid.Column="1" Grid.RowSpan="2" VerticalContentAlignment="Stretch" />
+        <Button x:Name="button_Copy5" Content="Count" HorizontalAlignment="Left" Margin="224.4,10,0,0" VerticalAlignment="Top" Width="48" Click="button6_Click" Height="32" Grid.Column="2"/>
+        <Button x:Name="button_Copy6" Content="UpDate" HorizontalAlignment="Left" Margin="272.4,10,0,0" VerticalAlignment="Top" Width="43" Click="button7_Click" Height="32" Grid.Column="2"/>
+        <Button x:Name="button_Copy7" Content="测试写" HorizontalAlignment="Left" Margin="20,116,0,0" VerticalAlignment="Top" Width="75" Click="button8_Click" Height="32" Grid.Row="1"/>
+        <Button x:Name="button_Copy8" Content="测试读"  HorizontalAlignment="Left" Margin="100,116,0,0" VerticalAlignment="Top" Width="75" Click="button9_Click" Height="32" Grid.Row="1" />
+    </Grid>
+</Page>

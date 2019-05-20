@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://fanuc.com.cn/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fanuc.com.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fanuc.com.cn/Imports">
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/FMSService.svc?xsd=xsd0" namespace="http://fanuc.com.cn/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/FMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/FMSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/FMSService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFMSService_GetFmsAssetCommParamByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetCommParamByPage" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetCommParamByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetCommParamByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetCommParamCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetCommParamCount" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetCommParamCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetCommParamCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsAssetCommParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsAssetCommParam" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsAssetCommParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsAssetCommParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsAssetCommParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsAssetCommParam" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsAssetCommParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsAssetCommParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsAssetCommParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsAssetCommParams" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsAssetCommParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsAssetCommParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsAssetCommParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsAssetCommParam" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsAssetCommParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsAssetCommParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetCommParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetCommParams" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetCommParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetCommParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetCommParamById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetCommParamById" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetCommParamById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetCommParamByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetTagSettingByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetTagSettingByPage" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetTagSettingByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetTagSettingByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetTagSettingCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetTagSettingCount" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetTagSettingCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetTagSettingCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsAssetTagSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsAssetTagSetting" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsAssetTagSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsAssetTagSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsAssetTagSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsAssetTagSetting" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsAssetTagSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsAssetTagSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsAssetTagSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsAssetTagSettings" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsAssetTagSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsAssetTagSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsAssetTagSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsAssetTagSetting" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsAssetTagSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsAssetTagSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetTagSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetTagSettings" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetTagSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetTagSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetTagSettingById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetTagSettingById" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsAssetTagSettingById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsAssetTagSettingByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsStateResultRecordByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsStateResultRecordByPage" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsStateResultRecordByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsStateResultRecordByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsStateResultRecordCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsStateResultRecordCount" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsStateResultRecordCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsStateResultRecordCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsStateResultRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsStateResultRecord" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsStateResultRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsStateResultRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsStateResultRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsStateResultRecord" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsStateResultRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsStateResultRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsStateResultRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsStateResultRecords" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsStateResultRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsStateResultRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsStateResultRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsStateResultRecord" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsStateResultRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsStateResultRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsStateResultRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsStateResultRecords" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsStateResultRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsStateResultRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsStateResultRecordById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsStateResultRecordById" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsStateResultRecordById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsStateResultRecordByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsSamplingRecordByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsSamplingRecordByPage" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsSamplingRecordByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsSamplingRecordByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsSamplingRecordCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsSamplingRecordCount" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsSamplingRecordCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsSamplingRecordCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsSamplingRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsSamplingRecord" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsSamplingRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsSamplingRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsSamplingRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsSamplingRecord" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsSamplingRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsSamplingRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsSamplingRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsSamplingRecords" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsSamplingRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsSamplingRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsSamplingRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsSamplingRecord" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsSamplingRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsSamplingRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsSamplingRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsSamplingRecords" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsSamplingRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsSamplingRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsSamplingRecordById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsSamplingRecordById" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsSamplingRecordById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsSamplingRecordByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionControlByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionControlByPage" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionControlByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionControlByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionControlCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionControlCount" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionControlCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionControlCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsActionControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsActionControl" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsActionControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsActionControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsActionControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsActionControl" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsActionControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsActionControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsActionControls_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsActionControls" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsActionControls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsActionControlsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsActionControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsActionControl" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsActionControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsActionControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionControls_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionControls" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionControls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionControlsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionControlById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionControlById" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionControlById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionControlByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsTagCalculationByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsTagCalculationByPage" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsTagCalculationByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsTagCalculationByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsTagCalculationCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsTagCalculationCount" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsTagCalculationCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsTagCalculationCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsTagCalculation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsTagCalculation" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsTagCalculation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsTagCalculationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsTagCalculation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsTagCalculation" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsTagCalculation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsTagCalculationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsTagCalculations_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsTagCalculations" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsTagCalculations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsTagCalculationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsTagCalculation_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsTagCalculation" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsTagCalculation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsTagCalculationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsTagCalculations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsTagCalculations" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsTagCalculations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsTagCalculationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsTagCalculationById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsTagCalculationById" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsTagCalculationById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsTagCalculationByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaMainByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaMainByPage" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaMainByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaMainByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaMainCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaMainCount" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaMainCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaMainCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsActionFormulaMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsActionFormulaMain" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsActionFormulaMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsActionFormulaMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsActionFormulaMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsActionFormulaMain" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsActionFormulaMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsActionFormulaMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsActionFormulaMains_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsActionFormulaMains" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsActionFormulaMains_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsActionFormulaMainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsActionFormulaMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsActionFormulaMain" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsActionFormulaMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsActionFormulaMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaMains_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaMains" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaMains_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaMainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaMainById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaMainById" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaMainById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaMainByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaDetailByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaDetailByPage" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaDetailByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaDetailByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaDetailCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaDetailCount" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaDetailCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaDetailCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsActionFormulaDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsActionFormulaDetail" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_AddFmsActionFormulaDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFmsActionFormulaDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsActionFormulaDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsActionFormulaDetail" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_UpdateFmsActionFormulaDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFmsActionFormulaDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsActionFormulaDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsActionFormulaDetails" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsActionFormulaDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsActionFormulaDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsActionFormulaDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsActionFormulaDetail" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_DelFmsActionFormulaDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelFmsActionFormulaDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaDetails" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaDetailById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaDetailById" />
+  </wsdl:message>
+  <wsdl:message name="IFMSService_GetFmsActionFormulaDetailById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFmsActionFormulaDetailByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFMSService">
+    <wsdl:operation name="GetFmsAssetCommParamByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetCommParamByPage" message="tns:IFMSService_GetFmsAssetCommParamByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetCommParamByPageResponse" message="tns:IFMSService_GetFmsAssetCommParamByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetCommParamCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetCommParamCount" message="tns:IFMSService_GetFmsAssetCommParamCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetCommParamCountResponse" message="tns:IFMSService_GetFmsAssetCommParamCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsAssetCommParam">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsAssetCommParam" message="tns:IFMSService_AddFmsAssetCommParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsAssetCommParamResponse" message="tns:IFMSService_AddFmsAssetCommParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsAssetCommParam">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsAssetCommParam" message="tns:IFMSService_UpdateFmsAssetCommParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsAssetCommParamResponse" message="tns:IFMSService_UpdateFmsAssetCommParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsAssetCommParams">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsAssetCommParams" message="tns:IFMSService_DelFmsAssetCommParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsAssetCommParamsResponse" message="tns:IFMSService_DelFmsAssetCommParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsAssetCommParam">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsAssetCommParam" message="tns:IFMSService_DelFmsAssetCommParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsAssetCommParamResponse" message="tns:IFMSService_DelFmsAssetCommParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetCommParams">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetCommParams" message="tns:IFMSService_GetFmsAssetCommParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetCommParamsResponse" message="tns:IFMSService_GetFmsAssetCommParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetCommParamById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetCommParamById" message="tns:IFMSService_GetFmsAssetCommParamById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetCommParamByIdResponse" message="tns:IFMSService_GetFmsAssetCommParamById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetTagSettingByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetTagSettingByPage" message="tns:IFMSService_GetFmsAssetTagSettingByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetTagSettingByPageResponse" message="tns:IFMSService_GetFmsAssetTagSettingByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetTagSettingCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetTagSettingCount" message="tns:IFMSService_GetFmsAssetTagSettingCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetTagSettingCountResponse" message="tns:IFMSService_GetFmsAssetTagSettingCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsAssetTagSetting">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsAssetTagSetting" message="tns:IFMSService_AddFmsAssetTagSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsAssetTagSettingResponse" message="tns:IFMSService_AddFmsAssetTagSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsAssetTagSetting">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsAssetTagSetting" message="tns:IFMSService_UpdateFmsAssetTagSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsAssetTagSettingResponse" message="tns:IFMSService_UpdateFmsAssetTagSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsAssetTagSettings">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsAssetTagSettings" message="tns:IFMSService_DelFmsAssetTagSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsAssetTagSettingsResponse" message="tns:IFMSService_DelFmsAssetTagSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsAssetTagSetting">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsAssetTagSetting" message="tns:IFMSService_DelFmsAssetTagSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsAssetTagSettingResponse" message="tns:IFMSService_DelFmsAssetTagSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetTagSettings">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetTagSettings" message="tns:IFMSService_GetFmsAssetTagSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetTagSettingsResponse" message="tns:IFMSService_GetFmsAssetTagSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetTagSettingById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetTagSettingById" message="tns:IFMSService_GetFmsAssetTagSettingById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsAssetTagSettingByIdResponse" message="tns:IFMSService_GetFmsAssetTagSettingById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsStateResultRecordByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsStateResultRecordByPage" message="tns:IFMSService_GetFmsStateResultRecordByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsStateResultRecordByPageResponse" message="tns:IFMSService_GetFmsStateResultRecordByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsStateResultRecordCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsStateResultRecordCount" message="tns:IFMSService_GetFmsStateResultRecordCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsStateResultRecordCountResponse" message="tns:IFMSService_GetFmsStateResultRecordCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsStateResultRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsStateResultRecord" message="tns:IFMSService_AddFmsStateResultRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsStateResultRecordResponse" message="tns:IFMSService_AddFmsStateResultRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsStateResultRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsStateResultRecord" message="tns:IFMSService_UpdateFmsStateResultRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsStateResultRecordResponse" message="tns:IFMSService_UpdateFmsStateResultRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsStateResultRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsStateResultRecords" message="tns:IFMSService_DelFmsStateResultRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsStateResultRecordsResponse" message="tns:IFMSService_DelFmsStateResultRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsStateResultRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsStateResultRecord" message="tns:IFMSService_DelFmsStateResultRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsStateResultRecordResponse" message="tns:IFMSService_DelFmsStateResultRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsStateResultRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsStateResultRecords" message="tns:IFMSService_GetFmsStateResultRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsStateResultRecordsResponse" message="tns:IFMSService_GetFmsStateResultRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsStateResultRecordById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsStateResultRecordById" message="tns:IFMSService_GetFmsStateResultRecordById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsStateResultRecordByIdResponse" message="tns:IFMSService_GetFmsStateResultRecordById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsSamplingRecordByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsSamplingRecordByPage" message="tns:IFMSService_GetFmsSamplingRecordByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsSamplingRecordByPageResponse" message="tns:IFMSService_GetFmsSamplingRecordByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsSamplingRecordCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsSamplingRecordCount" message="tns:IFMSService_GetFmsSamplingRecordCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsSamplingRecordCountResponse" message="tns:IFMSService_GetFmsSamplingRecordCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsSamplingRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsSamplingRecord" message="tns:IFMSService_AddFmsSamplingRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsSamplingRecordResponse" message="tns:IFMSService_AddFmsSamplingRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsSamplingRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsSamplingRecord" message="tns:IFMSService_UpdateFmsSamplingRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsSamplingRecordResponse" message="tns:IFMSService_UpdateFmsSamplingRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsSamplingRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsSamplingRecords" message="tns:IFMSService_DelFmsSamplingRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsSamplingRecordsResponse" message="tns:IFMSService_DelFmsSamplingRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsSamplingRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsSamplingRecord" message="tns:IFMSService_DelFmsSamplingRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsSamplingRecordResponse" message="tns:IFMSService_DelFmsSamplingRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsSamplingRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsSamplingRecords" message="tns:IFMSService_GetFmsSamplingRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsSamplingRecordsResponse" message="tns:IFMSService_GetFmsSamplingRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsSamplingRecordById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsSamplingRecordById" message="tns:IFMSService_GetFmsSamplingRecordById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsSamplingRecordByIdResponse" message="tns:IFMSService_GetFmsSamplingRecordById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionControlByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionControlByPage" message="tns:IFMSService_GetFmsActionControlByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionControlByPageResponse" message="tns:IFMSService_GetFmsActionControlByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionControlCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionControlCount" message="tns:IFMSService_GetFmsActionControlCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionControlCountResponse" message="tns:IFMSService_GetFmsActionControlCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsActionControl">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsActionControl" message="tns:IFMSService_AddFmsActionControl_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsActionControlResponse" message="tns:IFMSService_AddFmsActionControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsActionControl">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsActionControl" message="tns:IFMSService_UpdateFmsActionControl_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsActionControlResponse" message="tns:IFMSService_UpdateFmsActionControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsActionControls">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsActionControls" message="tns:IFMSService_DelFmsActionControls_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsActionControlsResponse" message="tns:IFMSService_DelFmsActionControls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsActionControl">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsActionControl" message="tns:IFMSService_DelFmsActionControl_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsActionControlResponse" message="tns:IFMSService_DelFmsActionControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionControls">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionControls" message="tns:IFMSService_GetFmsActionControls_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionControlsResponse" message="tns:IFMSService_GetFmsActionControls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionControlById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionControlById" message="tns:IFMSService_GetFmsActionControlById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionControlByIdResponse" message="tns:IFMSService_GetFmsActionControlById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsTagCalculationByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsTagCalculationByPage" message="tns:IFMSService_GetFmsTagCalculationByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsTagCalculationByPageResponse" message="tns:IFMSService_GetFmsTagCalculationByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsTagCalculationCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsTagCalculationCount" message="tns:IFMSService_GetFmsTagCalculationCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsTagCalculationCountResponse" message="tns:IFMSService_GetFmsTagCalculationCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsTagCalculation">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsTagCalculation" message="tns:IFMSService_AddFmsTagCalculation_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsTagCalculationResponse" message="tns:IFMSService_AddFmsTagCalculation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsTagCalculation">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsTagCalculation" message="tns:IFMSService_UpdateFmsTagCalculation_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsTagCalculationResponse" message="tns:IFMSService_UpdateFmsTagCalculation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsTagCalculations">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsTagCalculations" message="tns:IFMSService_DelFmsTagCalculations_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsTagCalculationsResponse" message="tns:IFMSService_DelFmsTagCalculations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsTagCalculation">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsTagCalculation" message="tns:IFMSService_DelFmsTagCalculation_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsTagCalculationResponse" message="tns:IFMSService_DelFmsTagCalculation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsTagCalculations">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsTagCalculations" message="tns:IFMSService_GetFmsTagCalculations_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsTagCalculationsResponse" message="tns:IFMSService_GetFmsTagCalculations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsTagCalculationById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsTagCalculationById" message="tns:IFMSService_GetFmsTagCalculationById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsTagCalculationByIdResponse" message="tns:IFMSService_GetFmsTagCalculationById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaMainByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaMainByPage" message="tns:IFMSService_GetFmsActionFormulaMainByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaMainByPageResponse" message="tns:IFMSService_GetFmsActionFormulaMainByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaMainCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaMainCount" message="tns:IFMSService_GetFmsActionFormulaMainCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaMainCountResponse" message="tns:IFMSService_GetFmsActionFormulaMainCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsActionFormulaMain">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsActionFormulaMain" message="tns:IFMSService_AddFmsActionFormulaMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsActionFormulaMainResponse" message="tns:IFMSService_AddFmsActionFormulaMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsActionFormulaMain">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsActionFormulaMain" message="tns:IFMSService_UpdateFmsActionFormulaMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsActionFormulaMainResponse" message="tns:IFMSService_UpdateFmsActionFormulaMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsActionFormulaMains">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsActionFormulaMains" message="tns:IFMSService_DelFmsActionFormulaMains_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsActionFormulaMainsResponse" message="tns:IFMSService_DelFmsActionFormulaMains_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsActionFormulaMain">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsActionFormulaMain" message="tns:IFMSService_DelFmsActionFormulaMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsActionFormulaMainResponse" message="tns:IFMSService_DelFmsActionFormulaMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaMains">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaMains" message="tns:IFMSService_GetFmsActionFormulaMains_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaMainsResponse" message="tns:IFMSService_GetFmsActionFormulaMains_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaMainById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaMainById" message="tns:IFMSService_GetFmsActionFormulaMainById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaMainByIdResponse" message="tns:IFMSService_GetFmsActionFormulaMainById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaDetailByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaDetailByPage" message="tns:IFMSService_GetFmsActionFormulaDetailByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaDetailByPageResponse" message="tns:IFMSService_GetFmsActionFormulaDetailByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaDetailCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaDetailCount" message="tns:IFMSService_GetFmsActionFormulaDetailCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaDetailCountResponse" message="tns:IFMSService_GetFmsActionFormulaDetailCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsActionFormulaDetail">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsActionFormulaDetail" message="tns:IFMSService_AddFmsActionFormulaDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/AddFmsActionFormulaDetailResponse" message="tns:IFMSService_AddFmsActionFormulaDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsActionFormulaDetail">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsActionFormulaDetail" message="tns:IFMSService_UpdateFmsActionFormulaDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/UpdateFmsActionFormulaDetailResponse" message="tns:IFMSService_UpdateFmsActionFormulaDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsActionFormulaDetails">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsActionFormulaDetails" message="tns:IFMSService_DelFmsActionFormulaDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsActionFormulaDetailsResponse" message="tns:IFMSService_DelFmsActionFormulaDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsActionFormulaDetail">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsActionFormulaDetail" message="tns:IFMSService_DelFmsActionFormulaDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/DelFmsActionFormulaDetailResponse" message="tns:IFMSService_DelFmsActionFormulaDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaDetails">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaDetails" message="tns:IFMSService_GetFmsActionFormulaDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaDetailsResponse" message="tns:IFMSService_GetFmsActionFormulaDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaDetailById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaDetailById" message="tns:IFMSService_GetFmsActionFormulaDetailById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaDetailByIdResponse" message="tns:IFMSService_GetFmsActionFormulaDetailById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

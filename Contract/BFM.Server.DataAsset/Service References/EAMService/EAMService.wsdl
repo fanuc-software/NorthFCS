@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://fanuc.com.cn/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EAMService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://fanuc.com.cn/" location="http://localhost/BFM.WCFService/EAMService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IEAMService" type="i0:IEAMService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAmAssetMasterNByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetAmAssetMasterNByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmAssetMasterNCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetAmAssetMasterNCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAmAssetMasterN">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/AddAmAssetMasterN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAmAssetMasterN">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/UpdateAmAssetMasterN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelAmAssetMasterNs">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelAmAssetMasterNs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelAmAssetMasterN">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelAmAssetMasterN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmAssetMasterNs">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetAmAssetMasterNs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmAssetMasterNById">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetAmAssetMasterNById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmPartsMasterNByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetAmPartsMasterNByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmPartsMasterNCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetAmPartsMasterNCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAmPartsMasterN">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/AddAmPartsMasterN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAmPartsMasterN">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/UpdateAmPartsMasterN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelAmPartsMasterNs">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelAmPartsMasterNs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelAmPartsMasterN">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelAmPartsMasterN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmPartsMasterNs">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetAmPartsMasterNs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAmPartsMasterNById">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetAmPartsMasterNById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsMaintainStandards">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/AddRsMaintainStandards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsMaintainStandards">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/UpdateRsMaintainStandards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainStandardss">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainStandards">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelRsMaintainStandards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardss">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsById">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsDetailByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsDetailByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsDetailCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsDetailCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsMaintainStandardsDetail">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/AddRsMaintainStandardsDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsMaintainStandardsDetail">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/UpdateRsMaintainStandardsDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainStandardsDetails">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardsDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainStandardsDetail">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardsDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsDetails">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsDetailById">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsDetailById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsRelateByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsRelateByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsRelateCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsRelateCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsMaintainStandardsRelate">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/AddRsMaintainStandardsRelate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsMaintainStandardsRelate">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/UpdateRsMaintainStandardsRelate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainStandardsRelates">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardsRelates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainStandardsRelate">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardsRelate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsRelates">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsRelates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsRelateById">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsRelateById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRmRepairRecordByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRmRepairRecordByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRmRepairRecordCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRmRepairRecordCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRmRepairRecord">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/AddRmRepairRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRmRepairRecord">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/UpdateRmRepairRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRmRepairRecords">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelRmRepairRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRmRepairRecord">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelRmRepairRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRmRepairRecords">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRmRepairRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRmRepairRecordById">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRmRepairRecordById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainRecordByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainRecordByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainRecordCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainRecordCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRsMaintainRecord">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/AddRsMaintainRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsMaintainRecord">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/UpdateRsMaintainRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainRecords">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelRsMaintainRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainRecord">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/DelRsMaintainRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainRecords">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainRecordById">
+      <soap:operation soapAction="http://fanuc.com.cn/IEAMService/GetRsMaintainRecordById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EAMService">
+    <wsdl:port name="BasicHttpBinding_IEAMService" binding="tns:BasicHttpBinding_IEAMService">
+      <soap:address location="http://localhost/BFM.WCFService/EAMService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

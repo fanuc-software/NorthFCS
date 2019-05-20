@@ -1,0 +1,87 @@
+﻿<Window x:Class="CSharp.WPF.FlowDesign.TestValue"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+        mc:Ignorable="d"
+        Title="测试" Height="498.8" Width="951.2" Loaded="Window_Loaded">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="118,42,0,0" Text="状态" VerticalAlignment="Top" Width="103" Height="22" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" x:Name="tbDeviceState" Margin="228,39,0,0" Text="1" VerticalAlignment="Top" Width="38"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,10,0,0" Text="状态" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="63,10,0,0" Text="1" VerticalAlignment="Top" Width="50"/>
+        <TextBlock HorizontalAlignment="Left" Margin="199,10,0,0" Text="状态" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="228,10,0,0" Text="2" VerticalAlignment="Top" Width="38"/>
+        <Border BorderBrush="Black" BorderThickness="1" Background="Gray" HorizontalAlignment="Left" Height="17" Margin="118,10,0,0" VerticalAlignment="Top" Width="40"/>
+        <Border BorderBrush="Black" BorderThickness="1" Background="Blue" HorizontalAlignment="Left" Height="17" Margin="271,10,0,0" VerticalAlignment="Top" Width="40"/>
+        <TextBlock HorizontalAlignment="Left" Margin="341,11,0,0" Text="状态" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="370,11,0,0" Text="3" VerticalAlignment="Top" Width="38"/>
+        <Border BorderBrush="Black" BorderThickness="1" Background="Yellow" HorizontalAlignment="Left" Height="17" Margin="413,10,0,0" VerticalAlignment="Top" Width="40"/>
+        <TextBlock HorizontalAlignment="Left" Margin="467,9,0,0" Text="状态" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="496,9,0,0" Text="4" VerticalAlignment="Top" Width="38"/>
+        <Border BorderBrush="Black" BorderThickness="1" Background="Red" HorizontalAlignment="Left" Height="17" Margin="539,8,0,0" VerticalAlignment="Top" Width="40"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23,40,0,0" Text="设备" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" x:Name="tbDeviceNO" Margin="63,39,0,0" Text="1" VerticalAlignment="Top" Width="50"/>
+        <Canvas x:Name="canvas1" Height="35" Margin="23,64,9.8,0" VerticalAlignment="Top" Visibility="Collapsed"/>
+        <DataGrid x:Name="dataGrid" Margin="23,236,9.8,9.6"/>
+        <Button x:Name="button" Content="提取数据" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="370,40,0,0" Click="button_Click"/>
+        <DatePicker x:Name="dpSearch" HorizontalAlignment="Left" Margin="521,38,0,0" VerticalAlignment="Top" Width="165"/>
+
+        <controls:StateTimeShow x:Name="canvas1_Copy" Height="59" Margin="23,145,9.8,0" VerticalAlignment="Top" Title="标题" 
+                             ShowMinTime="False" ShowMiddleTime="True" IsMouseOverShow="True" 
+                             TimeTitleHeight="20" TimeTitleSpan="0" TimeMaxHeight="1" TimePosition="-10,0" ShowDate="2018-06-12"
+                             TimeTopVisible="Collapsed" TimeBottomVisible="Visible" FontSize="14" 
+                             StateToolTipFormat="名称:(Name) \n开始时间: (BeginTime) \n结束时间: (EndTime) \n状态: (StateText) "
+                             StateItemMouseDown="canvas1_Copy_StateItemMouseDown_1" StateItemMouseMove="canvas1_Copy_StateItemMouseMove_1" >
+            <controls:StateTimeShow.StateBackground>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF4D4D4D" Offset="0"/>
+                    <GradientStop Color="#FF979797" Offset="1"/>
+                </RadialGradientBrush>
+            </controls:StateTimeShow.StateBackground>
+            <controls:StateTimeShow.StateData>
+                <controls:TimeFormat StateColor ="#660037FA" BeginTime="06/12/2018 01:00:00" EndTime="06/12/2018 02:00:00" 
+                                  Name="测试" StateText="测试" ShowText="True"/>
+                <controls:TimeStateFormat BeginTime="06/12/2018 3:00:00" EndTime="06/12/2018 6:00:00" StateType="Working"/>
+                <controls:TimeStateFormat BeginTime="06/12/2018 06:00:00" EndTime="06/12/2018 07:00:00" StateType="Error"/>
+
+                <controls:TimeFormat ShowText="True" StateText="工作" 
+                                       BeginTime="2018-06-12 10:00" EndTime="06/12/2018 12:00:00" >
+                    <controls:TimeFormat.StateColor>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="GreenYellow" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </controls:TimeFormat.StateColor>
+                </controls:TimeFormat>
+                <controls:TimeStateFormat BeginTime="06/12/2018 07:00:00" EndTime="06/12/2018 09:00:00" StateType="StandBy"/>
+                <controls:TimeFormat BeginTime="06/12/2018 12:00:00" EndTime="06/12/2018 14:00:00" 
+                                       StateText="故障" ShowText="True" TextColor="Yellow">
+                    <controls:TimeFormat.StateColor>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Red" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </controls:TimeFormat.StateColor>
+                </controls:TimeFormat>
+                <controls:TimeFormat StateText="待机" ShowText="True" BeginTime="06/12/2018 14:00:00" EndTime="06/12/2018 20:59:59">
+                    <controls:TimeFormat.StateColor>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Blue" Offset="0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </controls:TimeFormat.StateColor>
+                </controls:TimeFormat>
+            </controls:StateTimeShow.StateData>
+        </controls:StateTimeShow>
+
+    </Grid>
+</Window>
+
+
+
+
+
+
+

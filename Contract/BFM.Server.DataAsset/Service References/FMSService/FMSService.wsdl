@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://fanuc.com.cn/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FMSService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://fanuc.com.cn/" location="http://localhost/BFM.WCFService/FMSService.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IFMSService" type="i0:IFMSService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFmsAssetCommParamByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsAssetCommParamByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetCommParamCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsAssetCommParamCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsAssetCommParam">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/AddFmsAssetCommParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsAssetCommParam">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/UpdateFmsAssetCommParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsAssetCommParams">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsAssetCommParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsAssetCommParam">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsAssetCommParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetCommParams">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsAssetCommParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetCommParamById">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsAssetCommParamById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetTagSettingByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsAssetTagSettingByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetTagSettingCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsAssetTagSettingCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsAssetTagSetting">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/AddFmsAssetTagSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsAssetTagSetting">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/UpdateFmsAssetTagSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsAssetTagSettings">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsAssetTagSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsAssetTagSetting">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsAssetTagSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetTagSettings">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsAssetTagSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsAssetTagSettingById">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsAssetTagSettingById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsStateResultRecordByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsStateResultRecordByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsStateResultRecordCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsStateResultRecordCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsStateResultRecord">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/AddFmsStateResultRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsStateResultRecord">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/UpdateFmsStateResultRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsStateResultRecords">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsStateResultRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsStateResultRecord">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsStateResultRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsStateResultRecords">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsStateResultRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsStateResultRecordById">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsStateResultRecordById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsSamplingRecordByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsSamplingRecordByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsSamplingRecordCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsSamplingRecordCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsSamplingRecord">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/AddFmsSamplingRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsSamplingRecord">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/UpdateFmsSamplingRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsSamplingRecords">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsSamplingRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsSamplingRecord">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsSamplingRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsSamplingRecords">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsSamplingRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsSamplingRecordById">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsSamplingRecordById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionControlByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsActionControlByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionControlCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsActionControlCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsActionControl">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/AddFmsActionControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsActionControl">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/UpdateFmsActionControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsActionControls">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsActionControls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsActionControl">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsActionControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionControls">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsActionControls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionControlById">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsActionControlById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsTagCalculationByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsTagCalculationByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsTagCalculationCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsTagCalculationCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsTagCalculation">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/AddFmsTagCalculation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsTagCalculation">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/UpdateFmsTagCalculation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsTagCalculations">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsTagCalculations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsTagCalculation">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsTagCalculation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsTagCalculations">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsTagCalculations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsTagCalculationById">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsTagCalculationById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaMainByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaMainByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaMainCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaMainCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsActionFormulaMain">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/AddFmsActionFormulaMain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsActionFormulaMain">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/UpdateFmsActionFormulaMain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsActionFormulaMains">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsActionFormulaMains" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsActionFormulaMain">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsActionFormulaMain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaMains">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaMains" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaMainById">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaMainById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaDetailByPage">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaDetailByPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaDetailCount">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaDetailCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFmsActionFormulaDetail">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/AddFmsActionFormulaDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFmsActionFormulaDetail">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/UpdateFmsActionFormulaDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsActionFormulaDetails">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsActionFormulaDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelFmsActionFormulaDetail">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/DelFmsActionFormulaDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaDetails">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFmsActionFormulaDetailById">
+      <soap:operation soapAction="http://fanuc.com.cn/IFMSService/GetFmsActionFormulaDetailById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FMSService">
+    <wsdl:port name="BasicHttpBinding_IFMSService" binding="tns:BasicHttpBinding_IFMSService">
+      <soap:address location="http://localhost/BFM.WCFService/FMSService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

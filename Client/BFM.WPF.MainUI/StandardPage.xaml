@@ -1,0 +1,106 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BFM.WPF.MainUI"
+      xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+      xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+      xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+      xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+      xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+      x:Class="BFM.WPF.MainUI.StandardPage"
+      mc:Ignorable="d" FontSize ="16"
+      d:DesignHeight="800" d:DesignWidth="600"
+      Title="StandardPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <dxr:RibbonControl x:Name="ribbonControl" FontSize="12">
+            <dxr:RibbonDefaultPageCategory Caption="操作区">
+                <dxr:RibbonPage Caption="工作栏">
+                    <dxr:RibbonPageGroup Caption="数据编辑">
+                        <dxb:BarButtonItem Content="新增明细" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" Glyph="{dx:DXImage Image=AddFile_16x16.png}" LargeGlyph="{dx:DXImage Image=AddFile_32x32.png}" RibbonStyle="Large" ItemClick="BtnAdd_Click" />
+                        <dxb:BarButtonItem Content="编辑明细" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" Glyph="{dx:DXImage Image=Edit_16x16.png}" LargeGlyph="{dx:DXImage Image=Edit_32x32.png}" RibbonStyle="Large" ItemClick="BtnMod_Click" />
+                        <dxb:BarButtonItem Content="删除明细" KeyGesture="DEL" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" Glyph="{dx:DXImage Image=Delete_16x16.png}" LargeGlyph="{dx:DXImage Image=Delete_32x32.png}" RibbonStyle="Large" ItemClick="BtnDel_Click" />
+                        <dxb:BarButtonItem Content="保存" IsEnabled="{Binding IsVisible, ElementName=gbItem}" Glyph="{dx:DXImage Image=Save_16x16.png}" LargeGlyph="{dx:DXImage Image=Save_32x32.png}" RibbonStyle="Large" ItemClick="BtnSave_Click" />
+                        <dxb:BarButtonItem Content="取消" KeyGesture="ESC" IsEnabled="{Binding IsVisible, ElementName=gbItem}" Glyph="{dx:DXImage Image=Reset2_16x16.png}" LargeGlyph="{dx:DXImage Image=Reset2_32x32.png}" RibbonStyle="Large" ItemClick="BtnCancel_Click" />
+                    </dxr:RibbonPageGroup>
+                    <dxr:RibbonPageGroup Caption="刷选查询">
+                        <dxb:BarButtonItem Content="查询" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" Glyph="{dx:DXImage Image=Zoom_16x16.png}" LargeGlyph="{dx:DXImage Image=Zoom_32x32.png}" RibbonStyle="Large" ItemClick="BtnSearch_Click"  />
+                        <dxb:BarButtonItem Content="高级查询" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" Glyph="{dx:DXImage Image=AddFile_16x16.png}" LargeGlyph="{dx:DXImage Image=FunctionsLookupAndReference_32x32.png}" RibbonStyle="Large" ItemClick="BtnMoreSearch_Click" />
+                    </dxr:RibbonPageGroup>
+                    <dxr:RibbonPageGroup Caption="导入导出">
+                        <dxb:BarButtonItem Content="导入" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" Glyph="{dx:DXImage Image=Inbox_16x16.png}" LargeGlyph="{dx:DXImage Image=Inbox_32x32.png}" RibbonStyle="Large" ItemClick="BtnInPort_Click" />
+                        <dxb:BarButtonItem Content="信息导出" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" Glyph="{dx:DXImage Image=LoadMap_16x16.png}" LargeGlyph="{dx:DXImage Image=LoadMap_32x32.png}" RibbonStyle="Large" ItemClick="BtnOutPort_Click" />
+                        <dxb:BarButtonItem Content="报表" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" LargeGlyph="{dx:DXImage Image=AddChartPane_32x32.png}" Glyph="{dx:DXImage Image=AddChartPane_16x16.png}" RibbonStyle="Large" ItemClick="BtnReport_Click" />
+                    </dxr:RibbonPageGroup>
+                    </dxr:RibbonPage>
+                </dxr:RibbonDefaultPageCategory>
+        </dxr:RibbonControl>
+        
+        <Grid Grid.Row="1">
+            <Grid x:Name="MenuContent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <dxlc:LayoutControl Name="gbItem" Margin="0" Padding="0" 
+                                    IsCollapsed="True" Visibility="Collapsed">
+                    <dxlc:LayoutGroup Header="基础信息明细项" Name="dictBasic" View="GroupBox" ItemLabelsAlignment="Local"
+                              IsCollapsible="False" Background="White" Orientation="Vertical">
+                        <dxlc:LayoutGroup Margin="0,10,0,0">
+                            <dxlc:LayoutItem Label="明细编号" >
+                                <TextBox Text="{Binding ITEM_NO}"  Margin="10,0,10,0"/>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="名称" >
+                                <TextBox Text="{Binding ITEM_NAME}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,10,0,0">
+                            <dxlc:LayoutItem Label="代号" x:Name="lbCodeName" >
+                                <TextBox Text="{Binding ITEM_CODE}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="排列顺序" >
+                                <TextBox Text="{Binding ITEM_INDEX}" Margin="10,0,10,0" />
+
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,10,0,0">
+                            <dxlc:LayoutItem Label="明细项描述" >
+                                <TextBox Text="{Binding ITEM_INTROD}" Margin="10,0,10,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,10,0,0" Height="80">
+                            <dxlc:LayoutItem Label="备注"  VerticalAlignment="Stretch" >
+                                <TextBox Text="{Binding REMARK}" Margin="10,0,10,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutControl>
+
+                <Grid Grid.Row="1">
+                    <dxg:GridControl x:Name="gridItem" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" 
+                                      SelectionMode="Row" FontSize="16" MouseDoubleClick="gridItem_MouseDoubleClick" >
+                        <dxg:GridControl.View>
+                            <dxg:TableView ShowGroupPanel="False" AllowEditing="False" NavigationStyle="Row"/>
+                        </dxg:GridControl.View>
+                        <dxg:GridColumn FieldName="ITEM_NO" Header="明细编号" Width="100"/>
+                        <dxg:GridColumn FieldName="ITEM_NAME" Header="名称" Width="160"/>
+                        <dxg:GridColumn FieldName="ITEM_CODE" x:Name="gridCodeName" Header="代号" Width="80"/>
+                        <dxg:GridColumn FieldName="ITEM_INDEX" Header="顺序" Width="80"/>
+                        <dxg:GridColumn FieldName="ITEM_INTROD" Header="明细项描述" Width="*"/>
+                        <dxg:GridColumn Binding="{Binding Path=USE_FLAG, Converter={StaticResource BasicInfoConverter}, ConverterParameter='基础信息.是否启用'}" Header="状态"/>
+                        <dxg:GridColumn FieldName="REMARK" Header="备注" Width="*"/>
+                    </dxg:GridControl>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

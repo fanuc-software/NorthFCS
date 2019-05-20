@@ -1,0 +1,57 @@
+﻿<Page x:Class="BFM.WPF.MainUI.PageContainer"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"    
+      xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" 
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" 
+    xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1500"
+      Title="PageContainer">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <dxr:RibbonStatusBarControl Grid.Row="2"/>
+
+        <dxr:RibbonControl Height="537" Margin="0,0,0.4,0">
+            <dxr:RibbonControl.ApplicationMenu>
+                <dxr:ApplicationMenu/>
+            </dxr:RibbonControl.ApplicationMenu>
+            <dxr:RibbonDefaultPageCategory Caption="defaultCategory">
+                <dxr:RibbonPage Caption="Home">
+                    <dxr:RibbonPageGroup Caption="编辑">
+                        <dxb:BarButtonItem Content="新增" RibbonStyle="Large" Glyph="{dx:DXImage Image=Add_32x32.png}" LargeGlyph="{dx:DXImage Image=Add_32x32.png}" ItemClick="BarButtonItem_ItemClick"/>
+                        <dxb:BarButtonItem Content="删除" RibbonStyle="Large" Glyph="{dx:DXImage Image=Remove_32x32.png}" LargeGlyph="{dx:DXImage Image=Remove_32x32.png}" ItemClick="BarButtonItem_ItemClick"/>
+                        <dxb:BarButtonItem Content="修改" RibbonStyle="Large" Glyph="{dx:DXImage Image=EditName_32x32.png}" LargeGlyph="{dx:DXImage Image=EditName_32x32.png}" ItemClick="BarButtonItem_ItemClick"/>
+                        <dxb:BarButtonItem Content="保存" RibbonStyle="Large" Glyph="{dx:DXImage Image=Save_32x32.png}" LargeGlyph="{dx:DXImage Image=Save_32x32.png}" ItemClick="BarButtonItem_ItemClick"/>
+                        <dxb:BarButtonItem Content="取消" RibbonStyle="Large" Glyph="{dx:DXImage Image=Reset2_32x32.png}" LargeGlyph="{dx:DXImage Image=Reset2_32x32.png}" ItemClick="BarButtonItem_ItemClick"/>
+                    </dxr:RibbonPageGroup>
+                    <dxr:RibbonPageGroup Caption="刷选">
+                        <dxb:BarButtonItem Content="高级查询" RibbonStyle="Large" Glyph="{dx:DXImage Image=Zoom_32x32.png}" LargeGlyph="{dx:DXImage Image=Zoom_32x32.png}" ItemClick="BarButtonItem_ItemClick"/>
+                    </dxr:RibbonPageGroup>
+                    <dxr:RibbonPageGroup Caption="刷选">
+                        <dxb:BarButtonItem Content="导入" RibbonStyle="Large" Glyph="{dx:DXImage Image=FindByID_32x32.png}" LargeGlyph="{dx:DXImage Image=Inbox_32x32.png}" ItemClick="BarButtonItem_ItemClick"/>
+                        <dxb:BarButtonItem Content="导出" RibbonStyle="Large" Glyph="{dx:DXImage Image=Print_32x32.png}" LargeGlyph="{dx:DXImage Image=Print_32x32.png}" ItemClick="BarButtonItem_ItemClick"/>
+                    </dxr:RibbonPageGroup>
+                </dxr:RibbonPage>
+            </dxr:RibbonDefaultPageCategory>
+        </dxr:RibbonControl>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="83*"/>
+                <ColumnDefinition Width="67*"/>
+            </Grid.ColumnDefinitions>
+            <dxwui:FlipView x:Name="flipView" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" ShowNextButton="False" ShowPreviousButton="False" IsAnimationEnabled="True" Grid.ColumnSpan="2">
+
+            </dxwui:FlipView>
+
+
+        </Grid>
+    </Grid>
+</Page>

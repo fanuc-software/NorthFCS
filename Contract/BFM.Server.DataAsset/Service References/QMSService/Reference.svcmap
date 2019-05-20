@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="90739edb-6beb-455e-ad40-3d5c70f1009a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/BFM.WCFService/QMSService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="QMSService.wsdl" MetadataType="Wsdl" ID="87b63a0f-c72b-4cb3-af2b-da4baf55adf0" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/QMSService.svc?wsdl" />
+    <MetadataFile FileName="QMSService.disco" MetadataType="Disco" ID="0ea66c63-4e1f-4a8b-ad99-e7e45ea871f5" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/QMSService.svc?disco" />
+    <MetadataFile FileName="QMSService1.wsdl" MetadataType="Wsdl" ID="0f6a7075-5a7a-40da-bfc5-3672352e583f" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/QMSService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="QMSService.xsd" MetadataType="Schema" ID="45774157-65ea-47c4-b524-6d7c9955f2cc" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/QMSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="QMSService1.xsd" MetadataType="Schema" ID="b6eceefa-23a9-4ffb-8785-816632d4002c" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/QMSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="QMSService2.xsd" MetadataType="Schema" ID="d68b2f85-e5e9-4cf8-ad1f-7e27da5e0b5c" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/QMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="QMSService3.xsd" MetadataType="Schema" ID="4198569d-7478-4b83-811d-a06518d853d7" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/QMSService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

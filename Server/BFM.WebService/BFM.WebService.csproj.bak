@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49CEC0FD-EA2C-4285-8F37-4A61A7C0CA54}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFM.WebService</RootNamespace>
+    <AssemblyName>BFM.WebService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MySql.Data.6.8.8\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MySql.Data.Entity.6.8.8\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Oracle.ManagedDataAccess.18.3.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Oracle.ManagedDataAccess.EntityFramework.18.3.0\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQLService.asmx" />
+    <Content Include="DAService.asmx" />
+    <Content Include="FDIService.asmx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FDIService\FDIServiceMain.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FDIService\FDIPostRawMaterialBatch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIPostRawMaterialDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIPostRawMaterial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIPostSaleOrderBatch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIPostSaleOrderDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIPostSaleOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIPostWOIssueBatch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIPostWOIssueDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIPostWOIssue.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIPostWOCloseBatch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIPostWOCloseDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIPostWOClose.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIGetMaterialInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIGetSaleOrderDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIGetSaleOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIGetWOrderDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIGetWOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIGetRawMaterialDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIGetRawMaterial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIGetMaterialDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService.asmx.cs">
+      <DependentUpon>FDIService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\FDIGetMaterial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FDIService\IFDIService.cs" />
+    <Compile Include="DAService\DAStatusRecord.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAService\DAAlarmRecord.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAService\DAProductRecord.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAService.asmx.cs">
+      <DependentUpon>DAService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAService\DAMachineRealTimeInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DAService\IDAService.cs" />
+    <Compile Include="SQLService.asmx.cs">
+      <DependentUpon>SQLService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="NLog.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\BFM.Common.Base\BFM.Common.Base.csproj">
+      <Project>{31B1498B-91FB-43B4-B4E7-EE3911072D93}</Project>
+      <Name>BFM.Common.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\BFM.Common.DataBaseAsset\BFM.Common.DataBaseAsset.csproj">
+      <Project>{B2AC3987-C931-4015-A46E-16B8786856F0}</Project>
+      <Name>BFM.Common.DataBaseAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.ContractModel\BFM.ContractModel.csproj">
+      <Project>{d65e3c3e-0f32-426b-a60c-42485ad5110e}</Project>
+      <Name>BFM.ContractModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.BLL\BFM.BLL.csproj">
+      <Project>{d9188889-f01a-474a-bad1-68fe41a13988}</Project>
+      <Name>BFM.BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3998</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/BFM.WebService</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

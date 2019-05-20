@@ -1,0 +1,1293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://fanuc.com.cn/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fanuc.com.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fanuc.com.cn/Imports">
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/RSMService.svc?xsd=xsd0" namespace="http://fanuc.com.cn/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/RSMService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/RSMService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/RSMService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRSMService_GetRsFactoryByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsFactoryByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsFactoryByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsFactoryByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsFactoryCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsFactoryCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsFactoryCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsFactoryCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsFactory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsFactory" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsFactory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsFactoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsFactory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsFactory" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsFactory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsFactoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsFactorys_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsFactorys" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsFactorys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsFactorysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsFactory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsFactory" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsFactory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsFactoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsFactorys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsFactorys" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsFactorys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsFactorysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsFactoryById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsFactoryById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsFactoryById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsFactoryByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkShopByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkShopByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkShopByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkShopByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkShopCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkShopCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkShopCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkShopCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsWorkShop_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsWorkShop" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsWorkShop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsWorkShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsWorkShop_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsWorkShop" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsWorkShop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsWorkShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsWorkShops_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsWorkShops" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsWorkShops_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsWorkShopsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsWorkShop_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsWorkShop" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsWorkShop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsWorkShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkShops_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkShops" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkShops_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkShopsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkShopById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkShopById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkShopById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkShopByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsLine" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsLine" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsLines_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsLines" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsLines_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsLinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsLine" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLines_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLines" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLines_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineStationByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineStationByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineStationByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineStationByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineStationCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineStationCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineStationCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineStationCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsLineStation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsLineStation" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsLineStation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsLineStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsLineStation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsLineStation" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsLineStation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsLineStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsLineStations_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsLineStations" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsLineStations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsLineStationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsLineStation_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsLineStation" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsLineStation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsLineStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineStations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineStations" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineStations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineStationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineStationById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineStationById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineStationById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineStationByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsItemMasterByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsItemMasterByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsItemMasterByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsItemMasterByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsItemMasterCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsItemMasterCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsItemMasterCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsItemMasterCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsItemMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsItemMaster" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsItemMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsItemMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsItemMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsItemMaster" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsItemMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsItemMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsItemMasters_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsItemMasters" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsItemMasters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsItemMastersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsItemMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsItemMaster" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsItemMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsItemMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsItemMasters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsItemMasters" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsItemMasters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsItemMastersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsItemMasterById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsItemMasterById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsItemMasterById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsItemMasterByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineProductByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineProductByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineProductByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineProductByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineProductCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineProductCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineProductCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineProductCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsLineProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsLineProduct" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsLineProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsLineProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsLineProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsLineProduct" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsLineProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsLineProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsLineProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsLineProducts" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsLineProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsLineProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsLineProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsLineProduct" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsLineProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsLineProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineProducts" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineProductById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineProductById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsLineProductById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsLineProductByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsBomByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsBomByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsBomByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsBomByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsBomCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsBomCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsBomCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsBomCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsBom_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsBom" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsBom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsBomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsBom_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsBom" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsBom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsBomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsBoms_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsBoms" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsBoms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsBomsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsBom_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsBom" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsBom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsBomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsBoms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsBoms" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsBoms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsBomsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsBomById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsBomById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsBomById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsBomByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingHeadByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingHeadByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingHeadByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingHeadByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingHeadCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingHeadCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingHeadCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingHeadCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingHead_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingHead" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingHead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingHeadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingHead_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingHead" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingHead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingHeadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingHeads_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingHeads" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingHeads_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingHeadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingHead_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingHead" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingHead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingHeadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingHeads_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingHeads" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingHeads_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingHeadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingHeadById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingHeadById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingHeadById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingHeadByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingDetailByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingDetailByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingDetailByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingDetailByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingDetailCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingDetailCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingDetailCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingDetailCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingDetail" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingDetail" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingDetails" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingDetail" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingDetails" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingDetailById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingDetailById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingDetailById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingDetailByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingToolsByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingToolsByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingToolsByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingToolsByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingToolsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingToolsCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingToolsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingToolsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingTools_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingTools" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingTools_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingToolsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingTools_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingTools" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingTools_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingToolsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingToolss_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingToolss" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingToolss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingToolssResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingTools_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingTools" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingTools_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingToolsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingToolss_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingToolss" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingToolss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingToolssResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingToolsById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingToolsById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingToolsById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingToolsByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingParamByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingParamByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingParamByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingParamByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingParamCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingParamCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingParamCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingParamCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingParam" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingParam" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingParams" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingParam" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingParams" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingParamById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingParamById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingParamById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingParamByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingCheckByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingCheckByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingCheckByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingCheckByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingCheckCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingCheckCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingCheckCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingCheckCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingCheck" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingCheck" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingChecks_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingChecks" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingChecks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingChecksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingCheck" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingChecks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingChecks" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingChecks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingChecksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingCheckById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingCheckById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingCheckById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingCheckByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingEquipByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingEquipByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingEquipByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingEquipByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingEquipCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingEquipCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingEquipCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingEquipCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingEquip_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingEquip" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingEquip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingEquipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingEquip_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingEquip" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingEquip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingEquipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingEquips_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingEquips" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingEquips_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingEquipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingEquip_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingEquip" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingEquip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingEquipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingEquips_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingEquips" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingEquips_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingEquipsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingEquipById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingEquipById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingEquipById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingEquipByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingItemByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingItemByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingItemByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingItemByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingItemCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingItemCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingItemCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingItemCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingItem" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsRoutingItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsRoutingItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingItem" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsRoutingItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsRoutingItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingItems" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingItem" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsRoutingItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsRoutingItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingItems" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingItemById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingItemById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsRoutingItemById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsRoutingItemByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkCenterByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkCenterByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkCenterByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkCenterByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkCenterCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkCenterCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkCenterCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkCenterCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsWorkCenter_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsWorkCenter" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsWorkCenter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsWorkCenterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsWorkCenter_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsWorkCenter" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsWorkCenter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsWorkCenterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsWorkCenters_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsWorkCenters" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsWorkCenters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsWorkCentersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsWorkCenter_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsWorkCenter" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsWorkCenter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsWorkCenterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkCenters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkCenters" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkCenters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkCentersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkCenterById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkCenterById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsWorkCenterById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsWorkCenterByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsEquipMasterByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsEquipMasterByPage" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsEquipMasterByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsEquipMasterByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsEquipMasterCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsEquipMasterCount" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsEquipMasterCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsEquipMasterCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsEquipMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsEquipMaster" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_AddRsEquipMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsEquipMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsEquipMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsEquipMaster" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_UpdateRsEquipMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsEquipMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsEquipMasters_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsEquipMasters" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsEquipMasters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsEquipMastersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsEquipMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsEquipMaster" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_DelRsEquipMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsEquipMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsEquipMasters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsEquipMasters" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsEquipMasters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsEquipMastersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsEquipMasterById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsEquipMasterById" />
+  </wsdl:message>
+  <wsdl:message name="IRSMService_GetRsEquipMasterById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsEquipMasterByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRSMService">
+    <wsdl:operation name="GetRsFactoryByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsFactoryByPage" message="tns:IRSMService_GetRsFactoryByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsFactoryByPageResponse" message="tns:IRSMService_GetRsFactoryByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsFactoryCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsFactoryCount" message="tns:IRSMService_GetRsFactoryCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsFactoryCountResponse" message="tns:IRSMService_GetRsFactoryCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsFactory">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsFactory" message="tns:IRSMService_AddRsFactory_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsFactoryResponse" message="tns:IRSMService_AddRsFactory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsFactory">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsFactory" message="tns:IRSMService_UpdateRsFactory_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsFactoryResponse" message="tns:IRSMService_UpdateRsFactory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsFactorys">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsFactorys" message="tns:IRSMService_DelRsFactorys_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsFactorysResponse" message="tns:IRSMService_DelRsFactorys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsFactory">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsFactory" message="tns:IRSMService_DelRsFactory_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsFactoryResponse" message="tns:IRSMService_DelRsFactory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsFactorys">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsFactorys" message="tns:IRSMService_GetRsFactorys_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsFactorysResponse" message="tns:IRSMService_GetRsFactorys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsFactoryById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsFactoryById" message="tns:IRSMService_GetRsFactoryById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsFactoryByIdResponse" message="tns:IRSMService_GetRsFactoryById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkShopByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkShopByPage" message="tns:IRSMService_GetRsWorkShopByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkShopByPageResponse" message="tns:IRSMService_GetRsWorkShopByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkShopCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkShopCount" message="tns:IRSMService_GetRsWorkShopCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkShopCountResponse" message="tns:IRSMService_GetRsWorkShopCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsWorkShop">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsWorkShop" message="tns:IRSMService_AddRsWorkShop_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsWorkShopResponse" message="tns:IRSMService_AddRsWorkShop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsWorkShop">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsWorkShop" message="tns:IRSMService_UpdateRsWorkShop_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsWorkShopResponse" message="tns:IRSMService_UpdateRsWorkShop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsWorkShops">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsWorkShops" message="tns:IRSMService_DelRsWorkShops_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsWorkShopsResponse" message="tns:IRSMService_DelRsWorkShops_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsWorkShop">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsWorkShop" message="tns:IRSMService_DelRsWorkShop_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsWorkShopResponse" message="tns:IRSMService_DelRsWorkShop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkShops">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkShops" message="tns:IRSMService_GetRsWorkShops_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkShopsResponse" message="tns:IRSMService_GetRsWorkShops_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkShopById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkShopById" message="tns:IRSMService_GetRsWorkShopById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkShopByIdResponse" message="tns:IRSMService_GetRsWorkShopById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineByPage" message="tns:IRSMService_GetRsLineByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineByPageResponse" message="tns:IRSMService_GetRsLineByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineCount" message="tns:IRSMService_GetRsLineCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineCountResponse" message="tns:IRSMService_GetRsLineCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsLine">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsLine" message="tns:IRSMService_AddRsLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsLineResponse" message="tns:IRSMService_AddRsLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsLine">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsLine" message="tns:IRSMService_UpdateRsLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsLineResponse" message="tns:IRSMService_UpdateRsLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsLines">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsLines" message="tns:IRSMService_DelRsLines_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsLinesResponse" message="tns:IRSMService_DelRsLines_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsLine">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsLine" message="tns:IRSMService_DelRsLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsLineResponse" message="tns:IRSMService_DelRsLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLines">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLines" message="tns:IRSMService_GetRsLines_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLinesResponse" message="tns:IRSMService_GetRsLines_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineById" message="tns:IRSMService_GetRsLineById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineByIdResponse" message="tns:IRSMService_GetRsLineById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineStationByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineStationByPage" message="tns:IRSMService_GetRsLineStationByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineStationByPageResponse" message="tns:IRSMService_GetRsLineStationByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineStationCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineStationCount" message="tns:IRSMService_GetRsLineStationCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineStationCountResponse" message="tns:IRSMService_GetRsLineStationCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsLineStation">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsLineStation" message="tns:IRSMService_AddRsLineStation_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsLineStationResponse" message="tns:IRSMService_AddRsLineStation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsLineStation">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsLineStation" message="tns:IRSMService_UpdateRsLineStation_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsLineStationResponse" message="tns:IRSMService_UpdateRsLineStation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsLineStations">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsLineStations" message="tns:IRSMService_DelRsLineStations_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsLineStationsResponse" message="tns:IRSMService_DelRsLineStations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsLineStation">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsLineStation" message="tns:IRSMService_DelRsLineStation_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsLineStationResponse" message="tns:IRSMService_DelRsLineStation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineStations">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineStations" message="tns:IRSMService_GetRsLineStations_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineStationsResponse" message="tns:IRSMService_GetRsLineStations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineStationById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineStationById" message="tns:IRSMService_GetRsLineStationById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineStationByIdResponse" message="tns:IRSMService_GetRsLineStationById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsItemMasterByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsItemMasterByPage" message="tns:IRSMService_GetRsItemMasterByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsItemMasterByPageResponse" message="tns:IRSMService_GetRsItemMasterByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsItemMasterCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsItemMasterCount" message="tns:IRSMService_GetRsItemMasterCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsItemMasterCountResponse" message="tns:IRSMService_GetRsItemMasterCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsItemMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsItemMaster" message="tns:IRSMService_AddRsItemMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsItemMasterResponse" message="tns:IRSMService_AddRsItemMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsItemMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsItemMaster" message="tns:IRSMService_UpdateRsItemMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsItemMasterResponse" message="tns:IRSMService_UpdateRsItemMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsItemMasters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsItemMasters" message="tns:IRSMService_DelRsItemMasters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsItemMastersResponse" message="tns:IRSMService_DelRsItemMasters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsItemMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsItemMaster" message="tns:IRSMService_DelRsItemMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsItemMasterResponse" message="tns:IRSMService_DelRsItemMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsItemMasters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsItemMasters" message="tns:IRSMService_GetRsItemMasters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsItemMastersResponse" message="tns:IRSMService_GetRsItemMasters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsItemMasterById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsItemMasterById" message="tns:IRSMService_GetRsItemMasterById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsItemMasterByIdResponse" message="tns:IRSMService_GetRsItemMasterById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineProductByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineProductByPage" message="tns:IRSMService_GetRsLineProductByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineProductByPageResponse" message="tns:IRSMService_GetRsLineProductByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineProductCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineProductCount" message="tns:IRSMService_GetRsLineProductCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineProductCountResponse" message="tns:IRSMService_GetRsLineProductCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsLineProduct">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsLineProduct" message="tns:IRSMService_AddRsLineProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsLineProductResponse" message="tns:IRSMService_AddRsLineProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsLineProduct">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsLineProduct" message="tns:IRSMService_UpdateRsLineProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsLineProductResponse" message="tns:IRSMService_UpdateRsLineProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsLineProducts">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsLineProducts" message="tns:IRSMService_DelRsLineProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsLineProductsResponse" message="tns:IRSMService_DelRsLineProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsLineProduct">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsLineProduct" message="tns:IRSMService_DelRsLineProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsLineProductResponse" message="tns:IRSMService_DelRsLineProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineProducts">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineProducts" message="tns:IRSMService_GetRsLineProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineProductsResponse" message="tns:IRSMService_GetRsLineProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsLineProductById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineProductById" message="tns:IRSMService_GetRsLineProductById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsLineProductByIdResponse" message="tns:IRSMService_GetRsLineProductById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsBomByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsBomByPage" message="tns:IRSMService_GetRsBomByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsBomByPageResponse" message="tns:IRSMService_GetRsBomByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsBomCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsBomCount" message="tns:IRSMService_GetRsBomCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsBomCountResponse" message="tns:IRSMService_GetRsBomCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsBom">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsBom" message="tns:IRSMService_AddRsBom_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsBomResponse" message="tns:IRSMService_AddRsBom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsBom">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsBom" message="tns:IRSMService_UpdateRsBom_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsBomResponse" message="tns:IRSMService_UpdateRsBom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsBoms">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsBoms" message="tns:IRSMService_DelRsBoms_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsBomsResponse" message="tns:IRSMService_DelRsBoms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsBom">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsBom" message="tns:IRSMService_DelRsBom_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsBomResponse" message="tns:IRSMService_DelRsBom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsBoms">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsBoms" message="tns:IRSMService_GetRsBoms_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsBomsResponse" message="tns:IRSMService_GetRsBoms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsBomById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsBomById" message="tns:IRSMService_GetRsBomById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsBomByIdResponse" message="tns:IRSMService_GetRsBomById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingHeadByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingHeadByPage" message="tns:IRSMService_GetRsRoutingHeadByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingHeadByPageResponse" message="tns:IRSMService_GetRsRoutingHeadByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingHeadCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingHeadCount" message="tns:IRSMService_GetRsRoutingHeadCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingHeadCountResponse" message="tns:IRSMService_GetRsRoutingHeadCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingHead">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingHead" message="tns:IRSMService_AddRsRoutingHead_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingHeadResponse" message="tns:IRSMService_AddRsRoutingHead_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingHead">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingHead" message="tns:IRSMService_UpdateRsRoutingHead_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingHeadResponse" message="tns:IRSMService_UpdateRsRoutingHead_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingHeads">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingHeads" message="tns:IRSMService_DelRsRoutingHeads_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingHeadsResponse" message="tns:IRSMService_DelRsRoutingHeads_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingHead">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingHead" message="tns:IRSMService_DelRsRoutingHead_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingHeadResponse" message="tns:IRSMService_DelRsRoutingHead_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingHeads">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingHeads" message="tns:IRSMService_GetRsRoutingHeads_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingHeadsResponse" message="tns:IRSMService_GetRsRoutingHeads_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingHeadById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingHeadById" message="tns:IRSMService_GetRsRoutingHeadById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingHeadByIdResponse" message="tns:IRSMService_GetRsRoutingHeadById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingDetailByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingDetailByPage" message="tns:IRSMService_GetRsRoutingDetailByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingDetailByPageResponse" message="tns:IRSMService_GetRsRoutingDetailByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingDetailCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingDetailCount" message="tns:IRSMService_GetRsRoutingDetailCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingDetailCountResponse" message="tns:IRSMService_GetRsRoutingDetailCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingDetail">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingDetail" message="tns:IRSMService_AddRsRoutingDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingDetailResponse" message="tns:IRSMService_AddRsRoutingDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingDetail">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingDetail" message="tns:IRSMService_UpdateRsRoutingDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingDetailResponse" message="tns:IRSMService_UpdateRsRoutingDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingDetails">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingDetails" message="tns:IRSMService_DelRsRoutingDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingDetailsResponse" message="tns:IRSMService_DelRsRoutingDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingDetail">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingDetail" message="tns:IRSMService_DelRsRoutingDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingDetailResponse" message="tns:IRSMService_DelRsRoutingDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingDetails">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingDetails" message="tns:IRSMService_GetRsRoutingDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingDetailsResponse" message="tns:IRSMService_GetRsRoutingDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingDetailById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingDetailById" message="tns:IRSMService_GetRsRoutingDetailById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingDetailByIdResponse" message="tns:IRSMService_GetRsRoutingDetailById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingToolsByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingToolsByPage" message="tns:IRSMService_GetRsRoutingToolsByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingToolsByPageResponse" message="tns:IRSMService_GetRsRoutingToolsByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingToolsCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingToolsCount" message="tns:IRSMService_GetRsRoutingToolsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingToolsCountResponse" message="tns:IRSMService_GetRsRoutingToolsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingTools">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingTools" message="tns:IRSMService_AddRsRoutingTools_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingToolsResponse" message="tns:IRSMService_AddRsRoutingTools_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingTools">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingTools" message="tns:IRSMService_UpdateRsRoutingTools_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingToolsResponse" message="tns:IRSMService_UpdateRsRoutingTools_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingToolss">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingToolss" message="tns:IRSMService_DelRsRoutingToolss_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingToolssResponse" message="tns:IRSMService_DelRsRoutingToolss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingTools">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingTools" message="tns:IRSMService_DelRsRoutingTools_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingToolsResponse" message="tns:IRSMService_DelRsRoutingTools_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingToolss">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingToolss" message="tns:IRSMService_GetRsRoutingToolss_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingToolssResponse" message="tns:IRSMService_GetRsRoutingToolss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingToolsById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingToolsById" message="tns:IRSMService_GetRsRoutingToolsById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingToolsByIdResponse" message="tns:IRSMService_GetRsRoutingToolsById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingParamByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingParamByPage" message="tns:IRSMService_GetRsRoutingParamByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingParamByPageResponse" message="tns:IRSMService_GetRsRoutingParamByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingParamCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingParamCount" message="tns:IRSMService_GetRsRoutingParamCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingParamCountResponse" message="tns:IRSMService_GetRsRoutingParamCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingParam">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingParam" message="tns:IRSMService_AddRsRoutingParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingParamResponse" message="tns:IRSMService_AddRsRoutingParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingParam">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingParam" message="tns:IRSMService_UpdateRsRoutingParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingParamResponse" message="tns:IRSMService_UpdateRsRoutingParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingParams">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingParams" message="tns:IRSMService_DelRsRoutingParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingParamsResponse" message="tns:IRSMService_DelRsRoutingParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingParam">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingParam" message="tns:IRSMService_DelRsRoutingParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingParamResponse" message="tns:IRSMService_DelRsRoutingParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingParams">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingParams" message="tns:IRSMService_GetRsRoutingParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingParamsResponse" message="tns:IRSMService_GetRsRoutingParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingParamById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingParamById" message="tns:IRSMService_GetRsRoutingParamById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingParamByIdResponse" message="tns:IRSMService_GetRsRoutingParamById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingCheckByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingCheckByPage" message="tns:IRSMService_GetRsRoutingCheckByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingCheckByPageResponse" message="tns:IRSMService_GetRsRoutingCheckByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingCheckCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingCheckCount" message="tns:IRSMService_GetRsRoutingCheckCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingCheckCountResponse" message="tns:IRSMService_GetRsRoutingCheckCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingCheck">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingCheck" message="tns:IRSMService_AddRsRoutingCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingCheckResponse" message="tns:IRSMService_AddRsRoutingCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingCheck">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingCheck" message="tns:IRSMService_UpdateRsRoutingCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingCheckResponse" message="tns:IRSMService_UpdateRsRoutingCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingChecks">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingChecks" message="tns:IRSMService_DelRsRoutingChecks_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingChecksResponse" message="tns:IRSMService_DelRsRoutingChecks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingCheck">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingCheck" message="tns:IRSMService_DelRsRoutingCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingCheckResponse" message="tns:IRSMService_DelRsRoutingCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingChecks">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingChecks" message="tns:IRSMService_GetRsRoutingChecks_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingChecksResponse" message="tns:IRSMService_GetRsRoutingChecks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingCheckById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingCheckById" message="tns:IRSMService_GetRsRoutingCheckById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingCheckByIdResponse" message="tns:IRSMService_GetRsRoutingCheckById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingEquipByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingEquipByPage" message="tns:IRSMService_GetRsRoutingEquipByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingEquipByPageResponse" message="tns:IRSMService_GetRsRoutingEquipByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingEquipCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingEquipCount" message="tns:IRSMService_GetRsRoutingEquipCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingEquipCountResponse" message="tns:IRSMService_GetRsRoutingEquipCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingEquip">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingEquip" message="tns:IRSMService_AddRsRoutingEquip_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingEquipResponse" message="tns:IRSMService_AddRsRoutingEquip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingEquip">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingEquip" message="tns:IRSMService_UpdateRsRoutingEquip_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingEquipResponse" message="tns:IRSMService_UpdateRsRoutingEquip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingEquips">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingEquips" message="tns:IRSMService_DelRsRoutingEquips_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingEquipsResponse" message="tns:IRSMService_DelRsRoutingEquips_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingEquip">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingEquip" message="tns:IRSMService_DelRsRoutingEquip_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingEquipResponse" message="tns:IRSMService_DelRsRoutingEquip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingEquips">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingEquips" message="tns:IRSMService_GetRsRoutingEquips_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingEquipsResponse" message="tns:IRSMService_GetRsRoutingEquips_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingEquipById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingEquipById" message="tns:IRSMService_GetRsRoutingEquipById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingEquipByIdResponse" message="tns:IRSMService_GetRsRoutingEquipById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingItemByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingItemByPage" message="tns:IRSMService_GetRsRoutingItemByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingItemByPageResponse" message="tns:IRSMService_GetRsRoutingItemByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingItemCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingItemCount" message="tns:IRSMService_GetRsRoutingItemCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingItemCountResponse" message="tns:IRSMService_GetRsRoutingItemCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsRoutingItem">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingItem" message="tns:IRSMService_AddRsRoutingItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsRoutingItemResponse" message="tns:IRSMService_AddRsRoutingItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsRoutingItem">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingItem" message="tns:IRSMService_UpdateRsRoutingItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsRoutingItemResponse" message="tns:IRSMService_UpdateRsRoutingItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingItems">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingItems" message="tns:IRSMService_DelRsRoutingItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingItemsResponse" message="tns:IRSMService_DelRsRoutingItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsRoutingItem">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingItem" message="tns:IRSMService_DelRsRoutingItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsRoutingItemResponse" message="tns:IRSMService_DelRsRoutingItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingItems">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingItems" message="tns:IRSMService_GetRsRoutingItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingItemsResponse" message="tns:IRSMService_GetRsRoutingItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsRoutingItemById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingItemById" message="tns:IRSMService_GetRsRoutingItemById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsRoutingItemByIdResponse" message="tns:IRSMService_GetRsRoutingItemById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkCenterByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkCenterByPage" message="tns:IRSMService_GetRsWorkCenterByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkCenterByPageResponse" message="tns:IRSMService_GetRsWorkCenterByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkCenterCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkCenterCount" message="tns:IRSMService_GetRsWorkCenterCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkCenterCountResponse" message="tns:IRSMService_GetRsWorkCenterCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsWorkCenter">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsWorkCenter" message="tns:IRSMService_AddRsWorkCenter_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsWorkCenterResponse" message="tns:IRSMService_AddRsWorkCenter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsWorkCenter">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsWorkCenter" message="tns:IRSMService_UpdateRsWorkCenter_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsWorkCenterResponse" message="tns:IRSMService_UpdateRsWorkCenter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsWorkCenters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsWorkCenters" message="tns:IRSMService_DelRsWorkCenters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsWorkCentersResponse" message="tns:IRSMService_DelRsWorkCenters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsWorkCenter">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsWorkCenter" message="tns:IRSMService_DelRsWorkCenter_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsWorkCenterResponse" message="tns:IRSMService_DelRsWorkCenter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkCenters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkCenters" message="tns:IRSMService_GetRsWorkCenters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkCentersResponse" message="tns:IRSMService_GetRsWorkCenters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsWorkCenterById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkCenterById" message="tns:IRSMService_GetRsWorkCenterById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsWorkCenterByIdResponse" message="tns:IRSMService_GetRsWorkCenterById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsEquipMasterByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsEquipMasterByPage" message="tns:IRSMService_GetRsEquipMasterByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsEquipMasterByPageResponse" message="tns:IRSMService_GetRsEquipMasterByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsEquipMasterCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsEquipMasterCount" message="tns:IRSMService_GetRsEquipMasterCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsEquipMasterCountResponse" message="tns:IRSMService_GetRsEquipMasterCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsEquipMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsEquipMaster" message="tns:IRSMService_AddRsEquipMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/AddRsEquipMasterResponse" message="tns:IRSMService_AddRsEquipMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsEquipMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsEquipMaster" message="tns:IRSMService_UpdateRsEquipMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/UpdateRsEquipMasterResponse" message="tns:IRSMService_UpdateRsEquipMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsEquipMasters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsEquipMasters" message="tns:IRSMService_DelRsEquipMasters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsEquipMastersResponse" message="tns:IRSMService_DelRsEquipMasters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsEquipMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsEquipMaster" message="tns:IRSMService_DelRsEquipMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/DelRsEquipMasterResponse" message="tns:IRSMService_DelRsEquipMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsEquipMasters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsEquipMasters" message="tns:IRSMService_GetRsEquipMasters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsEquipMastersResponse" message="tns:IRSMService_GetRsEquipMasters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsEquipMasterById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsEquipMasterById" message="tns:IRSMService_GetRsEquipMasterById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IRSMService/GetRsEquipMasterByIdResponse" message="tns:IRSMService_GetRsEquipMasterById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,87 @@
+﻿<Page x:Class="BFM.WPF.SDM.Department.DepartmentView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BFM.WPF.SDM.Department"
+      xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+      xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+      xmlns:controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DepartmentView">
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2">
+            <controls:ImageButtonWithIcon Content="保存部门" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico"  Width="150" Height="40" Click="BarItem_OnItemClick" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="新增人员" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico"  Width="150" Height="40" Click="BarItem_AddUserClick" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="修改人员" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico"  Width="150" Height="40" Click="BarItem_UpdateUserClick" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="删除人员" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico"  Width="150" Height="40" Click="BarItem_DelUserClick" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="导入人员" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico"  Width="150" Height="40" Click="BarItem_DelUserClick" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="导出人员" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico"  Width="150" Height="40" Click="BarItem_DelUserClick" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+
+        </DockPanel>
+
+        <dxg:TreeListControl x:Name="treeList" Grid.Row="1" EnableSmartColumnsGeneration="True" SelectedItemChanged="treeList_SelectedItemChanged" >
+            <dxg:TreeListControl.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="新增" Click="MenuAdd_Click"/>
+                    <MenuItem Header="删除 " Click="MenuDelete_Click"/>
+                </ContextMenu>
+            </dxg:TreeListControl.ContextMenu>
+
+            <dxg:TreeListControl.View>
+                <dxg:TreeListView AutoExpandAllNodes="True"  KeyFieldName="PKNO" ParentFieldName="PARENT_DEPARTMENT_PKNO"  AutoWidth="True" AllowEditing="False" NavigationStyle="Row"/>
+            </dxg:TreeListControl.View>
+
+            <dxg:TreeListColumn FieldName="DEPARTMENT_NAME" Header="部门树"/>
+        </dxg:TreeListControl>
+
+
+        <dxlc:LayoutGroup x:Name="gbMenuContent" Grid.Row="1" Grid.Column="1" Header="部门信息"  View="GroupBox" ItemLabelsAlignment="Local" IsCollapsible="True" Orientation="Vertical" >
+            <dxlc:LayoutGroup Margin="0,15,0,0" >
+                <dxlc:LayoutItem Label="部门编码" >
+                    <TextBox Text="{Binding DEPARTMENT_CODE}"  Margin="10,0,10,0"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="部门代码" >
+                    <TextBox Text="{Binding DEPARTMENT_NO}" Margin="10,0,10,0" />
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+            <dxlc:LayoutGroup  Margin="0,15,0,0">
+                <dxlc:LayoutItem Label="部门名称" >
+                    <TextBox Text="{Binding DEPARTMENT_NAME}" Margin="10,0,10,0" />
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="部门路径" >
+                    <TextBox Text="{Binding DEPARTMENT_PATH}" Margin="10,0,10,0" />
+
+                </dxlc:LayoutItem>
+
+            </dxlc:LayoutGroup>
+            <dxlc:LayoutGroup  Margin="0,15,0,0">
+                <dxlc:LayoutItem Label="父部门" >
+                    <TextBox x:Name="parentname" Margin="10,0,10,0" />
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+            <dxlc:LayoutGroup  Margin="0,10,0,0">
+                <dxg:GridControl x:Name="UserDataGrid"  Grid.Row="1" IsEnabled="{Binding IsCollapsed , ElementName=gbItem}"  AutoGenerateColumns="None" EnableSmartColumnsGeneration="True"  >
+                    <dxg:GridControl.View>
+                        <dxg:TableView ShowGroupPanel="False" AllowEditing="False" NavigationStyle="Row"/>
+                    </dxg:GridControl.View>
+                    <dxg:GridColumn FieldName="STAFF_NO" Header="工号" Width="100"/>
+                    <dxg:GridColumn FieldName="USER_NAME" Header="用户姓名" Width="160"/>
+                    <dxg:GridColumn FieldName="REMARK" Header="备注" Width="80"/>
+                </dxg:GridControl>
+            </dxlc:LayoutGroup>
+        </dxlc:LayoutGroup>
+
+    </Grid>
+</Page>

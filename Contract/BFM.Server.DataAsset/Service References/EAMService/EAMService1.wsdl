@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://fanuc.com.cn/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fanuc.com.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fanuc.com.cn/Imports">
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/EAMService.svc?xsd=xsd0" namespace="http://fanuc.com.cn/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/EAMService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/EAMService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/EAMService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEAMService_GetAmAssetMasterNByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmAssetMasterNByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmAssetMasterNByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmAssetMasterNByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmAssetMasterNCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmAssetMasterNCount" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmAssetMasterNCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmAssetMasterNCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddAmAssetMasterN_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAmAssetMasterN" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddAmAssetMasterN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAmAssetMasterNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateAmAssetMasterN_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAmAssetMasterN" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateAmAssetMasterN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAmAssetMasterNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelAmAssetMasterNs_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelAmAssetMasterNs" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelAmAssetMasterNs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelAmAssetMasterNsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelAmAssetMasterN_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelAmAssetMasterN" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelAmAssetMasterN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelAmAssetMasterNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmAssetMasterNs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmAssetMasterNs" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmAssetMasterNs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmAssetMasterNsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmAssetMasterNById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmAssetMasterNById" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmAssetMasterNById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmAssetMasterNByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmPartsMasterNByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmPartsMasterNByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmPartsMasterNByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmPartsMasterNByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmPartsMasterNCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmPartsMasterNCount" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmPartsMasterNCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmPartsMasterNCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddAmPartsMasterN_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAmPartsMasterN" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddAmPartsMasterN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAmPartsMasterNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateAmPartsMasterN_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAmPartsMasterN" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateAmPartsMasterN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAmPartsMasterNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelAmPartsMasterNs_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelAmPartsMasterNs" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelAmPartsMasterNs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelAmPartsMasterNsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelAmPartsMasterN_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelAmPartsMasterN" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelAmPartsMasterN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelAmPartsMasterNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmPartsMasterNs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmPartsMasterNs" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmPartsMasterNs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmPartsMasterNsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmPartsMasterNById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmPartsMasterNById" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetAmPartsMasterNById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAmPartsMasterNByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsCount" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddRsMaintainStandards_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsMaintainStandards" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddRsMaintainStandards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsMaintainStandardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateRsMaintainStandards_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsMaintainStandards" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateRsMaintainStandards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsMaintainStandardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainStandardss_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainStandardss" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainStandardss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainStandardssResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainStandards_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainStandards" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainStandards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainStandardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardss_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardss" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardssResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsById" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsDetailByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsDetailByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsDetailByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsDetailByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsDetailCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsDetailCount" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsDetailCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsDetailCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddRsMaintainStandardsDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsMaintainStandardsDetail" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddRsMaintainStandardsDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsMaintainStandardsDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateRsMaintainStandardsDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsMaintainStandardsDetail" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateRsMaintainStandardsDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsMaintainStandardsDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainStandardsDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainStandardsDetails" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainStandardsDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainStandardsDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainStandardsDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainStandardsDetail" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainStandardsDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainStandardsDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsDetails" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsDetailById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsDetailById" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsDetailById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsDetailByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsRelateByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsRelateByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsRelateByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsRelateByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsRelateCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsRelateCount" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsRelateCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsRelateCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddRsMaintainStandardsRelate_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsMaintainStandardsRelate" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddRsMaintainStandardsRelate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsMaintainStandardsRelateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateRsMaintainStandardsRelate_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsMaintainStandardsRelate" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateRsMaintainStandardsRelate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsMaintainStandardsRelateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainStandardsRelates_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainStandardsRelates" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainStandardsRelates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainStandardsRelatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainStandardsRelate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainStandardsRelate" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainStandardsRelate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainStandardsRelateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsRelates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsRelates" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsRelates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsRelatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsRelateById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsRelateById" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainStandardsRelateById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainStandardsRelateByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRmRepairRecordByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRmRepairRecordByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRmRepairRecordByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRmRepairRecordByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRmRepairRecordCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRmRepairRecordCount" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRmRepairRecordCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRmRepairRecordCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddRmRepairRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRmRepairRecord" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddRmRepairRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRmRepairRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateRmRepairRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRmRepairRecord" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateRmRepairRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRmRepairRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRmRepairRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRmRepairRecords" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRmRepairRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRmRepairRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRmRepairRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRmRepairRecord" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRmRepairRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRmRepairRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRmRepairRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRmRepairRecords" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRmRepairRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRmRepairRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRmRepairRecordById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRmRepairRecordById" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRmRepairRecordById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRmRepairRecordByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainRecordByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainRecordByPage" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainRecordByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainRecordByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainRecordCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainRecordCount" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainRecordCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainRecordCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddRsMaintainRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsMaintainRecord" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_AddRsMaintainRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRsMaintainRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateRsMaintainRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsMaintainRecord" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_UpdateRsMaintainRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRsMaintainRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainRecords" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainRecord" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_DelRsMaintainRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRsMaintainRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainRecords" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainRecordById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainRecordById" />
+  </wsdl:message>
+  <wsdl:message name="IEAMService_GetRsMaintainRecordById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRsMaintainRecordByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEAMService">
+    <wsdl:operation name="GetAmAssetMasterNByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmAssetMasterNByPage" message="tns:IEAMService_GetAmAssetMasterNByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmAssetMasterNByPageResponse" message="tns:IEAMService_GetAmAssetMasterNByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmAssetMasterNCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmAssetMasterNCount" message="tns:IEAMService_GetAmAssetMasterNCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmAssetMasterNCountResponse" message="tns:IEAMService_GetAmAssetMasterNCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAmAssetMasterN">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/AddAmAssetMasterN" message="tns:IEAMService_AddAmAssetMasterN_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/AddAmAssetMasterNResponse" message="tns:IEAMService_AddAmAssetMasterN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAmAssetMasterN">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateAmAssetMasterN" message="tns:IEAMService_UpdateAmAssetMasterN_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateAmAssetMasterNResponse" message="tns:IEAMService_UpdateAmAssetMasterN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelAmAssetMasterNs">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelAmAssetMasterNs" message="tns:IEAMService_DelAmAssetMasterNs_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelAmAssetMasterNsResponse" message="tns:IEAMService_DelAmAssetMasterNs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelAmAssetMasterN">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelAmAssetMasterN" message="tns:IEAMService_DelAmAssetMasterN_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelAmAssetMasterNResponse" message="tns:IEAMService_DelAmAssetMasterN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmAssetMasterNs">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmAssetMasterNs" message="tns:IEAMService_GetAmAssetMasterNs_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmAssetMasterNsResponse" message="tns:IEAMService_GetAmAssetMasterNs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmAssetMasterNById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmAssetMasterNById" message="tns:IEAMService_GetAmAssetMasterNById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmAssetMasterNByIdResponse" message="tns:IEAMService_GetAmAssetMasterNById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmPartsMasterNByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmPartsMasterNByPage" message="tns:IEAMService_GetAmPartsMasterNByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmPartsMasterNByPageResponse" message="tns:IEAMService_GetAmPartsMasterNByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmPartsMasterNCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmPartsMasterNCount" message="tns:IEAMService_GetAmPartsMasterNCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmPartsMasterNCountResponse" message="tns:IEAMService_GetAmPartsMasterNCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAmPartsMasterN">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/AddAmPartsMasterN" message="tns:IEAMService_AddAmPartsMasterN_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/AddAmPartsMasterNResponse" message="tns:IEAMService_AddAmPartsMasterN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAmPartsMasterN">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateAmPartsMasterN" message="tns:IEAMService_UpdateAmPartsMasterN_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateAmPartsMasterNResponse" message="tns:IEAMService_UpdateAmPartsMasterN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelAmPartsMasterNs">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelAmPartsMasterNs" message="tns:IEAMService_DelAmPartsMasterNs_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelAmPartsMasterNsResponse" message="tns:IEAMService_DelAmPartsMasterNs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelAmPartsMasterN">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelAmPartsMasterN" message="tns:IEAMService_DelAmPartsMasterN_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelAmPartsMasterNResponse" message="tns:IEAMService_DelAmPartsMasterN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmPartsMasterNs">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmPartsMasterNs" message="tns:IEAMService_GetAmPartsMasterNs_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmPartsMasterNsResponse" message="tns:IEAMService_GetAmPartsMasterNs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAmPartsMasterNById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmPartsMasterNById" message="tns:IEAMService_GetAmPartsMasterNById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetAmPartsMasterNByIdResponse" message="tns:IEAMService_GetAmPartsMasterNById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsByPage" message="tns:IEAMService_GetRsMaintainStandardsByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsByPageResponse" message="tns:IEAMService_GetRsMaintainStandardsByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsCount" message="tns:IEAMService_GetRsMaintainStandardsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsCountResponse" message="tns:IEAMService_GetRsMaintainStandardsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsMaintainStandards">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/AddRsMaintainStandards" message="tns:IEAMService_AddRsMaintainStandards_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/AddRsMaintainStandardsResponse" message="tns:IEAMService_AddRsMaintainStandards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsMaintainStandards">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateRsMaintainStandards" message="tns:IEAMService_UpdateRsMaintainStandards_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateRsMaintainStandardsResponse" message="tns:IEAMService_UpdateRsMaintainStandards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainStandardss">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardss" message="tns:IEAMService_DelRsMaintainStandardss_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardssResponse" message="tns:IEAMService_DelRsMaintainStandardss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainStandards">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainStandards" message="tns:IEAMService_DelRsMaintainStandards_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardsResponse" message="tns:IEAMService_DelRsMaintainStandards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardss">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardss" message="tns:IEAMService_GetRsMaintainStandardss_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardssResponse" message="tns:IEAMService_GetRsMaintainStandardss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsById" message="tns:IEAMService_GetRsMaintainStandardsById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsByIdResponse" message="tns:IEAMService_GetRsMaintainStandardsById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsDetailByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsDetailByPage" message="tns:IEAMService_GetRsMaintainStandardsDetailByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsDetailByPageResponse" message="tns:IEAMService_GetRsMaintainStandardsDetailByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsDetailCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsDetailCount" message="tns:IEAMService_GetRsMaintainStandardsDetailCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsDetailCountResponse" message="tns:IEAMService_GetRsMaintainStandardsDetailCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsMaintainStandardsDetail">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/AddRsMaintainStandardsDetail" message="tns:IEAMService_AddRsMaintainStandardsDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/AddRsMaintainStandardsDetailResponse" message="tns:IEAMService_AddRsMaintainStandardsDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsMaintainStandardsDetail">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateRsMaintainStandardsDetail" message="tns:IEAMService_UpdateRsMaintainStandardsDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateRsMaintainStandardsDetailResponse" message="tns:IEAMService_UpdateRsMaintainStandardsDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainStandardsDetails">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardsDetails" message="tns:IEAMService_DelRsMaintainStandardsDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardsDetailsResponse" message="tns:IEAMService_DelRsMaintainStandardsDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainStandardsDetail">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardsDetail" message="tns:IEAMService_DelRsMaintainStandardsDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardsDetailResponse" message="tns:IEAMService_DelRsMaintainStandardsDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsDetails">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsDetails" message="tns:IEAMService_GetRsMaintainStandardsDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsDetailsResponse" message="tns:IEAMService_GetRsMaintainStandardsDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsDetailById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsDetailById" message="tns:IEAMService_GetRsMaintainStandardsDetailById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsDetailByIdResponse" message="tns:IEAMService_GetRsMaintainStandardsDetailById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsRelateByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsRelateByPage" message="tns:IEAMService_GetRsMaintainStandardsRelateByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsRelateByPageResponse" message="tns:IEAMService_GetRsMaintainStandardsRelateByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsRelateCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsRelateCount" message="tns:IEAMService_GetRsMaintainStandardsRelateCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsRelateCountResponse" message="tns:IEAMService_GetRsMaintainStandardsRelateCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsMaintainStandardsRelate">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/AddRsMaintainStandardsRelate" message="tns:IEAMService_AddRsMaintainStandardsRelate_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/AddRsMaintainStandardsRelateResponse" message="tns:IEAMService_AddRsMaintainStandardsRelate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsMaintainStandardsRelate">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateRsMaintainStandardsRelate" message="tns:IEAMService_UpdateRsMaintainStandardsRelate_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateRsMaintainStandardsRelateResponse" message="tns:IEAMService_UpdateRsMaintainStandardsRelate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainStandardsRelates">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardsRelates" message="tns:IEAMService_DelRsMaintainStandardsRelates_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardsRelatesResponse" message="tns:IEAMService_DelRsMaintainStandardsRelates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainStandardsRelate">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardsRelate" message="tns:IEAMService_DelRsMaintainStandardsRelate_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainStandardsRelateResponse" message="tns:IEAMService_DelRsMaintainStandardsRelate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsRelates">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsRelates" message="tns:IEAMService_GetRsMaintainStandardsRelates_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsRelatesResponse" message="tns:IEAMService_GetRsMaintainStandardsRelates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainStandardsRelateById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsRelateById" message="tns:IEAMService_GetRsMaintainStandardsRelateById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainStandardsRelateByIdResponse" message="tns:IEAMService_GetRsMaintainStandardsRelateById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRmRepairRecordByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRmRepairRecordByPage" message="tns:IEAMService_GetRmRepairRecordByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRmRepairRecordByPageResponse" message="tns:IEAMService_GetRmRepairRecordByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRmRepairRecordCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRmRepairRecordCount" message="tns:IEAMService_GetRmRepairRecordCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRmRepairRecordCountResponse" message="tns:IEAMService_GetRmRepairRecordCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRmRepairRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/AddRmRepairRecord" message="tns:IEAMService_AddRmRepairRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/AddRmRepairRecordResponse" message="tns:IEAMService_AddRmRepairRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRmRepairRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateRmRepairRecord" message="tns:IEAMService_UpdateRmRepairRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateRmRepairRecordResponse" message="tns:IEAMService_UpdateRmRepairRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRmRepairRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelRmRepairRecords" message="tns:IEAMService_DelRmRepairRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelRmRepairRecordsResponse" message="tns:IEAMService_DelRmRepairRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRmRepairRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelRmRepairRecord" message="tns:IEAMService_DelRmRepairRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelRmRepairRecordResponse" message="tns:IEAMService_DelRmRepairRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRmRepairRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRmRepairRecords" message="tns:IEAMService_GetRmRepairRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRmRepairRecordsResponse" message="tns:IEAMService_GetRmRepairRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRmRepairRecordById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRmRepairRecordById" message="tns:IEAMService_GetRmRepairRecordById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRmRepairRecordByIdResponse" message="tns:IEAMService_GetRmRepairRecordById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainRecordByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainRecordByPage" message="tns:IEAMService_GetRsMaintainRecordByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainRecordByPageResponse" message="tns:IEAMService_GetRsMaintainRecordByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainRecordCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainRecordCount" message="tns:IEAMService_GetRsMaintainRecordCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainRecordCountResponse" message="tns:IEAMService_GetRsMaintainRecordCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRsMaintainRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/AddRsMaintainRecord" message="tns:IEAMService_AddRsMaintainRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/AddRsMaintainRecordResponse" message="tns:IEAMService_AddRsMaintainRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRsMaintainRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateRsMaintainRecord" message="tns:IEAMService_UpdateRsMaintainRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/UpdateRsMaintainRecordResponse" message="tns:IEAMService_UpdateRsMaintainRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainRecords" message="tns:IEAMService_DelRsMaintainRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainRecordsResponse" message="tns:IEAMService_DelRsMaintainRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRsMaintainRecord">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainRecord" message="tns:IEAMService_DelRsMaintainRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/DelRsMaintainRecordResponse" message="tns:IEAMService_DelRsMaintainRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainRecords">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainRecords" message="tns:IEAMService_GetRsMaintainRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainRecordsResponse" message="tns:IEAMService_GetRsMaintainRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsMaintainRecordById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainRecordById" message="tns:IEAMService_GetRsMaintainRecordById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/IEAMService/GetRsMaintainRecordByIdResponse" message="tns:IEAMService_GetRsMaintainRecordById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

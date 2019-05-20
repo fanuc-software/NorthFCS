@@ -1,0 +1,58 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dxwuit="http://schemas.devexpress.com/winfx/2008/xaml/windowsui/themekeys"
+                    xmlns:dxwuii="http://schemas.devexpress.com/winfx/2008/xaml/windowsui/internal"
+                    xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui">
+
+    <ControlTemplate x:Key="DefaultHeaderControlTemplate" TargetType="dxwuii:NavigationHeaderControl">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <dxwuii:BackButton x:Name="PART_BackButton" Width="48" Height="48"  Command="{TemplateBinding ActualBackCommand}" Margin="0,0,10,0">
+                <dxwuii:BackButton.Template>
+                    <ControlTemplate TargetType="{x:Type dxwuii:BackButton}">
+                        <Image x:Name="img" Source="/BFM.WPF.Base;component/Resources/back.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="48" Height="48" />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="img" Property="Source" Value="/BFM.WPF.Base;component/Resources/back_Selected.png"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="img" Property="Source" Value="/BFM.WPF.Base;component/Resources/back_Selected.png"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </dxwuii:BackButton.Template>
+            </dxwuii:BackButton>
+            <ContentPresenter x:Name="PART_Content" VerticalAlignment="Center" Grid.Column="1" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxwuit:WindowsUIElementsThemeKey ResourceKey=PageAdornerControlTemplate, IsThemeIndependent=True}" TargetType="dxwui:PageAdornerControl">
+        <Border Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Margin="{TemplateBinding Padding}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <!--margin-->
+                <Grid Margin="45,0,0,0" >
+                    <dxwuii:NavigationHeaderControl VerticalAlignment="Center" x:Name="PART_NavigationHeader" Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                                    BackCommand="{TemplateBinding BackCommand}"
+                                                    ShowBackButton="{TemplateBinding ShowBackButton}" 
+                                                    FontSize="20" Foreground="#feb113" 
+                                                    Template="{StaticResource DefaultHeaderControlTemplate}"/>
+                </Grid>
+                <ContentPresenter Grid.Row="1"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+    <Style TargetType="dxwui:PageAdornerControl">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="/BFM.WPF.Base;component/Resources/pagebackground.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

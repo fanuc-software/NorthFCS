@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BFM.ContractModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfRsFactory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsFactory" nillable="true" type="tns:RsFactory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsFactory" nillable="true" type="tns:ArrayOfRsFactory" />
+  <xs:complexType name="RsFactory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FACTORY_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FACTORY_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsFactory" nillable="true" type="tns:RsFactory" />
+  <xs:complexType name="ArrayOfRsWorkShop">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsWorkShop" nillable="true" type="tns:RsWorkShop" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsWorkShop" nillable="true" type="tns:ArrayOfRsWorkShop" />
+  <xs:complexType name="RsWorkShop">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FACTORY_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="WORKSHOP_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WORKSHOP_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WORKSHOP_TYPE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsWorkShop" nillable="true" type="tns:RsWorkShop" />
+  <xs:complexType name="ArrayOfRsLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsLine" nillable="true" type="tns:RsLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsLine" nillable="true" type="tns:ArrayOfRsLine" />
+  <xs:complexType name="RsLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LINE_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LINE_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="WORKSHOP_PKNO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsLine" nillable="true" type="tns:RsLine" />
+  <xs:complexType name="ArrayOfRsLineStation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsLineStation" nillable="true" type="tns:RsLineStation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsLineStation" nillable="true" type="tns:ArrayOfRsLineStation" />
+  <xs:complexType name="RsLineStation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EQUIP_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EQUIP_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IP_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KEY_FLAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LINE_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAC_ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARENT_STATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SF_FLAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATION_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATION_SEQ" type="xs:int" />
+      <xs:element minOccurs="0" name="STATION_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsLineStation" nillable="true" type="tns:RsLineStation" />
+  <xs:complexType name="ArrayOfRsItemMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsItemMaster" nillable="true" type="tns:RsItemMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsItemMaster" nillable="true" type="tns:ArrayOfRsItemMaster" />
+  <xs:complexType name="RsItemMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ABC_CLASS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DEPT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DRAWING_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GB_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_ABV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_NORM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_SPECS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MP_FLAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NORM_CLASS" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROUND_TIMES" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ROUTING_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsItemMaster" nillable="true" type="tns:RsItemMaster" />
+  <xs:complexType name="ArrayOfRsLineProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsLineProduct" nillable="true" type="tns:RsLineProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsLineProduct" nillable="true" type="tns:ArrayOfRsLineProduct" />
+  <xs:complexType name="RsLineProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DEFAULT_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="DRAWING_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_ABV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_NORM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_SPECS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LINE_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEQ_NO" type="xs:int" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsLineProduct" nillable="true" type="tns:RsLineProduct" />
+  <xs:complexType name="ArrayOfRsBom">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsBom" nillable="true" type="tns:RsBom" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsBom" nillable="true" type="tns:ArrayOfRsBom" />
+  <xs:complexType name="RsBom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSEMBLY_GROUP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BASIC_FLAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHILD_MODEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHILD_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHILD_NORM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHILD_QTY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MOVE_DAYS" type="xs:int" />
+      <xs:element minOccurs="0" name="MP_FLAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OP_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORI_PARENT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARENT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARENT_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRODUCT_GROUP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEQ_NO" type="xs:int" />
+      <xs:element minOccurs="0" name="STATION_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STRAIGHT_SEND_FLAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsBom" nillable="true" type="tns:RsBom" />
+  <xs:complexType name="ArrayOfRsRoutingHead">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsRoutingHead" nillable="true" type="tns:RsRoutingHead" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsRoutingHead" nillable="true" type="tns:ArrayOfRsRoutingHead" />
+  <xs:complexType name="RsRoutingHead">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROUTING_ABV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROUTING_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsRoutingHead" nillable="true" type="tns:RsRoutingHead" />
+  <xs:complexType name="ArrayOfRsRoutingDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsRoutingDetail" nillable="true" type="tns:RsRoutingDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsRoutingDetail" nillable="true" type="tns:ArrayOfRsRoutingDetail" />
+  <xs:complexType name="RsRoutingDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COOP_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="COOP_TIME" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CUTLER_EQUIP_XY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FIRST_LAST" type="xs:int" />
+      <xs:element minOccurs="0" name="JOB_KIND" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MEASURE_EQUIP_XY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NC_PRO_INFO" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="NC_PRO_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OP_ABV_XY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OP_DESC_XY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OP_INDEX" type="xs:int" />
+      <xs:element minOccurs="0" name="OP_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OP_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OP_NOTE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OP_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_ACTION_PARAM1_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_ACTION_PARAM2_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_ACTION_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_ACTION_TYPE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="QC_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROUTING_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RUN_TIME" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RUN_UNIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SETUP_TIME" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SETUP_UNIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOL_DESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOL_FLAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="WC_ABV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WC_CODE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsRoutingDetail" nillable="true" type="tns:RsRoutingDetail" />
+  <xs:complexType name="ArrayOfRsRoutingTools">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsRoutingTools" nillable="true" type="tns:RsRoutingTools" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsRoutingTools" nillable="true" type="tns:ArrayOfRsRoutingTools" />
+  <xs:complexType name="RsRoutingTools">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROUTING_DETAIL_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_NC_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLS_TYPE_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsRoutingTools" nillable="true" type="tns:RsRoutingTools" />
+  <xs:complexType name="ArrayOfRsRoutingParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsRoutingParam" nillable="true" type="tns:RsRoutingParam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsRoutingParam" nillable="true" type="tns:ArrayOfRsRoutingParam" />
+  <xs:complexType name="RsRoutingParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MAX_SIZE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MIN_SIZE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PARAM_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARAM_DESC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARAM_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARAM_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARAM_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsRoutingParam" nillable="true" type="tns:RsRoutingParam" />
+  <xs:complexType name="ArrayOfRsRoutingCheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsRoutingCheck" nillable="true" type="tns:RsRoutingCheck" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsRoutingCheck" nillable="true" type="tns:ArrayOfRsRoutingCheck" />
+  <xs:complexType name="RsRoutingCheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CHECK_TYPE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CHK_FREQ_UNIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHK_FREQ_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHK_OBJ_UNIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COLLECTION_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REC_FREQ_UNIT" type="xs:decimal" />
+      <xs:element minOccurs="0" name="REC_FREQ_VALUE" type="xs:int" />
+      <xs:element minOccurs="0" name="REC_MODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsRoutingCheck" nillable="true" type="tns:RsRoutingCheck" />
+  <xs:complexType name="ArrayOfRsRoutingEquip">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsRoutingEquip" nillable="true" type="tns:RsRoutingEquip" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsRoutingEquip" nillable="true" type="tns:ArrayOfRsRoutingEquip" />
+  <xs:complexType name="RsRoutingEquip">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DEFAULT_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="EQUIP_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RHYTHM_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SHIFT_VALUE" type="xs:int" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsRoutingEquip" nillable="true" type="tns:RsRoutingEquip" />
+  <xs:complexType name="ArrayOfRsRoutingItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsRoutingItem" nillable="true" type="tns:RsRoutingItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsRoutingItem" nillable="true" type="tns:ArrayOfRsRoutingItem" />
+  <xs:complexType name="RsRoutingItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROUTING_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsRoutingItem" nillable="true" type="tns:RsRoutingItem" />
+  <xs:complexType name="ArrayOfRsWorkCenter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsWorkCenter" nillable="true" type="tns:RsWorkCenter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsWorkCenter" nillable="true" type="tns:ArrayOfRsWorkCenter" />
+  <xs:complexType name="RsWorkCenter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EQUIP_QTY" type="xs:int" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="WC_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WC_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsWorkCenter" nillable="true" type="tns:RsWorkCenter" />
+  <xs:complexType name="ArrayOfRsEquipMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsEquipMaster" nillable="true" type="tns:RsEquipMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsEquipMaster" nillable="true" type="tns:ArrayOfRsEquipMaster" />
+  <xs:complexType name="RsEquipMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEGIN_CHECK_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="CHANGE_CHECK_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EQUIP_MODEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EQUIP_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EQUIP_NORM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EQUIP_STATUS" type="xs:int" />
+      <xs:element minOccurs="0" name="EQUIP_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IMG_PATH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REPAIR_CHECK_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="WC_PKNO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsEquipMaster" nillable="true" type="tns:RsEquipMaster" />
+</xs:schema>

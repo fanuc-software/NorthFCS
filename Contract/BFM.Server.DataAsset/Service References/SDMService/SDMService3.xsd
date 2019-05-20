@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BFM.ContractModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfSysTableNOSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysTableNOSetting" nillable="true" type="tns:SysTableNOSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysTableNOSetting" nillable="true" type="tns:ArrayOfSysTableNOSetting" />
+  <xs:complexType name="SysTableNOSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CUR_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DATE_FORMATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FIELD_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FIRST_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDENTIFY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MAX_LENGTH" type="xs:int" />
+      <xs:element minOccurs="0" name="NO_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POSTFIX_STR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PREFIX_STR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TABLE_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TABLE_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysTableNOSetting" nillable="true" type="tns:SysTableNOSetting" />
+  <xs:complexType name="ArrayOfSysEnumMain">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysEnumMain" nillable="true" type="tns:SysEnumMain" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysEnumMain" nillable="true" type="tns:ArrayOfSysEnumMain" />
+  <xs:complexType name="SysEnumMain">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ENUM_CODE_CHECKKEY" type="xs:int" />
+      <xs:element minOccurs="0" name="ENUM_CODE_CHECKNULL" type="xs:int" />
+      <xs:element minOccurs="0" name="ENUM_CODE_CHECKNUM" type="xs:int" />
+      <xs:element minOccurs="0" name="ENUM_CODE_INFO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENUM_CODE_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENUM_IDENTIFY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENUM_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENUM_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENUM_SORT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ENUM_STATE" type="xs:int" />
+      <xs:element minOccurs="0" name="ENUM_TYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="VALUE_FIELD" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysEnumMain" nillable="true" type="tns:SysEnumMain" />
+  <xs:complexType name="ArrayOfSysEnumItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysEnumItems" nillable="true" type="tns:SysEnumItems" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysEnumItems" nillable="true" type="tns:ArrayOfSysEnumItems" />
+  <xs:complexType name="SysEnumItems">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ENUM_IDENTIFY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_INDEX" type="xs:int" />
+      <xs:element minOccurs="0" name="ITEM_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_TYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NAME_PINY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USER_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysEnumItems" nillable="true" type="tns:SysEnumItems" />
+  <xs:complexType name="ArrayOfSysUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysUser" nillable="true" type="tns:SysUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysUser" nillable="true" type="tns:ArrayOfSysUser" />
+  <xs:complexType name="SysUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DEPARTMENT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXPIRE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STAFF_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TEL_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysUser" nillable="true" type="tns:SysUser" />
+  <xs:complexType name="ArrayOfSysRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysRole" nillable="true" type="tns:SysRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysRole" nillable="true" type="tns:ArrayOfSysRole" />
+  <xs:complexType name="SysRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROLE_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysRole" nillable="true" type="tns:SysRole" />
+  <xs:complexType name="ArrayOfSysPurview">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysPurview" nillable="true" type="tns:SysPurview" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysPurview" nillable="true" type="tns:ArrayOfSysPurview" />
+  <xs:complexType name="SysPurview">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PURVIEW_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PURVIEW_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysPurview" nillable="true" type="tns:SysPurview" />
+  <xs:complexType name="ArrayOfSysMenuItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysMenuItem" nillable="true" type="tns:SysMenuItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysMenuItem" nillable="true" type="tns:ArrayOfSysMenuItem" />
+  <xs:complexType name="SysMenuItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSEMBLY_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IMG_PATH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_SEQ" type="xs:int" />
+      <xs:element minOccurs="0" name="ITEM_TITLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PAGE_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAGE_PARAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARENT_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TARGET_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysMenuItem" nillable="true" type="tns:SysMenuItem" />
+  <xs:complexType name="ArrayOfSysRoleUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysRoleUser" nillable="true" type="tns:SysRoleUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysRoleUser" nillable="true" type="tns:ArrayOfSysRoleUser" />
+  <xs:complexType name="SysRoleUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROLE_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USER_PKNO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysRoleUser" nillable="true" type="tns:SysRoleUser" />
+  <xs:complexType name="ArrayOfSysUserPurview">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysUserPurview" nillable="true" type="tns:SysUserPurview" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysUserPurview" nillable="true" type="tns:ArrayOfSysUserPurview" />
+  <xs:complexType name="SysUserPurview">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PURVIEW_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USER_PKNO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysUserPurview" nillable="true" type="tns:SysUserPurview" />
+  <xs:complexType name="ArrayOfSysRolePurview">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysRolePurview" nillable="true" type="tns:SysRolePurview" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysRolePurview" nillable="true" type="tns:ArrayOfSysRolePurview" />
+  <xs:complexType name="SysRolePurview">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PURVIEW_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROLE_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysRolePurview" nillable="true" type="tns:SysRolePurview" />
+  <xs:complexType name="ArrayOfSysMenuPurview">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysMenuPurview" nillable="true" type="tns:SysMenuPurview" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysMenuPurview" nillable="true" type="tns:ArrayOfSysMenuPurview" />
+  <xs:complexType name="SysMenuPurview">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MENU_ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PURVIEW_PKNO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysMenuPurview" nillable="true" type="tns:SysMenuPurview" />
+  <xs:complexType name="ArrayOfSysUserMenu">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysUserMenu" nillable="true" type="tns:SysUserMenu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysUserMenu" nillable="true" type="tns:ArrayOfSysUserMenu" />
+  <xs:complexType name="SysUserMenu">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MENU_ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USER_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysUserMenu" nillable="true" type="tns:SysUserMenu" />
+  <xs:complexType name="ArrayOfRsWorkSchedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsWorkSchedule" nillable="true" type="tns:RsWorkSchedule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsWorkSchedule" nillable="true" type="tns:ArrayOfRsWorkSchedule" />
+  <xs:complexType name="RsWorkSchedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MARK_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MARK_ENDTIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MARK_STARTTIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WORK_FLAG" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsWorkSchedule" nillable="true" type="tns:RsWorkSchedule" />
+  <xs:complexType name="ArrayOfSysAttachInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysAttachInfo" nillable="true" type="tns:SysAttachInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysAttachInfo" nillable="true" type="tns:ArrayOfSysAttachInfo" />
+  <xs:complexType name="SysAttachInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ATTACHFORMATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ATTACHICON" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ATTACHINFO" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ATTACHINTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ATTACHMANAGEMODE" type="xs:int" />
+      <xs:element minOccurs="0" name="ATTACHNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ATTACHSTOREFILE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ATTACHSTORETYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="BELONGFUNCTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FUNCTIONPKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GROUPNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ISEQ" type="xs:int" />
+      <xs:element minOccurs="0" name="ISTATE" type="xs:int" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysAttachInfo" nillable="true" type="tns:SysAttachInfo" />
+  <xs:complexType name="ArrayOfSysAppInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysAppInfo" nillable="true" type="tns:SysAppInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysAppInfo" nillable="true" type="tns:ArrayOfSysAppInfo" />
+  <xs:complexType name="SysAppInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APP_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APP_RELATIVE_PATH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MODEL_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODEL_CONTENT" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="MODEL_INNER_VERSION" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MODEL_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MODEL_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VERSION_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VERSION_TYPE" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysAppInfo" nillable="true" type="tns:SysAppInfo" />
+  <xs:complexType name="ArrayOfSysDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SysDepartment" nillable="true" type="tns:SysDepartment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSysDepartment" nillable="true" type="tns:ArrayOfSysDepartment" />
+  <xs:complexType name="SysDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DEPARTMENT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPARTMENT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPARTMENT_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPARTMENT_PATH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARENT_DEPARTMENT_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VERSION_TYPE" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SysDepartment" nillable="true" type="tns:SysDepartment" />
+</xs:schema>

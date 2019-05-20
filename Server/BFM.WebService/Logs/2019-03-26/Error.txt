@@ -1,0 +1,660 @@
+2019-03-26 11:46:16.4352 | error:GetRawMaterial   error
+message: Unexpected character encountered while parsing value: c. Path '', line 0, position 0.
+StackTrace:   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 473
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 103
+InnerException: 
+2019-03-26 11:59:18.5602 | error:GetRawMaterial   error
+message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[BFM.ContractModel.FDIGetWOrder]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'DocEntry', line 1, position 12.
+StackTrace:   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 473
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 103
+InnerException: 
+2019-03-26 12:01:12.5602 | error:GetRawMaterial   error
+message: After parsing a value an unexpected character was encountered: O. Path '[0].OcrCode5', line 1, position 251.
+StackTrace:   在 Newtonsoft.Json.JsonTextReader.ParsePostValue(Boolean ignoreComments)
+   在 Newtonsoft.Json.JsonTextReader.Read()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 473
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 103
+InnerException: 
+2019-03-26 12:12:00.0603 | error:GetRawMaterial   error
+message: Unexpected character encountered while parsing number: ". Path '[0].DocEntry', line 1, position 14.
+StackTrace:   在 Newtonsoft.Json.JsonTextReader.ReadNumberCharIntoBuffer(Char currentChar, Int32 charPos)
+   在 Newtonsoft.Json.JsonTextReader.ReadNumberIntoBuffer()
+   在 Newtonsoft.Json.JsonTextReader.ParseNumber(ReadType readType)
+   在 Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   在 Newtonsoft.Json.JsonTextReader.ReadAsString()
+   在 Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 473
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 104
+InnerException: 
+2019-03-26 12:12:00.3415 | error:GetRawMaterial   error
+message: Unexpected character encountered while parsing number: ". Path '[0].DocEntry', line 1, position 14.
+StackTrace:   在 Newtonsoft.Json.JsonTextReader.ReadNumberCharIntoBuffer(Char currentChar, Int32 charPos)
+   在 Newtonsoft.Json.JsonTextReader.ReadNumberIntoBuffer()
+   在 Newtonsoft.Json.JsonTextReader.ParseNumber(ReadType readType)
+   在 Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   在 Newtonsoft.Json.JsonTextReader.ReadAsString()
+   在 Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 473
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 104
+InnerException: 
+2019-03-26 12:12:00.4977 | error:GetRawMaterial   error
+message: Unexpected character encountered while parsing number: ". Path '[0].DocEntry', line 1, position 15.
+StackTrace:   在 Newtonsoft.Json.JsonTextReader.ReadNumberCharIntoBuffer(Char currentChar, Int32 charPos)
+   在 Newtonsoft.Json.JsonTextReader.ReadNumberIntoBuffer()
+   在 Newtonsoft.Json.JsonTextReader.ParseNumber(ReadType readType)
+   在 Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   在 Newtonsoft.Json.JsonTextReader.ReadAsString()
+   在 Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 473
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 104
+InnerException: 
+2019-03-26 12:12:00.6228 | error:GetRawMaterial   error
+message: Unexpected character encountered while parsing number: ". Path '[0].DocEntry', line 1, position 15.
+StackTrace:   在 Newtonsoft.Json.JsonTextReader.ReadNumberCharIntoBuffer(Char currentChar, Int32 charPos)
+   在 Newtonsoft.Json.JsonTextReader.ReadNumberIntoBuffer()
+   在 Newtonsoft.Json.JsonTextReader.ParseNumber(ReadType readType)
+   在 Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   在 Newtonsoft.Json.JsonTextReader.ReadAsString()
+   在 Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 473
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 104
+InnerException: 
+2019-03-26 13:20:23.9665 | error:GetRawMaterial   error
+message: Unexpected character encountered while parsing number: ". Path '[0].DocEntry', line 1, position 14.
+StackTrace:   在 Newtonsoft.Json.JsonTextReader.ReadNumberCharIntoBuffer(Char currentChar, Int32 charPos)
+   在 Newtonsoft.Json.JsonTextReader.ReadNumberIntoBuffer()
+   在 Newtonsoft.Json.JsonTextReader.ParseNumber(ReadType readType)
+   在 Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   在 Newtonsoft.Json.JsonTextReader.ReadAsString()
+   在 Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 473
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 104
+InnerException: 
+2019-03-26 13:22:16.8102 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 13:23:33.1860 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 13:23:57.5290 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 13:24:10.6072 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 13:25:01.4196 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 13:32:10.7790 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 13:32:27.9665 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 13:33:02.8884 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 13:33:06.0447 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 14:17:23.6384 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 14:19:21.9353 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 14:24:37.3572 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 14:24:42.0291 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 14:24:42.0603 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 14:24:42.1228 | error:GetRawMaterial   error
+message: A configuration for type 'BFM.ContractModel.FDIPostSaleOrderDetail' has already been added. To reference the existing configuration use the Entity<T>() or ComplexType<T>() methods.
+StackTrace:   在 System.Data.Entity.ModelConfiguration.Configuration.ModelConfiguration.Add(EntityTypeConfiguration entityTypeConfiguration)
+   在 System.Data.Entity.ModelConfiguration.Configuration.ConfigurationRegistrar.Add[TEntityType](EntityTypeConfiguration`1 entityTypeConfiguration)
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1](CallSite site, T0 arg0, T1 arg1)
+   在 BFM.Common.DataBaseAsset.DB_Service.OnModelCreating(DbModelBuilder modelBuilder) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DB.CodeFirst\DB_Service.cs:行号 33
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModelBuilder()
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.Initialize()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 BFM.Common.DataBaseAsset.EF.BaseDAL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\DAL\BaseDAL.cs:行号 76
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException: 
+2019-03-26 14:26:34.7331 | error:GetRawMaterial   error
+message: Unexpected end when reading JSON. Path '[0]', line 1, position 2.
+StackTrace:   在 Newtonsoft.Json.JsonReader.ReadAndAssert()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 473
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 103
+InnerException: 
+2019-03-26 14:27:13.7946 | error:GetRawMaterial   error
+message: Unexpected end when reading JSON. Path '[0]', line 1, position 2.
+StackTrace:   在 Newtonsoft.Json.JsonReader.ReadAndAssert()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 473
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 103
+InnerException: 
+2019-03-26 14:36:03.5592 | error:GetRawMaterial   error
+message: Unexpected end when reading JSON. Path '[0]', line 1, position 2.
+StackTrace:   在 Newtonsoft.Json.JsonReader.ReadAndAssert()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 490
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 103
+InnerException: 
+2019-03-26 14:38:04.5710 | error:GetRawMaterial   error
+message: Unexpected end when reading JSON. Path '[0]', line 1, position 2.
+StackTrace:   在 Newtonsoft.Json.JsonReader.ReadAndAssert()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 490
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 103
+InnerException: 
+2019-03-26 14:45:45.2927 | error:GetRawMaterial   error
+message: Unexpected end when reading JSON. Path '[0]', line 1, position 2.
+StackTrace:   在 Newtonsoft.Json.JsonReader.ReadAndAssert()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 490
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 103
+InnerException: 
+2019-03-26 14:46:39.5085 | error:GetRawMaterial   error
+message: Unexpected end when reading JSON. Path '[0]', line 1, position 2.
+StackTrace:   在 Newtonsoft.Json.JsonReader.ReadAndAssert()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 490
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 103
+InnerException: 
+2019-03-26 14:46:54.0563 | error:GetRawMaterial   error
+message: The underlying provider failed on Open.
+StackTrace:   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 BFM.Common.DataBaseAsset.EF.BaseBLL`1.GetModels(Expression`1 whereLambda) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.DataBaseAsset\EF\BLL\BaseBLL.cs:行号 55
+   在 BFM.BLL.Model.FDIGetWOrderBLL.BFM.Common.DataBaseAsset.EF.IBaseBLL<BFM.ContractModel.FDIGetWOrder>.GetModels(Expression`1 whereLambda)
+   在 BFM.WebService.FDIService.GetFDIGetWOrders(String sWhere) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIGetWOrder.cs:行号 163
+   在 BFM.WebService.FDIService.GetWorkOrder(String jsWOMain, String jsWODetail) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 108
+InnerException:Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding. 
+2019-03-26 16:59:16.6803 | error:GetRawMaterialInfo   error
+message: Unexpected character encountered while parsing value: c. Path '', line 0, position 0.
+StackTrace:   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 490
+   在 BFM.WebService.FDIService.GetMaterialInfo(String jsMaterialInfo) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 68
+InnerException: 
+2019-03-26 16:59:42.6948 | error:GetRawMaterialInfo   error
+message: Unexpected character encountered while parsing value: c. Path '', line 0, position 0.
+StackTrace:   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 490
+   在 BFM.WebService.FDIService.GetMaterialInfo(String jsMaterialInfo) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 68
+InnerException: 
+2019-03-26 16:59:42.7341 | error:GetRawMaterialInfo   error
+message: Unexpected character encountered while parsing value: c. Path '', line 0, position 0.
+StackTrace:   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 490
+   在 BFM.WebService.FDIService.GetMaterialInfo(String jsMaterialInfo) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 68
+InnerException: 
+2019-03-26 16:59:42.7624 | error:GetRawMaterialInfo   error
+message: Unexpected character encountered while parsing value: c. Path '', line 0, position 0.
+StackTrace:   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 490
+   在 BFM.WebService.FDIService.GetMaterialInfo(String jsMaterialInfo) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 68
+InnerException: 
+2019-03-26 16:59:42.8239 | error:GetRawMaterialInfo   error
+message: Unexpected character encountered while parsing value: c. Path '', line 0, position 0.
+StackTrace:   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 490
+   在 BFM.WebService.FDIService.GetMaterialInfo(String jsMaterialInfo) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 68
+InnerException: 
+2019-03-26 17:07:10.7585 | error:GetRawMaterialInfo   error
+message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[BFM.ContractModel.FDIGetMaterialInfo]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'ItemCode', line 1, position 12.
+StackTrace:   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 490
+   在 BFM.WebService.FDIService.GetMaterialInfo(String jsMaterialInfo) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 68
+InnerException: 
+2019-03-26 17:08:52.8571 | error:GetRawMaterialInfo   error
+message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[BFM.ContractModel.FDIGetMaterialInfo]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'ItemCode', line 1, position 12.
+StackTrace:   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 490
+   在 BFM.WebService.FDIService.GetMaterialInfo(String jsMaterialInfo) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 68
+InnerException: 
+2019-03-26 17:08:52.8893 | error:GetRawMaterialInfo   error
+message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[BFM.ContractModel.FDIGetMaterialInfo]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'ItemCode', line 1, position 12.
+StackTrace:   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 490
+   在 BFM.WebService.FDIService.GetMaterialInfo(String jsMaterialInfo) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 68
+InnerException: 
+2019-03-26 17:08:52.9987 | error:GetRawMaterialInfo   error
+message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[BFM.ContractModel.FDIGetMaterialInfo]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'ItemCode', line 1, position 12.
+StackTrace:   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   在 BFM.Common.Base.SafeConverter.JsonDeserializeObject[T](String value) 位置 D:\JS_IT_MES\mes_new\Common\BFM.Common.Base\Converter\SafeConverter.cs:行号 490
+   在 BFM.WebService.FDIService.GetMaterialInfo(String jsMaterialInfo) 位置 D:\JS_IT_MES\mes_new\Server\BFM.WebService\FDIService\FDIServiceMain.cs:行号 68
+InnerException: 

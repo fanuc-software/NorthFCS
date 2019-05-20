@@ -1,0 +1,161 @@
+﻿<Page xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"  xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  x:Class="BFM.WPF.SDM.DM.DocumentManageView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="800"
+      Title="DocumentManageView" Foreground="#FFFDF3F3">
+    <Page.Resources>
+        <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="{x:Type Button}">
+            <Border x:Name="border" BorderBrush="Transparent" BorderThickness="0" 
+                    Background="Transparent" SnapsToDevicePixels="True">
+                <Image Source="Download.png" Height="15" Width="15"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsDefaulted" Value="True">
+                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderThickness" TargetName="border" Value="2"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="BorderThickness" TargetName="border" Value="4"/>
+                </Trigger>
+                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="ButtonControlTemplate2" TargetType="{x:Type Button}">
+            <Border x:Name="border" BorderBrush="Transparent" BorderThickness="0" 
+                    Background="Transparent" SnapsToDevicePixels="True">
+                <Image Source="logviewer.png" Height="15" Width="15"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsDefaulted" Value="True">
+                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderThickness" TargetName="border" Value="2"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="BorderThickness" TargetName="border" Value="4"/>
+                </Trigger>
+                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="ButtonControlTemplate3" TargetType="{x:Type Button}">
+            <Border x:Name="border" BorderBrush="Transparent" BorderThickness="0" 
+                    Background="Transparent" SnapsToDevicePixels="True">
+                <Image Source="delete.png" Height="15" Width="15"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsDefaulted" Value="True">
+                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderThickness" TargetName="border" Value="2"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="BorderThickness" TargetName="border" Value="4"/>
+                </Trigger>
+                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+
+    </Page.Resources>
+    <Grid Background="#FFF6F6F6" Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="stplUpView" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Grid.Row="0" Margin="5,10,0,0" >
+            <TextBlock Text="文件上传操作：" Foreground="#FF1B1919" Margin="0 0 10 0"></TextBlock>
+            <dxe:TextEdit x:Name="txtFilePath"  Width="200" Margin="0 0 10 0"></dxe:TextEdit>
+            <dx:SimpleButton x:Name="btnUpLoad" Content="打开并上传" Click="btnUpLoad_Click"></dx:SimpleButton>
+        </StackPanel>
+        <dxg:GridControl  x:Name="gridView" Grid.ColumnSpan="2" Margin="0,42,0,0" Grid.Row="0" Grid.RowSpan="2">
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="view" AllowScrollHeaders ="True" ScrollBarAnnotationMode="All"  ShowFilterPanelMode="Default"
+							       AllowEditing="False" ShowGroupPanel="False" NavigationStyle="Row" 
+								   ShowSearchPanelMode="Always" AllowHorizontalScrollingVirtualization="True"  RowMinHeight="30" GroupSummaryDisplayMode="AlignByColumns" />
+            </dxg:GridControl.View>
+            <dxg:GridColumn FieldName="BELONGFUNCTION" Header="所属模块" GroupIndex="0" Width="100" />
+            <dxg:GridColumn FieldName="GROUPNO" Header="分组编号" />
+            <dxg:GridColumn FieldName="ATTACHNAME" Header="文件名称" />
+            <dxg:GridColumn FieldName="ATTACHFORMATE" Header="文件格式" />
+            <dxg:GridColumn Binding="{Binding Path=ATTACHSTORETYPE, Converter={StaticResource BasicInfoConverter}, ConverterParameter='文档管理.存储类型'}" Header="文件存储类型" SortOrder="Ascending" SortIndex="0"/>
+            <!--<dxg:GridColumn FieldName="ATTACHSTORETYPE" Header="文件存储类型" SortOrder="Ascending" SortIndex="0"/>-->
+            <dxg:GridColumn FieldName="ISEQ" Header="排序" SortOrder="Ascending" SortIndex="0"/>
+            <dxg:GridColumn FieldName="CREATED_BY" Header="创建人"  SortOrder="Ascending" SortIndex="0"/>
+            <dxg:GridColumn FieldName="CREATION_DATE" Header="创建时间"  SortOrder="Ascending" SortIndex="0"/>
+            <dxg:GridColumn Header="操作">
+                <dxg:GridColumn.CellTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="50"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Button Width="34" Height="30" Content="Click" Grid.Column="0"
+                HorizontalAlignment="Right" Margin="0,16,24.6,15.6" 
+                VerticalAlignment="Center" Template="{DynamicResource ButtonControlTemplate1}" Click="btnDownLoad_Click_1" />
+                            <!--<dx:SimpleButton x:Name="btnDownLoad" Grid.Column="0" Content="下载" Click="btnDownLoad_Click_1" Height="20"/>-->
+                            <Button Width="34" Height="30" Content="Click" Grid.Column="1"
+                HorizontalAlignment="Right" Margin="0,16,24.6,15.6" 
+                VerticalAlignment="Center" Template="{DynamicResource ButtonControlTemplate2}" Click="SimpleButton_Click" />
+                            <!--<dx:SimpleButton Grid.Column="1" Content="查看" Click="SimpleButton_Click" Height="20"></dx:SimpleButton>-->
+                            
+                            <!--<dx:SimpleButton x:Name="delAttach" Grid.Column="2" Content="删除" Click="delAttach_Click" Height="20"></dx:SimpleButton>-->
+                        </Grid>
+                    </DataTemplate>
+                </dxg:GridColumn.CellTemplate>
+            </dxg:GridColumn>
+            <dxg:GridColumn Header="操作" x:Name ="delColum">
+                <dxg:GridColumn.CellTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="50"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Width="34" Height="30" Content="Click" Grid.Column="2"
+                HorizontalAlignment="Right" Margin="0,16,24.6,15.6" 
+                VerticalAlignment="Center" Template="{DynamicResource ButtonControlTemplate3}" Click="delAttach_Click" />
+                        </Grid>
+                    </DataTemplate>
+                </dxg:GridColumn.CellTemplate>
+            </dxg:GridColumn>
+            <dxg:GridControl.GroupSummary>
+                <dxg:GridSummaryItem FieldName="CREATION_DATE" SummaryType="Count"/>
+            </dxg:GridControl.GroupSummary>
+        </dxg:GridControl>
+
+    </Grid>
+</Page>

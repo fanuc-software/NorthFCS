@@ -1,0 +1,81 @@
+﻿<Page xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BFM.WPF.SDM.MenuItem"
+        xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion" 
+      xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+      xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+      xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+      xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+       xmlns:Controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+      x:Class="BFM.WPF.SDM.MenuItem.MenuItemView"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600" FontSize="14">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0">
+            <Controls:ImageButtonWithIcon Content="保存" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico"  Width="100" Height="40" Click="BarItem_OnItemClick" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+        </DockPanel>
+
+        <dxg:TreeListControl x:Name="treeList" Grid.Row="1" EnableSmartColumnsGeneration="True" SelectedItemChanged="treeList_SelectedItemChanged" >
+            <dxg:TreeListControl.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="新增" Click="MenuAdd_Click"/>
+                    <MenuItem Header="删除 " Click="MenuDelete_Click"/>
+                </ContextMenu>
+            </dxg:TreeListControl.ContextMenu>
+
+            <dxg:TreeListControl.View>
+                <dxg:TreeListView AutoExpandAllNodes="True" KeyFieldName="PKNO" ParentFieldName="PARENT_PKNO" AutoWidth="True" AllowEditing="False" NavigationStyle="Row"/>
+            </dxg:TreeListControl.View>
+
+            <dxg:TreeListColumn FieldName="ITEM_TITLE" Header="菜单树"/>
+        </dxg:TreeListControl>
+
+
+        <dxlc:LayoutGroup x:Name="gbMenuContent" Grid.Row="1" Grid.Column="1" Header="菜单信息"  View="GroupBox" ItemLabelsAlignment="Local" IsCollapsible="True" Orientation="Vertical" >
+            <dxlc:LayoutGroup Margin="0,30,0,0" >
+                <dxlc:LayoutItem Label="菜单标题" >
+                    <TextBox Text="{Binding ITEM_TITLE}"  Margin="10,0,10,0"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="菜单顺序" > 
+                    <TextBox Text="{Binding ITEM_SEQ}" Margin="10,0,10,0" />
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+            <dxlc:LayoutGroup  Margin="0,50,0,0">
+                <dxlc:LayoutItem Label="菜单类型" >
+                    <TextBox Text="{Binding ITEM_TYPE}" Margin="10,0,10,0" />
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="命名空间" >
+                    <TextBox Text="{Binding ASSEMBLY_NAME}" Margin="10,0,10,0" />
+
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+            <dxlc:LayoutGroup Margin="0,50,0,0">
+
+                <dxlc:LayoutItem Label="类名称" >
+                    <TextBox Text="{Binding PAGE_ID}" Margin="10,0,10,0" />
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="图标路径" >
+                    <TextBox Text="{Binding IMG_PATH}" Margin="10,0,10,0"  x:Name="url" />
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+            <dxlc:LayoutGroup Margin="0,50,0,0">
+                <dxlc:LayoutItem Label="父级菜单" >
+                    <TextBox x:Name="parentname" Margin="10,0,10,0" />
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+        </dxlc:LayoutGroup>
+
+    </Grid>
+</Page>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="322fc558-c445-4ba2-9a01-6a0eb43ced42" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/BFM.WCFService/EAMService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EAMService.xsd" MetadataType="Schema" ID="87ecf511-5e76-4dbf-a162-efb9ef8cb8c8" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/EAMService.svc?xsd=xsd1" />
+    <MetadataFile FileName="EAMService.disco" MetadataType="Disco" ID="f8ad2a18-1b52-44e8-aef6-7d802533ccd7" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/EAMService.svc?disco" />
+    <MetadataFile FileName="EAMService.wsdl" MetadataType="Wsdl" ID="7d99046f-6566-4b90-a95e-282338c44b16" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/EAMService.svc?wsdl" />
+    <MetadataFile FileName="EAMService1.xsd" MetadataType="Schema" ID="8985ddcb-f52b-4c61-826f-ed60ea3b398f" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/EAMService.svc?xsd=xsd2" />
+    <MetadataFile FileName="EAMService2.xsd" MetadataType="Schema" ID="f391e26a-bbca-426e-b4dd-27023cdb9ef7" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/EAMService.svc?xsd=xsd3" />
+    <MetadataFile FileName="EAMService1.wsdl" MetadataType="Wsdl" ID="78c20f97-b259-4b59-ad50-24a35cd52104" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/EAMService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="EAMService3.xsd" MetadataType="Schema" ID="f05f6ddb-1ee7-494e-b0dc-bbfc1ec314e7" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/EAMService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,206 @@
+﻿<Window xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+        xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        x:Class="BFM.WPF.MainUI.MainWindow"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"        
+        Title="MainWindow" d:DesignHeight="1080" d:DesignWidth="1920" >
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0.0001" CornerRadius="0" CaptionHeight="103"/>
+    </WindowChrome.WindowChrome>
+    <DockPanel x:Name="RootFrame">
+        <DockPanel.Background>
+            <ImageBrush ImageSource="Images/background.png"/>
+        </DockPanel.Background>
+        <Grid  DockPanel.Dock="Top" Height="103">
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/header.png"/>
+            </Grid.Background>
+            <StackPanel Margin="30,0,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Image Source="Images/logo.png" Width="269" VerticalAlignment="Bottom" Stretch="Uniform"/>
+                <TextBlock Text="BFM-MES制造执行系统 v2.0" Foreground="#FFA2A9B1" FontSize="30" VerticalAlignment="Center" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" WindowChrome.IsHitTestVisibleInChrome="True" Margin="0,0,30,0">
+                <controls:ImageButton x:Name="BtMin" Width="35" Height="35" 
+                                      VerticalAlignment="Center" HorizontalAlignment="Right"  
+                                      Margin="0,0,15,0" Click="BtMin_OnClick"
+                                      NormalImgPath="Images/normal/min.png" 
+                                      HoverImgPath="Images/selected/min.png"
+                                      PressedImgPath="Images/selected/min.png"/>
+
+                <controls:ImageButton x:Name="BtRestore" Width="35" Height="35" VerticalAlignment="Center" 
+                                      HorizontalAlignment="Right"  Margin="0,0,15,0" Click="BtMax_OnClick"
+                                      NormalImgPath="Images/normal/restore.png" 
+                                      HoverImgPath="Images/selected/restore.png"
+                                      PressedImgPath="Images/selected/restore.png"/>
+
+                <controls:ImageButton x:Name="BtMax" Width="35" Height="35" VerticalAlignment="Center" 
+                                      HorizontalAlignment="Right"  Margin="0,0,15,0" Click="BtMax_OnClick"
+                                      NormalImgPath="Images/normal/max.png" 
+                                      HoverImgPath="Images/selected/max.png"
+                                      PressedImgPath="Images/selected/max.png"
+                                      Visibility="Collapsed"/>
+
+                <controls:ImageButton x:Name="BtClose" Width="35" Height="35" VerticalAlignment="Center"
+                                      HorizontalAlignment="Right"  Click="BtClose_Click"
+                                      NormalImgPath="Images/normal/close.png" 
+                                      HoverImgPath="Images/selected/close.png"
+                                      PressedImgPath="Images/selected/close.png"/>
+            </StackPanel>
+            <dxb:BarContainerControl x:Name="barContainerControl" ContainerType="Top">
+                <!--<dxb:ToolBarControl x:Name="MainMeun" Caption="MainMeun" RotateWhenVertical="True">
+                </dxb:ToolBarControl>-->
+                <dxb:MainMenuControl x:Name="mainMenuControl" Caption="Main Menu" FontSize="20">
+                </dxb:MainMenuControl>
+            </dxb:BarContainerControl>
+        </Grid>
+        <Grid DockPanel.Dock="Left">
+            <dxn:NavBarControl x:Name="navBarControl" FontSize="15" >
+                <dxn:NavBarControl.View >
+                    <dxn:SideBarView ItemsPanelOrientation="Vertical" Orientation="Vertical"/>
+                </dxn:NavBarControl.View>
+            </dxn:NavBarControl>
+        </Grid>
+        <Grid >
+            <dx:DXTabControl x:Name="dxTabControl"  TabHidden="dxTabControl_TabHidden">
+            </dx:DXTabControl>
+        </Grid>
+       
+    </DockPanel>
+
+
+    <!--<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<dxr:RibbonControl x:Name="ribbonControl" Grid.Row="0" VerticalAlignment="Stretch" Margin="2" RibbonStyle="Office2010">
+			<dxr:RibbonDefaultPageCategory Caption="defaultCategory">
+				<dxr:RibbonPage Caption="生产任务">
+					<dxr:RibbonPageGroup Caption="计划管理">
+						<dxb:BarButtonItem Content="计划维护" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM" Glyph="{dx:DXImageOffice2013 Image=Paste_32x32.png}"/>
+						<dxb:BarButtonItem Content="计划查询" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM" Glyph="{dx:DXImageOffice2013 Image=Report_32x32.png}"/>
+					</dxr:RibbonPageGroup>
+					<dxr:RibbonPageGroup Caption="任务管理">
+						<dxb:BarButtonItem Content="任务管理" RibbonStyle="Large" Description="BFM.WPF.PPM.Task.TaskView" Tag="BFM.WPF.PPM" Glyph="{dx:DXImage Image=Open_32x32.png}" LargeGlyph="{dx:DXImage Image=Open_32x32.png}"/>
+						<dxb:BarButtonItem Content="任务分派" RibbonStyle="Large" Description="BFM.WPF.PPM.Task.TaskAssign" Tag="BFM.WPF.PPM" Glyph="{dx:DXImage Image=Open2_32x32.png}" LargeGlyph="{dx:DXImage Image=Open2_32x32.png}"/>
+						<dxb:BarButtonItem Content="工单生成" RibbonStyle="Large" Description="BFM.WPF.PPM.Task.TaskLineView" Tag="BFM.WPF.PPM" Glyph="pack://application:,,,/DevExpress.Images.v18.1;component/DevAV/Actions/PrintIncludeEvaluations_32x32.png"/>
+						<dxb:BarButtonItem Content="工单下发" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM" Glyph="pack://application:,,,/DevExpress.Images.v18.1;component/DevAV/Actions/SortByOrderDate_32x32.png"/>
+					</dxr:RibbonPageGroup>
+					<dxr:RibbonPageGroup Caption="高级计划与排产">
+						<dxb:BarButtonItem Content="正向排程" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM" Glyph="{dx:DXImageOffice2013 Image=BringForward_32x32.png}"/>
+						<dxb:BarButtonItem Content="逆向排程" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM" Glyph="{dx:DXImageOffice2013 Image=SendBackward_32x32.png}"/>
+						<dxb:BarButtonItem Content="产能评估" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM" Glyph="{dx:DXImageOffice2013 Image=EditWrapPoints_32x32.png}"/>
+						<dxb:BarButtonItem Content="排产优化" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM" Glyph="{dx:DXImageOffice2013 Image=MoreLayoutOptions_32x32.png}"/>
+						<dxb:BarButtonItem Content="排程查询" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM" Glyph="{dx:DXImageOffice2013 Image=ChartsShowLegend_32x32.png}"/>
+					</dxr:RibbonPageGroup>
+				</dxr:RibbonPage>
+				<dxr:RibbonPage Caption="工艺资源">
+					<dxr:RibbonPageGroup Caption="工艺资源">
+						<dxb:BarButtonItem Content="工艺设计" RibbonStyle="Large" Description="BFM.WPF.RSM.Routing.RoutingView" Tag="BFM.WPF.RSM"/>
+						<dxb:BarButtonItem Content="工艺查询" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+					</dxr:RibbonPageGroup>
+					<dxr:RibbonPageGroup Caption="刀具管理">
+                        <dxb:BarButtonItem Content="刀具台账" RibbonStyle="Large" Description="BFM.WPF.TMS.TM.Views.ToolsMasterView" Tag="BFM.WPF.TMS" Glyph="{dx:DXImage Image=Add_32x32.png}"/>
+                        <dxb:BarButtonItem Content="刀具寿命" RibbonStyle="Large" Description="BFM.WPF.TMS.TM.Views.ToolLifeShow" Tag="BFM.WPF.TMS" Glyph="{dx:DXImage Image=Add_32x32.png}"/>
+                        <dxb:BarButtonItem Content="刀具寿命2" RibbonStyle="Large" Description="BFM.WPF.TMS.TM.Views.ToolLifeShow2" Tag="BFM.WPF.TMS" Glyph="{dx:DXImage Image=Add_32x32.png}"/>
+                        <dxb:BarButtonItem Content="刀具库存" RibbonStyle="Large" Description="BFM.WPF.TMS.TM.Views.ToolsInventory" Tag="BFM.WPF.TMS" Glyph="{dx:DXImage Image=Add_32x32.png}"/>
+                        <dxb:BarButtonItem Content="刀具决策" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM" Glyph="{dx:DXImage Image=Add_32x32.png}"/>
+                    </dxr:RibbonPageGroup>                    
+					<dxr:RibbonPageGroup Caption="基础数据">
+						<dxb:BarButtonItem Content="BOM管理" RibbonStyle="Large" Description="BFM.WPF.RSM.BaseData.BomView" Tag="BFM.WPF.RSM"/>
+                        <dxb:BarButtonItem Content="产品管理" RibbonStyle="Large" Description="BFM.WPF.RSM.BaseData.ItemMasterView" Tag="BFM.WPF.RSM"/>
+						<dxb:BarButtonItem Content="原材料管理" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+					</dxr:RibbonPageGroup>
+				</dxr:RibbonPage>
+				<dxr:RibbonPage Caption="过程管理">
+					<dxr:RibbonPageGroup Caption="过程监控">
+						<dxb:BarButtonItem Content="实时信息" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+						<dxb:BarButtonItem Content="工序信息" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+						<dxb:BarButtonItem Content="工单报工" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+						<dxb:BarButtonItem Content="故障报修" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+                    </dxr:RibbonPageGroup>
+                    <dxr:RibbonPageGroup Caption="质量管理">
+                        <dxb:BarButtonItem Content="检测查询" RibbonStyle="Large" Description="BFM.WPF.QMS.ProductionQualityView" Tag="BFM.WPF.QMS"/>
+                        <dxb:BarButtonItem Content="产品检测" RibbonStyle="Large" Description="BFM.WPF.QMS.ProductQuality" Tag="BFM.WPF.QMS"/>
+                        <dxb:BarButtonItem Content="质量看板" RibbonStyle="Large" Description="BFM.WPF.QMS.QualityView" Tag="BFM.WPF.QMS"/>
+                        <dxb:BarButtonItem Content="质量追溯" RibbonStyle="Large" Description="BFM.WPF.QMS.QualitySearch" Tag="BFM.WPF.QMS"/>
+                    </dxr:RibbonPageGroup>
+
+                    <dxr:RibbonPageGroup Caption="统计分析">
+                        <dxb:BarButtonItem Content="产量统计" RibbonStyle="Large" Description="BFM.WPF.SRA.Statistical.StatusStatistic" Tag="BFM.WPF.SRA"/>
+						<dxb:BarButtonItem Content="运行统计" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+						<dxb:BarButtonItem Content="状态统计" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+						<dxb:BarButtonItem Content="故障统计" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+					</dxr:RibbonPageGroup>
+				</dxr:RibbonPage>
+				<dxr:RibbonPage Caption="设备管理">
+					<dxr:RibbonPageGroup Caption="台账管理">
+                        <dxb:BarButtonItem Content="设备台账" RibbonStyle="Large" Description="BFM.WPF.EAM.AM.AssetMasterView" Tag="BFM.WPF.EAM"/>
+                        <dxb:BarButtonItem Content="台账查询" RibbonStyle="Large" Description="BFM.WPF.EAM.AM.AssetMasterView" Tag="BFM.WPF.EAM"/>
+					</dxr:RibbonPageGroup>
+                    <dxr:RibbonPageGroup Caption="故障维修">
+                        <dxb:BarButtonItem Content="故障报修" RibbonStyle="Large" Description="BFM.WPF.EAM.RM.RepairMasterView" Tag="BFM.WPF.EAM"/>
+						-->
+    <!--<dxb:BarButtonItem Content="故障处理" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>-->
+    <!--
+                        <dxb:BarButtonItem Content="故障查询" RibbonStyle="Large" Description="BFM.WPF.EAM.RM.RepairMasterView" Tag="BFM.WPF.EAM"/>
+					</dxr:RibbonPageGroup>
+                    <dxr:RibbonPageGroup Caption="预防维护">
+                        <dxb:BarButtonItem Content="维护规程" RibbonStyle="Large" Description="BFM.WPF.EAM.RS.MaintainStandardView" Tag="BFM.WPF.EAM"/> 
+                        <dxb:BarButtonItem Content="规程设备配置" RibbonStyle="Large" Description="BFM.WPF.EAM.RS.MaintainStandardRelateView" Tag="BFM.WPF.EAM"/>
+                        <dxb:BarButtonItem Content="保养工单" RibbonStyle="Large" Description="BFM.WPF.EAM.RS.MaintainOrderView" Tag="BFM.WPF.EAM"/>
+                        <dxb:BarButtonItem Content="保养汇总" RibbonStyle="Large" Description="BFM.WPF.EAM.RS.MaintainReport" Tag="BFM.WPF.EAM"/>
+					</dxr:RibbonPageGroup>
+					-->
+    <!--<dxr:RibbonPageGroup Caption="备件管理">
+						<dxb:BarButtonItem Content="备件信息" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+						<dxb:BarButtonItem Content="备件库存" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+					</dxr:RibbonPageGroup>
+					<dxr:RibbonPageGroup Caption="档案管理">
+						<dxb:BarButtonItem Content="档案维护" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+						<dxb:BarButtonItem Content="档案检索" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+					</dxr:RibbonPageGroup>-->
+    <!--
+				</dxr:RibbonPage>
+				<dxr:RibbonPage Caption="系统管理">
+					<dxr:RibbonPageGroup Caption="系统安全">
+						<dxb:BarButtonItem Content="用户信息" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+						<dxb:BarButtonItem Content="角色信息" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+						<dxb:BarButtonItem Content="权限信息" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+						<dxb:BarButtonItem Content="部门信息" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+						<dxb:BarButtonItem Content="登录日志" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+					</dxr:RibbonPageGroup>
+					<dxr:RibbonPageGroup Caption="系统数据">
+						<dxb:BarButtonItem Content="数据字典" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+						<dxb:BarButtonItem Content="刷新缓存" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM"/>
+					</dxr:RibbonPageGroup>
+				</dxr:RibbonPage>
+			</dxr:RibbonDefaultPageCategory>
+		</dxr:RibbonControl>
+		<dxdo:DockLayoutManager Grid.Row="1" Margin="2" x:Name="dockLayoutManager">
+			<dxdo:LayoutGroup x:Name="layoutGroup"  Orientation="Horizontal" CaptionAlignMode="Custom">
+				
+			</dxdo:LayoutGroup>
+		</dxdo:DockLayoutManager>
+
+		<dxr:RibbonStatusBarControl Grid.Row="2" x:Name="StatusBar" IsSizeGripVisible="True">
+			<dxr:RibbonStatusBarControl.RightItems>
+				<dxb:BarStaticItem x:Name="bFileName" ItemMinWidth="150" AutoSizeMode="Fill" Content="{Binding UserName}"/>
+			</dxr:RibbonStatusBarControl.RightItems>
+			<dxr:RibbonStatusBarControl.LeftItems>
+				<dxb:BarStaticItem x:Name="bPosInfo" ItemMinWidth="150"/>
+
+			</dxr:RibbonStatusBarControl.LeftItems>
+		</dxr:RibbonStatusBarControl>
+
+	</Grid>-->
+</Window>

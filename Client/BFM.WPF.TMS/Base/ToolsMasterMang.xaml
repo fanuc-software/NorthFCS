@@ -1,0 +1,197 @@
+﻿<Page xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+      xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+      xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+      xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+      xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+      x:Class="BFM.WPF.TMS.ToolsMasterMang"
+       xmlns:controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+      mc:Ignorable="d" FontSize ="14"
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="刀具台账信息维护">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Row="0" DockPanel.Dock="Top" Height="50" Margin="15,0" Background="#eff0f3" CornerRadius="0,0,8,8">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2" Opacity="0.5" Direction="-90" BlurRadius="10" />
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <dxlc:LayoutGroup Grid.Column="1" Margin="10,10,0,0">
+                    <dxlc:LayoutItem Label="开始时间">
+                        <dxe:DateEdit  Margin="10,0,10,0" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="结束时间">
+                        <dxe:DateEdit    Margin="10,0,10,0"/>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="刀具编号/名称">
+                        <TextBox></TextBox>
+                    </dxlc:LayoutItem>
+
+                    <controls:ImageButtonWithIcon DockPanel.Dock="Left" x:Name="bSearch4" Content="查询" Icon="/BFM.WPF.EAM;component/Images/26.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/26.ico"  Width="100" Height="40"   Margin="20,-10,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+                </dxlc:LayoutGroup>
+
+
+            </Grid>
+
+
+        </Border>
+        <DockPanel Grid.Row="1">
+            <controls:ImageButtonWithIcon Content="新增" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico"  Width="100" Height="40" Click="BtnAdd_Click" Margin="0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="新增并入库" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico"  Width="140" Height="40" Click="BtnAddIn_Click" Margin="10,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="修改" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/16.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico"  Width="100" Height="40" Click="BtnMod_Click" Margin="10,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="删除" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/24.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/24.ico"  Width="100" Height="40" Click="BtnDel_Click" Margin="10,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="入库" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico"  Width="100" Height="40" Click="BtnIn_Click" Margin="10,0,0,0" VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="出库" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico"  Width="100" Height="40" Click="BtnOut_Click" Margin="10,0,0,0" VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="保存" DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/21.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/21.ico"  Width="100" Height="40" Click="BtnSave_Click" Margin="10,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="取消" DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/23.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/23.ico"  Width="100" Height="40" Click="BtnCancel_Click" Margin="10,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+        </DockPanel>
+
+
+
+        <Grid Grid.Row="2" >
+            <Grid x:Name="MenuContent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <dxlc:LayoutControl x:Name="gbItem" Margin="0" Padding="0" IsCollapsed="True" Orientation="Vertical" >
+                    <dxlc:LayoutGroup x:Name="dictInfo" Header="刀具台账详细信息" Visibility="Collapsed" View="GroupBox" ItemLabelsAlignment="Local"
+                              IsCollapsible="False" Background="White" Orientation="Vertical">
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="刀具唯一编码" >
+                                <TextBox Text="{Binding TOOLS_CODE, Mode=TwoWay}" Margin="5,0,5,0"/>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="刀具类型">
+                                <ComboBox Name="cmbToolsType" SelectedValue="{Binding TOOLS_TYPE_PKNO}" 
+                                      DisplayMemberPath="TOOLS_TYPE_NAME"  SelectedValuePath="PKNO" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="刀具名称">
+                                <TextBox Text="{Binding TOOLS_NAME}" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="刀具寿命统计方式" >
+                                <ComboBox SelectedValue="{Binding TOOLS_LIFE_METHOD}" SelectedValuePath="Tag" Margin="5,0,5,0" >
+                                    <ComboBoxItem Content="计件" Tag="1" />
+                                    <ComboBoxItem Content="计时" Tag="2" />
+                                </ComboBox>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="刀具计划寿命" >
+                                <TextBox Text="{Binding TOOLS_LIFE_PLAN}" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="刀具已使用寿命" >
+                                <TextBox Text="{Binding TOOLS_LIFE_USED}" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="刀具直径的形状补偿" >
+                                <TextBox Text="{Binding COMPENSATION_SHAPE_DIAMETER}" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="刀具直径的磨损补偿" >
+                                <TextBox Text="{Binding COMPENSATION_ABRASION_DIAMETER}" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="刀具长度的形状补偿" >
+                                <TextBox Text="{Binding COMPENSATION_SHAPE_LENGTH}" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="刀具长度的磨损补偿" >
+                                <TextBox Text="{Binding COMPENSATION_ABRASION_LENGTH}" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0" Height="60">
+                            <dxlc:LayoutItem Label="刀具描述" Height="60"  VerticalAlignment="Stretch" >
+                                <TextBox Text="{Binding TOOLS_INTROD}" Margin="5,0,5,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0" Height="60">
+                            <dxlc:LayoutItem Label="备注" Height="60"  VerticalAlignment="Stretch" >
+                                <TextBox Text="{Binding REMARK}" Margin="5,0,5,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup x:Name="inbound" Header="刀具入库信息" Visibility="Collapsed" View="GroupBox" ItemLabelsAlignment="Local"
+                              IsCollapsible="False" Background="White" Orientation="Vertical">
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="入库库区">
+                                <ComboBox Name="cmbInAreaInfo" SelectedValue="{Binding AREA_PKNO}" SelectedValuePath="PKNO" DisplayMemberPath="AREA_NAME" Margin="5,0,5,0" IsEditable="False" SelectionChanged="Selector_OnSelectionChanged" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="入库货位">
+                                <ComboBox Name="cmbInAllocation" SelectedValue="{Binding ALLOCATION_PKNO}" SelectedValuePath="PKNO" DisplayMemberPath="ALLOCATION_NAME" IsEditable="False" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="入库人员">
+                                <TextBox Text="{Binding OPERATE_PERSON}" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0" Height="60">
+                            <dxlc:LayoutItem Label="入库备注" Height="60"  VerticalAlignment="Stretch" >
+                                <TextBox Text="{Binding REMARK}" Margin="5,0,5,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup x:Name="outbound" Header="刀具出库信息" Visibility="Collapsed" View="GroupBox" ItemLabelsAlignment="Local"
+                              IsCollapsible="False" Background="White" Orientation="Vertical">
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="出库去向">
+                                <ComboBox Name="cmbOutBound" SelectedValue="{Binding OUT_TARGET}" SelectedValuePath="Tag" Margin="5,0,5,0" IsEditable="False" SelectionChanged="OutBound_OnSelectionChanged" >
+                                    <ComboBoxItem Content="机床" Tag ="2" />
+                                    <ComboBoxItem Content="其他出库" Tag ="10" />
+                                </ComboBox>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="安装位置">
+                                <ComboBox x:Name="cmbOutPos" SelectedValue="{Binding INSTALL_POS}" SelectedValuePath="PKNO" DisplayMemberPath="ASSET_NAME" IsEditable="True" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="出库人员">
+                                <TextBox Text="{Binding OPERATE_PERSON}" Margin="5,0,5,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0" Height="60">
+                            <dxlc:LayoutItem Label="出库备注" Height="60" VerticalAlignment="Stretch" >
+                                <TextBox Text="{Binding REMARK}" Margin="5,0,5,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutControl>
+
+                <Grid Grid.Row="1">
+                    <dxg:GridControl x:Name="gridItem" SelectionMode="Row" FontSize="14" 
+                                     IsEnabled="{Binding IsCollapsed, ElementName=gbItem, Mode=OneWay}" MouseDoubleClick="gridItem_MouseDoubleClick" >
+                        <dxg:GridControl.View>
+                            <dxg:TableView ShowGroupPanel="False" AllowEditing="False" NavigationStyle="Row"/>
+                        </dxg:GridControl.View>
+                        <dxg:GridColumn FieldName="TOOLS_CODE" Header="刀具唯一编码" Width="120"/>
+                        <dxg:GridColumn Binding="{Binding TOOLS_TYPE_PKNO, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='TMS_TOOLS_TYPE;PKNO;TOOLS_TYPE_NAME'}" Header="刀具类型" Width="120"/>
+                        <dxg:GridColumn Binding="{Binding TOOLS_LIFE_METHOD, Converter={StaticResource EnumInfoConverter}, ConverterParameter='1:计件;2:计时'}" Header="刀具寿命统计方式" Width="100"/>
+                        <dxg:GridColumn FieldName="TOOLS_LIFE_PLAN" Header="刀具计划寿命" Width="100"/>
+                        <dxg:GridColumn FieldName="TOOLS_LIFE_USED" Header="刀具已使用寿命" Width="100"/>
+                        <dxg:GridColumn FieldName="COMPENSATION_SHAPE_DIAMETER" Header="刀具直径的形状补偿" Width="100"/>
+                        <dxg:GridColumn FieldName="COMPENSATION_ABRASION_DIAMETER" Header="刀具直径的磨损补偿" Width="100"/>
+                        <dxg:GridColumn FieldName="COMPENSATION_SHAPE_LENGTH" Header="刀具长度的形状补偿" Width="100"/>
+                        <dxg:GridColumn FieldName="COMPENSATION_ABRASION_LENGTH" Header="刀具长度的磨损补偿" Width="100"/>
+                        <dxg:GridColumn Binding="{Binding TOOLS_POSITION, Converter={StaticResource EnumInfoConverter}, ConverterParameter='0:未入库;1:在库;2:安装在设备上;10:已出库'}" Header="刀具位置" Width="100"/>
+                        <dxg:GridColumn Binding="{Binding TOOLS_POSITION_PKNO, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='WMS_ALLOCATION_INFO;PKNO;ALLOCATION_NAME;AM_ASSET_MASTER_N;PKNO;ASSET_NAME'}" Header="刀具位置详细" Width="100"/>
+                        <dxg:GridColumn FieldName="TOOLS_INTROD" Header="刀具描述" Width="100"/>
+                        <dxg:GridColumn FieldName="REMARK" Header="备注" Width="200"/>
+                    </dxg:GridControl>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

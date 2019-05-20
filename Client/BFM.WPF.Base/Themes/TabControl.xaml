@@ -1,0 +1,90 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal"
+                    xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys"
+                     xmlns:core="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+                     xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys"
+                    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <DataTemplate x:Key="TabItemNormalBackground">
+        <dxcn:TabBorder ViewInfo="{Binding}" BorderBackground="Transparent" BorderBrush="#afb4bd" BorderCornerRadius="0" 
+        		BorderMode="BorderBrush" BorderThickness="0" BorderMargin="0" HoldBorderThickness="0"  HoldBorderMargin="0" 
+                        />
+    </DataTemplate>
+    <DataTemplate x:Key="TabItemHoverBackground">
+        <dxcn:TabBorder ViewInfo="{Binding}" BorderBrush="Transparent" BorderCornerRadius="0"
+        		BorderMode="BorderBrush" BorderThickness="0,0,0,0" BorderMargin="0" HoldBorderThickness="0,0,0,0" HoldBorderMargin="0">
+            <dxcn:TabBorder.BorderBackground>
+                <ImageBrush ImageSource="/BFM.WPF.Base;component/Resources/TabSelected.png" Stretch="UniformToFill"/>
+            </dxcn:TabBorder.BorderBackground>
+        </dxcn:TabBorder>
+    </DataTemplate>
+    <DataTemplate x:Key="TabItemSelectedBackground">
+        <dxcn:TabBorder ViewInfo="{Binding}" BorderBrush="Transparent" BorderCornerRadius="0"
+        		BorderMode="BorderBrush" BorderThickness="0,0,0,0" BorderMargin="0" HoldBorderThickness="0,0,0,0" HoldBorderMargin="0">
+            <dxcn:TabBorder.BorderBackground>
+                <ImageBrush ImageSource="/BFM.WPF.Base;component/Resources/TabSelected.png"  Stretch="UniformToFill"/>
+            </dxcn:TabBorder.BorderBackground>
+        </dxcn:TabBorder>
+    </DataTemplate>
+    <DataTemplate x:Key="TabItemFocusedBackground">
+        <dxcn:TabBorder ViewInfo="{Binding}" BorderBrush="Transparent" BorderCornerRadius="0"
+        		BorderMode="BorderBrush" BorderThickness="0,0,0,0" BorderMargin="0" HoldBorderThickness="0,0,0,0" HoldBorderMargin="0" >
+            <dxcn:TabBorder.BorderBackground>
+                <ImageBrush ImageSource="/BFM.WPF.Base;component/Resources/TabSelected.png"  Stretch="UniformToFill"/>
+            </dxcn:TabBorder.BorderBackground>
+        </dxcn:TabBorder>
+    </DataTemplate>
+    <Style x:Key="{dxt:DXTabControlThemeKey ResourceKey=PanelContainerStyle, IsThemeIndependent=True}" TargetType="{x:Type dxcn:TabPanelContainer}">
+        <Setter Property="NormalMargin" Value="0,0,0,0" />
+        <Setter Property="Background" Value="#eef5fb"/>
+    </Style>
+    <Style TargetType="{x:Type dx:DXTabControl}">
+        <Setter Property="Padding" Value="10,0,10,10"/>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="dx:DXTabItem">
+                    <Setter Property="Header" Value="{Binding Header}"/>
+                    <Setter Property="Content" Value="{Binding Content}"/>
+                    <Setter Property="Height" Value="42"/>
+                    <Setter Property="MinWidth" Value="98"/>
+                    <Setter Property="Margin" Value="0,0,0,0"/>
+                    <Setter Property="Padding" Value="20,0"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="NormalBackgroundTemplate" Value="{StaticResource TabItemNormalBackground}"/>
+                    <Setter Property="HoverBackgroundTemplate" Value="{StaticResource TabItemHoverBackground}"/>
+                    <Setter Property="SelectedBackgroundTemplate" Value="{StaticResource TabItemSelectedBackground}"/>
+                    <Setter Property="FocusedBackgroundTemplate" Value="{StaticResource TabItemFocusedBackground}"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontSize" Value="14"/>
+                            <!--<Setter Property="FontWeight" Value="Bold"/>-->
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontSize" Value="14"/>
+                            <!--<Setter Property="FontWeight" Value="Bold"/>-->
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontSize" Value="14"/>
+                            <!--<Setter Property="FontWeight" Value="Bold"/>-->
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="false">
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <DataTemplate x:Key="{dxt:DXTabControlThemeKey ResourceKey=Background, IsThemeIndependent=True}">
+        <Border CornerRadius="0" BorderBrush="#afb4bd" BorderThickness="0" Margin="0">
+        </Border>
+    </DataTemplate>
+</ResourceDictionary>

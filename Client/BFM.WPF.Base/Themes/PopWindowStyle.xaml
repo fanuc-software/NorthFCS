@@ -1,0 +1,996 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:core="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys"
+                    xmlns:dxcm="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:dxeh="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal"
+                    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+                    xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys"
+                    xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <Style TargetType="dxlc:GroupBox" x:Key="groupBoxStyle">
+        <Setter Property="NormalTemplate" >
+            <Setter.Value>
+                <ControlTemplate TargetType="dxlc:GroupBox">
+                    <core:Container>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="LayoutStates">
+                                <VisualState x:Name="NormalLayout" />
+                                <VisualState x:Name="MinimizedLayout">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TitleStretcher" Storyboard.TargetProperty="Visibility" Duration="0">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SeparatorElement" Storyboard.TargetProperty="Visibility" Duration="0">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Visibility" Duration="0">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MaximizedLayout" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="BorderElement" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" CornerRadius="0" core:BorderExtensions.ClipChild="True">
+                            <dxlc:LayoutControl Orientation="Vertical" Padding="0" ItemSpace="0" ScrollBars="None" core:DXSerializer.Enabled="False">
+                                <dxlc:LayoutGroup Background="#FEB113" Padding="2" ItemSpace="0" Visibility="{TemplateBinding TitleVisibility}">
+                                    <Rectangle x:Name="TitleStretcher" Width="0" Visibility="Collapsed" />
+                                    <core:DXContentPresenter x:Name="DXContentPresenter1" Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" Margin="25,5,0,5" VerticalAlignment="Center" Foreground="White" FontSize="20"/>
+                                    <dxlc:GroupBoxButton x:Name="MinimizeElement" Margin="2,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{TemplateBinding MinimizeElementVisibility}" />
+                                    <dxlc:GroupBoxButton x:Name="MaximizeElement" Margin="2,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{TemplateBinding MaximizeElementVisibility}" />
+                                </dxlc:LayoutGroup>
+                                <Rectangle x:Name="SeparatorElement" Height="1" Fill="{TemplateBinding SeparatorBrush}" Visibility="{TemplateBinding TitleVisibility}" />
+                                <core:DXContentPresenter x:Name="ContentElement" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding CurrentContentTemplate}" Margin="{TemplateBinding Padding}" />
+                            </dxlc:LayoutControl>
+                        </Border>
+                    </core:Container>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="core:ThemeManager.IsTouchEnabled" Value="True">
+                            <Setter Property="Margin" TargetName="DXContentPresenter1" Value="12" />
+                            <Setter Property="Margin" TargetName="ContentElement" Value="12" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
+    <Style TargetType="dxlc:GroupBoxButton">
+        <Setter Property="Opacity" Value="0" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Focusable" Value="false" />
+    </Style>
+
+    <Style TargetType="Button" x:Key="PopButton">
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="5" x:Name="bd" Background="#323a45" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding Content}" FontSize="{TemplateBinding FontSize}" Foreground="White"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="bd" Property="Background" Value="#feb113"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="dxlc:LayoutItem">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Foreground" Value="#252c36"/>
+        <Setter Property="Margin" Value="15,5,0,5"/>
+    </Style>
+    <Style TargetType="TextBox" >
+        <Setter Property="Height" Value="31"/>
+        <Setter Property="Foreground" Value="#737a81"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border x:Name="root" CornerRadius="3" BorderBrush="#a1a6ab" BorderThickness="2">
+                        <ScrollViewer x:Name="PART_ContentHost" Foreground="#737a81"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter TargetName="root" Property="BorderBrush" Value="#feb113"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="dxlc:GroupBox">
+        <Setter Property="NormalTemplate" >
+            <Setter.Value>
+                <ControlTemplate TargetType="dxlc:GroupBox">
+                    <core:Container>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="LayoutStates">
+                                <VisualState x:Name="NormalLayout" />
+                                <VisualState x:Name="MinimizedLayout">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TitleStretcher" Storyboard.TargetProperty="Visibility" Duration="0">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SeparatorElement" Storyboard.TargetProperty="Visibility" Duration="0">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Visibility" Duration="0">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MaximizedLayout" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="BorderElement" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" CornerRadius="0" core:BorderExtensions.ClipChild="True">
+                            <dxlc:LayoutControl Orientation="Vertical" Padding="0" ItemSpace="0" ScrollBars="None" core:DXSerializer.Enabled="False">
+                                <dxlc:LayoutGroup Background="#FEB113" Padding="2" ItemSpace="0" Visibility="{TemplateBinding TitleVisibility}">
+                                    <Rectangle x:Name="TitleStretcher" Width="0" Visibility="Collapsed" />
+                                    <core:DXContentPresenter x:Name="DXContentPresenter1" Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" Margin="25,5,0,5" VerticalAlignment="Center" Foreground="White" FontSize="18"/>
+                                    <dxlc:GroupBoxButton x:Name="MinimizeElement" Margin="2,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{TemplateBinding MinimizeElementVisibility}" />
+                                    <dxlc:GroupBoxButton x:Name="MaximizeElement" Margin="2,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{TemplateBinding MaximizeElementVisibility}" />
+                                </dxlc:LayoutGroup>
+                                <Rectangle x:Name="SeparatorElement" Height="1" Fill="{TemplateBinding SeparatorBrush}" Visibility="{TemplateBinding TitleVisibility}" />
+                                <core:DXContentPresenter x:Name="ContentElement"  Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding CurrentContentTemplate}" Margin="{TemplateBinding Padding}" />
+                            </dxlc:LayoutControl>
+                        </Border>
+                    </core:Container>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="core:ThemeManager.IsTouchEnabled" Value="True">
+                            <Setter Property="Margin" TargetName="DXContentPresenter1" Value="12" />
+                            <Setter Property="Margin" TargetName="ContentElement" Value="12" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--dateEdit-->
+    <!--月视图-->
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=MonthInfoTemplate,IsThemeIndependent=True}">
+        <Grid x:Name="PART_ContentGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="5"/>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ContentControl Grid.Row="1" Grid.ColumnSpan="7" Grid.Column="2" Template="{DynamicResource {dxet:DateEditThemeKey ResourceKey=MonthInfoDelimeter}}" />
+            <ContentControl x:Name="WeekNumberDelimeter" Grid.Row="2" Grid.RowSpan="6" Grid.Column="1" Template="{DynamicResource {dxet:DateEditThemeKey ResourceKey=WeekNumberDelimeter}}" Visibility="Collapsed" />
+        </Grid>
+    </ControlTemplate>
+    <!--月视图分割横线-->
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=MonthInfoDelimeter,IsThemeIndependent=True}">
+        <Border x:Name="borderRoot" Background="Green" Height="-0" Margin="0" SnapsToDevicePixels="True" VerticalAlignment="Center" />
+        <ControlTemplate.Triggers>
+            <Trigger Property="dxcm:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="borderRoot" Value="0" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style x:Key="{dxet:DateEditThemeKey ResourceKey=WeekdayAbbreviationStyle,IsThemeIndependent=True}" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="#737a81" />
+    </Style>
+    <!--弹出框cell-->
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=CellButtonTemplate,IsThemeIndependent=True}" TargetType="{x:Type Button}">
+        <Grid Background="Transparent">
+            <Border x:Name="Focused" BorderBrush="#151D2A" BorderThickness="1" Visibility="Collapsed">
+            </Border>
+            <Border x:Name="Hover" Background="#151D2A" CornerRadius="1" Padding="1" Visibility="Collapsed" />
+            <Border x:Name="Today" BorderBrush="#151D2A" BorderThickness="1" CornerRadius="1" Padding="1" Visibility="Collapsed" />
+            <dx:ContentContainer x:Name="ButtonContent" Foreground="White">
+                <ContentPresenter Margin="4,0,4,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+            </dx:ContentContainer>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="CellNormalState">
+                    </VisualState>
+                    <VisualState x:Name="CellTodayState">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Today" Storyboard.TargetProperty="Visibility" Duration="0">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="CellFocusedState">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Focused" Storyboard.TargetProperty="Visibility" Duration="0">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="CellInactiveState">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonContent" Storyboard.TargetProperty="Foreground" Duration="0">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <SolidColorBrush Color="Gray" />
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+    <!--弹出框头部按钮-->
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=HeaderButtonTemplate,IsThemeIndependent=True}" TargetType="{x:Type Button}">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Foreground" Duration="0">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <SolidColorBrush Color="White" />
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <dx:ContentContainer x:Name="Content" Foreground="White">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+            </dx:ContentContainer>
+        </Grid>
+    </ControlTemplate>
+    <dx:EditorStringIdConverter x:Key="EditorStringIdConverter" />
+    <!--弹出框-->
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=CalendarTemplate,IsThemeIndependent=True}" TargetType="{x:Type dxe:DateEditCalendar}">
+        <Border x:Name="text123" Background="#393F46" CornerRadius="5" SnapsToDevicePixels="True" UseLayoutRounding="True"  >
+            <StackPanel Background="Transparent">
+                <Border BorderThickness="0" Visibility="Visible" Margin="0,5,0,0">
+                    <Button x:Name="PART_Today" Foreground="#FFBC12" Margin="4,4,4,0" FontSize="14" Style="{DynamicResource {dxet:DateEditThemeKey IsVisibleInBlend=True, ResourceKey=HeaderButtonStyle}}" Content="{Binding Path=DateTimeText, RelativeSource={RelativeSource TemplatedParent}}"/>
+                </Border>
+                <Border Visibility="Visible" Margin="0,0,0,5">
+                    <Grid x:Name="Grid1" Background="Transparent" Margin="4,2,4,0" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <RepeatButton x:Name="PART_LeftArrow" Margin="20,-25,0,0" Grid.Column="0" >
+                            <RepeatButton.Template>
+                                <ControlTemplate>
+                                    <Border>
+                                        <Image x:Name="img_active" Source="/BFM.WPF.Base;component/Resources/left.png"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Opacity" TargetName="img_active" Value="0.4"></Setter>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/left_s.png"></Setter>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/left_s.png"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </RepeatButton.Template>
+                        </RepeatButton>
+                        <Button x:Name="PART_CurrentDate" Margin="0,2,0,5" Style="{DynamicResource {dxet:DateEditThemeKey IsVisibleInBlend=True, ResourceKey=CurrentDateButtonStyle}}" Content="{Binding Path=CurrentDateText, RelativeSource={RelativeSource TemplatedParent}}" FontSize="14" VerticalContentAlignment="Center" Grid.Column="1" Foreground="White"/>
+                        <RepeatButton x:Name="PART_RightArrow" Margin="0,-25,20,0"  Grid.Column="2" >
+                            <RepeatButton.Template>
+                                <ControlTemplate>
+                                    <Border>
+                                        <Image x:Name="img_active" Source="/BFM.WPF.Base;component/Resources/right.png"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Opacity" TargetName="img_active" Value="0.4"></Setter>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/right_s.png"></Setter>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/right_s.png"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </RepeatButton.Template>
+                        </RepeatButton>
+                    </Grid>
+                </Border>
+                <Border Background="#151D2A" BorderBrush="#151D2A" BorderThickness="2" CornerRadius="0,0,5,5" Height="200">
+                    <Grid Margin="12,10,12,8">
+                        <dxe:DateEditCalendarContent IsEnabled="False" Opacity="0" Foreground="Red" Template="{TemplateBinding MonthInfoTemplate}" State="Month" />
+                        <dxe:DateEditCalendarContent IsEnabled="False" Opacity="0" Foreground="Green" Template="{TemplateBinding YearInfoTemplate}" State="Year" />
+                        <dxe:DateEditCalendarContent IsEnabled="False" Opacity="0" Foreground="Blue" Template="{TemplateBinding YearsInfoTemplate}" State="Years" />
+                        <dxe:DateEditCalendarContent IsEnabled="False" Opacity="0" Foreground="Yellow"  Template="{TemplateBinding YearsGroupInfoTemplate}" State="YearsGroup" />
+                        <dxe:DateEditCalendarTransferControl x:Name="PART_CalendarTransferContent" Foreground="Black" FontSize="12" FontWeight="Black" Style="{TemplateBinding CalendarTransferStyle}" Visibility="Visible" />
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="Grid1" Value="12" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <!--按钮-->
+    <ControlTemplate TargetType="{x:Type ButtonBase}" x:Key="{dxet:ButtonsThemeKey ResourceKey=ButtonTemplate,IsThemeIndependent=True}">
+        <Grid x:Name="Root" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto">
+                    <ColumnDefinition.SharedSizeGroup>
+                        <sys:String>ComboBoxButton</sys:String>
+                    </ColumnDefinition.SharedSizeGroup>
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="Arrow" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="1" SnapsToDevicePixels="True"  >
+                <Border Background="Transparent" Width="25" Height="25"  VerticalAlignment="Center" HorizontalAlignment="Center" CornerRadius="2">
+                    <Image x:Name="img_active" Source="/BFM.WPF.Base;component/Resources/arrow_cmb.png" Margin="0,4,4,0"  Stretch="Uniform" Width="16"/>
+                </Border>
+            </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" TargetName="img_active" Value="0.4"></Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/arrow_cmb_s.png"></Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/arrow_cmb.png"></Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--DateEdit样式-->
+    <Style TargetType="dxe:DateEdit">
+        <Setter Property="BorderBrush" Value="#a1a6ab"/>
+        <Setter Property="Foreground" Value="#737a81"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="AllowNullInput" Value="True"/>
+        <Setter Property="IsTextEditable" Value="False"/>
+        <Setter Property="BorderTemplate">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ContentControl}">
+                    <Border x:Name="root" BorderThickness="2" Background="Transparent" BorderBrush="#a1a6ab" CornerRadius="3">
+                        <ContentPresenter x:Name="presenter"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter TargetName="root" Property="Background" Value="white"/>
+                            <Setter TargetName="presenter" Property="dxe:SpinEdit.FontWeight" Value="Bold"/>
+                            <Setter TargetName="root" Property="BorderBrush" Value="#feb113"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    
+    <!--combobox-->
+    <Style TargetType="{x:Type dxe:ComboBoxEdit}">
+        <Setter Property="BorderBrush" Value="#a1a6ab"/>
+        <Setter Property="IsTextEditable" Value="False"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxe:ComboBoxEdit}">
+                    <Grid>
+                        <Border x:Name="BorderBg" Background="Transparent" CornerRadius="3" BorderBrush="#a1a6ab" BorderThickness="2">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="25"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="4" x:Name="Border" Background="#050D1A" BorderThickness="1,1,1,0" BorderBrush="#FFBC12" Opacity="0"/>
+                                <TextBox x:Name="TextBoxEdit" Grid.Column="0" Margin="5,0,0,0" BorderThickness="0" 
+                                         Style="{StaticResource ComboBoxEdit}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                         Text="{TemplateBinding DisplayText}" FontFamily="Microsoft YaHei"
+                                          />
+                                <ToggleButton x:Name="ToggleButton" Grid.Column="1" Margin="2,4,2,2" Style="{StaticResource ToggleStyle}" IsChecked="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=dxe:ComboBoxEdit},Path=IsPopupOpen,Mode=TwoWay}"></ToggleButton>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="BorderBg" Property="BorderBrush" Value="#FFBC12"/>
+                            <Setter TargetName="BorderBg" Property="BorderThickness" Value="2"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="BorderBg" Property="BorderBrush" Value="#a1a6ab"/>
+                            <Setter TargetName="BorderBg" Property="BorderThickness" Value="1"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="BorderBg" Property="BorderBrush" Value="#FFBC12"/>
+                            <Setter TargetName="BorderBg" Property="BorderThickness" Value="2"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="False">
+                            <Setter TargetName="BorderBg" Property="BorderBrush" Value="#a1a6ab"/>
+                            <Setter TargetName="BorderBg" Property="BorderThickness" Value="2"/>
+                        </Trigger>
+                        <Trigger SourceName="TextBoxEdit" Property="IsFocused" Value="True">
+                            <Setter TargetName="BorderBg" Property="BorderBrush" Value="#FFBC12"/>
+                            <Setter TargetName="BorderBg" Property="BorderThickness" Value="2"/>
+                        </Trigger>
+                        <Trigger SourceName="TextBoxEdit" Property="IsFocused"  Value="False">
+                            <Setter TargetName="BorderBg" Property="BorderBrush" Value="#a1a6ab"/>
+                            <Setter TargetName="BorderBg" Property="BorderThickness" Value="2"/>
+                        </Trigger>
+                        <Trigger SourceName="ToggleButton" Property="IsFocused" Value="True">
+                            <Setter TargetName="BorderBg" Property="BorderBrush" Value="#FFBC12"/>
+                            <Setter TargetName="BorderBg" Property="BorderThickness" Value="2"/>
+                        </Trigger>
+                        <Trigger SourceName="ToggleButton" Property="IsFocused" Value="False">
+                            <Setter TargetName="BorderBg" Property="BorderBrush" Value="#a1a6ab"/>
+                            <Setter TargetName="BorderBg" Property="BorderThickness" Value="2"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="BorderBg" Property="Background" Value="Transparent"/>
+                            <Setter TargetName="Border" Property="Background" Value="Transparent"/>
+                            <Setter TargetName="ToggleButton" Property="IsEnabled" Value="False"/>
+                            <Setter TargetName="TextBoxEdit" Property="IsEnabled" Value="False"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type dxe:ComboBoxEditItem}">
+                    <Setter Property="Template" >
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type dxe:ComboBoxEditItem}">
+                                <Border x:Name="BorderBG" Background="#050D1A" BorderThickness="0" BorderBrush="Transparent" Height="28">
+                                    <ContentPresenter ContentSource="{Binding Source}" VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="5,0,0,0"></ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                        <Setter TargetName="BorderBG" Property="Background" >
+                                            <Setter.Value>
+                                                <SolidColorBrush Color="#050D1A" Opacity="0.5"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="Foreground" Value="#feb113"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Foreground" Value="#737a81"></Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ControlTemplate x:Key="ToggleBtnTemplate1" TargetType="{x:Type ToggleButton}">
+        <Border x:Name="border" BorderThickness="0" Background="Transparent" >
+            <Grid x:Name="stackPanel" HorizontalAlignment="Center">
+                <Image x:Name="img_active" HorizontalAlignment="Center" Width="16" Margin="0,4,4,0" Opacity="1"
+                                                                       Source="/BFM.WPF.Base;component/Resources/arrow_cmb.png" Stretch="Uniform" />
+                <StackPanel>
+                    <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}"
+                                  Content="{TemplateBinding Content}" Margin="0,11,0,0"
+                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  RecognizesAccessKey="True" 
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" TargetName="img_active" Value="0.4"></Setter>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/arrow_cmb_s.png"></Setter>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="False">
+                <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/arrow_cmb.png"></Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--CheckedComboBox下拉窗口-->
+    <ControlTemplate x:Key="{dxet:ComboBoxEditThemeKey ResourceKey=PopupContentTemplate,IsThemeIndependent=True}" TargetType="{x:Type ContentControl}">
+        <Grid Width="Auto" Height="Auto" SnapsToDevicePixels="True" Background="Transparent">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <dxeh:PopupListBoxDisplayMemberPathConverter x:Key="DisplayMemberPathConverter" />
+                    <Style TargetType="{x:Type dxe:SelectAllItemCheckEdit}">
+                        <Setter Property="Foreground" Value="#737a81"></Setter>
+                    </Style>
+
+                    <Style TargetType="{x:Type dxe:CheckEdit}">
+                        <Setter Property="Foreground" Value="#737a81"></Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Border BorderBrush="#FFBC12" BorderThickness="2,1,2,2"  CornerRadius="2,2,4,4">
+                <dxe:PopupListBox x:Name="PART_Content" AllowItemHighlighting="{Binding Path=(dxe:BaseEdit.OwnerEdit).AllowItemHighlighting, RelativeSource={RelativeSource TemplatedParent} }" dx:FocusHelper2.Focusable="False" DisplayMemberPath="{Binding Path=Tag, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource DisplayMemberPathConverter}}" 
+                                   ItemTemplate="{Binding Path=Tag.ItemTemplate, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   ItemsPanel="{Binding Path=Tag.ItemsPanel, RelativeSource={RelativeSource TemplatedParent}}" HorizontalContentAlignment="{Binding Path=Tag.HorizontalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   VerticalContentAlignment="{Binding Path=Tag.VerticalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" 
+                                   Style="{DynamicResource {dxet:EditorListBoxThemeKey ResourceKey=PopupStyle,IsThemeIndependent=True}}" FocusVisualStyle="{x:Null}"
+                                   Background="#050D1A" Foreground="White">
+                    <dxe:PopupListBox.ItemTemplateSelector>
+                        <Binding Path="Tag.ItemTemplateSelector" RelativeSource="{RelativeSource TemplatedParent}" />
+                    </dxe:PopupListBox.ItemTemplateSelector>
+                </dxe:PopupListBox>
+            </Border>
+
+        </Grid>
+    </ControlTemplate>
+    <!--下拉框popup部分-->
+    <ControlTemplate x:Key="{dxt:PopupBaseThemeKey ResourceKey=BorderTemplate,IsThemeIndependent=True}" TargetType="{x:Type dx:PopupBorderControl}">
+        <Grid Name="Root" ClipToBounds="False">
+            <Border x:Name="Border" Background="#050D1A" BorderBrush="{x:Null}" BorderThickness="0" Margin="0,0,8,8"
+                    Width="{TemplateBinding ContentWidth}" Height="{TemplateBinding ContentHeight}"
+                    MinWidth="{TemplateBinding ContentMinWidth}" MaxWidth="{TemplateBinding ContentMaxWidth}"
+                    MinHeight="{TemplateBinding ContentMinHeight}" MaxHeight="{TemplateBinding ContentMaxHeight}">
+                <Border.Effect>
+                    <DropShadowEffect x:Name="Shadow" Direction="315" ShadowDepth="3" BlurRadius="5" Opacity="0.15"/>
+                </Border.Effect>
+                <ContentPresenter/>
+            </Border>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="AppType">
+                    <VisualState x:Name="Standalone"/>
+                    <VisualState x:Name="BrowserHosted" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <!--文本框样式-->
+    <!--<Style TargetType="{x:Type dxe:TextEdit}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxe:TextEdit}">
+                    <Border x:Name="root" Background="Transparent" BorderThickness="2" BorderBrush="#a1a6ab" CornerRadius="3">
+                        <Grid>
+                            <TextBox Text="{TemplateBinding Text}" Style="{x:Null}" HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderThickness="0" BorderBrush="Transparent" Foreground="#737a81"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="true">
+                            <Setter TargetName="root" Property="BorderBrush" Value="#feb113"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+
+    <!--表格样式-->
+    <Style TargetType="{x:Type dxg:GridControl}">
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    <SolidColorBrush x:Key="myBrush" Color="White"/>
+    <Style TargetType="dxg:TableView">
+        <Setter Property="RowMinHeight" Value="40"/>
+        <Setter Property="AllowEditing" Value="True"/>
+        <Setter Property="NavigationStyle" Value="Row"/>
+        <Setter Property="AutoWidth" Value="True"/>
+        <Setter Property="IndicatorWidth" Value="30"/>
+        <Setter Property="VerticalScrollbarVisibility" Value="Auto"/>
+        <Setter Property="ShowFocusedRectangle" Value="True"/>
+        <!--<Setter Property="AlternateRowBackground" Value="#262933"/>-->
+        <Setter Property="CellStyle">
+            <Setter.Value>
+                <!--单元格右边边框-->
+                <Style BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle,IsThemeIndependent=True}}" TargetType="{x:Type dxg:LightweightCellEditor}">
+                    <Setter Property="BorderBrush" Value="#596272"/>
+                    <Setter Property="Width" Value="1"/>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="AutoFilterRowCellStyle">
+            <Setter.Value>
+                <Style TargetType="dxg:FilterCellContentPresenter">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Foreground" Value="#737a81"/>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FocusedRowBorderTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border BorderBrush="#feb113" BorderThickness="1"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="RowIndicatorContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Border x:Name="errorIndicatorBorder"
+                    Background="White" BorderBrush="Black" BorderThickness="0"
+                    dxg:ToolTipHelper.ShowTooltip="{Binding Path=(dxe:BaseEdit.HasValidationError)}"
+                    dxg:ToolTipHelper.Content="{Binding Path=(dxe:BaseEdit.ValidationError)}"
+                    dxg:ToolTipHelper.ContentTemplate="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=RowToolTipTemplate}}">
+                        <ContentPresenter x:Name="iconPresenter" Content="{Binding}">
+                            <ContentPresenter.ContentTemplate>
+                                <DataTemplate>
+                                    <Grid />
+                                </DataTemplate>
+                            </ContentPresenter.ContentTemplate>
+                        </ContentPresenter>
+                    </Border>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="Focused">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=FocusedIconTemplate}}" TargetName="iconPresenter" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="Changed">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=ChangedIconTemplate}}" TargetName="iconPresenter" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="NewItemRow">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=NewItemRowIconTemplate}}" TargetName="iconPresenter" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="Editing">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=EditingIconTemplate}}" TargetName="iconPresenter" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="Error">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=ErrorIconTemplate}}" TargetName="iconPresenter" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="FocusedError">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=FocusedErrorIconTemplate}}" TargetName="iconPresenter" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=IndicatorState}" Value="AutoFilterRow">
+                            <Setter Property="ContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=AutoFilterRowIconTemplate}}" TargetName="iconPresenter" />
+                            <Setter Property="Background" Value="{StaticResource myBrush}" TargetName="errorIndicatorBorder" />
+                            <!--<Setter Property="BorderBrush" Value="#444d58" TargetName="errorIndicatorBorder"/>
+                            <Setter Property="BorderThickness" Value="0,0,1,1" TargetName="errorIndicatorBorder"/>-->
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <!--<dxg:TableView.FocusedRowBorderTemplate>
+            <ControlTemplate>
+                <Border BorderBrush="Yellow" BorderThickness="2"/>
+            </ControlTemplate>
+        </dxg:TableView.FocusedRowBorderTemplate>-->
+    </Style>
+
+    <ControlTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=FilterRowTemplate,IsThemeIndependent=True}" TargetType="{x:Type ContentControl}" >
+        <Border BorderBrush="Black" BorderThickness="0,0,0,1" >
+            <Grid >
+                <Border x:Name="borderFocused" Background="#FFF78A09" SnapsToDevicePixels="True">
+                    <Border.Visibility>
+                        <Binding Path="SelectionState">
+                            <Binding.Converter>
+                                <dxg:SelectionStateToVisibilityConverter Value="Focused" />
+                            </Binding.Converter>
+                        </Binding>
+                    </Border.Visibility>
+                </Border>
+                <ContentControl HorizontalContentAlignment="Stretch">
+                    <ContentPresenter />
+                </ContentControl>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=SelectionState}" Value="Focused">
+                <Setter Property="Foreground" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=TextFocusedBrush}}" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--自动过滤行indicator样式-->
+    <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=AutoFilterRowIconTemplate,IsThemeIndependent=True}">
+        <!--<Path Stretch="Fill" Fill="#050D1A" Data="F1 M -9.93411e-009,0L 3,3L 3,7L 4,7L 4,3L 7,4.76837e-007L -9.93411e-009,0 Z " Margin="0,1,0,0" Width="7" Height="7" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
+        <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/BFM.WPF.Base;component/Resources/filterIcon.png" Width="12" Height="15"/>
+    </DataTemplate>
+
+    <Style x:Key="RowIndicatorStyleBase" TargetType="dxg:RowIndicator">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="AutoFilterRowContentTemplate" Value="{DynamicResource {dxgt:RowIndicatorThemeKey ResourceKey=AutoFilterRowIconTemplate}}" />
+    </Style>
+    <ControlTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=FitColumnContentTemplate,IsThemeIndependent=True}">
+        <Border Name="fitColumnVerticalLine" Background="White" BorderThickness="0,0,0,0" BorderBrush="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" >
+            <Border.Opacity>
+                <Binding Path="View.ShowVerticalLines">
+                    <Binding.Converter>
+                        <dx:BoolToObjectConverter FalseValue="0" TrueValue="1" />
+                    </Binding.Converter>
+                </Binding>
+            </Border.Opacity>
+        </Border>
+    </ControlTemplate>
+    <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=RowTemplate, ThemeName=MetropolisDark,IsThemeIndependent=True}">
+        <Border BorderThickness="0,0,1,1" BorderBrush="Black">
+            <ContentPresenter Content="{Binding DataContext, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{Binding Path=View.RowIndicatorContentTemplate}" />
+        </Border>
+    </DataTemplate>
+    <!--表头样式-->
+    <Style TargetType="dxg:GridColumnHeader">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="#737a81"/>
+        <!--<Setter Property="Background" Value="#2A3139"/>-->
+        <Setter Property="Height" Value="40"></Setter>
+    </Style>
+
+    <Style TargetType="{x:Type dxg:BackgroundBorderControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxg:BackgroundBorderControl}">
+                    <Border Background="#0B121E" BorderBrush="#FFFFFFFF" BorderThickness="0,0,0,1" Margin="0,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--表头文本居中-->
+    <Style TargetType="{x:Type dxg:GridColumn}">
+        <Setter Property="HorizontalHeaderContentAlignment" Value="Center"/>
+        <!--<Setter Property="CellTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Margin="0"  HorizontalAlignment="Center" VerticalAlignment="Center"  Text="{Binding Path=Value}">
+                    </TextBlock>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>-->
+        <!--选择框-->
+        <!--CheckEdit样式-->
+        <Style.Triggers>
+            <Trigger Property="FieldName" Value="DX$CheckboxSelectorColumn">
+                <Setter Property="CellTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <dxe:CheckEdit Name="PART_Editor">
+                                <dxe:CheckEdit.Style>
+                                    <Style TargetType="{x:Type dxe:CheckEdit}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type dxe:CheckEdit}">
+                                                    <Grid Height="14" Width="14">
+                                                        <Grid.Background>
+                                                            <ImageBrush ImageSource="/BFM.WPF.Base;component/Resources/unchecked.png"/>
+                                                        </Grid.Background>
+                                                        <Image x:Name="PART_Editor" Source="/BFM.WPF.Base;component/Resources/checked.png" Visibility="Collapsed"/>
+                                                    </Grid>
+
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsChecked" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible" TargetName="PART_Editor"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </dxe:CheckEdit.Style>
+                            </dxe:CheckEdit>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <!--表格外边框-->
+    <ControlTemplate x:Key="{dxgt:GridControlThemeKey ResourceKey=BorderTemplate,IsThemeIndependent=True}" TargetType="{x:Type ContentControl}">
+        <Border Background="White" BorderBrush="Gray"  CornerRadius="0">
+            <Border.BorderThickness>
+                <Binding Path="(dxg:GridBorderHelper.ShowBorder)" RelativeSource="{RelativeSource TemplatedParent}">
+                    <Binding.Converter>
+                        <dx:BoolToObjectConverter FalseValue="0" TrueValue="2" />
+                    </Binding.Converter>
+                </Binding>
+            </Border.BorderThickness>
+            <ContentPresenter />
+        </Border>
+    </ControlTemplate>
+
+    <!--表头背景色-->
+    <ControlTemplate x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=ControlTemplate, IsThemeIndependent=True}" TargetType="{x:Type dxg:GridColumnHeaderBase}">
+        <dxg:ColumnHeaderDockPanel x:Name="PART_LayoutPanel" TextElement.Foreground="#737a81"
+                                   ContentMargin="{StaticResource {dxgt:GridColumnHeaderThemeKey ResourceKey=ContentMargin}}">
+            <Border x:Name="PART_Border" Background="White" BorderBrush="#596272" BorderThickness="0,0,1,1"/>
+        </dxg:ColumnHeaderDockPanel>
+    </ControlTemplate>
+
+    <!--行样式-->
+    <Style TargetType="dxg:RowControl">
+        <Setter Property="Foreground" Value="#737a81"/>
+        <Setter Property="ShowVerticalLines" Value="True"/>
+        <Setter Property="ShowHorizontalLine" Value="True"/>
+        <Setter Property="BorderBrush" Value="#596272"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <!--<Condition Property="IsMouseOver" Value="True" />-->
+                    <Condition Property="IsFocused" Value="True" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="SelectionState" Value="Focused" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+            <Trigger Property="SelectionState" Value="Selected">
+                <Setter Property="Foreground" Value="#feb113" />
+            </Trigger>
+            <Trigger Property="SelectionState" Value="Focused">
+                <Setter Property="Foreground" Value="#feb113" />
+            </Trigger>
+            <Trigger Property="SelectionState" Value="FocusedAndSelected">
+                <Setter Property="Foreground" Value="#feb113" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--行头背景 设为透明后显示的是row的背景颜色-->
+    <ControlTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=RowIndicatorTemplate,IsThemeIndependent=True}" TargetType="{x:Type dxg:RowIndicator}">
+        <Grid>
+            <Border x:Name="PART_ContentBorder" Background="White" BorderBrush="#596272" BorderThickness="0,0,1,1" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxgt:TableViewThemeKey ResourceKey=DataPresenterTemplate,IsThemeIndependent=True}" TargetType="{x:Type dxg:DataPresenter}">
+        <Border Background="White">
+            <ContentPresenter />
+        </Border>
+    </ControlTemplate>
+    <!--查找面板-->
+    <SolidColorBrush x:Key="{dxgt:TableViewThemeKey ResourceKey=SearchPanelBackground,IsThemeIndependent=True}" Color="Transparent" />
+    <SolidColorBrush x:Key="{dxgt:TableViewThemeKey ResourceKey=SearchPanelBorderBottomBrush,IsThemeIndependent=True}" Color="#3D464F" />
+
+    <!--统计行-->
+    <ControlTemplate x:Key="{dxgt:TotalSummaryThemeKey ResourceKey=FootersContentTemplate,IsThemeIndependent=True}" TargetType="{x:Type ContentControl}">
+        <Grid>
+            <Border BorderBrush="#596272" Background="White">
+                <Border.BorderThickness>
+                    <Binding Path="View.IsRootView">
+                        <Binding.Converter>
+                            <dx:BoolToObjectConverter TrueValue="0,1,0,0" FalseValue="0,0,0,1" />
+                        </Binding.Converter>
+                    </Binding>
+                </Border.BorderThickness>
+            </Border>
+
+            <ContentPresenter Margin="0,3,0,2" />
+        </Grid>
+    </ControlTemplate>
+
+    <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=FixedSummaryFillBrush,IsThemeIndependent=True}" Color="#28323C" />
+
+    <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=TotalSummaryBorderBrush,IsThemeIndependent=True}" Color="#596272" />
+    <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=TotalSummaryBrush,IsThemeIndependent=True}" Color="White" />
+
+
+
+    <!--搜索框-->
+    <!--<dxn:RenderTemplate x:Key="TextEditBorderTemplate">
+        <dxn:RenderPanel Name="PART_Root">
+            <dxn:RenderPanel Name="PART_Border">
+                <dxn:RenderBorder Background="Transparent" BorderBrush="#3D464F" BorderThickness="1" CornerRadius="3"/>
+            </dxn:RenderPanel>
+        </dxn:RenderPanel>
+    </dxn:RenderTemplate>
+
+    <ControlTemplate x:Key="{dxet:BaseEditThemeKey ResourceKey=TextEditBorderTemplate,IsThemeIndependent=True}" TargetType="ContentControl">
+        <Grid>
+            <dxn:Chrome RenderTemplate="{StaticResource TextEditBorderTemplate}" />
+            <ContentPresenter Margin="{StaticResource ResourceKey={dxet:InplaceBaseEditThemeKey ResourceKey=TextEditBorderThickness}}" />
+            <dxn:Chrome RenderTemplate="{StaticResource {dxet:InplaceBaseEditThemeKey ResourceKey=HoverBorderTemplate}}" 
+                                dxeh:ControlHelper.ShowFocusedState="{Binding Path=(dxeh:ControlHelper.ShowFocusedState), RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="False" />
+        </Grid>
+    </ControlTemplate>
+    
+    <Style x:Key="BaseTextStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Foreground" Value="#7B8289"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+    <Style x:Key="{dxet:TextEditThemeKey ResourceKey=TextStyle,IsThemeIndependent=true}" TargetType="{x:Type TextBox}" 
+           BasedOn="{StaticResource BaseTextStyle}">
+    </Style>-->
+
+
+    <!--RowIndicator-->
+    <DataTemplate x:Key="{dxgt:RowIndicatorThemeKey ResourceKey=FocusedIconTemplate,IsThemeIndependent=True}">
+        <!--<Path Stretch="Fill" Fill="#FF80838F" Data="F1 M 382,1021L 386,1025L 382,1029L 382,1021 Z" Margin="1,0,0,0" Width="4" Height="8" HorizontalAlignment="Center" VerticalAlignment="Center" />-->
+        <Image Source="/BFM.WPF.Base;component/Resources/arrow.png" HorizontalAlignment="Center" VerticalAlignment="Center" Width="18" Height="18"/>
+    </DataTemplate>
+
+    <!--Band文本居中-->
+    <Style TargetType="{x:Type dxg:GridControlBand}">
+        <Setter Property="HorizontalHeaderContentAlignment" Value="Center"/>
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Border>
+                        <TextBlock Text="{Binding}" FontSize="16"/>
+                    </Border>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--Band边框及背景色-->
+    <ControlTemplate x:Key="Border" TargetType="{x:Type dxg:GridColumnHeaderBase}">
+        <dxg:ColumnHeaderDockPanel x:Name="PART_LayoutPanel" TextElement.Foreground="#737a81" ContentMargin="4,3,5,9" TextElement.FontSize="14">
+            <Border x:Name="PART_Border" BorderBrush="Black" Background="#2A3139" BorderThickness="0,0,1,1" Margin="0,0,0,0" />
+        </dxg:ColumnHeaderDockPanel>
+    </ControlTemplate>
+    <Style TargetType="{x:Type dxg:BandHeaderControl}">
+        <Setter Property="Template" Value="{DynamicResource Border}" />
+        <Setter Property="DragElementTemplate" Value="{DynamicResource {dxgt:GridColumnHeaderThemeKey ResourceKey=DragElementTemplate}}" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    
+    <!--光标颜色-->
+    <SolidColorBrush x:Key="{dxet:TextEditThemeKey ResourceKey=CaretBrush, IsThemeIndependent=True}" Color="Black" />
+
+</ResourceDictionary>

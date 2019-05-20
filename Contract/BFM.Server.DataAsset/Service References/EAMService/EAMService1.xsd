@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BFM.ContractModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfAmAssetMasterN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AmAssetMasterN" nillable="true" type="tns:AmAssetMasterN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAmAssetMasterN" nillable="true" type="tns:ArrayOfAmAssetMasterN" />
+  <xs:complexType name="AmAssetMasterN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ABC_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSET_CLASS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSET_GROUP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSET_LABEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSET_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSET_NORM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSET_PIC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSET_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DEPARTMENT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPARTMENT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INITIAL_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INSTALL_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MANUCATURER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANUCATURE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OLD_ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OUT_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PARENT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARENT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARENT_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="START_USE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_DEPT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_DEPT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AmAssetMasterN" nillable="true" type="tns:AmAssetMasterN" />
+  <xs:complexType name="ArrayOfAmPartsMasterN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AmPartsMasterN" nillable="true" type="tns:AmPartsMasterN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAmPartsMasterN" nillable="true" type="tns:ArrayOfAmPartsMasterN" />
+  <xs:complexType name="AmPartsMasterN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCT_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSET_UNIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ASSET_USE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHECK_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DEPARTMENT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPARTMENT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DEPRECIATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DEPRECIATION_VALUE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DRAWING_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EQUIP_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXCHANGE_PERIOD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HAND_OVER_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="INSTALL_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ITEM_QTY" type="xs:int" />
+      <xs:element minOccurs="0" name="KEY_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAY_LOCATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAY_REGION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MANAGER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NET_VALUE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PARENT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARENT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARTS_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARTS_MODEL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARTS_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARTS_NORM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARTS_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RECKON_VALUE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="REGISTER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REG_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STANDARD_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="START_USE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SUPPLIER_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUPPLIER_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TYPE_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TYPE_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UNIT_PRICE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_DEPT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_DEPT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="USE_PART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_STATE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AmPartsMasterN" nillable="true" type="tns:AmPartsMasterN" />
+  <xs:complexType name="ArrayOfRsMaintainStandards">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsMaintainStandards" nillable="true" type="tns:RsMaintainStandards" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsMaintainStandards" nillable="true" type="tns:ArrayOfRsMaintainStandards" />
+  <xs:complexType name="RsMaintainStandards">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STANDARD_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsMaintainStandards" nillable="true" type="tns:RsMaintainStandards" />
+  <xs:complexType name="ArrayOfRsMaintainStandardsDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsMaintainStandardsDetail" nillable="true" type="tns:RsMaintainStandardsDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsMaintainStandardsDetail" nillable="true" type="tns:ArrayOfRsMaintainStandardsDetail" />
+  <xs:complexType name="RsMaintainStandardsDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ESTIMATED_TIME" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MAN_TIME" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STANDARD_CONTENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STANDARD_CYCLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STANDARD_FILE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STANDARD_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+      <xs:element minOccurs="0" name="WORK_TYPE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsMaintainStandardsDetail" nillable="true" type="tns:RsMaintainStandardsDetail" />
+  <xs:complexType name="ArrayOfRsMaintainStandardsRelate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsMaintainStandardsRelate" nillable="true" type="tns:RsMaintainStandardsRelate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsMaintainStandardsRelate" nillable="true" type="tns:ArrayOfRsMaintainStandardsRelate" />
+  <xs:complexType name="RsMaintainStandardsRelate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_MAINTAIN_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEXT_MAINTAIN_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STANDARD_DETAIL_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsMaintainStandardsRelate" nillable="true" type="tns:RsMaintainStandardsRelate" />
+  <xs:complexType name="ArrayOfRmRepairRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RmRepairRecord" nillable="true" type="tns:RmRepairRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRmRepairRecord" nillable="true" type="tns:ArrayOfRmRepairRecord" />
+  <xs:complexType name="RmRepairRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FAULT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAULT_CONTENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAULT_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAULT_OCCURRENCE_TIME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAULT_REPAIRER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAULT_REPAIR_CONTENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAULT_REPAIR_RESULT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAULT_REPAIR_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FAULT_SORT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FAULT_WARRANTY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RmRepairRecord" nillable="true" type="tns:RmRepairRecord" />
+  <xs:complexType name="ArrayOfRsMaintainRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RsMaintainRecord" nillable="true" type="tns:RsMaintainRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRsMaintainRecord" nillable="true" type="tns:ArrayOfRsMaintainRecord" />
+  <xs:complexType name="RsMaintainRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSET_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MAINTAIN_DATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAINTAIN_TIME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAINTAIN_USER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STANDARD_DETAIL_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RsMaintainRecord" nillable="true" type="tns:RsMaintainRecord" />
+</xs:schema>

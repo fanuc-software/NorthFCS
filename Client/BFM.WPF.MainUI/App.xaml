@@ -1,0 +1,24 @@
+﻿<Application
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converter="clr-namespace:BFM.WPF.Base.Converter;assembly=BFM.WPF.Base"
+             x:Class="BFM.WPF.MainUI.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <converter:ForeignInfoConverter x:Key="ForeignInfoConverter" />
+            <converter:BasicInfoConverter x:Key="BasicInfoConverter" />
+            <converter:ColumnOperateConverter x:Key="ColumnOperateConverter" />
+            <converter:EnumInfoConverter x:Key="EnumInfoConverter" />
+            <converter:FormateConverter x:Key="FormateConverter" />
+            <converter:ToVisibilityConverter x:Key="ToVisibilityConverter" />
+            <converter:ToBoolConverter x:Key="ToBoolConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/BFM.WPF.Base;component/Themes/Share.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/BFM.WPF.Base;component/Themes/GridView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/BFM.WPF.Base;component/Themes/TabControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/BFM.WPF.Base;component/Themes/Layout.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/BFM.WPF.Base;component/Themes/Editors.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

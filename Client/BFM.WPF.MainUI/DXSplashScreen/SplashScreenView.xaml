@@ -1,0 +1,44 @@
+﻿<UserControl
+    x:Class="BFM.WPF.MainUI.SplashScreenView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    mc:Ignorable="d" 
+    d:DataContext="{x:Static dx:SplashScreenViewModel.DesignTimeData}" Width="450" Height="260" Padding="0"
+    >
+    <Grid x:Name="LayoutRoot" Margin="0">
+        <Grid x:Name="Splash" Width="450" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
+            <Grid x:Name="Back">
+                <Border Background="Black" CornerRadius="3" Opacity="0.15"/>
+                <Border CornerRadius="2" Margin="1" Background="White"/>
+            </Grid>
+            <Grid x:Name="Content_Area" Margin="12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="323*"/>
+                    <ColumnDefinition Width="103*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image x:Name="Image" Source="/BFM.WPF.MainUI;component/images/LoginLogo.png" Stretch="None" Grid.ColumnSpan="2" Margin="0,0,-0.4,0"/>
+                <TextBlock x:Name="Info" TextWrapping="Wrap" Text="{Binding State}" Grid.Row="1" Margin="12,9,11.6,38.4" Foreground="#FF2D2D2D" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                <ProgressBar x:Name="progressBar"
+                             Height="12"
+                             Grid.Row="2"
+                             Margin="12,11.8,11.6,12.2"
+                             IsIndeterminate="{Binding IsIndeterminate}"
+                             Value="{Binding Progress}"
+                             Maximum="{Binding MaxProgress}" Grid.ColumnSpan="2"/>
+                <DockPanel x:Name="Footer" Grid.Row="3" Margin="12,19.8,11.6,4.4" Grid.ColumnSpan="2">
+                    <!--<Image x:Name="Logotype" DockPanel.Dock="Left" Source="/BFM.WPF.MainUI;component/images/selected/LoginBack.png" Stretch="None" HorizontalAlignment="Left"  />-->
+                    <TextBlock x:Name="Footer_Text" Text="Copyright ©北京发那科机电有限公司 2018" Opacity="0.5" Foreground="#FF2D2D2D" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </DockPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

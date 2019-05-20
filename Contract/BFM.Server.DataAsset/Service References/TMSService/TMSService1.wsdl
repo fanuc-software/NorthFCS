@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://fanuc.com.cn/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fanuc.com.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://fanuc.com.cn/Imports">
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/TMSService.svc?xsd=xsd0" namespace="http://fanuc.com.cn/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/TMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/TMSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" />
+      <xsd:import schemaLocation="http://localhost/BFM.WCFService/TMSService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITMSService_GetTmsToolsTypeByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsTypeByPage" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsTypeByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsTypeByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsTypeCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsTypeCount" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsTypeCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsTypeCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AddTmsToolsType_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTmsToolsType" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AddTmsToolsType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTmsToolsTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_UpdateTmsToolsType_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTmsToolsType" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_UpdateTmsToolsType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTmsToolsTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DelTmsToolsTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelTmsToolsTypes" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DelTmsToolsTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelTmsToolsTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DelTmsToolsType_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelTmsToolsType" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DelTmsToolsType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelTmsToolsTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsTypes" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsTypeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsTypeById" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsTypeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsTypeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsMasterByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsMasterByPage" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsMasterByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsMasterByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsMasterCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsMasterCount" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsMasterCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsMasterCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AddTmsToolsMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTmsToolsMaster" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AddTmsToolsMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTmsToolsMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_UpdateTmsToolsMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTmsToolsMaster" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_UpdateTmsToolsMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTmsToolsMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DelTmsToolsMasters_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelTmsToolsMasters" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DelTmsToolsMasters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelTmsToolsMastersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DelTmsToolsMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelTmsToolsMaster" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DelTmsToolsMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelTmsToolsMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsMasters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsMasters" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsMasters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsMastersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsMasterById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsMasterById" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsToolsMasterById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsToolsMasterByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsDeviceToolsPosByPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsDeviceToolsPosByPage" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsDeviceToolsPosByPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsDeviceToolsPosByPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsDeviceToolsPosCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsDeviceToolsPosCount" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsDeviceToolsPosCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsDeviceToolsPosCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AddTmsDeviceToolsPos_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTmsDeviceToolsPos" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_AddTmsDeviceToolsPos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTmsDeviceToolsPosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_UpdateTmsDeviceToolsPos_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTmsDeviceToolsPos" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_UpdateTmsDeviceToolsPos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTmsDeviceToolsPosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DelTmsDeviceToolsPoss_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelTmsDeviceToolsPoss" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DelTmsDeviceToolsPoss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelTmsDeviceToolsPossResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DelTmsDeviceToolsPos_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelTmsDeviceToolsPos" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_DelTmsDeviceToolsPos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelTmsDeviceToolsPosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsDeviceToolsPoss_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsDeviceToolsPoss" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsDeviceToolsPoss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsDeviceToolsPossResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsDeviceToolsPosById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsDeviceToolsPosById" />
+  </wsdl:message>
+  <wsdl:message name="ITMSService_GetTmsDeviceToolsPosById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTmsDeviceToolsPosByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITMSService">
+    <wsdl:operation name="GetTmsToolsTypeByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsTypeByPage" message="tns:ITMSService_GetTmsToolsTypeByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsTypeByPageResponse" message="tns:ITMSService_GetTmsToolsTypeByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTmsToolsTypeCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsTypeCount" message="tns:ITMSService_GetTmsToolsTypeCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsTypeCountResponse" message="tns:ITMSService_GetTmsToolsTypeCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTmsToolsType">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/AddTmsToolsType" message="tns:ITMSService_AddTmsToolsType_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/AddTmsToolsTypeResponse" message="tns:ITMSService_AddTmsToolsType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTmsToolsType">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/UpdateTmsToolsType" message="tns:ITMSService_UpdateTmsToolsType_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/UpdateTmsToolsTypeResponse" message="tns:ITMSService_UpdateTmsToolsType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelTmsToolsTypes">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/DelTmsToolsTypes" message="tns:ITMSService_DelTmsToolsTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/DelTmsToolsTypesResponse" message="tns:ITMSService_DelTmsToolsTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelTmsToolsType">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/DelTmsToolsType" message="tns:ITMSService_DelTmsToolsType_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/DelTmsToolsTypeResponse" message="tns:ITMSService_DelTmsToolsType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTmsToolsTypes">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsTypes" message="tns:ITMSService_GetTmsToolsTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsTypesResponse" message="tns:ITMSService_GetTmsToolsTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTmsToolsTypeById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsTypeById" message="tns:ITMSService_GetTmsToolsTypeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsTypeByIdResponse" message="tns:ITMSService_GetTmsToolsTypeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTmsToolsMasterByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsMasterByPage" message="tns:ITMSService_GetTmsToolsMasterByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsMasterByPageResponse" message="tns:ITMSService_GetTmsToolsMasterByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTmsToolsMasterCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsMasterCount" message="tns:ITMSService_GetTmsToolsMasterCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsMasterCountResponse" message="tns:ITMSService_GetTmsToolsMasterCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTmsToolsMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/AddTmsToolsMaster" message="tns:ITMSService_AddTmsToolsMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/AddTmsToolsMasterResponse" message="tns:ITMSService_AddTmsToolsMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTmsToolsMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/UpdateTmsToolsMaster" message="tns:ITMSService_UpdateTmsToolsMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/UpdateTmsToolsMasterResponse" message="tns:ITMSService_UpdateTmsToolsMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelTmsToolsMasters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/DelTmsToolsMasters" message="tns:ITMSService_DelTmsToolsMasters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/DelTmsToolsMastersResponse" message="tns:ITMSService_DelTmsToolsMasters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelTmsToolsMaster">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/DelTmsToolsMaster" message="tns:ITMSService_DelTmsToolsMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/DelTmsToolsMasterResponse" message="tns:ITMSService_DelTmsToolsMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTmsToolsMasters">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsMasters" message="tns:ITMSService_GetTmsToolsMasters_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsMastersResponse" message="tns:ITMSService_GetTmsToolsMasters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTmsToolsMasterById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsMasterById" message="tns:ITMSService_GetTmsToolsMasterById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsToolsMasterByIdResponse" message="tns:ITMSService_GetTmsToolsMasterById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTmsDeviceToolsPosByPage">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsDeviceToolsPosByPage" message="tns:ITMSService_GetTmsDeviceToolsPosByPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsDeviceToolsPosByPageResponse" message="tns:ITMSService_GetTmsDeviceToolsPosByPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTmsDeviceToolsPosCount">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsDeviceToolsPosCount" message="tns:ITMSService_GetTmsDeviceToolsPosCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsDeviceToolsPosCountResponse" message="tns:ITMSService_GetTmsDeviceToolsPosCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTmsDeviceToolsPos">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/AddTmsDeviceToolsPos" message="tns:ITMSService_AddTmsDeviceToolsPos_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/AddTmsDeviceToolsPosResponse" message="tns:ITMSService_AddTmsDeviceToolsPos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTmsDeviceToolsPos">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/UpdateTmsDeviceToolsPos" message="tns:ITMSService_UpdateTmsDeviceToolsPos_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/UpdateTmsDeviceToolsPosResponse" message="tns:ITMSService_UpdateTmsDeviceToolsPos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelTmsDeviceToolsPoss">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/DelTmsDeviceToolsPoss" message="tns:ITMSService_DelTmsDeviceToolsPoss_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/DelTmsDeviceToolsPossResponse" message="tns:ITMSService_DelTmsDeviceToolsPoss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelTmsDeviceToolsPos">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/DelTmsDeviceToolsPos" message="tns:ITMSService_DelTmsDeviceToolsPos_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/DelTmsDeviceToolsPosResponse" message="tns:ITMSService_DelTmsDeviceToolsPos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTmsDeviceToolsPoss">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsDeviceToolsPoss" message="tns:ITMSService_GetTmsDeviceToolsPoss_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsDeviceToolsPossResponse" message="tns:ITMSService_GetTmsDeviceToolsPoss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTmsDeviceToolsPosById">
+      <wsdl:input wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsDeviceToolsPosById" message="tns:ITMSService_GetTmsDeviceToolsPosById_InputMessage" />
+      <wsdl:output wsaw:Action="http://fanuc.com.cn/ITMSService/GetTmsDeviceToolsPosByIdResponse" message="tns:ITMSService_GetTmsDeviceToolsPosById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

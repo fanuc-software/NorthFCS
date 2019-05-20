@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BFM.ContractModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfWmsAreaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WmsAreaInfo" nillable="true" type="tns:WmsAreaInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWmsAreaInfo" nillable="true" type="tns:ArrayOfWmsAreaInfo" />
+  <xs:complexType name="WmsAreaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AREA_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AREA_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AREA_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AREA_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOTAL_COL" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TOTAL_LAY" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TOTAL_ROW" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WmsAreaInfo" nillable="true" type="tns:WmsAreaInfo" />
+  <xs:complexType name="ArrayOfWmsAllocationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WmsAllocationInfo" nillable="true" type="tns:WmsAllocationInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWmsAllocationInfo" nillable="true" type="tns:ArrayOfWmsAllocationInfo" />
+  <xs:complexType name="WmsAllocationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ALLOCATION_CAPACITY" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ALLOCATION_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ALLOCATION_COL" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ALLOCATION_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ALLOCATION_LAY" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ALLOCATION_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ALLOCATION_ROW" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ALLOCATION_STATE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AREA_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CUR_PALLET_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INTERFACE_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WmsAllocationInfo" nillable="true" type="tns:WmsAllocationInfo" />
+  <xs:complexType name="ArrayOfWmsInvOperate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WmsInvOperate" nillable="true" type="tns:WmsInvOperate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWmsInvOperate" nillable="true" type="tns:ArrayOfWmsInvOperate" />
+  <xs:complexType name="WmsInvOperate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ALLOCATION_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AREA_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BATCH_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="INSTALL_POS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATERIAL_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OPERATE_NUM" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OPERATE_PERSON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OPERATE_SOURCE" type="xs:int" />
+      <xs:element minOccurs="0" name="OPERATE_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OPERATE_TYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="OUT_TARGET" type="xs:int" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WmsInvOperate" nillable="true" type="tns:WmsInvOperate" />
+  <xs:complexType name="ArrayOfWmsInventory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WmsInventory" nillable="true" type="tns:WmsInventory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWmsInventory" nillable="true" type="tns:ArrayOfWmsInventory" />
+  <xs:complexType name="WmsInventory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ALLOCATION_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AREA_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BATCH_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INVENTORY_NUM" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MATERIAL_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WmsInventory" nillable="true" type="tns:WmsInventory" />
+</xs:schema>

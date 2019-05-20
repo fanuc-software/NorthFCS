@@ -1,0 +1,63 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Name="loginwindow"
+        x:Class="BFM.WPF.MainUI.Login" ResizeMode="NoResize"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
+        Title="标准窗口" Height="400" Width="578" >
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0.0001" CornerRadius="0" CaptionHeight="400"/>
+    </WindowChrome.WindowChrome>
+    <DockPanel x:Name="RootFrame" Background="Gray">
+        <Grid Margin="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="images/bg.jpg"/>
+            </Grid.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="44" />
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="Transparent" />
+
+                    <Image x:Name="image" Grid.Row="0" Grid.Column="0" Source="images/logo.png" Stretch="Fill" HorizontalAlignment="Left" Width="96" Height="30" VerticalAlignment="Top" Margin="5,4,0,0" />
+
+                    <TextBlock x:Name="textBlock1" Grid.Row="0" Grid.Column="1" Text="用户登录" FontSize="20" FontFamily="Microsoft MHei" FontWeight="Bold" Height="24" VerticalAlignment="Center" Foreground="Black" HorizontalAlignment="Center"/>
+
+                    <StackPanel Grid.Column="2" WindowChrome.IsHitTestVisibleInChrome="True" Orientation="Horizontal" HorizontalAlignment="Right" Width="auto"  >
+                        <Button x:Name="btnChange" Visibility="Collapsed" Content="+" FontWeight="Bold" FontSize="12" FontFamily="SimSun" HorizontalAlignment="Right" 
+        	                VerticalAlignment="Top" Width="36" Height="28" Template="{StaticResource FormTitleNormalButton}"  Click="btnChange_Click" />
+                        <Button x:Name="btnMin" Content="_" FontWeight="Bold" FontSize="12" FontFamily="SimSun" HorizontalAlignment="Right" 
+        	                VerticalAlignment="Top" Width="36" Height="28" Template="{StaticResource FormTitleNormalButton}" Click="btnMin_Click"/>
+                        <Button x:Name="btnClose" Content="×" FontWeight="Bold" FontSize="12" FontFamily="SimSun" HorizontalAlignment="Right" 
+                            VerticalAlignment="Top" Width="36" Height="28" Template="{StaticResource FormTitleCloseButton}" Click="btnClose_Click">
+                        </Button>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <TextBlock HorizontalAlignment="Left" Margin="335,159,0,0" Text="用户名：" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="335,201,0,0" Text="密码：" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cmbUserName" WindowChrome.IsHitTestVisibleInChrome="True" HorizontalAlignment="Left" Margin="402,152,0,0" Text="" VerticalAlignment="Top" Width="123" Height="30" VerticalContentAlignment="Center" IsEditable="True" />
+                    <PasswordBox x:Name="pbPassword" WindowChrome.IsHitTestVisibleInChrome="True" HorizontalAlignment="Left" Margin="402,195,0,0" VerticalAlignment="Top" Height="30" Width="123" VerticalContentAlignment="Center"/>
+                    <Button x:Name="btnLogin" WindowChrome.IsHitTestVisibleInChrome="True" Content="登录" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="349,237,0,0" Height="41" Click="btnLogin_Click" IsDefault="True"/>
+                    <Button x:Name="btnClose1" WindowChrome.IsHitTestVisibleInChrome="True" Content="退出" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="450,237,0,0" Height="41" Click="btnClose_Click"/>
+                    <Button x:Name="btnTest" WindowChrome.IsHitTestVisibleInChrome="True" Content="测试" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,237,0,0" Height="41" Click="btnTest_Click" />
+                </Grid>
+
+                <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="欢迎使用制造执行系统 MES v2.1" FontSize="14" FontWeight="Bold" Margin="4"/>
+
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>

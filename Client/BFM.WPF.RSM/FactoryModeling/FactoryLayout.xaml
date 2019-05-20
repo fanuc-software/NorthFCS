@@ -1,0 +1,118 @@
+﻿<Page x:Class="BFM.WPF.RSM.FactoryModeling.FactoryLayout"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+      xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+      xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"  
+      xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"  
+      xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"  
+      xmlns:local="clr-namespace:BFM.WPF.RSM.FactoryModeling"
+          xmlns:Controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="FactoryLayout" FontSize="14">
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2">
+            <Controls:ImageButtonWithIcon Content="新增车间" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico"  Width="150" Height="40" Click="BarItemShop_OnItemClick" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="新增生产线" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/1.ico"  Width="150" Height="40" Click="BarItemLine_OnItemClick" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <Controls:ImageButtonWithIcon Content="保存" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.SDM;component/Images/21.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/21.ico"  Width="150" Height="40" Click="BarItem_OnItemClick" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+         
+
+        </DockPanel>
+   
+
+        <dxg:TreeListControl x:Name="treeList" Grid.Row="1" EnableSmartColumnsGeneration="True" SelectedItemChanged="treeList_SelectedItemChanged" >
+            <dxg:TreeListControl.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="新增" Click="MenuAdd_Click"/>
+                    <MenuItem Header="删除 " Click="MenuDelete_Click"/>
+                </ContextMenu>
+            </dxg:TreeListControl.ContextMenu>
+
+            <dxg:TreeListControl.View>
+                <dxg:TreeListView AutoExpandAllNodes="True"  AutoWidth="True" AllowEditing="False" NavigationStyle="Row"/>
+            </dxg:TreeListControl.View>
+            <dxg:TreeListColumn  Header="工厂布局" FieldName="NAME" />
+        </dxg:TreeListControl>
+
+
+        <dxlc:LayoutGroup x:Name="gbWorkShopContent" Grid.Row="1" Grid.Column="1" Header="车间信息"  View="GroupBox" ItemLabelsAlignment="Local" IsCollapsible="True" Orientation="Vertical" Visibility="Hidden" >
+            <dxlc:LayoutItem Label="车间编码" >
+                <TextBox Text="{Binding LINE_NAME}"  Margin="10,0,10,0"/>
+            </dxlc:LayoutItem>
+            <dxlc:LayoutGroup Margin="0,30,0,0" >
+                <dxlc:LayoutItem Label="车间名称" >
+                    <TextBox Text="{Binding WORKSHOP_NAME}"  Margin="10,0,10,0"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="车间地址" >
+                    <TextBox Text="{Binding WORKSHOP_ADDRESS}" Margin="10,0,10,0" />
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+            <dxlc:LayoutGroup  Margin="0,50,0,0">
+                <dxlc:LayoutItem Label="车间类型" >
+                    <TextBox Text="{Binding WORKSHOP_TYPE}" Margin="10,0,10,0" />
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="所属工厂" >
+                    <TextBox x:Name="txt_ParentFactory"  Margin="10,0,10,0" />
+
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+         
+        </dxlc:LayoutGroup>
+
+        <dxlc:LayoutGroup x:Name="gbLineContent" Grid.Row="1" Grid.Column="1" Header="生产线信息"  View="GroupBox" ItemLabelsAlignment="Local" IsCollapsible="True" Orientation="Vertical" Visibility="Hidden" >
+            <dxlc:LayoutItem Label="生产线编码" >
+                <TextBox Text="{Binding LINE_NAME}"  Margin="10,0,10,0"/>
+            </dxlc:LayoutItem>
+            <dxlc:LayoutGroup Margin="0,30,0,0" >
+                <dxlc:LayoutItem Label="生产线名称" >
+                    <TextBox Text="{Binding LINE_NAME}"  Margin="10,0,10,0"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="生产线类型" >
+                    <TextBox Text="{Binding LINE_TYPE}" Margin="10,0,10,0" />
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+            <dxlc:LayoutGroup  Margin="0,50,0,0">
+            
+                <dxlc:LayoutItem Label="所属车间" >
+                    <TextBox x:Name="txt_ParentWorkShop"  Margin="10,0,10,0" />
+
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+
+        </dxlc:LayoutGroup>
+
+        <dxlc:LayoutGroup Header="工厂信息" x:Name="gbFactoryContent" Grid.Row="1" Grid.Column="1"   View="GroupBox" ItemLabelsAlignment="Local" IsCollapsible="True" Orientation="Vertical" Visibility="Hidden" Background="White" >
+                <dxlc:LayoutGroup Margin="0,5,0,0">
+                    <dxlc:LayoutItem Label="工厂名称" >
+                        <TextBox Text="{Binding FACTORY_NAME}"  Margin="10,0,10,0"/>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="工厂地址">
+                        <TextBox Text="{Binding FACTORY_ADDRESS}" Margin="10,0,10,0" />
+                    </dxlc:LayoutItem>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Margin="0,5,0,0">
+                    <dxlc:LayoutItem Label="是否启用" >
+                        <TextBox Text="{Binding USE_FLAG}" Margin="10,0,10,0" />
+                    </dxlc:LayoutItem>
+                </dxlc:LayoutGroup>
+                <dxlc:LayoutGroup Margin="0,5,0,0" Height="80">
+                    <dxlc:LayoutItem Label="备注" Height="80"  VerticalAlignment="Stretch" >
+                        <TextBox Text="{Binding REMARK}" Margin="10,0,10,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                    </dxlc:LayoutItem>
+                </dxlc:LayoutGroup>
+            </dxlc:LayoutGroup>
+        
+    </Grid>
+</Page>

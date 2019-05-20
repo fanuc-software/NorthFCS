@@ -1,0 +1,115 @@
+﻿<Page x:Class="CSharp.WPF.FlowDesign.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:mainCanvas1="clr-namespace:BFM.WPF.FlowDesign.MainCanvas"
+        xmlns:base1="clr-namespace:BFM.WPF.FlowDesign.Controls.Base"
+        mc:Ignorable="d" Background="White"
+        Title="Window1" Height="600" Width="1000" Loaded="Window_Loaded" >
+    <!--<Window.Resources>
+        <ControlTemplate x:Key="ResizeThumbTemplate" TargetType="{x:Type Thumb}">
+            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                <Grid>
+                    <Border BorderBrush="#7F0000FF" BorderThickness="1" Background="Transparent"/>
+                    <Border Background="Transparent" Margin="2"/>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ThumbControlTemplate1" TargetType="{x:Type controls:DragThumb}">
+            <Border BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" >
+                <Grid>
+                    <Border x:Name="ResizeBorder" Margin="-5" Visibility="Collapsed">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="5"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="5"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="5"/>
+                            </Grid.ColumnDefinitions>
+                            <controls:ResizeThumb Grid.Row="0" Grid.Column="0" Background="Transparent" DragDirection="TopLeft" Cursor="SizeNWSE" Template="{DynamicResource ResizeThumbTemplate}" DragDelta="ResizeThumb_DragDelta" DragCompleted="ResizeThumb_DragCompleted" />
+                            <controls:ResizeThumb Grid.Row="0" Grid.Column="2" Background="Transparent" DragDirection="TopCenter" Cursor="SizeNS" Template="{DynamicResource ResizeThumbTemplate}" DragDelta="ResizeThumb_DragDelta" DragCompleted="ResizeThumb_DragCompleted" />
+                            <controls:ResizeThumb Grid.Row="0" Grid.Column="4" Background="Transparent" DragDirection="TopRight" Cursor="SizeNESW" Template="{DynamicResource ResizeThumbTemplate}" DragDelta="ResizeThumb_DragDelta" DragCompleted="ResizeThumb_DragCompleted" />
+                            <controls:ResizeThumb Grid.Row="2" Grid.Column="0" Background="Transparent" DragDirection="MiddleLeft" Cursor="SizeWE" Template="{DynamicResource ResizeThumbTemplate}" DragDelta="ResizeThumb_DragDelta" DragCompleted="ResizeThumb_DragCompleted" />
+                            <controls:ResizeThumb Grid.Row="2" Grid.Column="4" Background="Transparent" DragDirection="MiddleRight" Cursor="SizeWE" Template="{DynamicResource ResizeThumbTemplate}" DragDelta="ResizeThumb_DragDelta" DragCompleted="ResizeThumb_DragCompleted" />
+                            <controls:ResizeThumb Grid.Row="4" Grid.Column="0" Background="Transparent" DragDirection="BottomLeft" Cursor="SizeNESW" Template="{DynamicResource ResizeThumbTemplate}" DragDelta="ResizeThumb_DragDelta" DragCompleted="ResizeThumb_DragCompleted" />
+                            <controls:ResizeThumb Grid.Row="4" Grid.Column="2" Background="Transparent" DragDirection="BottomCenter" Cursor="SizeNS" Template="{DynamicResource ResizeThumbTemplate}" DragDelta="ResizeThumb_DragDelta" DragCompleted="ResizeThumb_DragCompleted" />
+                            <controls:ResizeThumb Grid.Row="4" Grid.Column="4" Background="Transparent" DragDirection="BottomRight" Cursor="SizeNWSE" Template="{DynamicResource ResizeThumbTemplate}" DragDelta="ResizeThumb_DragDelta" DragCompleted="ResizeThumb_DragCompleted" />
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" BorderThickness="0" 
+                            Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Margin="1"/>
+                    <Border Background="{TemplateBinding Background}" Margin="2">
+                        <Image Source="{Binding Source, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill" />
+                    </Border>
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter TargetName="ResizeBorder" Property="Visibility" Value="Visible"></Setter>
+                    <Setter Property="Background" Value="Blue"></Setter>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="ResizeBorder" Property="Visibility" Value="Visible"></Setter>
+                    <Setter Property="Background" Value="Blue"></Setter>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>-->
+    <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown" Margin="0,1,-0.4,-0.6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="149"/>
+            <ColumnDefinition Width="516*"/>
+        </Grid.ColumnDefinitions>
+        <mainCanvas1:FlowContent GridCellSize="20,20" DocumentSize="2000,2000"  x:Name="canvas1" Grid.Column="1"
+                              MouseLeftButtonDown="canvas1_MouseLeftButtonDown" MouseLeftButtonUp="canvas1_OnMouseLeftButtonUp"  
+                              MouseMove="canvas1_MouseMove" MouseDown="canvas1_MouseDown" MouseWheel="canvas1_MouseWheel" 
+                              KeyDown="canvas1_KeyDown" Focusable="True" ShowGrid="True" >
+            <!--<controls:FlowContent.Background>
+                <ImageBrush ImageSource="images/4.jpg"/>
+            </controls:FlowContent.Background>-->
+        </mainCanvas1:FlowContent>
+
+        <Grid x:Name="gridLeft" Grid.Column="0">
+            <Slider x:Name="_zoom" Minimum="1" Maximum="100" Value="10" Margin="9,10,4.8,0" SmallChange="0.01" 
+                ValueChanged="_zoom_ValueChanged" Height="18" VerticalAlignment="Top"/>
+
+            <Button x:Name="button" Content="New" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="button_Click"/>
+            <TextBlock x:Name="tbLeft" HorizontalAlignment="Left" Margin="28,448,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tbTop" HorizontalAlignment="Left" Margin="28,465,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tbWidth" HorizontalAlignment="Left" Margin="28,485,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tbHeight" HorizontalAlignment="Left" Margin="28,506,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tbContentWidth" HorizontalAlignment="Left" Margin="28,526,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tbContentHeight" HorizontalAlignment="Left" Margin="28,547,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+            <TextBox x:Name="tbImage" HorizontalAlignment="Left" Height="68" Margin="9,53,0,0" TextWrapping="Wrap" Text="E:\代码生成器\MVVMFramework\FlowDesign\images\3.jpg" VerticalAlignment="Top" Width="130"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,33,0,0" TextWrapping="Wrap" Text="Image路径" VerticalAlignment="Top"/>
+            <Button x:Name="button_Copy" Content="Change" HorizontalAlignment="Left" Margin="80,127,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="button_Copy_Click" />
+            <Button x:Name="button_Copy1" Content="置底" HorizontalAlignment="Left" Margin="10,248,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="button_Copy1_Click" />
+            <Button x:Name="button_Copy2" Content="Del" HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="button_Copy2_Click" />
+            <TextBlock x:Name="tbLeft_Copy" HorizontalAlignment="Left" Margin="28,429,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+            <Button x:Name="button_Copy3" Content="置顶" HorizontalAlignment="Left" Margin="80,248,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="button_Copy3_Click" />
+            <Button x:Name="button_Copy4" Content="下一层" HorizontalAlignment="Left" Margin="10,287,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="button_Copy4_Click" />
+            <Button x:Name="button_Copy5" Content="上一层" HorizontalAlignment="Left" Margin="80,287,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="button_Copy5_Click" />
+            <Button x:Name="button_Copy6" Content="Line" HorizontalAlignment="Left" Margin="10,327,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="button6_Click"/>
+            <Button x:Name="button_Copy7" Content="开始绘制Line" HorizontalAlignment="Left" Margin="80,326,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="button7_Click"/>
+            <TextBox x:Name="tbLineWidth" HorizontalAlignment="Left" Height="23" Margin="9,381,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="49"/>
+            <Button x:Name="button_Copy8" Content="正交Y" HorizontalAlignment="Left" Margin="80,372,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="button8_Click"/>
+            <Button x:Name="button_Copy9" Content="正交X" HorizontalAlignment="Left" Margin="80,412,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="button9_Click"/>
+            <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="80,169,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="btnSave_Click" />
+            <Button x:Name="btnSave_Copy" Content="Load" HorizontalAlignment="Left" Margin="80,209,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="btnIntial_Click" />
+            <Button x:Name="button_Copy10" Content="只读" HorizontalAlignment="Left" Margin="80,448,0,0" VerticalAlignment="Top" Width="59" Height="35" Click="button10_Click"/>
+            <!--<base:ImageGifView Source="E:\代码生成器\MVVMFramework\FlowDesign\images\chilun.gif" HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top" Height="34" Width="59"/>-->
+            <base1:GifImage Source="E:\代码生成器\MVVMFramework\FlowDesign\images\chilun.gif" HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top" Height="34" Width="59"/>
+            <Button x:Name="button_Copy11" Content="关闭" HorizontalAlignment="Right" Margin="0,5,-842.2,0" VerticalAlignment="Top" Width="59" Height="35" Template="{StaticResource FormTitleCloseButton}" Click="button_Copy11_Click" />
+
+        </Grid>
+    </Grid>
+</Page>

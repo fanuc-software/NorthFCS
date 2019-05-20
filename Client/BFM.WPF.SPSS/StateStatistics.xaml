@@ -1,0 +1,112 @@
+﻿<Page 
+      xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"  
+      xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+      xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+      xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+      xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+      xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+      xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+      xmlns:controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+    x:Class="BFM.WPF.SPSS.StateStatistics"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BFM.WPF.SPSS"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="StateStatistics">
+
+    <Grid Background="White" x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="78" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" DockPanel.Dock="Top" Height="50" Margin="15,0" Background="#eff0f3" CornerRadius="0,0,8,8">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2" Opacity="0.5" Direction="-90" BlurRadius="10" />
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <dxlc:LayoutGroup Grid.Column="1" Margin="10,10,0,0">
+                    <dxlc:LayoutItem Label="开始时间">
+                        <dxe:DateEdit  Margin="10,0,10,0" x:Name="StartTime" Mask="d"/>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="结束时间">
+                        <dxe:DateEdit  Margin="10,0,10,0" x:Name="EndTime" Mask="d"  />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="设备编号">
+                        <dxe:ComboBoxEdit x:Name="DeviceNumber" />
+                    </dxlc:LayoutItem>
+                    <controls:ImageButtonWithIcon DockPanel.Dock="Left" x:Name="bSearch4" Content="查询" Icon="/BFM.WPF.EAM;component/Images/26.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/26.ico"  Width="100" Height="40"   Margin="20,-10,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left" Click="bSearch4_click"/>
+                </dxlc:LayoutGroup>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1">
+            <dxg:GridControl Grid.Row="1"  Margin="5,5,5,5" x:Name="stateControl" BorderThickness="1" BorderBrush="#E0E0E0">
+                <dxg:GridControl.View >
+                    <dxg:TableView x:Name="ds" AllowEditing="False" AutoWidth="False" AllowPerPixelScrolling="False" AllowMoveColumnToDropArea="False" AllowGrouping="True" AllowColumnMoving="False" AllowResizing="False" ShowColumnHeaders="True" ShowGroupPanel="False"/>
+                </dxg:GridControl.View>
+                <dxg:GridColumn FieldName="ASSET_CODE" Header="设备编号" FixedWidth="True" />
+                <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ASSET_NAME'}" Header="设备名称" FixedWidth="True"/>
+                <dxg:GridColumn Binding="{Binding Path=START_TIME, Converter={StaticResource FormateConverter}, ConverterParameter='yyyy-MM-dd HH:mm:ss'}" Header="开始时间" FixedWidth="True" Width="150"/>
+                <dxg:GridColumn Binding="{Binding Path=END_TIME, Converter={StaticResource FormateConverter}, ConverterParameter='yyyy-MM-dd HH:mm:ss'}" Header="结束时间" FixedWidth="True" Width="150"/>
+                <dxg:GridColumn Binding="{Binding Path=RUN_STATUS, Converter={StaticResource EnumInfoConverter}, ConverterParameter='1:运行;2:故障;3:待机;4:未知'}" Header="运行状态" FixedWidth="True" />
+                <dxg:GridColumn FieldName="MAIN_PROG" Header="主程序号" FixedWidth="True"/>
+                <dxg:GridColumn FieldName="CTTIME" Header="CTTIME" FixedWidth="True"/>
+            </dxg:GridControl>
+        </Grid>
+        <controls:StateTimeShow x:Name="stateShow" ShowMinTime="False" StateToolTipFormat="名称:(Name) \n开始时间: (BeginTime) \n结束时间: (EndTime) \n状态: (StateText) " Grid.Row="2" VerticalAlignment="Top" Height="63" Visibility="Visible" Margin="5,5,5,5"/>
+        <dxc:ChartControl Grid.Row="3"  x:Name="barChart" AnimationMode="OnLoad"   BorderBrush="#E0E0E0"  Background="White" BorderThickness="1" Margin="5,5,5,5">
+            <dxc:ChartControl.Palette>
+                <dxc:ChameleonPalette/>
+            </dxc:ChartControl.Palette>
+            <dxc:ChartControl.Legend >
+                <dxc:Legend HorizontalPosition="Right" />
+            </dxc:ChartControl.Legend>
+            <dxc:XYDiagram2D EnableAxisXNavigation="False" EnableAxisYNavigation="False" BarDistance="0">
+                <dxc:XYDiagram2D.AxisX >
+                    <dxc:AxisX2D x:Name="_AxisX"  Visible="True" Brush="Black" TickmarksMinorVisible="False" GridLinesMinorVisible="False" GridLinesVisible="False"  LogarithmicBase="20" Alignment="Near" StickToEnd="False"  TickmarksVisible="True">
+                        <dxc:AxisX2D.CrosshairAxisLabelOptions>
+                            <dxc:CrosshairAxisLabelOptions />
+                        </dxc:AxisX2D.CrosshairAxisLabelOptions>
+                        <dxc:AxisX2D.Label>
+                            <dxc:AxisLabel  Foreground="Black" Padding="0,1" FontSize="12"   />
+                        </dxc:AxisX2D.Label>
+                    </dxc:AxisX2D>
+                </dxc:XYDiagram2D.AxisX>
+                <dxc:XYDiagram2D.AxisY >
+                    <dxc:AxisY2D x:Name="_AxisY" GridLinesMinorVisible="False" TickmarksMinorVisible="True" TickmarksVisible="True" GridLinesVisible="False" Interlaced="True" Visible="True" TickmarksCrossAxis="False" Brush="Black">
+                        <dxc:AxisY2D.Label>
+                            <dxc:AxisLabel Foreground="Black" FontSize="12"/>
+                        </dxc:AxisY2D.Label>
+                        <dxc:AxisY2D.Title>
+                            <dxc:AxisTitle Visible="True" Content="时间(H)" Foreground="Black" />
+                        </dxc:AxisY2D.Title>
+                    </dxc:AxisY2D>
+                </dxc:XYDiagram2D.AxisY>
+                <dxc:XYDiagram2D.DefaultPane>
+                    <dxc:Pane x:Name="DefaultPaneBackground" DomainBorderBrush="White"  DomainBrush="White" >
+                        <dxc:Pane.AxisXScrollBarOptions>
+                            <dxc:ScrollBarOptions/>
+                        </dxc:Pane.AxisXScrollBarOptions>
+                    </dxc:Pane>
+                </dxc:XYDiagram2D.DefaultPane>
+                <dxc:LineStepSeries2D x:Name="LineSideSerie" ColorEach="True" MarkerSize="15" MarkerVisible="True" LabelsVisibility="True" LegendTextPattern="{}{A}:{V:0.00}">
+                    <dxc:LineStepSeries2D.MarkerModel>
+                        <dxc:CircleMarker2DModel />
+                    </dxc:LineStepSeries2D.MarkerModel>
+                    <dxc:LineStepSeries2D.Label >
+                        <dxc:SeriesLabel  ConnectorVisible="True" TextPattern="{}{V} H" ></dxc:SeriesLabel>
+                    </dxc:LineStepSeries2D.Label>
+                </dxc:LineStepSeries2D>
+            </dxc:XYDiagram2D>
+        </dxc:ChartControl>
+    </Grid>
+</Page>

@@ -1,0 +1,1162 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys"
+                     xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                    xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys"
+                    xmlns:dxei="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal"
+                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys"
+                    xmlns:dxcm="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                     xmlns:dxeh="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal"
+                    xmlns:native="http://schemas.devexpress.com/winfx/2008/xaml/core/internal"
+                    xmlns:controls="clr-namespace:BFM.WPF.Base.Controls"
+                    xmlns:helper="clr-namespace:BFM.WPF.Base.Helper">
+   
+    <!--单元格内进度条样式-->
+    <Style TargetType="ProgressBar" x:Key="InpalceProgressBarStyle">
+        <Setter Property="Background" Value="#434b56" />
+        <Setter Property="Maximum" Value="1" />
+        <Setter Property="Value" Value="0" />
+        <Setter Property="Height" Value="10" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Foreground" Value="#2cb161" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid x:Name="Root" >
+                        <Border x:Name="PART_Track" Background="{TemplateBinding Background}" 
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        <Border  x:Name="PART_Indicator" HorizontalAlignment="Left" Background="{TemplateBinding Foreground}" 
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter Property="LayoutTransform" TargetName="Root" >
+                                <Setter.Value>
+                                    <RotateTransform Angle="-90" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--CheckEdit样式-->
+    <Style TargetType="{x:Type dxe:CheckEdit}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxe:CheckEdit}">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Width="{TemplateBinding Width}">
+                        <Image x:Name="PART_Editor" Height="14" Width="14" Source="/BFM.WPF.Base;component/Resources/unchecked.png"/>
+                        <TextBlock Text="{TemplateBinding Content}" ToolTip="{TemplateBinding Content}"  TextTrimming="CharacterEllipsis" Margin="5,0,0,0" FontSize="{TemplateBinding FontSize}" 
+                                   Visibility="{TemplateBinding HasContent,Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    </StackPanel>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Source" Value="/BFM.WPF.Base;component/Resources/checked.png" TargetName="PART_Editor"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--ComboBox下拉按钮模板-->
+    <ControlTemplate x:Key="ToggleBtnTemplate" TargetType="{x:Type ToggleButton}">
+        <Border x:Name="border" BorderThickness="0" Background="#c0c4cc" >
+            <Grid x:Name="stackPanel" HorizontalAlignment="Center" Height="Auto">
+                <Image x:Name="img_active" Margin="0" Source="/BFM.WPF.Base;component/Resources/arrow_cmb.png"   Opacity="1" Stretch="None" />
+                <StackPanel>
+                    <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}"
+                                  Content="{TemplateBinding Content}" Margin="0,11,0,0"
+                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  RecognizesAccessKey="True" 
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="BorderBrush"  TargetName="border" Value="#00FF00"/>
+                <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/arrow_cmb_s.png"></Setter>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="False">
+                <Setter Property="BorderThickness" TargetName="border" Value="0"/>
+                <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/arrow_cmb.png"></Setter>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="BorderThickness" TargetName="border" Value="0"/>
+                <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/arrow_cmb.png"></Setter>
+
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style x:Key="ToggleStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Template" Value="{DynamicResource ToggleBtnTemplate}"/>
+    </Style>
+
+    <!--ComboBoxEdit样式-->
+    <Style TargetType="{x:Type TextBox}" x:Key="ComboBoxEdit">
+        <Setter Property="MaxLength" Value="{Binding MaxLength}" />
+        <Setter Property="IsTabStop" Value="{Binding IsTabStop}" />
+        <Setter Property="Focusable" Value="{Binding Focusable}" />
+        <Setter Property="TextWrapping" Value="{Binding TextWrapping}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Padding" Value="{Binding Padding}" />
+        <Setter Property="IsReadOnly" Value="{Binding IsReadOnly}" />
+        <Setter Property="AcceptsReturn" Value="{Binding AcceptsReturn}" />
+        <Setter Property="VerticalScrollBarVisibility" Value="{Binding VerticalScrollBarVisibility}" />
+        <Setter Property="HorizontalScrollBarVisibility" Value="{Binding HorizontalScrollBarVisibility}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="SelectionBrush">
+            <Setter.Value>
+                <SolidColorBrush Color="#FFBC12"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="root" Background="Transparent" BorderThickness="0" CornerRadius="4">
+                        <Grid>
+                            <!--<Border BorderThickness="1" BorderBrush="{DynamicResource Dark16LightGreen}" Opacity="0" x:Name="Border"/>-->
+                            <ScrollViewer x:Name="PART_ContentHost" RenderOptions.ClearTypeHint="Enabled"
+                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="root" Property="Background" Value="#55646a"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="AcceptsTab" Value="{Binding AcceptsTab}" />
+        <Setter Property="CharacterCasing" Value="{Binding CharacterCasing}" />
+        <Setter Property="ContextMenu" Value="{Binding ContextMenu}" />
+        <!--<Setter Property="FocusVisualStyle" Value="{x:Null}" />-->
+        <Setter Property="Foreground" Value="#3e3e3e" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment}" />
+        <Setter Property="TextDecorations" Value="{Binding TextDecorations}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment}" />
+    </Style>
+
+    <!--dxe:ComboBoxEdit样式-->
+    <Style TargetType="{x:Type dxe:ComboBoxEdit}">
+        <Setter Property="Foreground" Value="#3e3e3e" />
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type dxe:ComboBoxEditItem}">
+                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="Template" >
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type dxe:ComboBoxEditItem}">
+                                <Border x:Name="BorderBG" Background="White" BorderThickness="0" BorderBrush="Transparent" Height="28">
+                                    <ContentPresenter ContentSource="{Binding Source}" VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="5,0,0,0"></ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="BorderBG" Property="Background" >
+                                            <Setter.Value>
+                                                <SolidColorBrush Color="#e6f0f9"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <!--<Setter Property="Foreground" Value="#5589f3"/>-->
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Foreground" Value="#3e3e3e"></Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--dxe:ComboBoxEdit-->
+    <Style x:Key="ComboBoxStyle" TargetType="{x:Type dxe:ComboBoxEdit}">
+        <Setter Property="BorderBrush" Value="#5589f3"/>
+        <Setter Property="IsTextEditable" Value="True"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxe:ComboBoxEdit}">
+                    <Grid>
+                        <Border x:Name="BorderBg" Background="Transparent" CornerRadius="4" BorderBrush="#5589f3" BorderThickness="2">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="25"/>
+                                </Grid.ColumnDefinitions>
+                                <!--<Border Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="4" x:Name="Border" Background="#050D1A" BorderThickness="2,2,2,0" BorderBrush="#FFBC12" Opacity="0"/>-->
+                                <TextBox x:Name="TextBoxEdit" Grid.Column="0" Margin="5,0,0,0" BorderThickness="0" 
+                                         Style="{StaticResource ComboBoxEdit}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                         Text="{TemplateBinding DisplayText}" FontFamily="Microsoft YaHei"
+                                          />
+                                <ToggleButton x:Name="ToggleButton" Grid.Column="1" Margin="2,4,2,2" Style="{StaticResource ToggleStyle}" IsChecked="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType=dxe:ComboBoxEdit},Path=IsPopupOpen,Mode=TwoWay}"></ToggleButton>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsKeyboardFocusWithin, RelativeSource={RelativeSource Self}}" Value="True">
+                            <Setter TargetName="BorderBg" Property="BorderBrush" Value="#FFBC12"/>
+                        </DataTrigger>
+                        <Trigger SourceName="ToggleButton" Property="IsFocused" Value="True">
+                            <Setter TargetName="BorderBg" Property="BorderBrush" Value="#FFBC12"/>
+                            <Setter TargetName="BorderBg" Property="BorderThickness" Value="2,2,2,1"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="ToggleButton" Property="IsEnabled" Value="False"/>
+                            <Setter TargetName="TextBoxEdit" Property="IsEnabled" Value="False"/>
+                        </Trigger>
+                        <Trigger Property="IsReadOnly" Value="True">
+                            <Setter TargetName="ToggleButton" Property="IsEnabled" Value="False"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type dxe:ComboBoxEditItem}">
+                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="Template" >
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type dxe:ComboBoxEditItem}">
+                                <Border x:Name="BorderBG" Background="White" BorderThickness="0" BorderBrush="Transparent" Height="28">
+                                    <ContentPresenter ContentSource="{Binding Source}" VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="5,0,0,0"></ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="BorderBG" Property="Background" >
+                                            <Setter.Value>
+                                                <SolidColorBrush Color="#e6f0f9" Opacity="0.5"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <!--<Setter Property="Foreground" Value="#5589f3"/>-->
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Foreground" Value="#3e3e3e"></Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="ToggleBtnTemplate1" TargetType="{x:Type ToggleButton}">
+        <Border x:Name="border" BorderThickness="0" Background="Transparent" >
+            <Grid x:Name="stackPanel" HorizontalAlignment="Center">
+                <Image x:Name="img_active" HorizontalAlignment="Center" Width="16" Margin="0,4,4,0" Opacity="1"
+                                                                       Source="/BFM.WPF.Base;component/Resources/arrow_cmb.png" Stretch="Uniform" />
+                <StackPanel>
+                    <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}"
+                                  Content="{TemplateBinding Content}" Margin="0,11,0,0"
+                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  RecognizesAccessKey="True" 
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" TargetName="img_active" Value="0.4"></Setter>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/arrow_cmb_s.png"></Setter>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="False">
+                <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/arrow_cmb.png"></Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--CheckedComboBox下拉窗口-->
+    <ControlTemplate x:Key="{dxet:ComboBoxEditThemeKey ResourceKey=PopupContentTemplate,IsThemeIndependent=True}" TargetType="{x:Type ContentControl}">
+        <Grid Width="Auto" Height="Auto" SnapsToDevicePixels="True" Background="Transparent">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <dxeh:PopupListBoxDisplayMemberPathConverter x:Key="DisplayMemberPathConverter" />
+                    <Style TargetType="{x:Type dxe:SelectAllItemCheckEdit}">
+                        <Setter Property="Foreground" Value="#3e3e3e"></Setter>
+                    </Style>
+
+                    <Style TargetType="{x:Type dxe:CheckEdit}">
+                        <Setter Property="Foreground" Value="#3e3e3e"></Setter>
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <Border BorderBrush="#959595" BorderThickness="2,1,2,2"  CornerRadius="2,2,4,4">
+                <dxe:PopupListBox x:Name="PART_Content" AllowItemHighlighting="{Binding Path=(dxe:BaseEdit.OwnerEdit).AllowItemHighlighting, RelativeSource={RelativeSource TemplatedParent} }" dx:FocusHelper2.Focusable="False" DisplayMemberPath="{Binding Path=Tag, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource DisplayMemberPathConverter}}" 
+                                   ItemTemplate="{Binding Path=Tag.ItemTemplate, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   ItemsPanel="{Binding Path=Tag.ItemsPanel, RelativeSource={RelativeSource TemplatedParent}}" HorizontalContentAlignment="{Binding Path=Tag.HorizontalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   VerticalContentAlignment="{Binding Path=Tag.VerticalContentAlignment, RelativeSource={RelativeSource TemplatedParent}}" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" 
+                                   Style="{DynamicResource {dxet:EditorListBoxThemeKey ResourceKey=PopupStyle,IsThemeIndependent=True}}" FocusVisualStyle="{x:Null}"
+                                   Background="White" Foreground="#3e3e3e">
+                    <dxe:PopupListBox.ItemTemplateSelector>
+                        <Binding Path="Tag.ItemTemplateSelector" RelativeSource="{RelativeSource TemplatedParent}" />
+                    </dxe:PopupListBox.ItemTemplateSelector>
+                </dxe:PopupListBox>
+            </Border>
+
+        </Grid>
+    </ControlTemplate>
+    <!--下拉框popup部分-->
+    <ControlTemplate x:Key="{dxt:PopupBaseThemeKey ResourceKey=BorderTemplate,IsThemeIndependent=True}" TargetType="{x:Type dx:PopupBorderControl}">
+        <Grid Name="Root" ClipToBounds="False">
+            <Border x:Name="Border" Background="White" BorderBrush="{x:Null}" BorderThickness="0" Margin="0,0,8,8"
+                    Width="{TemplateBinding ContentWidth}" Height="{TemplateBinding ContentHeight}"
+                    MinWidth="{TemplateBinding ContentMinWidth}" MaxWidth="{TemplateBinding ContentMaxWidth}"
+                    MinHeight="{TemplateBinding ContentMinHeight}" MaxHeight="{TemplateBinding ContentMaxHeight}">
+                <Border.Effect>
+                    <DropShadowEffect x:Name="Shadow" Direction="315" ShadowDepth="3" BlurRadius="5" Opacity="0.15"/>
+                </Border.Effect>
+                <ContentPresenter/>
+            </Border>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="AppType">
+                    <VisualState x:Name="Standalone"/>
+                    <VisualState x:Name="BrowserHosted" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+    <!--dateEdit-->
+    <!--月视图-->
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=MonthInfoTemplate,IsThemeIndependent=True}">
+        <Grid x:Name="PART_ContentGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="5"/>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ContentControl Grid.Row="1" Grid.ColumnSpan="7" Grid.Column="2" Template="{DynamicResource {dxet:DateEditThemeKey ResourceKey=MonthInfoDelimeter}}" />
+            <ContentControl x:Name="WeekNumberDelimeter" Grid.Row="2" Grid.RowSpan="6" Grid.Column="1" Template="{DynamicResource {dxet:DateEditThemeKey ResourceKey=WeekNumberDelimeter}}" Visibility="Collapsed" />
+        </Grid>
+    </ControlTemplate>
+    <!--月视图分割横线-->
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=MonthInfoDelimeter,IsThemeIndependent=True}">
+        <Border x:Name="borderRoot" Background="Green" Height="-0" Margin="0" SnapsToDevicePixels="True" VerticalAlignment="Center" />
+        <ControlTemplate.Triggers>
+            <Trigger Property="dxcm:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="borderRoot" Value="0" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style x:Key="{dxet:DateEditThemeKey ResourceKey=WeekdayAbbreviationStyle,IsThemeIndependent=True}" TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="#3e3e3e" />
+    </Style>
+    <!--弹出框cell-->
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=CellButtonTemplate,IsThemeIndependent=True}" TargetType="{x:Type Button}">
+        <Grid Background="Transparent">
+            <Border x:Name="Focused" Background="#37b5e8" BorderThickness="1" Visibility="Collapsed">
+            </Border>
+            <Border x:Name="Hover" Background="#37b5e8" CornerRadius="1" Padding="1" Visibility="Collapsed" />
+            <Border x:Name="Today" BorderBrush="#37b5e8" BorderThickness="1" CornerRadius="1" Padding="1" Visibility="Collapsed" />
+            <dx:ContentContainer x:Name="ButtonContent" Foreground="#3e3e3e">
+                <ContentPresenter Margin="4,0,4,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+            </dx:ContentContainer>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="CellNormalState">
+                    </VisualState>
+                    <VisualState x:Name="CellTodayState">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Today" Storyboard.TargetProperty="Visibility" Duration="0">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="CellFocusedState">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Focused" Storyboard.TargetProperty="Visibility" Duration="0">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="CellInactiveState">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonContent" Storyboard.TargetProperty="Foreground" Duration="0">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <SolidColorBrush Color="LightGray" />
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+    <!--弹出框头部按钮-->
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=HeaderButtonTemplate,IsThemeIndependent=True}" TargetType="{x:Type Button}">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Foreground" Duration="0">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <SolidColorBrush Color="#3e3e3e" />
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <dx:ContentContainer x:Name="Content" Foreground="#3e3e3e">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
+            </dx:ContentContainer>
+        </Grid>
+    </ControlTemplate>
+    <dx:EditorStringIdConverter x:Key="EditorStringIdConverter" />
+    <!--弹出框-->
+    <ControlTemplate x:Key="{dxet:DateEditThemeKey ResourceKey=CalendarTemplate,IsThemeIndependent=True}" TargetType="{x:Type dxe:DateEditCalendar}">
+        <Border x:Name="text123" Background="White" CornerRadius="0" SnapsToDevicePixels="True" UseLayoutRounding="True" BorderBrush="#959595" BorderThickness="2"  >
+            <StackPanel Background="Transparent">
+                <Border BorderThickness="0" Visibility="Visible" Margin="0,5,0,0">
+                    <Button x:Name="PART_Today" Foreground="#3e3e3e" Margin="4,4,4,0" FontSize="14" Style="{DynamicResource {dxet:DateEditThemeKey IsVisibleInBlend=True, ResourceKey=HeaderButtonStyle}}" Content="{Binding Path=DateTimeText, RelativeSource={RelativeSource TemplatedParent}}"/>
+                </Border>
+                <Border Visibility="Visible" Margin="0,0,0,5">
+                    <Grid x:Name="Grid1" Background="Transparent" Margin="4,2,4,0" VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <RepeatButton x:Name="PART_LeftArrow" Margin="20,-25,0,0" Grid.Column="0" >
+                            <RepeatButton.Template>
+                                <ControlTemplate>
+                                    <Border>
+                                        <Image x:Name="img_active" Source="/BFM.WPF.Base;component/Resources/left.png"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Opacity" TargetName="img_active" Value="0.4"></Setter>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/left_s.png"></Setter>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/left_s.png"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </RepeatButton.Template>
+                        </RepeatButton>
+                        <Button x:Name="PART_CurrentDate" Margin="0,2,0,5" Style="{DynamicResource {dxet:DateEditThemeKey IsVisibleInBlend=True, ResourceKey=CurrentDateButtonStyle}}" Content="{Binding Path=CurrentDateText, RelativeSource={RelativeSource TemplatedParent}}" FontSize="14" VerticalContentAlignment="Center" Grid.Column="1" Foreground="#5589f3"/>
+                        <RepeatButton x:Name="PART_RightArrow" Margin="0,-25,20,0"  Grid.Column="2" >
+                            <RepeatButton.Template>
+                                <ControlTemplate>
+                                    <Border>
+                                        <Image x:Name="img_active" Source="/BFM.WPF.Base;component/Resources/right.png"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Opacity" TargetName="img_active" Value="0.4"></Setter>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/right_s.png"></Setter>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/right_s.png"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </RepeatButton.Template>
+                        </RepeatButton>
+                    </Grid>
+                </Border>
+                <Border Background="White" BorderBrush="#959595" BorderThickness="0,2,0,0" CornerRadius="0,0,0,0" Height="200">
+                    <Grid Margin="12,10,12,8">
+                        <dxe:DateEditCalendarContent IsEnabled="False" Opacity="0" Foreground="Red" Template="{TemplateBinding MonthInfoTemplate}" State="Month" />
+                        <dxe:DateEditCalendarContent IsEnabled="False" Opacity="0" Foreground="Green" Template="{TemplateBinding YearInfoTemplate}" State="Year" />
+                        <dxe:DateEditCalendarContent IsEnabled="False" Opacity="0" Foreground="Blue" Template="{TemplateBinding YearsInfoTemplate}" State="Years" />
+                        <dxe:DateEditCalendarContent IsEnabled="False" Opacity="0" Foreground="Yellow"  Template="{TemplateBinding YearsGroupInfoTemplate}" State="YearsGroup" />
+                        <dxe:DateEditCalendarTransferControl x:Name="PART_CalendarTransferContent" Foreground="Black" FontSize="12" FontWeight="Black" Style="{TemplateBinding CalendarTransferStyle}" Visibility="Visible" />
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="Grid1" Value="12" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <!--按钮-->
+    <ControlTemplate TargetType="{x:Type ButtonBase}" x:Key="{dxet:ButtonsThemeKey ResourceKey=ButtonTemplate,IsThemeIndependent=True}">
+        <Grid x:Name="Root">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto">
+                    <ColumnDefinition.SharedSizeGroup>
+                        <sys:String>ComboBoxButton</sys:String>
+                    </ColumnDefinition.SharedSizeGroup>
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="Arrow" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="1" SnapsToDevicePixels="True">
+                <Border Background="Transparent" Width="25" Height="25"  VerticalAlignment="Center" HorizontalAlignment="Center" CornerRadius="2">
+                    <Image x:Name="img_active" Source="/BFM.WPF.Base;component/Resources/arrow_cmb.png"  Stretch="Uniform" Width="16"/>
+                </Border>
+            </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" TargetName="img_active" Value="0.4"></Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/arrow_cmb_s.png"></Setter>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Source" TargetName="img_active" Value="/BFM.WPF.Base;component/Resources/arrow_cmb.png"></Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--DateEdit样式-->
+    <Style TargetType="dxe:DateEdit">
+        <Setter Property="BorderBrush" Value="#959595"/>
+        <Setter Property="Foreground" Value="#3e3e3e"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="AllowNullInput" Value="True"/>
+        <Setter Property="IsTextEditable" Value="True"/>
+        <Setter Property="BorderTemplate">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ContentControl}">
+                    <Border x:Name="root" BorderThickness="2" Background="Transparent" BorderBrush="#959595" CornerRadius="4">
+                        <ContentPresenter x:Name="presenter"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter TargetName="root" Property="BorderBrush" Value="#5589f3"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--SpinEdit样式-->
+    <ControlTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=SpinDownButtonTemplate, IsThemeIndependent=True}" TargetType="{x:Type ButtonBase}">
+        <Grid x:Name="Grid1"  MinWidth="0">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="DefaultState" Storyboard.TargetProperty="Opacity" To="1" />
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" To="0" />
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" To="0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="DefaultState" Storyboard.TargetProperty="Opacity" To="0" />
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" To="1" />
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" To="0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="DefaultState" Storyboard.TargetProperty="Opacity" To="0" />
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="HoverState" Storyboard.TargetProperty="Opacity" To="0" />
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="PressedState" Storyboard.TargetProperty="Opacity" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="Glyph" Storyboard.TargetProperty="Opacity" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto">
+                    <!--BEGIN WPF-->
+                    <ColumnDefinition.SharedSizeGroup>
+                        <sys:String>ComboBoxButton</sys:String>
+                    </ColumnDefinition.SharedSizeGroup>
+                    <!--END WPF-->
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="DefaultState" Background="Transparent" BorderBrush="#7B8289" BorderThickness="0" Margin="0,1,0,0" Opacity="1" CornerRadius="4">
+            </Border>
+            <Border x:Name="HoverState"  Background="Transparent"  BorderBrush="#7B8289" BorderThickness="0" Opacity="0" Margin="0,1,0,0" CornerRadius="4">
+            </Border>
+            <Border x:Name="PressedState"  Background="Transparent" BorderBrush="#7B8289" BorderThickness="0" Opacity="0" Margin="0,1,0,0" CornerRadius="4">
+            </Border>
+            <Grid x:Name="Arrow"  Grid.ColumnSpan="1"  SnapsToDevicePixels="True" Margin="6,0,6,0">
+                <Image x:Name="Glyph" Source="/BFM.WPF.Base;component/Resources/arrow_down.png" Width="15" Height="8" Margin="0,0,1,0"></Image>
+            </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="MinWidth" TargetName="Grid1" Value="44" />
+                <Setter Property="Source" TargetName="Glyph" Value="/BFM.WPF.Base;component/Resources/arrow_down_s.png" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Source" TargetName="Glyph" Value="/BFM.WPF.Base;component/Resources/arrow_down_s.png" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Source" TargetName="Glyph" Value="/BFM.WPF.Base;component/Resources/arrow_down_s.png" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=SpinUpButtonTemplate, IsThemeIndependent=True}" TargetType="{x:Type ButtonBase}">
+        <Grid x:Name="Grid1" MinWidth="0">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="DefaultState"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="1" />
+                            <DoubleAnimation Duration="0"
+                                                     Storyboard.TargetName="HoverState"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="0" />
+                            <DoubleAnimation Duration="0"
+                                                     Storyboard.TargetName="PressedState"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"
+                                                     Storyboard.TargetName="DefaultState"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="0" />
+                            <DoubleAnimation Duration="0"
+                                                     Storyboard.TargetName="HoverState"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="1" />
+                            <DoubleAnimation Duration="0"
+                                                     Storyboard.TargetName="PressedState"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"
+                                                     Storyboard.TargetName="DefaultState"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="0" />
+                            <DoubleAnimation Duration="0"
+                                                     Storyboard.TargetName="HoverState"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="0" />
+                            <DoubleAnimation Duration="0"
+                                                     Storyboard.TargetName="PressedState"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"
+                                                     Storyboard.TargetName="Glyph"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto">
+                    <!--BEGIN WPF-->
+                    <ColumnDefinition.SharedSizeGroup>
+                        <sys:String>ComboBoxButton</sys:String>
+                    </ColumnDefinition.SharedSizeGroup>
+                    <!--END WPF-->
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="DefaultState" Background="Transparent"  BorderBrush="#7B8289"  BorderThickness="0" Opacity="0.95" CornerRadius="4">
+            </Border>
+            <Border x:Name="HoverState" Background="Transparent" BorderBrush="#7B8289" BorderThickness="0" Opacity="0" CornerRadius="4">
+            </Border>
+            <Border x:Name="PressedState" Background="Transparent" BorderBrush="#7B8289" BorderThickness="0" Opacity="0" CornerRadius="4">
+            </Border>
+            <Grid x:Name="Arrow" SnapsToDevicePixels="True" Margin="6,0,6,0">
+                <Image x:Name="Glyph" Grid.RowSpan="2" Source="/BFM.WPF.Base;component/Resources/arrow_up.png" Width="15" Height="8" Margin="0,0,2,0"/>
+            </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="MinWidth" TargetName="Grid1" Value="44" />
+                <Setter Property="Source" TargetName="Glyph" Value="/BFM.WPF.Base;component/Resources/arrow_up_s.png" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Source" TargetName="Glyph" Value="/BFM.WPF.Base;component/Resources/arrow_up_s.png" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Source" TargetName="Glyph" Value="/BFM.WPF.Base;component/Resources/arrow_up_s.png" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style TargetType="dxe:SpinEdit">
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="ToolTipService.ShowDuration" Value="{x:Static Member=system:Int32.MaxValue}"/>
+        <Setter Property="IsFloatValue" Value="False"/>
+        <Setter Property="Foreground" Value="#3e3e3e" />
+        <Setter Property="BorderBrush" Value="#7B8289"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Increment" Value="1"/>
+        <Setter Property="MaskType" Value="Numeric"/>
+        <Setter Property="AllowNullInput" Value="True"/>
+        <Setter Property="IsTextEditable" Value="True"/>
+        <Setter Property="EditValueType" Value="{x:Type system:Int32}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="BorderTemplate">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ContentControl}">
+                    <Border x:Name="root" Background="Transparent" BorderThickness="2" BorderBrush="#444d58" CornerRadius="4">
+                        <ContentPresenter x:Name="presenter"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <!--<Setter TargetName="root" Property="Background" Value="#1F4B6C"/>
+                            <Setter TargetName="root" Property="BorderBrush" Value="#1F4B6C"/>-->
+                            <Setter TargetName="presenter" Property="dxe:SpinEdit.FontWeight" Value="Bold"/>
+                            <Setter TargetName="root" Property="BorderBrush" Value="#5589f3"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="dxe:SpinEdit.EditValue" Value="{x:Null}"/>
+                    <Condition Property="dxe:SpinEdit.IsMouseOver" Value="False"/>
+                    <Condition Property="dxe:SpinEdit.IsKeyboardFocusWithin" Value="False"/>
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="dxe:SpinEdit.Opacity" Value="1"/>
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--弹窗按钮样式-->
+    <Style TargetType="Button" x:Key="PopButton">
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="5" x:Name="bd" Background="#323a45" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding Content}" FontSize="{TemplateBinding FontSize}" Foreground="White"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="bd" Property="Background" Value="#5589f3"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button" x:Key="PopButton1">
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="5" x:Name="bd" Background="#5589f3" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding Content}" FontSize="{TemplateBinding FontSize}" Foreground="White"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="bd" Property="Background" Value="#323a45"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--TextEdit样式-->
+    <Style TargetType="{x:Type dxe:TextEdit}">
+        <Setter Property="Foreground" Value="#3e3e3e"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <native:RenderTemplate x:Key="render">
+        <native:RenderPanel Name="PART_Root">
+            <native:RenderPanel Name="PART_Border">
+                <native:RenderBorder Name="root" Background="Transparent"  BorderBrush="#959595" BorderThickness="2" CornerRadius="4"/>
+            </native:RenderPanel>
+        </native:RenderPanel>
+        <native:RenderTemplate.Triggers>
+            <native:RenderTrigger DependencyProperty="{x:Static dx:ThemeManager.IsTouchEnabledProperty}" ValueSource="TemplatedParent" Value="True">
+                <native:RenderSetter TargetName="PART_Root" Property="MinWidth" Value="44" />
+                <native:RenderSetter TargetName="PART_Root" Property="MinHeight" Value="44" />
+            </native:RenderTrigger>
+            <native:RenderTrigger Property="IsKeyboardFocusWithin" Value="True">
+                <native:RenderSetter TargetName="root" Property="BorderBrush" Value="#5589f3"/>
+            </native:RenderTrigger>
+        </native:RenderTemplate.Triggers>
+    </native:RenderTemplate>
+    <ControlTemplate x:Key="{dxet:BaseEditThemeKey ResourceKey=TextEditBorderTemplate,IsThemeIndependent=True}" TargetType="ContentControl">
+        <Grid>
+            <native:Chrome RenderTemplate="{StaticResource render}" Foreground="#3e3e3e"/>
+            <ContentPresenter Margin="{StaticResource ResourceKey={dxet:InplaceBaseEditThemeKey ResourceKey=TextEditBorderThickness}}" />
+            <native:Chrome RenderTemplate="{StaticResource {dxet:InplaceBaseEditThemeKey ResourceKey=HoverBorderTemplate}}" Foreground="#3e3e3e" dxei:ControlHelper.ShowFocusedState="{Binding Path=(dxei:ControlHelper.ShowFocusedState), RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="False" />
+        </Grid>
+    </ControlTemplate>
+
+    <!--光标颜色-->
+    <SolidColorBrush x:Key="{dxet:TextEditThemeKey ResourceKey=CaretBrush, IsThemeIndependent=True}" Color="Black" />
+
+    <!--TextBox-->
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="MaxLength" Value="{Binding MaxLength}" />
+        <Setter Property="IsTabStop" Value="{Binding IsTabStop}" />
+        <Setter Property="Focusable" Value="{Binding Focusable}" />
+        <Setter Property="TextWrapping" Value="{Binding TextWrapping}" />
+        <Setter Property="Background" Value="#1F4B6C" />
+        <Setter Property="BorderBrush" Value="#959595" />
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Padding" Value="5,0" />
+        <Setter Property="IsReadOnly" Value="{Binding IsReadOnly}" />
+        <Setter Property="AcceptsReturn" Value="{Binding AcceptsReturn}" />
+        <Setter Property="VerticalScrollBarVisibility" Value="{Binding VerticalScrollBarVisibility}" />
+        <Setter Property="HorizontalScrollBarVisibility" Value="{Binding HorizontalScrollBarVisibility}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalAlignment" Value="{Binding VerticalAlignment}" />
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="AcceptsTab" Value="{Binding AcceptsTab}" />
+        <Setter Property="CharacterCasing" Value="{Binding CharacterCasing}" />
+        <Setter Property="ContextMenu" Value="{Binding ContextMenu}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment}" />
+        <Setter Property="TextDecorations" Value="{Binding TextDecorations}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="MinHeight" Value="30"/>
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="root" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4" 
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                        <!--<Border.Background>
+                            <ImageBrush ImageSource="/YieldMonitorSys.Themes;component/Images/EditFrame.png"/>
+                        </Border.Background>-->
+                        <Grid>
+                            <ScrollViewer x:Name="PART_ContentHost" RenderOptions.ClearTypeHint="Enabled" 
+                                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Stretch"/>
+                            <Button Name="Part_ClearButton" Content="×" FontSize="16" 
+                                helper:TextBoxHelper.IsClearButton="True" Style="{x:Null}"
+                                Background="Transparent" BorderThickness="0" ToolTip="清空" 
+                                Foreground="#CCC" Visibility="Collapsed" Margin="0" Padding="0" Focusable="False" HorizontalAlignment="Right" Width="25" >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Background="Transparent" BorderThickness="0">
+                                            <TextBlock Text="×" Foreground="{TemplateBinding Foreground}" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="Part_ClearButton" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter TargetName="root" Property="BorderBrush" Value="#5589f3"/>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" SourceName="Part_ClearButton" Value="True">
+                            <Setter TargetName="Part_ClearButton" Property="Foreground" Value="#222"/>
+                        </Trigger>
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter TargetName="Part_ClearButton" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="Text" Value="">
+                            <Setter TargetName="Part_ClearButton" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsReadOnly" Value="True">
+                            <Setter TargetName="Part_ClearButton" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Part_ClearButton" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="VerticalScrollBarVisibility" Value="Visible">
+                            <Setter TargetName="Part_ClearButton" Property="Margin" Value="0,0,20,0"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--VS自带Combox样式-->
+    <!--Combox-->
+    <Style TargetType="ToggleButton" x:Key="ComboxStyleBtn">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <!--下拉按钮内部背景色-->
+                    <Border x:Name="Back" Background="Transparent" BorderThickness="1" BorderBrush="Transparent">
+                        <!--下拉按钮内边框-->
+                        <Image x:Name="img_active" Margin="0" Source="/BFM.WPF.Base;component/Resources/arrow_cmb.png"   Opacity="1" Stretch="None" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="img_active" Property="Source" Value="/BFM.WPF.Base;component/Resources/arrow_cmb_s.png"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Combox-->
+    <Style TargetType="{x:Type ComboBox}">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <!--ComBoxItem-->
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="MinHeight" Value="28"></Setter>
+                    <Setter Property="MinWidth" Value="60"></Setter>
+                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="Foreground" Value="#3e3e3e"></Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ComboBoxItem">
+                                <Border Name="Back" Background="Transparent"  BorderThickness="0,0,0,0" BorderBrush="#959595" >
+                                    <ContentPresenter ContentSource="{Binding Source}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" ></ContentPresenter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Back" Property="Background" Value="#e6f0f9"></Setter>
+                                    </Trigger>
+                                    <!--下拉框背景色-->
+                                    <Trigger Property="IsHighlighted" Value="True">
+                                        <Setter TargetName="Back" Property="Background" Value="#e6f0f9"></Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.7*"/>
+                            <ColumnDefinition Width="0.3*" MaxWidth="30"/>
+                        </Grid.ColumnDefinitions>
+                        <!--文字区域背景和边线样式-->
+                        <TextBox Background="Transparent" VerticalAlignment="Center"  Grid.Column="0" Foreground="#3e3e3e" 
+                                 FontSize="{TemplateBinding FontSize}"
+                                 BorderBrush="#959595" BorderThickness="0" IsReadOnly="True" 
+                                 Text="{TemplateBinding Text}" />
+
+                        <Border  x:Name="root"  Grid.Column="0" BorderThickness="2,2,0,2" BorderBrush="#959595" CornerRadius="4,0,0,4">
+
+                        </Border>
+                        <!--右侧下拉button设置-->
+                        <Border x:Name="button"  Grid.Column="1" BorderThickness="0,2,2,2" BorderBrush="#959595" CornerRadius="0,4,4,0">
+                            <ToggleButton Style="{StaticResource ComboxStyleBtn}" ClickMode="Press"
+                                          IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                        <!--弹出popup整体设置-->
+                        <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Slide" >
+                            <!--弹出popup边框-->
+                            <Border CornerRadius="0" BorderBrush="#959595" BorderThickness="1,0,1,1" MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="Black" BlurRadius="2" ShadowDepth="0" Opacity="1"/>
+                                </Border.Effect>
+                                <!--下拉幕布边界背景设置 MaxHeight="{TemplateBinding MaxDropDownHeight}"-->
+                                <ScrollViewer Margin="0,0,0,0"   SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" BorderBrush="#959595" BorderThickness="2" >
+                                    <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->
+                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" Background="White"/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter TargetName="root" Property="BorderBrush" Value="#5589f3"/>
+                            <Setter TargetName="button" Property="BorderBrush" Value="#5589f3"/>
+                        </Trigger>
+                        <Trigger Property="IsReadOnly" Value="True">
+                            <Setter TargetName="button" Property="IsEnabled" Value="False"/>
+                            <Setter TargetName="button" Property="Background" Value="#F5F5F5"/>
+                        </Trigger>
+
+                        <!--<Trigger Property="Text" Value="{x:Null}">
+                            <Setter Property="SelectedIndex" Value="-1"/>
+                        </Trigger>
+                        <Trigger Property="Text" Value="">
+                            <Setter Property="SelectedIndex" Value="-1"/>
+                        </Trigger>-->
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--ComboBoxItem-->
+    <Style TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="MinHeight" Value="28"></Setter>
+        <Setter Property="MinWidth" Value="60"></Setter>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="#3e3e3e"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBoxItem">
+                    <Border Name="Back" Background="Transparent"  BorderThickness="0,0,0,0" BorderBrush="#959595" >
+                        <ContentPresenter ContentSource="{Binding Source}" VerticalAlignment="Center" 
+                                          HorizontalAlignment="Left" Margin="10,0,0,0" ></ContentPresenter>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Back" Property="Background" Value="#e6f0f9"></Setter>
+                        </Trigger>
+                        <!--下拉框背景色-->
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter TargetName="Back" Property="Background" Value="#e6f0f9"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--ComboBox-->
+    <ControlTemplate x:Key="NormalComboBox" TargetType="{x:Type ComboBox}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.7*"/>
+                <ColumnDefinition Width="0.3*" MaxWidth="30"/>
+            </Grid.ColumnDefinitions>
+
+            <!--文字区域背景和边线样式-->
+            <Border x:Name="Border" Background="White" Margin="3" CornerRadius="4,0,0,4">
+                <TextBox x:Name="PART_EditableTextBox" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                 IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}" 
+                                 Margin="{TemplateBinding Padding}" VerticalContentAlignment="Center"
+                                 Background="Transparent" VerticalAlignment="Stretch" Foreground="#3e3e3e" FontSize="{TemplateBinding FontSize}"
+                                 BorderBrush="#959595" BorderThickness="0" >
+                    <TextBox.Style>
+                        <Style TargetType="{x:Type TextBox}">
+                            <Setter Property="OverridesDefaultStyle" Value="True"/>
+                            <Setter Property="AllowDrop" Value="True"/>
+                            <Setter Property="MinWidth" Value="0"/>
+                            <Setter Property="MinHeight" Value="0"/>
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+                            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type TextBox}">
+                                        <ScrollViewer x:Name="PART_ContentHost" Background="Transparent" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+            </Border>
+
+            <Border  x:Name="root"  Grid.Column="0" BorderThickness="2,2,0,2" BorderBrush="#959595" CornerRadius="4,0,0,4" />
+            <!--右侧下拉button设置-->
+            <Border x:Name="button"  Grid.Column="1" BorderThickness="0,2,2,2" BorderBrush="#959595" CornerRadius="0,4,4,0">
+                <ToggleButton Style="{StaticResource ComboxStyleBtn}" ClickMode="Press" 
+                                          IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+            </Border>
+            <!--弹出popup整体设置-->
+            <Popup Grid.Column="0" Grid.ColumnSpan="2" IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" 
+                               Focusable="False" AllowsTransparency="True" PopupAnimation="Slide" >
+                <!--弹出popup边框-->
+                <Border CornerRadius="0" BorderBrush="#959595" BorderThickness="1,0,1,1" 
+                                    MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{TemplateBinding ActualWidth}" 
+                                    x:Name="DropDown" SnapsToDevicePixels="True">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="2" ShadowDepth="0" Opacity="1"/>
+                    </Border.Effect>
+                    <!--下拉幕布边界背景设置 MaxHeight="{TemplateBinding MaxDropDownHeight}"-->
+                    <ScrollViewer Margin="0,0,0,0" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" 
+                                              VerticalScrollBarVisibility="Auto" BorderBrush="#959595" BorderThickness="2" >
+                        <!-- StackPanel 用于显示子级，方法是将 IsItemsHost 设置为 True -->
+                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" Background="White"/>
+                    </ScrollViewer>
+                </Border>
+            </Popup>
+        </Grid>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter TargetName="root" Property="BorderBrush" Value="#5589f3"/>
+                <Setter TargetName="button" Property="BorderBrush" Value="#5589f3"/>
+            </Trigger>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter TargetName="button" Property="IsEnabled" Value="False"/>
+                <Setter TargetName="button" Property="Background" Value="#F5F5F5"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+</ResourceDictionary>

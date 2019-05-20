@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F5790BEB-0F08-4476-9B31-AF1F4CA841E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFM.WPF.EAM</RootNamespace>
+    <AssemblyName>BFM.WPF.EAM</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Charts.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.CodeView.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.1.Core, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v18.1, Version=18.1.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Effects, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AM\AmAssetMasterNEdit.xaml.cs">
+      <DependentUpon>AmAssetMasterNEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AM\AmAssetMasterNView.xaml.cs">
+      <DependentUpon>AmAssetMasterNView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AM\AmPartsMasterNEdit.xaml.cs">
+      <DependentUpon>AmPartsMasterNEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AM\AmPartsMasterNView.xaml.cs">
+      <DependentUpon>AmPartsMasterNView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RM\Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RM\RepairMasterView.xaml.cs">
+      <DependentUpon>RepairMasterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RM\RmRepairRecordView.xaml.cs">
+      <DependentUpon>RmRepairRecordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RS\MaintainOrderView.xaml.cs">
+      <DependentUpon>MaintainOrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RS\MaintainStandard_NingBo.xaml.cs">
+      <DependentUpon>MaintainStandard_NingBo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RS\MaintainStandardEdit.xaml.cs">
+      <DependentUpon>MaintainStandardEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RS\MaintainStandardRelateView.xaml.cs">
+      <DependentUpon>MaintainStandardRelateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RS\MaintainStandardsDetailEdit.xaml.cs">
+      <DependentUpon>MaintainStandardsDetailEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RS\MaintainStandardView.xaml.cs">
+      <DependentUpon>MaintainStandardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.AmAssetMasterN.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.AmPartsMasterN.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RmRepairRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainStandards.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainStandardsDetail.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainStandardsRelate.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.WmsAllocationInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.WmsAreaInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.WmsInvOperate.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\BFM.Common.Base\BFM.Common.Base.csproj">
+      <Project>{31B1498B-91FB-43B4-B4E7-EE3911072D93}</Project>
+      <Name>BFM.Common.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.ContractModel\BFM.ContractModel.csproj">
+      <Project>{D65E3C3E-0F32-426B-A60C-42485AD5110E}</Project>
+      <Name>BFM.ContractModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.Server.DataAsset\BFM.Server.DataAsset.csproj">
+      <Project>{533cd39a-c244-47c7-a11a-0aa70bf3d551}</Project>
+      <Name>BFM.Server.DataAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.Base\BFM.WPF.Base.csproj">
+      <Project>{83ebfe28-d316-4272-81fc-fbb0033daf93}</Project>
+      <Name>BFM.WPF.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.SDM\BFM.WPF.SDM.csproj">
+      <Project>{0f712dd6-1b1a-4c44-a3dc-887804aa3edd}</Project>
+      <Name>BFM.WPF.SDM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.WMS\BFM.WPF.WMS.csproj">
+      <Project>{3CAAA686-769F-416B-88B2-BEBCEBB03101}</Project>
+      <Name>BFM.WPF.WMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NotifyIconWpf\NotifyIconWpf.csproj">
+      <Project>{878673e3-59b0-4ff1-96f9-6388f5fad515}</Project>
+      <Name>NotifyIconWpf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AM\AmAssetMasterNEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AM\AmAssetMasterNView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AM\AmPartsMasterNEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AM\AmPartsMasterNView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RM\Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RM\RepairMasterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RM\RmRepairRecordView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RS\MaintainOrderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RS\MaintainStandard_NingBo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RS\MaintainStandardEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RS\MaintainStandardRelateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RS\MaintainStandardsDetailEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RS\MaintainStandardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\New_Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\a6b.png" />
+    <Resource Include="Images\a6c.png" />
+    <Resource Include="Images\aet.png" />
+    <Resource Include="Images\aeu.png" />
+    <Resource Include="Images\ajx.png" />
+    <Resource Include="Images\ajy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\aay.png" />
+    <Resource Include="Images\aaz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\aub.png" />
+    <Resource Include="Images\auc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1.ico" />
+    <Resource Include="Images\16.ico" />
+    <Resource Include="Images\24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\26.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\21.ico" />
+    <Resource Include="Images\23.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\6.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

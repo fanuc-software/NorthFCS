@@ -1,0 +1,149 @@
+﻿<Page 
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+      xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+      xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+      xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+      xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+      xmlns:controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+      xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+      x:Class="BFM.WPF.FMS.BasicData.ActionControl"
+      mc:Ignorable="d" FontSize ="16"
+      d:DesignHeight="800" d:DesignWidth="600"
+      Title="指令动作控制配置">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" DockPanel.Dock="Top" Height="50" Margin="15,0" Background="#eff0f3" CornerRadius="0,0,8,8">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2" Opacity="0.5" Direction="-90" BlurRadius="10" />
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <dxlc:LayoutGroup Grid.Column="1" Margin="10,10,0,0">
+                    <dxlc:LayoutItem Label="开始时间">
+                        <dxe:DateEdit  Margin="10,0,10,0" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="结束时间">
+                        <dxe:DateEdit    Margin="10,0,10,0"/>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="计划信息">
+                        <TextBox></TextBox>
+                    </dxlc:LayoutItem>
+                    <controls:ImageButtonWithIcon DockPanel.Dock="Left" x:Name="bSearch4" Content="查询" Icon="/BFM.WPF.EAM;component/Images/26.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/26.ico"  Width="100" Height="40"   Margin="20,-10,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+                </dxlc:LayoutGroup>
+            </Grid>
+        </Border>
+        <DockPanel Grid.Row="1">
+            <controls:ImageButtonWithIcon Content="增加" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/1.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/1.ico"  Width="100" Height="40" Click="BtnAdd_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="修改" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/16.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/16.ico"  Width="100" Height="40" Click="BtnMod_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="删除" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/24.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/24.ico"  Width="100" Height="40" Click="BtnDel_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="保存"  DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/21.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/21.ico"  Width="100" Height="40" Click="BtnSave_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+            <controls:ImageButtonWithIcon Content="取消"   DockPanel.Dock="Left"  Icon="/BFM.WPF.EAM;component/Images/23.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/23.ico"  Width="100" Height="40" Click="BtnCancel_Click" Margin="20,0,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left"/>
+        </DockPanel>
+
+        <Grid Grid.Row="2">
+            <Grid x:Name="MenuContent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <dxlc:LayoutControl x:Name="gbItem" Margin="0" Padding="0" 
+                                    IsCollapsed="True" Visibility="Collapsed">
+                    <dxlc:LayoutGroup Header="指令动作控制配置信息" x:Name="dictBasic" View="GroupBox" ItemLabelsAlignment="Local"
+                              IsCollapsible="False" Background="White" Orientation="Vertical">
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="设备信息" >
+                                <ComboBox x:Name="cmbAssetInfo" SelectedValue="{Binding ASSET_CODE}" 
+                                          SelectedValuePath="ASSET_CODE" DisplayMemberPath="ASSET_NAME"  
+                                          SelectionChanged="Selector_OnSelectionChanged"  Margin="5,0"/>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="指令动作名称" >
+                                <TextBox Text="{Binding ACTION_NAME}" Margin="5,0" />
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="指令动作类型" >
+                                <controls:BasicItemCombox Text="{Binding ACTION_TYPE}" EnumIdentify="基础信息.指令动作类型" Margin="5,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="指令动作开始条件的Tag点" >
+                                <ComboBox SelectedValue="{Binding START_CONDITION_TAG_PKNO}" ItemsSource="{Binding Tag, ElementName=cmbAssetInfo}" SelectedValuePath="PKNO" DisplayMemberPath="TAG_NAME" Margin="5,0" >
+                                </ComboBox>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="指令动作开始条件值" >
+                                <TextBox Text="{Binding START_CONDITION_VALUE}" Margin="5,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="指令动作执行的Tag点" >
+                                <ComboBox SelectedValue="{Binding EXECUTE_TAG_PKNO}" ItemsSource="{Binding Tag, ElementName=cmbAssetInfo}" SelectedValuePath="PKNO" DisplayMemberPath="TAG_NAME" Margin="5,0" >
+                                </ComboBox>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="指令动作执行写入的值" >
+                                <TextBox Text="{Binding EXECUTE_WRITE_VALUE}" Margin="5,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="指令动作执行参数1的Tag点" >
+                                <ComboBox SelectedValue="{Binding EXECUTE_PARAM1_TAG_PKNO}" ItemsSource="{Binding Tag, ElementName=cmbAssetInfo}" SelectedValuePath="PKNO" DisplayMemberPath="TAG_NAME" Margin="5,0" >
+                                </ComboBox>
+                            </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Label="指令动作执行参数2的Tag点" >
+                                <ComboBox SelectedValue="{Binding EXECUTE_PARAM2_TAG_PKNO}" ItemsSource="{Binding Tag, ElementName=cmbAssetInfo}" SelectedValuePath="PKNO" DisplayMemberPath="TAG_NAME" Margin="5,0" >
+                                    </ComboBox>
+                                </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0">
+                            <dxlc:LayoutItem Label="指令动作完成条件的Tag点" >
+                                <ComboBox SelectedValue="{Binding FINISH_CONDITION_TAG_PKNO}" ItemsSource="{Binding Tag, ElementName=cmbAssetInfo}" SelectedValuePath="PKNO" DisplayMemberPath="TAG_NAME" Margin="5,0" >
+                                </ComboBox>
+                            </dxlc:LayoutItem>
+                            <dxlc:LayoutItem Label="指令动作完成条件值" >
+                                <TextBox Text="{Binding FINISH_CONDITION_VALUE}" Margin="5,0" />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                        <dxlc:LayoutGroup Margin="0,5,0,0" Height="80">
+                            <dxlc:LayoutItem Label="备注"  VerticalAlignment="Stretch" >
+                                <TextBox Text="{Binding REMARK}" Margin="5,0" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible"  />
+                            </dxlc:LayoutItem>
+                        </dxlc:LayoutGroup>
+                    </dxlc:LayoutGroup>
+                </dxlc:LayoutControl>
+                
+                <Grid Grid.Row="1" >
+                    <dxg:GridControl x:Name="gridItem" IsEnabled="{Binding IsCollapsed, ElementName=gbItem}" 
+                                      SelectionMode="Row" FontSize="16" MouseDoubleClick="gridItem_MouseDoubleClick" >
+                        <dxg:GridControl.View>
+                            <dxg:TableView ShowGroupPanel="False" AllowEditing="False" NavigationStyle="Row"/>
+                        </dxg:GridControl.View>
+                        <dxg:GridColumn Binding="{Binding Path=ASSET_CODE, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='AM_ASSET_MASTER_N;ASSET_CODE;ASSET_NAME'}" Header="设备名称" Width="100"/>
+                        <dxg:GridColumn FieldName="ACTION_NAME" Header="指令动作名称" Width="80"/>
+                        <dxg:GridColumn Binding="{Binding Path=ACTION_TYPE, Converter={StaticResource BasicInfoConverter}, ConverterParameter='基础信息.指令动作类型'}" Header="指令动作类型"/>
+                        <dxg:GridColumn Binding="{Binding Path=START_CONDITION_TAG_PKNO, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='FMS_ASSET_TAG_SETTING;PKNO;TAG_NAME'}" Header="指令动作开始条件的Tag点" Width="100"/>
+                        <dxg:GridColumn FieldName="START_CONDITION_VALUE" Header="指令动作开始条件值" Width="80"/>
+                        <dxg:GridColumn Binding="{Binding Path=EXECUTE_TAG_PKNO, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='FMS_ASSET_TAG_SETTING;PKNO;TAG_NAME'}" Header="指令动作执行的Tag点" Width="100"/>
+                        <dxg:GridColumn FieldName="EXECUTE_WRITE_VALUE" Header="指令动作执行写入的值" Width="80"/>
+                        <dxg:GridColumn Binding="{Binding Path=EXECUTE_PARAM1_TAG_PKNO, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='FMS_ASSET_TAG_SETTING;PKNO;TAG_NAME'}" Header="指令动作执行参数1的Tag点" Width="100"/>
+                        <dxg:GridColumn Binding="{Binding Path=EXECUTE_PARAM2_TAG_PKNO, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='FMS_ASSET_TAG_SETTING;PKNO;TAG_NAME'}" Header="指令动作执行参数2的Tag点" Width="100"/>
+                        <dxg:GridColumn Binding="{Binding Path=FINISH_CONDITION_TAG_PKNO, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='FMS_ASSET_TAG_SETTING;PKNO;TAG_NAME'}" Header="指令动作完成条件的Tag点" Width="100"/>
+                        <dxg:GridColumn FieldName="FINISH_CONDITION_VALUE" Header="指令动作完成条件的值" Width="80"/>
+                        <dxg:GridColumn FieldName="REMARK" Header="备注" Width="*"/>
+                    </dxg:GridControl>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

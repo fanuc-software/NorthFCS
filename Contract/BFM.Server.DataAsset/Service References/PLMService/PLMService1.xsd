@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BFM.ContractModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BFM.ContractModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPmPlanMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PmPlanMaster" nillable="true" type="tns:PmPlanMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPmPlanMaster" nillable="true" type="tns:ArrayOfPmPlanMaster" />
+  <xs:complexType name="PmPlanMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DISPATCH_QTY" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NEED_QTY" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLAN_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PLAN_END_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PLAN_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLAN_QTY" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PLAN_START_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PLAN_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RUN_STATE" type="xs:int" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PmPlanMaster" nillable="true" type="tns:PmPlanMaster" />
+  <xs:complexType name="ArrayOfPmTaskMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PmTaskMaster" nillable="true" type="tns:PmTaskMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPmTaskMaster" nillable="true" type="tns:ArrayOfPmTaskMaster" />
+  <xs:complexType name="PmTaskMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACT_FINISH_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ACT_START_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BATCH_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPLETE_QTY" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LINE_QTY" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ONLINE_QTY" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLAN_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RUN_STATE" type="xs:int" />
+      <xs:element minOccurs="0" name="TASK_FINISH_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TASK_QTY" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TASK_START_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TASK_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PmTaskMaster" nillable="true" type="tns:PmTaskMaster" />
+  <xs:complexType name="ArrayOfPmTaskLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PmTaskLine" nillable="true" type="tns:PmTaskLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPmTaskLine" nillable="true" type="tns:ArrayOfPmTaskLine" />
+  <xs:complexType name="PmTaskLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACT_FINISH_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ACT_START_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPLETE_QTY" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LINE_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ONCE_QTY" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ONLINE_QTY" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PREPARED_QTY" type="xs:decimal" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RUN_STATE" type="xs:int" />
+      <xs:element minOccurs="0" name="TASK_FINISH_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TASK_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TASK_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TASK_QTY" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TASK_START_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PmTaskLine" nillable="true" type="tns:PmTaskLine" />
+  <xs:complexType name="ArrayOfMesJobOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MesJobOrder" nillable="true" type="tns:MesJobOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMesJobOrder" nillable="true" type="tns:ArrayOfMesJobOrder" />
+  <xs:complexType name="MesJobOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACT_FINISH_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ACT_START_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BATCH_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPLETE_QTY" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOB_ORDER_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOB_ORDER_TYPE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LINE_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LINE_TASK_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ONCE_QTY" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ONLINE_QTY" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_INFO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROUTING_DETAIL_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RUN_STATE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TASK_QTY" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MesJobOrder" nillable="true" type="tns:MesJobOrder" />
+  <xs:complexType name="ArrayOfMesProcessCtrol">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MesProcessCtrol" nillable="true" type="tns:MesProcessCtrol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMesProcessCtrol" nillable="true" type="tns:ArrayOfMesProcessCtrol" />
+  <xs:complexType name="MesProcessCtrol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BEGIN_ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BEGIN_POSITION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPLETE_QTY" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CUR_PRODUCT_CODE_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINISH_ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINISH_POSITION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOB_ORDER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOB_ORDER_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PALLET_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_ACTION_PARAM1_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_ACTION_PARAM2_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_ACTION_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_ACTION_TYPE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PROCESS_CTROL_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_DEVICE_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_END_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PROCESS_END_TYPE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PROCESS_INDEX" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PROCESS_PROGRAM_CONTENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_PROGRAM_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PROCESS_QTY" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PROCESS_START_TIME" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PROCESS_START_TYPE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PROCESS_STATE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="QUALIFIED_QTY" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ROUTING_DETAIL_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUB_JOB_ORDER_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MesProcessCtrol" nillable="true" type="tns:MesProcessCtrol" />
+  <xs:complexType name="ArrayOfTestEFCodeFirst">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TestEFCodeFirst" nillable="true" type="tns:TestEFCodeFirst" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTestEFCodeFirst" nillable="true" type="tns:ArrayOfTestEFCodeFirst" />
+  <xs:complexType name="TestEFCodeFirst">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USER_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestEFCodeFirst" nillable="true" type="tns:TestEFCodeFirst" />
+  <xs:complexType name="ArrayOfMesProductProcess">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MesProductProcess" nillable="true" type="tns:MesProductProcess" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMesProductProcess" nillable="true" type="tns:ArrayOfMesProductProcess" />
+  <xs:complexType name="MesProductProcess">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CUR_ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CUR_ROCESS_CTROL_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOB_ORDER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JOB_ORDER_PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PALLET_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PKNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRODUCT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRODUCT_NUMBER" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PRODUCT_POSITION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRODUCT_STATE" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="QUALIFIED_NUMBER" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RAW_NUMBER" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="REMARK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUB_JOB_ORDER_NO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPDATED_INTROD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_FLAG" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MesProductProcess" nillable="true" type="tns:MesProductProcess" />
+</xs:schema>

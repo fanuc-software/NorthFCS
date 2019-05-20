@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="61051d45-c7fb-4a69-b3d6-50ee46eefcf9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/BFM.WCFService/DAService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DAService.xsd" MetadataType="Schema" ID="9c7901c2-8e33-469e-aa0d-ebfc8134aae2" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/DAService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DAService1.xsd" MetadataType="Schema" ID="e9af083b-6d8e-4284-8ab2-ff5b2d1c9f69" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/DAService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DAService.disco" MetadataType="Disco" ID="ea23d49d-eec9-45c4-9b29-0783dcc2d665" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/DAService.svc?disco" />
+    <MetadataFile FileName="DAService.wsdl" MetadataType="Wsdl" ID="d7a1e2ce-2ad1-42b0-82ef-a48e6175fa30" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/DAService.svc?wsdl" />
+    <MetadataFile FileName="DAService2.xsd" MetadataType="Schema" ID="f2ec435c-7a73-46b9-842f-09d45e4672ae" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/DAService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DAService1.wsdl" MetadataType="Wsdl" ID="280e2203-2ad6-4176-9e57-d14d7c5b5ea8" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/DAService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="DAService3.xsd" MetadataType="Schema" ID="d4b78531-5e99-4ff4-bd7d-0a131630958b" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/DAService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

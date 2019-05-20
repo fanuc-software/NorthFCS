@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8199f1ea-0ac9-49c3-b21d-7449287457ab" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/BFM.WCFService/SDMService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SDMService.wsdl" MetadataType="Wsdl" ID="281e5522-609d-4933-b065-ea5b042f447f" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/SDMService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SDMService.xsd" MetadataType="Schema" ID="19ba2a4d-e568-4ee7-a120-9be9edccdd08" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/SDMService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SDMService1.xsd" MetadataType="Schema" ID="33dd943b-311e-4c3d-bc7c-038aede1f865" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/SDMService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SDMService1.wsdl" MetadataType="Wsdl" ID="2d0cb2fd-df6a-40d8-9297-d7cc1cee1b60" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/SDMService.svc?wsdl" />
+    <MetadataFile FileName="SDMService2.xsd" MetadataType="Schema" ID="fd2990ae-e4d8-47b5-9a58-9c90329f835f" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/SDMService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SDMService3.xsd" MetadataType="Schema" ID="4373fd70-4e8a-4d26-8eac-96e27dd09cad" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/SDMService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SDMService.disco" MetadataType="Disco" ID="f2af681c-054e-41f2-b4f7-ddbb1a1bfab3" SourceId="1" SourceUrl="http://localhost/BFM.WCFService/SDMService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

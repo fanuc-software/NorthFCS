@@ -4,8 +4,6 @@ packages
 .vs
 /key
 /key.pub
-*.csproj
-*.sln
 /.git.zip
 /Contract/BFM.ContractModel/*.bak
 /Server/BFM.WCFService/BFM.WCFService.csproj.bak

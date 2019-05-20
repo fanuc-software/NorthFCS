@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F26BD35-AC83-46A7-8D0D-8425A0945B4B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFM.WPF.MainUI</RootNamespace>
+    <AssemblyName>BFM.WPF.MainUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\OutPutRelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Diagram.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Export, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Spreadsheet.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Accordion.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Charts.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.CodeView.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.ExpressionEditor.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.DataAccess.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Diagram.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Gauges.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Layout.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.NavBar.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PivotGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.ReportDesigner.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Spreadsheet.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.MetropolisDark.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\MyBarItem.cs" />
+    <Compile Include="Desktop.xaml.cs">
+      <DependentUpon>Desktop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DXSplashScreen\SplashScreenView.xaml.cs">
+      <DependentUpon>SplashScreenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IndexPage.xaml.cs">
+      <DependentUpon>IndexPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewMainForm.xaml.cs">
+      <DependentUpon>NewMainForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="StandardPage.xaml.cs">
+      <DependentUpon>StandardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestCalculation.cs" />
+    <Compile Include="TestPage.xaml.cs">
+      <DependentUpon>TestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestPage\PageContainer.xaml.cs">
+      <DependentUpon>PageContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestPage\TestMVVM.xaml.cs">
+      <DependentUpon>TestMVVM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestPage\TestUIPage.xaml.cs">
+      <DependentUpon>TestUIPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestWebApi.xaml.cs">
+      <DependentUpon>TestWebApi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VersionCtrol\VersionManage.cs" />
+    <Compile Include="VersionCtrol\VersionProcess.cs" />
+    <Compile Include="VersionInfo.cs" />
+    <Page Include="Desktop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DXSplashScreen\SplashScreenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IndexPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NewMainForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StandardPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestPage\PageContainer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TestPage\TestMVVM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestPage\TestUIPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestWebApi.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Resource Include="mainapp.ico" />
+    <Resource Include="images\dm.png" />
+    <Resource Include="images\icon\PrepareProcess.png" />
+    <Resource Include="images\icon\ActionControl.png" />
+    <Resource Include="images\icon\RoutingDetailView.png" />
+    <Resource Include="images\icon\RoutingView.png" />
+    <Resource Include="images\icon\ToolsExchangeMang.png" />
+    <Resource Include="images\icon\ToolsMasterMang.png" />
+    <Resource Include="images\icon\ToolsPrepare.png" />
+    <Resource Include="images\icon\ToolsTypeMang.png" />
+    <Resource Include="images\icon\PrepareProcess_FuZhou.png" />
+    <Resource Include="images\icon\FactoryLayout.png" />
+    <Resource Include="images\icon\FactoryView.png" />
+    <Resource Include="images\icon\ItemMasterView.png" />
+    <Resource Include="images\icon\AssetCommParamSetting.png" />
+    <Resource Include="images\icon\AssetTagSetting.png" />
+    <Resource Include="images\icon\BOMView.png" />
+    <Resource Include="images\icon\ConfirmProductionView.png" />
+    <Resource Include="images\icon\DeviceDataMoniter.png" />
+    <Resource Include="images\icon\DeviceToolsPosMang.png" />
+    <Resource Include="images\icon\AllocationMang.png" />
+    <Resource Include="images\icon\PlanMasterMang.png" />
+    <Resource Include="images\icon\TaskLineMang.png" />
+    <Resource Include="images\icon\TaskLineSearch.png" />
+    <Resource Include="images\icon\TaskMasterMang.png" />
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Configs\system.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.AmAssetMasterN.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.AmPartsMasterN.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsAssetCommParam.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsAssetTagSetting.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsSamplingRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsStateResultRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RmRepairRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsBom.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsEquipMaster.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsFactory.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsItemMaster.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsLine.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsLineProduct.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsLineStation.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainStandards.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainStandardsDetail.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainStandardsRelate.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingCheck.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingDetail.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingEquip.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingHead.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingItem.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingParam.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsWorkCenter.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsWorkSchedule.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsWorkShop.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysAttachInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysEnumItems.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysEnumMain.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysMenuItem.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysMenuPurview.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysPurview.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysRole.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysRolePurview.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysRoleUser.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysTableNOSetting.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysUser.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysUserMenu.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysUserPurview.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\BFM.Common.Base\BFM.Common.Base.csproj">
+      <Project>{31B1498B-91FB-43B4-B4E7-EE3911072D93}</Project>
+      <Name>BFM.Common.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\BFM.Common.DataBaseAsset\BFM.Common.DataBaseAsset.csproj">
+      <Project>{b2ac3987-c931-4015-a46e-16b8786856f0}</Project>
+      <Name>BFM.Common.DataBaseAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\BFM.Common.DeviceAsset\BFM.Common.DeviceAsset.csproj">
+      <Project>{dff3af8f-434d-43d8-ba91-4f0bf47b8e40}</Project>
+      <Name>BFM.Common.DeviceAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\BFM.OPC.Client.Core\BFM.OPC.Client.Core.csproj">
+      <Project>{e844e70c-1a0d-4dd0-91bc-64386d174e66}</Project>
+      <Name>BFM.OPC.Client.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\BFM.Web.Base\BFM.Web.Base.csproj">
+      <Project>{ff07f4aa-cb7a-4656-bcb6-a9d501ac9c29}</Project>
+      <Name>BFM.Web.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.ContractModel\BFM.ContractModel.csproj">
+      <Project>{d65e3c3e-0f32-426b-a60c-42485ad5110e}</Project>
+      <Name>BFM.ContractModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.Server.DataAsset\BFM.Server.DataAsset.csproj">
+      <Project>{533CD39A-C244-47C7-A11A-0AA70BF3D551}</Project>
+      <Name>BFM.Server.DataAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.Base\BFM.WPF.Base.csproj">
+      <Project>{83ebfe28-d316-4272-81fc-fbb0033daf93}</Project>
+      <Name>BFM.WPF.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.EAM\BFM.WPF.EAM.csproj">
+      <Project>{f5790beb-0f08-4476-9b31-af1f4ca841e0}</Project>
+      <Name>BFM.WPF.EAM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.FMS\BFM.WPF.FMS.csproj">
+      <Project>{36F7E0E2-EE4A-48B5-9891-5B434D37516A}</Project>
+      <Name>BFM.WPF.FMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.PMC\BFM.WPF.PMC.csproj">
+      <Project>{9bd18150-c8b3-4697-ae5f-e1ffd668e714}</Project>
+      <Name>BFM.WPF.PMC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.PPM\BFM.WPF.PPM.csproj">
+      <Project>{bb1089c0-5384-40ae-9c56-91938401f0ba}</Project>
+      <Name>BFM.WPF.PPM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.QMS\BFM.WPF.QMS.csproj">
+      <Project>{43c4c9a7-fb4e-44ce-8b55-2f5d9e2f1c25}</Project>
+      <Name>BFM.WPF.QMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.Report\BFM.WPF.Report.csproj">
+      <Project>{b860081f-3ddb-4ad7-9194-0be87d5ba0fd}</Project>
+      <Name>BFM.WPF.Report</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.RSM\BFM.WPF.RSM.csproj">
+      <Project>{068b3e5b-c8c8-44ed-803b-062e4afc0666}</Project>
+      <Name>BFM.WPF.RSM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.SDM\BFM.WPF.SDM.csproj">
+      <Project>{0f712dd6-1b1a-4c44-a3dc-887804aa3edd}</Project>
+      <Name>BFM.WPF.SDM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.SPSS\BFM.WPF.SPSS.csproj">
+      <Project>{759613e2-8cdb-4e0b-b6e5-0c4eb9630ba7}</Project>
+      <Name>BFM.WPF.SPSS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.TMS\BFM.WPF.TMS.csproj">
+      <Project>{05ac8409-c566-4a26-99cc-e2cf9e8b5480}</Project>
+      <Name>BFM.WPF.TMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.WMS\BFM.WPF.WMS.csproj">
+      <Project>{3caaa686-769f-416b-88b2-bebcebb03101}</Project>
+      <Name>BFM.WPF.WMS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icon\AmAssetMasterNView.png" />
+    <Resource Include="images\icon\AmPartsMasterNView.png" />
+    <Resource Include="images\icon\DocumentManageView.png" />
+    <Resource Include="images\icon\EnumView.png" />
+    <Resource Include="images\icon\MaintainOrderView.png" />
+    <Resource Include="images\icon\MaintainStandardRelateView.png" />
+    <Resource Include="images\icon\MaintainStandardView.png" />
+    <Resource Include="images\icon\MenuItemView.png" />
+    <Resource Include="images\icon\PurviewView.png" />
+    <Resource Include="images\icon\RepairMasterView.png" />
+    <Resource Include="images\icon\TableNOSetting.png" />
+    <Resource Include="images\icon\WorkCalendarView.png" />
+    <Resource Include="images\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\background.png" />
+    <Resource Include="images\bg.jpg" />
+    <Resource Include="images\header.png" />
+    <Resource Include="images\icon\dm.png" />
+    <Resource Include="images\icon\dmg.ico" />
+    <Resource Include="images\icon\PurviewMenuView.png" />
+    <Resource Include="images\LoginBg.png" />
+    <Resource Include="images\LoginLogo.png" />
+    <Resource Include="images\logo.png" />
+    <Resource Include="images\normal\bom.png" />
+    <Resource Include="images\normal\byhz.png" />
+    <Resource Include="images\normal\clbd.png" />
+    <Resource Include="images\normal\close.png" />
+    <Resource Include="images\normal\cltj.png" />
+    <Resource Include="images\normal\cpgl.png" />
+    <Resource Include="images\normal\cpjc.png" />
+    <Resource Include="images\normal\ddxx.png" />
+    <Resource Include="images\normal\djkc.png" />
+    <Resource Include="images\normal\djsm.png" />
+    <Resource Include="images\normal\djtz.png" />
+    <Resource Include="images\normal\gdxf.png" />
+    <Resource Include="images\normal\group.png" />
+    <Resource Include="images\normal\gygl.png" />
+    <Resource Include="images\normal\gzgl.png" />
+    <Resource Include="images\normal\gztj.png" />
+    <Resource Include="images\normal\input.png" />
+    <Resource Include="images\normal\jhpc.png" />
+    <Resource Include="images\normal\jhwh.png" />
+    <Resource Include="images\normal\LoginBack.png" />
+    <Resource Include="images\normal\max.png" />
+    <Resource Include="images\normal\min.png" />
+    <Resource Include="images\normal\oee.png" />
+    <Resource Include="images\normal\restore.png" />
+    <Resource Include="images\normal\rwgl.png" />
+    <Resource Include="images\normal\sbbg.png" />
+    <Resource Include="images\normal\sbbx.png" />
+    <Resource Include="images\normal\sbtz.png" />
+    <Resource Include="images\normal\scjk.png" />
+    <Resource Include="images\normal\tile.png" />
+    <Resource Include="images\normal\tile_s.png" />
+    <Resource Include="images\normal\upBt.png" />
+    <Resource Include="images\normal\whcl.png" />
+    <Resource Include="images\normal\whgd.png" />
+    <Resource Include="images\normal\yclgl.png" />
+    <Resource Include="images\normal\zlkb.png" />
+    <Resource Include="images\normal\zlzs.png" />
+    <Resource Include="images\selected\bom.png" />
+    <Resource Include="images\selected\byhz.png" />
+    <Resource Include="images\selected\clbd.png" />
+    <Resource Include="images\selected\close.png" />
+    <Resource Include="images\selected\cltj.png" />
+    <Resource Include="images\selected\cpgl.png" />
+    <Resource Include="images\selected\cpjc.png" />
+    <Resource Include="images\selected\ddxx.png" />
+    <Resource Include="images\selected\djkc.png" />
+    <Resource Include="images\selected\djsm.png" />
+    <Resource Include="images\selected\djtz.png" />
+    <Resource Include="images\selected\gdxf.png" />
+    <Resource Include="images\selected\group.png" />
+    <Resource Include="images\selected\gygl.png" />
+    <Resource Include="images\selected\gzgl.png" />
+    <Resource Include="images\selected\gztj.png" />
+    <Resource Include="images\selected\input_s.png" />
+    <Resource Include="images\selected\jhpc.png" />
+    <Resource Include="images\selected\jhwh.png" />
+    <Resource Include="images\selected\LoginBack.png" />
+    <Resource Include="images\selected\max.png" />
+    <Resource Include="images\selected\min.png" />
+    <Resource Include="images\selected\oee.png" />
+    <Resource Include="images\selected\restore.png" />
+    <Resource Include="images\selected\rwgl.png" />
+    <Resource Include="images\selected\sbbg.png" />
+    <Resource Include="images\selected\sbbx.png" />
+    <Resource Include="images\selected\sbtz.png" />
+    <Resource Include="images\selected\scjk.png" />
+    <Resource Include="images\selected\tile.png" />
+    <Resource Include="images\selected\tile_s.png" />
+    <Resource Include="images\selected\upBt.png" />
+    <Resource Include="images\selected\whcl.png" />
+    <Resource Include="images\selected\whgd.png" />
+    <Resource Include="images\selected\yclgl.png" />
+    <Resource Include="images\selected\zlkb.png" />
+    <Resource Include="images\selected\zlzs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DXSplashScreen\Image.png" />
+    <Resource Include="DXSplashScreen\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="images\MenuIcon\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\normal\max_Pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\normal\min_Pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\selected\close_Pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\normal\TAB_1.png" />
+    <Resource Include="images\normal\选择条3.png" />
+    <Resource Include="images\normal\选择框2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\normal\AcordionSelected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\backgroud.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

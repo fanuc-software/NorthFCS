@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2AC3987-C931-4015-A46E-16B8786856F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFM.Common.DataBaseAsset</RootNamespace>
+    <AssemblyName>BFM.Common.DataBaseAsset</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Oracle.ManagedDataAccess.18.3.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataFilters\FilterItem.cs" />
+    <Compile Include="DataFilters\FilterOperationTrans.cs" />
+    <Compile Include="DataFilters\IDataFilter.cs" />
+    <Compile Include="DataFilters\IFilterDescriptor.cs" />
+    <Compile Include="DataFilters\ObjectCompositionFilter.cs" />
+    <Compile Include="DataFilters\ObjectFilter.cs" />
+    <Compile Include="DBFactory.cs" />
+    <Compile Include="EF\BLL\BaseBLL.cs" />
+    <Compile Include="EF\BLL\IBaseBLL.cs" />
+    <Compile Include="EF\BLL\SqlBLL.cs" />
+    <Compile Include="EF\DAL\SqlDAL.cs" />
+    <Compile Include="EF\DBContextFactory.cs" />
+    <Compile Include="EF\DAL\BaseDAL.cs" />
+    <Compile Include="EF\DAL\IBaseDAL.cs" />
+    <Compile Include="EF\DB.CodeFirst\DB_Service.cs" />
+    <Compile Include="EF\Extensions\QueryableExtensions.cs" />
+    <Compile Include="Enum\EmDbType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ADO.NET\SqlHelper.cs" />
+    <Compile Include="VersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BFM.Common.Base\BFM.Common.Base.csproj">
+      <Project>{31B1498B-91FB-43B4-B4E7-EE3911072D93}</Project>
+      <Name>BFM.Common.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.AmAssetMasterN.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.AmPartsMasterN.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsActionControl.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsAssetCommParam.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsAssetTagSetting.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsSamplingRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsStateResultRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.MesJobOrder.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.MesProcessCtrol.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.PmPlanMaster.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.PmTaskLine.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.PmTaskMaster.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RmRepairRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsBom.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsEquipMaster.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsFactory.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsItemMaster.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsLine.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsLineProduct.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsLineStation.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainRecord.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainStandards.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainStandardsDetail.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsMaintainStandardsRelate.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingCheck.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingDetail.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingEquip.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingHead.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingItem.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingParam.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsRoutingTools.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsWorkCenter.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsWorkSchedule.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.RsWorkShop.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysAttachInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysEnumItems.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysEnumMain.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysMenuItem.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysMenuPurview.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysPurview.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysRole.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysRolePurview.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysRoleUser.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysTableNOSetting.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysUser.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysUserMenu.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.SysUserPurview.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.TestEFCodeFirst.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.TmsDeviceToolsPos.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.TmsToolsMaster.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.TmsToolsType.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.WmsAllocationInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.WmsAreaInfo.datasource" />
+    <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.WmsInvOperate.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Redis\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

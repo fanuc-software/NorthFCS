@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D65E3C3E-0F32-426B-A60C-42485AD5110E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFM.ContractModel</RootNamespace>
+    <AssemblyName>BFM.ContractModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnivMes.BFM.ContractModel">
+      <HintPath>..\..\Client\BFM.WPF.FlowDesign\bin\Debug\UnivMes.BFM.ContractModel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FMSService\FmsActionFormulaDetail.cs" />
+    <Compile Include="FMSService\FmsActionFormulaMain.cs" />
+    <Compile Include="WMSService\WmsInventory.cs" />
+    <Compile Include="PLMService\MesProductProcess.cs" />
+    <Compile Include="QMSService\QmsCheckMaster.cs" />
+    <Compile Include="QMSService\QmsRoutingCheck.cs" />
+    <Compile Include="QMSService\QmsCheckParam.cs" />
+    <Compile Include="FMSService\FmsTagCalculation.cs" />
+    <Compile Include="SDMService\SysAppInfo.cs" />
+    <Compile Include="DAService\DAStatusRecord.cs" />
+    <Compile Include="DAService\DAAlarmRecord.cs" />
+    <Compile Include="DAService\DAProductRecord.cs" />
+    <Compile Include="DAService\DAMachineRealTimeInfo.cs" />
+    <Compile Include="QMSService\QmsTest.cs" />
+    <Compile Include="RSMService\RsEquipMaster.cs" />
+    <Compile Include="RSMService\RsWorkCenter.cs" />
+    <Compile Include="RSMService\RsRoutingItem.cs" />
+    <Compile Include="RSMService\RsRoutingEquip.cs" />
+    <Compile Include="RSMService\RsRoutingCheck.cs" />
+    <Compile Include="RSMService\RsRoutingParam.cs" />
+    <Compile Include="RSMService\RsRoutingTools.cs" />
+    <Compile Include="RSMService\RsRoutingDetail.cs" />
+    <Compile Include="RSMService\RsRoutingHead.cs" />
+    <Compile Include="RSMService\RsBom.cs" />
+    <Compile Include="RSMService\RsLineProduct.cs" />
+    <Compile Include="RSMService\RsItemMaster.cs" />
+    <Compile Include="RSMService\RsLineStation.cs" />
+    <Compile Include="RSMService\RsLine.cs" />
+    <Compile Include="RSMService\RsWorkShop.cs" />
+    <Compile Include="RSMService\RsFactory.cs" />
+    <Compile Include="FMSService\FmsActionControl.cs" />
+    <Compile Include="FMSService\FmsSamplingRecord.cs" />
+    <Compile Include="FMSService\FmsStateResultRecord.cs" />
+    <Compile Include="FMSService\FmsAssetTagSetting.cs" />
+    <Compile Include="FMSService\FmsAssetCommParam.cs" />
+    <Compile Include="SDMService\SysDepartment.cs" />
+    <Compile Include="VersionInfo.cs" />
+    <Compile Include="WMSService\WmsInvOperate.cs" />
+    <Compile Include="WMSService\WmsAllocationInfo.cs" />
+    <Compile Include="WMSService\WmsAreaInfo.cs" />
+    <Compile Include="EAMService\RsMaintainRecord.cs" />
+    <Compile Include="EAMService\RmRepairRecord.cs" />
+    <Compile Include="EAMService\RsMaintainStandardsRelate.cs" />
+    <Compile Include="EAMService\RsMaintainStandardsDetail.cs" />
+    <Compile Include="EAMService\RsMaintainStandards.cs" />
+    <Compile Include="EAMService\AmPartsMasterN.cs" />
+    <Compile Include="EAMService\AmAssetMasterN.cs" />
+    <Compile Include="PLMService\TestEFCodeFirst.cs" />
+    <Compile Include="PLMService\MesProcessCtrol.cs" />
+    <Compile Include="PLMService\MesJobOrder.cs" />
+    <Compile Include="PLMService\PmTaskLine.cs" />
+    <Compile Include="PLMService\PmTaskMaster.cs" />
+    <Compile Include="PLMService\PmPlanMaster.cs" />
+    <Compile Include="TMSService\TmsDeviceToolsPos.cs" />
+    <Compile Include="TMSService\TmsToolsMaster.cs" />
+    <Compile Include="TMSService\TmsToolsType.cs" />
+    <Compile Include="SDMService\RsWorkSchedule.cs" />
+    <Compile Include="SDMService\SysAttachInfo.cs" />
+    <Compile Include="SDMService\SysEnumItems.cs" />
+    <Compile Include="SDMService\SysEnumMain.cs" />
+    <Compile Include="SDMService\SysMenuItem.cs" />
+    <Compile Include="SDMService\SysMenuPurview.cs" />
+    <Compile Include="SDMService\SysPurview.cs" />
+    <Compile Include="SDMService\SysRole.cs" />
+    <Compile Include="SDMService\SysRolePurview.cs" />
+    <Compile Include="SDMService\SysRoleUser.cs" />
+    <Compile Include="SDMService\SysTableNOSetting.cs" />
+    <Compile Include="SDMService\SysUser.cs" />
+    <Compile Include="SDMService\SysUserMenu.cs" />
+    <Compile Include="SDMService\SysUserPurview.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

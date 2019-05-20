@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{533CD39A-C244-47C7-A11A-0AA70BF3D551}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BFM.Server.DataAsset</RootNamespace>
+    <AssemblyName>BFM.Server.DataAsset</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\SQLService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="WcfSqlHelper.cs" />
+    <Compile Include="WebApiService\FMSService\FmsActionFormulaDetailF.cs" />
+    <Compile Include="WebApiService\FMSService\FmsActionFormulaMainF.cs" />
+    <Compile Include="WebApiService\WMSService\WmsInventoryF.cs" />
+    <Compile Include="Service References\PLMService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="WebApiService\PLMService\MesProductProcessF.cs" />
+    <Compile Include="WebApiService\QMSService\QmsCheckMasterF.cs" />
+    <Compile Include="WebApiService\QMSService\QmsRoutingCheckF.cs" />
+    <Compile Include="WebApiService\QMSService\QmsCheckParamF.cs" />
+    <Compile Include="WebApiService\SDMService\SysDepartmentF.cs" />
+    <Compile Include="WebApiService\FMSService\FmsTagCalculationF.cs" />
+    <Compile Include="VersionInfo.cs" />
+    <Compile Include="WebApiService\SDMService\SysAppInfoF.cs" />
+    <Compile Include="Service References\DAService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="WebApiService\DAService\DAStatusRecordF.cs" />
+    <Compile Include="WebApiService\DAService\DAAlarmRecordF.cs" />
+    <Compile Include="WebApiService\DAService\DAProductRecordF.cs" />
+    <Compile Include="WebApiService\DAService\DAMachineRealTimeInfoF.cs" />
+    <Compile Include="WebApiService\DAService\DAFacade.cs" />
+    <Compile Include="WebApiService\RSMService\RsBomF.cs" />
+    <Compile Include="WebApiService\RSMService\RSMFacade.cs" />
+    <Compile Include="Service References\QMSService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="WebApiService\QMSService\QmsTestF.cs" />
+    <Compile Include="WebApiService\QMSService\QMSFacade.cs" />
+    <Compile Include="Service References\FMSService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RSMService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="WebApiService\FMSService\FmsActionControlF.cs" />
+    <Compile Include="WebApiService\FMSService\FmsSamplingRecordF.cs" />
+    <Compile Include="WebApiService\FMSService\FmsStateResultRecordF.cs" />
+    <Compile Include="WebApiService\FMSService\FmsAssetTagSettingF.cs" />
+    <Compile Include="WebApiService\FMSService\FmsAssetCommParamF.cs" />
+    <Compile Include="WebApiService\FMSService\FMSFacade.cs" />
+    <Compile Include="Service References\EAMService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WMSService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="WebApiService\EAMService\RsMaintainRecordF.cs" />
+    <Compile Include="WebApiService\EAMService\RmRepairRecordF.cs" />
+    <Compile Include="WebApiService\EAMService\RsMaintainStandardsRelateF.cs" />
+    <Compile Include="WebApiService\EAMService\RsMaintainStandardsDetailF.cs" />
+    <Compile Include="WebApiService\EAMService\RsMaintainStandardsF.cs" />
+    <Compile Include="WebApiService\EAMService\AmPartsMasterNF.cs" />
+    <Compile Include="WebApiService\EAMService\AmAssetMasterNF.cs" />
+    <Compile Include="WebApiService\EAMService\EAMFacade.cs" />
+    <Compile Include="WebApiService\PLMService\TestEFCodeFirstF.cs" />
+    <Compile Include="WebApiService\PLMService\MesProcessCtrolF.cs" />
+    <Compile Include="WebApiService\PLMService\MesJobOrderF.cs" />
+    <Compile Include="WebApiService\PLMService\PmTaskLineF.cs" />
+    <Compile Include="WebApiService\PLMService\PmTaskMasterF.cs" />
+    <Compile Include="WebApiService\PLMService\PmPlanMasterF.cs" />
+    <Compile Include="WebApiService\PLMService\PLMFacade.cs" />
+    <Compile Include="WebApiService\SDMService\SysAttachInfoF.cs" />
+    <Compile Include="WebApiService\SDMService\RsWorkScheduleF.cs" />
+    <Compile Include="WebApiService\SDMService\SysUserMenuF.cs" />
+    <Compile Include="WebApiService\SDMService\SysMenuPurviewF.cs" />
+    <Compile Include="WebApiService\SDMService\SysRolePurviewF.cs" />
+    <Compile Include="WebApiService\SDMService\SysUserPurviewF.cs" />
+    <Compile Include="WebApiService\SDMService\SysRoleUserF.cs" />
+    <Compile Include="WebApiService\SDMService\SysPurviewF.cs" />
+    <Compile Include="WebApiService\SDMService\SysRoleF.cs" />
+    <Compile Include="WebApiService\SDMService\SysUserF.cs" />
+    <Compile Include="WebApiService\SDMService\SysEnumItemsF.cs" />
+    <Compile Include="WebApiService\SDMService\SysEnumMainF.cs" />
+    <Compile Include="WebApiService\SDMService\SysTableNOSettingF.cs" />
+    <Compile Include="WebApiService\SDMService\SysMenuItemF.cs" />
+    <Compile Include="WebApiService\SDMService\SDMFacade.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SDMService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TMSService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="WebApiService\Base\IObjectFacade.cs" />
+    <Compile Include="WebApiService\WMSService\WmsAllocationInfoF.cs" />
+    <Compile Include="WebApiService\WMSService\WmsAreaInfoF.cs" />
+    <Compile Include="WebApiService\WMSService\WMSFacade.cs" />
+    <Compile Include="WebApiService\WMSService\WmsInvOperateF.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\BFM.Common.Base\BFM.Common.Base.csproj">
+      <Project>{31B1498B-91FB-43B4-B4E7-EE3911072D93}</Project>
+      <Name>BFM.Common.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.ContractModel\BFM.ContractModel.csproj">
+      <Project>{d65e3c3e-0f32-426b-a60c-42485ad5110e}</Project>
+      <Name>BFM.ContractModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\BFM.ContractModel.AmAssetMasterN.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.AmPartsMasterN.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.DAAlarmRecord.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.DAMachineRealTimeInfo.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.DAProductRecord.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.DAStatusRecord.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.FmsActionControl.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.FmsActionFormulaDetail.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.FmsActionFormulaMain.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.FmsAssetCommParam.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.FmsAssetTagSetting.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.FmsSamplingRecord.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.FmsStateResultRecord.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.FmsTagCalculation1.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.MesJobOrder.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.MesProcessCtrol.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.MesProductProcess.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.PmPlanMaster.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.PmTaskLine.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.PmTaskMaster.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.QmsCheckMaster.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.QmsCheckParam.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.QmsRoutingCheck.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.QmsTest.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RmRepairRecord.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsBom.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsEquipMaster.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsFactory.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsItemMaster.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsLine.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsLineProduct.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsLineStation.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsMaintainRecord.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsMaintainStandards.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsMaintainStandardsDetail.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsMaintainStandardsRelate.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsRoutingCheck.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsRoutingDetail.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsRoutingEquip.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsRoutingHead.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsRoutingItem.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsRoutingParam.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsRoutingTools.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsWorkCenter.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsWorkSchedule.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.RsWorkShop.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysAppInfo.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysAttachInfo.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysDepartment.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysEnumItems.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysEnumMain.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysMenuItem.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysMenuPurview.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysPurview.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysRole.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysRolePurview.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysRoleUser.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysTableNOSetting.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysUser.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysUserMenu.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.SysUserPurview.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.TestEFCodeFirst.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.TmsDeviceToolsPos.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.TmsToolsMaster.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.TmsToolsType.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.WmsAllocationInfo.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.WmsAreaInfo.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.WmsInventory.datasource" />
+    <None Include="Properties\DataSources\BFM.ContractModel.WmsInvOperate.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DAService\DAService.wsdl" />
+    <None Include="Service References\DAService\DAService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DAService\DAService1.wsdl" />
+    <None Include="Service References\DAService\DAService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DAService\DAService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DAService\DAService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EAMService\EAMService.wsdl" />
+    <None Include="Service References\EAMService\EAMService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EAMService\EAMService1.wsdl" />
+    <None Include="Service References\EAMService\EAMService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EAMService\EAMService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EAMService\EAMService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FMSService\FMSService.wsdl" />
+    <None Include="Service References\FMSService\FMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FMSService\FMSService1.wsdl" />
+    <None Include="Service References\FMSService\FMSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FMSService\FMSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FMSService\FMSService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PLMService\PLMService.wsdl" />
+    <None Include="Service References\PLMService\PLMService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PLMService\PLMService1.wsdl" />
+    <None Include="Service References\PLMService\PLMService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PLMService\PLMService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PLMService\PLMService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QMSService\QMSService.wsdl" />
+    <None Include="Service References\QMSService\QMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QMSService\QMSService1.wsdl" />
+    <None Include="Service References\QMSService\QMSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QMSService\QMSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QMSService\QMSService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RSMService\RSMService.wsdl" />
+    <None Include="Service References\RSMService\RSMService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RSMService\RSMService1.wsdl" />
+    <None Include="Service References\RSMService\RSMService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RSMService\RSMService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RSMService\RSMService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SDMService\SDMService.wsdl" />
+    <None Include="Service References\SDMService\SDMService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SDMService\SDMService1.wsdl" />
+    <None Include="Service References\SDMService\SDMService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SDMService\SDMService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SDMService\SDMService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SQLService\SQLService.wsdl" />
+    <None Include="Service References\SQLService\SQLService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SQLService\SQLService1.wsdl" />
+    <None Include="Service References\SQLService\SQLService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SQLService\SQLService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SQLService\SQLService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SQLService\SQLService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TMSService\TMSService.wsdl" />
+    <None Include="Service References\TMSService\TMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TMSService\TMSService1.wsdl" />
+    <None Include="Service References\TMSService\TMSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TMSService\TMSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TMSService\TMSService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WMSService\WMSService.wsdl" />
+    <None Include="Service References\WMSService\WMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WMSService\WMSService1.wsdl" />
+    <None Include="Service References\WMSService\WMSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WMSService\WMSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WMSService\WMSService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DAService\" />
+    <WCFMetadataStorage Include="Service References\EAMService\" />
+    <WCFMetadataStorage Include="Service References\FMSService\" />
+    <WCFMetadataStorage Include="Service References\PLMService\" />
+    <WCFMetadataStorage Include="Service References\QMSService\" />
+    <WCFMetadataStorage Include="Service References\RSMService\" />
+    <WCFMetadataStorage Include="Service References\SDMService\" />
+    <WCFMetadataStorage Include="Service References\SQLService\" />
+    <WCFMetadataStorage Include="Service References\TMSService\" />
+    <WCFMetadataStorage Include="Service References\WMSService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SDMService\SDMService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SDMService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SDMService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SDMService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TMSService\TMSService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TMSService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TMSService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TMSService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EAMService\EAMService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EAMService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EAMService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EAMService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WMSService\WMSService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WMSService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WMSService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WMSService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FMSService\FMSService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FMSService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FMSService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FMSService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RSMService\RSMService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RSMService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RSMService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RSMService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QMSService\QMSService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QMSService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QMSService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QMSService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAService\DAService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DAService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PLMService\PLMService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PLMService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PLMService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PLMService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SQLService\SQLService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SQLService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SQLService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SQLService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

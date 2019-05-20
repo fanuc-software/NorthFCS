@@ -92,8 +92,8 @@
 					<dxr:RibbonPageGroup Caption="任务管理">
 						<dxb:BarButtonItem Content="任务管理" RibbonStyle="Large" Description="BFM.WPF.PPM.Task.TaskView" Tag="BFM.WPF.PPM" Glyph="{dx:DXImage Image=Open_32x32.png}" LargeGlyph="{dx:DXImage Image=Open_32x32.png}"/>
 						<dxb:BarButtonItem Content="任务分派" RibbonStyle="Large" Description="BFM.WPF.PPM.Task.TaskAssign" Tag="BFM.WPF.PPM" Glyph="{dx:DXImage Image=Open2_32x32.png}" LargeGlyph="{dx:DXImage Image=Open2_32x32.png}"/>
-						<dxb:BarButtonItem Content="工单生成" RibbonStyle="Large" Description="BFM.WPF.PPM.Task.TaskLineView" Tag="BFM.WPF.PPM" Glyph="pack://application:,,,/DevExpress.Images.v18.2;component/DevAV/Actions/PrintIncludeEvaluations_32x32.png"/>
-						<dxb:BarButtonItem Content="工单下发" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM" Glyph="pack://application:,,,/DevExpress.Images.v18.2;component/DevAV/Actions/SortByOrderDate_32x32.png"/>
+						<dxb:BarButtonItem Content="工单生成" RibbonStyle="Large" Description="BFM.WPF.PPM.Task.TaskLineView" Tag="BFM.WPF.PPM" Glyph="pack://application:,,,/DevExpress.Images.v18.1;component/DevAV/Actions/PrintIncludeEvaluations_32x32.png"/>
+						<dxb:BarButtonItem Content="工单下发" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM" Glyph="pack://application:,,,/DevExpress.Images.v18.1;component/DevAV/Actions/SortByOrderDate_32x32.png"/>
 					</dxr:RibbonPageGroup>
 					<dxr:RibbonPageGroup Caption="高级计划与排产">
 						<dxb:BarButtonItem Content="正向排程" RibbonStyle="Large" Description="BFM.WPF.PPM.Plan.PlanView" Tag="BFM.WPF.PPM" Glyph="{dx:DXImageOffice2013 Image=BringForward_32x32.png}"/>

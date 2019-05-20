@@ -407,6 +407,10 @@
       <Project>{0f712dd6-1b1a-4c44-a3dc-887804aa3edd}</Project>
       <Name>BFM.WPF.SDM</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.SHWMS\BFM.WPF.SHWMS.csproj">
+      <Project>{50c748c0-6c06-4039-bdf1-8dd97b9f265d}</Project>
+      <Name>BFM.WPF.SHWMS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BFM.WPF.SPSS\BFM.WPF.SPSS.csproj">
       <Project>{759613e2-8cdb-4e0b-b6e5-0c4eb9630ba7}</Project>
       <Name>BFM.WPF.SPSS</Name>

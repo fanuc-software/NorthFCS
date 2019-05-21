@@ -1,0 +1,193 @@
+﻿using GalaSoft.MvvmLight;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
+namespace BFM.WPF.SHWMS.ViewModel
+{
+    public enum OrderStateEnum
+    {
+        Create,
+        Executing,
+        Finish
+    }
+
+    public enum OrderCommandEnum
+    {
+        Remove,
+        Cancel,
+        Start,
+        Pause,
+        Continue
+
+    }
+    public class OrderViewModel : ViewModelBase
+    {
+        public string OrderID { get; set; }
+
+        public string CreateTime { get; set; }
+
+        private OrderStateEnum state;
+
+        public OrderStateEnum Sate
+        {
+            get { return state; }
+            set
+            {
+                state = value;
+                StateInfo = state == OrderStateEnum.Create ? "新订单" : state == OrderStateEnum.Executing ? "执行中" : "已完成";
+            }
+        }
+
+
+
+        private string context;
+
+        public string Context
+        {
+            get { return context; }
+            set
+            {
+                if (context != value)
+                {
+                    context = value;
+                    RaisePropertyChanged(() => Context);
+                }
+            }
+        }
+
+        private string stateInfo;
+
+        public string StateInfo
+        {
+            get { return stateInfo; }
+            set
+            {
+                if (stateInfo != value)
+                {
+                    stateInfo = value;
+                    RaisePropertyChanged(() => StateInfo);
+                }
+            }
+        }
+
+        public List<OrderItemViewModel> Items { get; set; } = new List<OrderItemViewModel>();
+
+        public OrderViewModel Self { get { return this; } }
+
+        public override string ToString()
+        {
+            Context = Items.Aggregate("", (s, n) => $"{s} {n}");
+            return Context;
+        }
+
+
+        public ICommand OrderCommand
+        {
+            get
+            {
+                return new RelayCommand<OrderCommandEnum>(s =>
+                {
+                    OrderCommandEvent?.Invoke(s, this);
+                });
+            }
+        }
+
+        public event Action<OrderCommandEnum, OrderViewModel> OrderCommandEvent;
+
+    }
+
+
+    public class OrderItemViewModel : ViewModelBase, ICloneable
+    {
+        private const int MaxCount = 10;
+
+        public string ItemID { get; set; }
+
+        public string Name { get; set; }
+
+
+        public string IconPath { get; set; }
+
+
+        private int count;
+
+        public int Count
+        {
+            get { return count; }
+            set
+            {
+                if (count != value)
+                {
+                    count = value;
+                    RaisePropertyChanged(() => Count);
+                }
+            }
+        }
+
+
+        private int currentCount;
+
+        public int CurrentCount
+        {
+            get { return currentCount; }
+            set
+            {
+                if (currentCount != value)
+                {
+                    currentCount = value;
+                    RaisePropertyChanged(() => CurrentCount);
+                }
+            }
+        }
+
+        public ICommand ItemOperaCommand
+        {
+            get
+            {
+                return new RelayCommand<int>(s =>
+                {
+                    var temp = Count ;
+                    temp += s;
+                    if (temp > MaxCount)
+                    {
+                        Count = MaxCount;
+                    }
+                    else if (temp < 0)
+                    {
+                        Count = 0;
+                    }
+                    else {
+                        Count += s;
+                    }
+                     
+                });
+            }
+        }
+
+
+        public void Init()
+        {
+            Count = 0;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}: {CurrentCount}/{Count}";
+        }
+
+        public object Clone()
+        {
+            return new OrderItemViewModel()
+            {
+                Count = Count,
+                ItemID = ItemID,
+                IconPath = IconPath,
+                Name = Name
+            };
+        }
+    }
+}

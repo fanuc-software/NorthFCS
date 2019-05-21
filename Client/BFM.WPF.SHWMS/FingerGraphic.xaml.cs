@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BFM.WPF.SHWMS.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,28 @@ namespace BFM.WPF.SHWMS
     /// </summary>
     public partial class FingerGraphic : Page
     {
+        MainJobViewModel mainJobViewModel;
         public FingerGraphic()
         {
             InitializeComponent();
+            mainJobViewModel = new MainJobViewModel();
+            this.Loaded += FingerGraphic_Loaded;
+            mainJobViewModel.StartJobEvent += MainJobViewModel_StartJobEvent;
+            mainJobViewModel.JobOperationEvent += MainJobViewModel_JobOperationEvent;
+        }
+
+        private void MainJobViewModel_JobOperationEvent(JobWorkEnum arg1, string arg2)
+        {
+
+        }
+
+        private void MainJobViewModel_StartJobEvent(OrderViewModel obj)
+        {
+        }
+
+        private void FingerGraphic_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = mainJobViewModel;
         }
     }
 }

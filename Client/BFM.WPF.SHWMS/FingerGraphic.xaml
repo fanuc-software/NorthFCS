@@ -9,6 +9,6 @@
       Title="FingerGraphic">
 
     <Grid>
-        <TextBlock Text="Hello world" />
+        <Label Content="h1. Bootstrap heading" Style="{DynamicResource h1}"></Label>
     </Grid>
 </Page>

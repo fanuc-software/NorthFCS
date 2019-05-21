@@ -19,10 +19,7 @@ namespace BFM.WPF.SHWMS.ViewModel
 
         public ObservableCollection<OrderViewModel> OrderNodes { get; set; } = new ObservableCollection<OrderViewModel>();
 
-
         public List<OrderItemViewModel> OrderItems { get; set; } = new List<OrderItemViewModel>();
-
-
 
         public event Action<JobWorkEnum, string> JobOperationEvent;
 
@@ -58,7 +55,6 @@ namespace BFM.WPF.SHWMS.ViewModel
                 });
             }
         }
-
 
         private void Order_OrderCommandEvent(OrderCommandEnum arg1, OrderViewModel arg2)
         {

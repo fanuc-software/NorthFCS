@@ -70,6 +70,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Service\JobService.cs" />
+    <Compile Include="ViewModel\ImageConvert.cs" />
     <Compile Include="ViewModel\MainJobViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\OrderViewModel.cs" />
@@ -182,54 +184,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SHImage\Logo.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\兔.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\六方体.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\牛.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\狗.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\猪.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\猴.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\羊.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\芯轴.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\虎.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\蛇.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\装配单元1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\马.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\鸡.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\鼠.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SHImage\龙.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="SHImage\Logo.png" />
+    <Resource Include="SHImage\兔.png" />
+    <Resource Include="SHImage\六方体.png" />
+    <Resource Include="SHImage\牛.png" />
+    <Resource Include="SHImage\狗.png" />
+    <Resource Include="SHImage\猪.png" />
+    <Resource Include="SHImage\猴.png" />
+    <Resource Include="SHImage\羊.png" />
+    <Resource Include="SHImage\芯轴.png" />
+    <Resource Include="SHImage\虎.png" />
+    <Resource Include="SHImage\蛇.png" />
+    <Resource Include="SHImage\装配单元1.png" />
+    <Resource Include="SHImage\马.png" />
+    <Resource Include="SHImage\鸡.png" />
+    <Resource Include="SHImage\鼠.png" />
+    <Resource Include="SHImage\龙.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

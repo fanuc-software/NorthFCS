@@ -74,6 +74,23 @@ namespace BFM.WPF.SHWMS.ViewModel
             }
         }
 
+
+        private int progress;
+
+        public int Progress
+        {
+            get { return progress; }
+            set
+            {
+                if (progress != value)
+                {
+                    progress = value;
+                    RaisePropertyChanged(() => Progress);
+                }
+            }
+        }
+
+
         public List<OrderItemViewModel> Items { get; set; } = new List<OrderItemViewModel>();
 
         public OrderViewModel Self { get { return this; } }
@@ -95,7 +112,33 @@ namespace BFM.WPF.SHWMS.ViewModel
                 });
             }
         }
+        public int CurrentTotal { get; set; }
+        public int TotalProgress { get; set; }
+        public void StartJob()
+        {
+            TotalProgress = Items.Sum(d => d.Count);
+            Sate = OrderStateEnum.Executing;
 
+            OrderCommandEvent?.Invoke(OrderCommandEnum.Start, this);
+
+        }
+
+        public bool WorkItem(OrderItemViewModel model)
+        {
+            if (model.CurrentCount == model.Count)
+            {
+
+                return false;
+            }
+            model.CurrentCount++;
+            CurrentTotal++;
+            Progress = Convert.ToInt32(CurrentTotal * 100.0 / TotalProgress);
+            if (CurrentTotal == TotalProgress)
+            {
+                Sate = OrderStateEnum.Finish;
+            }
+            return true;
+        }
         public event Action<OrderCommandEnum, OrderViewModel> OrderCommandEvent;
 
     }
@@ -148,9 +191,10 @@ namespace BFM.WPF.SHWMS.ViewModel
         {
             get
             {
-                return new RelayCommand<int>(s =>
+                return new RelayCommand<object>(d =>
                 {
-                    var temp = Count ;
+                    var s = Convert.ToInt32(d);
+                    var temp = Count;
                     temp += s;
                     if (temp > MaxCount)
                     {
@@ -160,10 +204,11 @@ namespace BFM.WPF.SHWMS.ViewModel
                     {
                         Count = 0;
                     }
-                    else {
+                    else
+                    {
                         Count += s;
                     }
-                     
+
                 });
             }
         }

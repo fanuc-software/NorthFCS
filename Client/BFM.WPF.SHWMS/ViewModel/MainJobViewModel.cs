@@ -45,13 +45,14 @@ namespace BFM.WPF.SHWMS.ViewModel
                     };
                     order.OrderCommandEvent += Order_OrderCommandEvent;
                     OrderNodes.Add(order);
-
                     items.ForEach(d =>
                     {
                         order.Items.Add(d.Clone() as OrderItemViewModel);
                     });
-                    JobOperationEvent?.Invoke(JobWorkEnum.Success, "订单添加成功！");
+                    order.ToString();
 
+                    JobOperationEvent?.Invoke(JobWorkEnum.Success, "订单添加成功！");
+                    OrderItems.ForEach(d => d.Init());
                 });
             }
         }
@@ -80,7 +81,7 @@ namespace BFM.WPF.SHWMS.ViewModel
 
                     Name = d,
                     ItemID = Guid.NewGuid().ToString(),
-                    IconPath = $"SHImage/{d}.png"
+                    IconPath = $"./SHImage/{d}.png"
                 });
             });
         }

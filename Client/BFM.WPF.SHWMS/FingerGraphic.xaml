@@ -3,12 +3,157 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Converter="clr-namespace:BFM.WPF.SHWMS.ViewModel"
+      
       xmlns:local="clr-namespace:BFM.WPF.SHWMS"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="850" d:DesignWidth="800"
       Title="FingerGraphic">
-
+    <Page.Resources>
+        <Converter:ImageConvert x:Key="imageConvert"/>
+        
+    </Page.Resources>
     <Grid>
-        <Label Content="h1. Bootstrap heading" Style="{DynamicResource h1}"></Label>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ContentControl Style="{StaticResource panel-default}">
+            
+            <StackPanel>
+                
+                <ContentControl Style="{StaticResource panel-heading-primary}" Content="订单列表"/>
+
+                <ContentControl Style="{StaticResource panel-body}"  >
+                    <DataGrid HorizontalScrollBarVisibility="Auto" AutoGenerateColumns="False" Height="500" RowHeight="80" IsReadOnly="True" ColumnWidth="*"  CanUserReorderColumns="False" CanUserResizeColumns="False" Width="Auto" ItemsSource="{Binding OrderNodes}" CanUserAddRows="False">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding OrderID}" Header="编号" ElementStyle="{StaticResource DataGridTextCenter}"/>
+                            <DataGridTextColumn Binding="{Binding CreateTime}" Header="创建时间" ElementStyle="{StaticResource DataGridTextCenter}"/>
+                            <DataGridTextColumn Binding="{Binding StateInfo}" Header="状态" ElementStyle="{StaticResource DataGridTextCenter}"/>
+                            <!--<DataGridTextColumn Binding="{Binding Context}" Header="详情" ElementStyle="{StaticResource DataGridTextCenter}"/>-->
+                            <DataGridTemplateColumn Header="详情" Width="*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <ItemsControl ItemsSource="{Binding Items}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel />
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid Margin="0,2,5,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="50" />
+                                                                <ColumnDefinition Width="70"/>
+                                                            </Grid.ColumnDefinitions>
+
+                                                            <Image  Width="50" Stretch="Uniform"  Source="{Binding Path=Name,Converter={StaticResource imageConvert}}" />
+                                                            <WrapPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                                <Label Content="{Binding CurrentCount}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
+                                                                <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
+                                                                <Label Content="{Binding Count}" FontSize="14" Style="{DynamicResource code}" Background="#D9534f" Foreground="White"></Label>
+
+                                                            </WrapPanel>
+
+
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                            <ProgressBar Margin="0,4,0,0" Value="{Binding Progress}" Width="Auto" Style="{DynamicResource progress-bar-info}"></ProgressBar>
+
+                                        </StackPanel>
+
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="80">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <WrapPanel Margin="0,20,0,0" HorizontalAlignment="Right">
+
+                                            <!--<Button Style="{DynamicResource btn-danger}" Command="{Binding OrderCommand}" CommandParameter="{x:Static Converter:OrderCommandEnum.Remove}" >
+                                                <Button.Content>
+                                                    <Path Style="{DynamicResource glyphicon}" Data="{DynamicResource glyphicon-remove}"></Path>
+
+                                                </Button.Content>
+                                            </Button>-->
+                                        </WrapPanel>
+
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </ContentControl>
+
+            </StackPanel>
+            
+        </ContentControl>
+        <ContentControl Grid.Row="1" Style="{StaticResource panel-default}">
+
+            <StackPanel>
+
+                <ContentControl Style="{StaticResource panel-heading-primary}" Content="新建订单"/>
+
+                <ContentControl Style="{StaticResource panel-body}" >
+                    <ListBox ItemsSource="{Binding OrderItems}" Height="380">
+                     
+                        <ListBox.Template>
+                            <ControlTemplate TargetType="{x:Type ListBox}">
+                                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                    <WrapPanel Orientation="Horizontal" IsItemsHost="True"  ScrollViewer.CanContentScroll="True"/>
+
+                                </ScrollViewer>
+                                
+                            </ControlTemplate>
+                            
+                            
+                        </ListBox.Template>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                               
+
+                                    <Image Height="150" Width="150" Stretch="Fill" Source="{Binding Path=Name,Converter={StaticResource imageConvert}}" />
+                                    <WrapPanel HorizontalAlignment="Center">
+                                        <Button Style="{DynamicResource btn-primary}" Command="{Binding ItemOperaCommand}" CommandParameter="-1">
+                                            <Button.Content>
+                                                <Path Style="{DynamicResource glyphicon}" Data="{DynamicResource glyphicon-minus}"></Path>
+                                            </Button.Content>
+                                        </Button>
+
+                                        <Label Content="{Binding Count}"  FontSize="20"  Style="{DynamicResource code}" Margin="5,0,5,0"></Label>
+                                        <Button Style="{DynamicResource btn-primary}" Command="{Binding ItemOperaCommand}" CommandParameter="1">
+                                            <Button.Content>
+                                                <Path Style="{DynamicResource glyphicon}" Data="{DynamicResource glyphicon-plus}"></Path>
+                                            </Button.Content>
+                                        </Button>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ContentControl>
+                <ContentControl Style="{StaticResource panel-footer-default}">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <Label HorizontalAlignment="Center" x:Name="infoLabel" Content="" Style="{DynamicResource text-warning}"></Label>
+                        <Button HorizontalAlignment="Right" Grid.Column="1" Content="提交订单" Command="{Binding AddCommand}" Style="{DynamicResource btn-primary}"></Button>
+                    </Grid>
+                </ContentControl>
+            </StackPanel>
+
+        </ContentControl>
     </Grid>
 </Page>

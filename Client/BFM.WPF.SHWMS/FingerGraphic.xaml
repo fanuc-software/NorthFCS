@@ -50,11 +50,11 @@
                                                     <ColumnDefinition Width="70"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <Image  Width="50" Stretch="Uniform"  Source="{Binding Path=LatheOne.ID,Converter={StaticResource imageConvert}}" />
+                                                <Image  Width="50" Stretch="Uniform"  Source="{Binding Path=VMOne.ID,Converter={StaticResource imageConvert}}" />
                                                 <WrapPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                                    <Label Content="{Binding LatheOne.CurrentValue}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
+                                                    <Label Content="{Binding VMOne.CurrentValue}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
                                                     <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
-                                                    <Label Content="{Binding LatheOne.Count}" FontSize="14" Style="{DynamicResource code}" Background="#D9534f" Foreground="White"></Label>
+                                                    <Label Content="{Binding VMOne.Count}" FontSize="14" Style="{DynamicResource code}" Background="#D9534f" Foreground="White"></Label>
 
                                                 </WrapPanel>
 

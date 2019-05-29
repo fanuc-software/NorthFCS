@@ -208,6 +208,10 @@
       <Project>{31b1498b-91fb-43b4-b4e7-ee3911072d93}</Project>
       <Name>BFM.Common.Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Common\BFM.Common.DeviceAsset\BFM.Common.DeviceAsset.csproj">
+      <Project>{dff3af8f-434d-43d8-ba91-4f0bf47b8e40}</Project>
+      <Name>BFM.Common.DeviceAsset</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Contract\BFM.ContractModel\BFM.ContractModel.csproj">
       <Project>{d65e3c3e-0f32-426b-a60c-42485ad5110e}</Project>
       <Name>BFM.ContractModel</Name>

@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using BFM.Common.DeviceAsset;
+using System.Threading;
+
 namespace BFM.WPF.SHWMS.ViewModel
 {
     public enum OrderStateEnum
@@ -102,7 +105,7 @@ namespace BFM.WPF.SHWMS.ViewModel
         }
 
 
-        public LatheViewModel LatheOne { get; set; }
+        public LatheViewModel VMOne { get; set; }
 
         public LatheViewModel LatheTwo { get; set; }
         public ICommand OrderCommand
@@ -123,9 +126,10 @@ namespace BFM.WPF.SHWMS.ViewModel
             Sate = OrderStateEnum.Executing;
 
             OrderCommandEvent?.Invoke(OrderCommandEnum.Start, this);
-            
 
         }
+
+
 
         public bool WorkItem(OrderItemViewModel model)
         {
@@ -245,6 +249,8 @@ namespace BFM.WPF.SHWMS.ViewModel
     {
         public string ID { get; set; }
 
+        public string IP { get; set; }
+
         public int DeviceInitValue { get; set; }
 
 
@@ -299,6 +305,51 @@ namespace BFM.WPF.SHWMS.ViewModel
 
         public int Count { get; set; }
 
+        public void  StartMachiningCount()
+        {
+
+            //获得加工数量的初始值
+            int cout = 0;
+            GetTotalMachiningCount(IP, ref cout);
+            DeviceInitValue = cout;
+
+            Task.Factory.StartNew(() =>
+            {
+
+                while (Progress <= 100)
+                {
+                    Thread.Sleep(2000);
+                    cout = 0;
+                   var res= GetTotalMachiningCount(IP, ref cout);
+                    if (res == 0)
+                    {
+                        DeviceCurrentValue = cout;
+
+                    }
+                }
+            });
+        }
+
+        private short GetTotalMachiningCount(string ip, ref int cout)
+        {
+            ushort flib;
+            short ret = Focas1.cnc_allclibhndl3(ip, 8193, 10, out flib);
+            if (ret != 0) return ret;
+
+            Focas1.IODBPSD_1 buf = new Focas1.IODBPSD_1();
+            ret = Focas1.cnc_rdparam(flib, 6712, 0, 8, buf);
+            if (ret != 0)
+            {
+                Focas1.cnc_freelibhndl(flib);
+                return ret;
+            }
+
+            cout = buf.idata;
+
+            Focas1.cnc_freelibhndl(flib);
+            return 0;
+
+        }
 
     }
 

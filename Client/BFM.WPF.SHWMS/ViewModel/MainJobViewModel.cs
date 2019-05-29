@@ -42,8 +42,8 @@ namespace BFM.WPF.SHWMS.ViewModel
                         CreateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                         Sate = OrderStateEnum.Create,
                         OrderID = Guid.NewGuid().ToString(),
-                        LatheOne = new LatheViewModel() { ID = "Lathe1" },
-                        LatheTwo = new LatheViewModel() { ID = "Lathe2" }
+                        VMOne = new LatheViewModel() { ID = "Lathe1",IP="192.168.0.232" },
+                        LatheTwo = new LatheViewModel() { ID = "Lathe2", IP = "192.168.0.231" }
                     };
                     order.OrderCommandEvent += Order_OrderCommandEvent;
                     OrderNodes.Add(order);
@@ -51,10 +51,11 @@ namespace BFM.WPF.SHWMS.ViewModel
                     {
                         order.Items.Add(d.Clone() as OrderItemViewModel);
                     });
-                    order.LatheOne.Count = order.Items.Sum(d => d.Count);
+                    order.VMOne.Count = order.Items.Sum(d => d.Count);
                     order.LatheTwo.Count = order.Items.Sum(d => d.Count);
                     order.ToString();
-
+                    order.VMOne.StartMachiningCount();
+                    order.LatheTwo.StartMachiningCount();
                     JobOperationEvent?.Invoke(JobWorkEnum.Success, "订单添加成功！");
                     OrderItems.ForEach(d => d.Init());
                 });

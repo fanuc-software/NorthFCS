@@ -102,6 +102,9 @@ namespace BFM.WPF.SHWMS.ViewModel
         }
 
 
+        public LatheViewModel LatheOne { get; set; }
+
+        public LatheViewModel LatheTwo { get; set; }
         public ICommand OrderCommand
         {
             get
@@ -120,6 +123,7 @@ namespace BFM.WPF.SHWMS.ViewModel
             Sate = OrderStateEnum.Executing;
 
             OrderCommandEvent?.Invoke(OrderCommandEnum.Start, this);
+            
 
         }
 
@@ -234,5 +238,77 @@ namespace BFM.WPF.SHWMS.ViewModel
                 Name = Name
             };
         }
+    }
+
+
+    public class LatheViewModel : ViewModelBase
+    {
+        public string ID { get; set; }
+
+        public int DeviceInitValue { get; set; }
+
+
+        private int deviceCurrentValue;
+
+        public int DeviceCurrentValue
+        {
+            get { return deviceCurrentValue; }
+            set
+            {
+                deviceCurrentValue = value;
+                CurrentValue = deviceCurrentValue - DeviceInitValue;
+            }
+        }
+
+
+
+        private int currentValue;
+
+        public int CurrentValue
+        {
+            get { return currentValue; }
+            set
+            {
+                if (currentValue != value)
+                {
+                    currentValue = value;
+                    Progress = (int)(currentValue * 100.0 / Count);
+                    RaisePropertyChanged(() => CurrentValue);
+
+                }
+            }
+        }
+
+
+        private int progress;
+
+        public int Progress
+        {
+            get { return progress; }
+            set
+            {
+                if (progress != value)
+                {
+                    progress = value;
+                    RaisePropertyChanged(() => Progress);
+
+                }
+            }
+        }
+
+
+        public int Count { get; set; }
+
+
+    }
+
+
+    public class LatheNode
+    {
+        public string ID { get; set; }
+
+        public int InitValue { get; set; }
+
+        public int CurrentValue { get; set; }
     }
 }

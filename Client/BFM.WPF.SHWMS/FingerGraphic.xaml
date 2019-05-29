@@ -32,7 +32,57 @@
                             <DataGridTextColumn Binding="{Binding CreateTime}" Header="创建时间" ElementStyle="{StaticResource DataGridTextCenter}"/>
                             <DataGridTextColumn Binding="{Binding StateInfo}" Header="状态" ElementStyle="{StaticResource DataGridTextCenter}"/>
                             <!--<DataGridTextColumn Binding="{Binding Context}" Header="详情" ElementStyle="{StaticResource DataGridTextCenter}"/>-->
-                            <DataGridTemplateColumn Header="详情" Width="*">
+                            <DataGridTemplateColumn Header="加工进度" Width="*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="140" />
+                                                <ColumnDefinition Width="140" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="50" />
+                                                    <ColumnDefinition Width="70"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Image  Width="50" Stretch="Uniform"  Source="{Binding Path=LatheOne.ID,Converter={StaticResource imageConvert}}" />
+                                                <WrapPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                    <Label Content="{Binding LatheOne.CurrentValue}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
+                                                    <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
+                                                    <Label Content="{Binding LatheOne.Count}" FontSize="14" Style="{DynamicResource code}" Background="#D9534f" Foreground="White"></Label>
+
+                                                </WrapPanel>
+
+                                            </Grid>
+                                            <Grid  Grid.Column="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="50" />
+                                                    <ColumnDefinition Width="70"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Image  Width="50" Stretch="Uniform"  Source="{Binding Path=LatheTwo.ID,Converter={StaticResource imageConvert}}" />
+                                                <WrapPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                    <Label Content="{Binding LatheTwo.CurrentValue}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
+                                                    <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
+                                                    <Label Content="{Binding LatheTwo.Count}" FontSize="14" Style="{DynamicResource code}" Background="#D9534f" Foreground="White"></Label>
+
+                                                </WrapPanel>
+
+                                            </Grid>
+
+                                            <ProgressBar Grid.Row="1" Grid.ColumnSpan="2"  Value="{Binding LatheTwo.Progress}" Width="Auto" Style="{DynamicResource progress-bar-info}"></ProgressBar>
+
+                                        </Grid>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="打印进度" Width="*">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel>

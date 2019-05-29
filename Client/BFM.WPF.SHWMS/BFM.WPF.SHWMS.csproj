@@ -8,11 +8,12 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>BFM.WPF.SHWMS</RootNamespace>
     <AssemblyName>BFM.WPF.SHWMS</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,6 +71,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Service\GenerateMachiningTask.cs" />
     <Compile Include="Service\JobService.cs" />
     <Compile Include="ViewModel\ImageConvert.cs" />
     <Compile Include="ViewModel\MainJobViewModel.cs" />
@@ -200,6 +202,32 @@
     <Resource Include="SHImage\鸡.png" />
     <Resource Include="SHImage\鼠.png" />
     <Resource Include="SHImage\龙.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\BFM.Common.Base\BFM.Common.Base.csproj">
+      <Project>{31b1498b-91fb-43b4-b4e7-ee3911072d93}</Project>
+      <Name>BFM.Common.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.ContractModel\BFM.ContractModel.csproj">
+      <Project>{d65e3c3e-0f32-426b-a60c-42485ad5110e}</Project>
+      <Name>BFM.ContractModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Contract\BFM.Server.DataAsset\BFM.Server.DataAsset.csproj">
+      <Project>{533cd39a-c244-47c7-a11a-0aa70bf3d551}</Project>
+      <Name>BFM.Server.DataAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.FMS\BFM.WPF.FMS.csproj">
+      <Project>{36f7e0e2-ee4a-48b5-9891-5b434d37516a}</Project>
+      <Name>BFM.WPF.FMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BFM.WPF.SDM\BFM.WPF.SDM.csproj">
+      <Project>{0f712dd6-1b1a-4c44-a3dc-887804aa3edd}</Project>
+      <Name>BFM.WPF.SDM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SHImage\Lathe2.png" />
+    <Resource Include="SHImage\Lathe1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

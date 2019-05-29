@@ -25,6 +25,18 @@ namespace BFM.WPF.SHWMS.ViewModel
 
         public event Action<OrderViewModel> StartJobEvent;
 
+
+        public ICommand CycleStartCommand
+        {
+
+            get
+            {
+                return new RelayCommand(() =>
+                {
+
+                });
+            }
+        }
         public ICommand AddCommand
         {
             get
@@ -42,7 +54,7 @@ namespace BFM.WPF.SHWMS.ViewModel
                         CreateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                         Sate = OrderStateEnum.Create,
                         OrderID = Guid.NewGuid().ToString(),
-                        VMOne = new LatheViewModel() { ID = "Lathe1",IP="192.168.0.232" },
+                        VMOne = new LatheViewModel() { ID = "Lathe1", IP = "192.168.0.232" },
                         LatheTwo = new LatheViewModel() { ID = "Lathe2", IP = "192.168.0.231" }
                     };
                     order.OrderCommandEvent += Order_OrderCommandEvent;

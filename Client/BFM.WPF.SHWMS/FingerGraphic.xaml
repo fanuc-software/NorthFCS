@@ -25,7 +25,7 @@
                 <ContentControl Style="{StaticResource panel-heading-primary}" Content="订单列表"/>
 
                 <ContentControl Style="{StaticResource panel-body}"  >
-                    <DataGrid HorizontalScrollBarVisibility="Auto" AutoGenerateColumns="False" Height="500" RowHeight="80" IsReadOnly="True" ColumnWidth="*"  CanUserReorderColumns="False" CanUserResizeColumns="False" Width="Auto" ItemsSource="{Binding OrderNodes}" CanUserAddRows="False">
+                    <DataGrid HorizontalScrollBarVisibility="Auto" AutoGenerateColumns="False" Height="420" RowHeight="80" IsReadOnly="True" ColumnWidth="*"  CanUserReorderColumns="False" CanUserResizeColumns="False" Width="Auto" ItemsSource="{Binding OrderNodes}" CanUserAddRows="False">
 
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding OrderID}" Header="编号" ElementStyle="{StaticResource DataGridTextCenter}"/>
@@ -143,7 +143,21 @@
                     </DataGrid>
 
                 </ContentControl>
+                <ContentControl Style="{StaticResource panel-footer-default}">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="200" />
+                        </Grid.ColumnDefinitions>
+                        <Label HorizontalAlignment="Center"  Content="" Style="{DynamicResource text-warning}"></Label>
+                        <WrapPanel Grid.Column="1" HorizontalAlignment="Right">
+                            <Button Content="循环停止"  Style="{DynamicResource btn-danger}" Margin="0,0,10,0"></Button>
 
+                            <Button Content="循环启动" Command="{Binding CycleStartCommand}" Style="{DynamicResource btn-primary}"></Button>
+                        </WrapPanel>
+                  
+                    </Grid>
+                </ContentControl>
             </StackPanel>
             
         </ContentControl>

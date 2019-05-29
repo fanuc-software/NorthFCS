@@ -103,7 +103,7 @@
                     </dxlc:LayoutItem>
                     <!--<controls:ImageButtonWithIcon Content="独立下单" IsEnabled="{Binding Path=ActionType, Converter={StaticResource ToBoolConverter}, ConverterParameter='11'}" Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico" HorizontalAlignment="Left" Width="300" Height="80" FontSize="25" Click="Btn_AssemblyClick" Margin="122,0,-122,0" />-->
                     <controls:ImageButtonWithIcon Content="开始流程" IsEnabled="{Binding Path=ActionType, Converter={StaticResource ToBoolConverter}, ConverterParameter='11'}" Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico" HorizontalAlignment="Left" Width="300" Height="80" FontSize="25" Click="Btn_StartClick" Margin="122,0,-122,0" />
-                    <controls:ImageButtonWithIcon Content="开始流程(无装配单元)" IsEnabled="{Binding Path=ActionType, Converter={StaticResource ToBoolConverter}, ConverterParameter='11'}" Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico" HorizontalAlignment="Left" Width="300" Height="80" FontSize="25" Click="Btn_Start2Click" Margin="122,0,-122,0" />
+                    <controls:ImageButtonWithIcon Content="开始流程(无装配单元)" IsEnabled="{Binding Path=ActionType, Converter={StaticResource ToBoolConverter}, ConverterParameter='11'}" Icon="/BFM.WPF.SDM;component/Images/1.ico" SelectedIcon="/BFM.WPF.SDM;component/Images/16.ico" HorizontalAlignment="Left" Width="300" Height="80" FontSize="25" Click="MyBtn_Start2Click" Margin="122,0,-122,0" />
 
                 </dxlc:LayoutGroup>
 

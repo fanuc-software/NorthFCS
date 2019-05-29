@@ -274,11 +274,17 @@ namespace BFM.WPF.FMS
                             .OrderBy(c => c.CREATION_DATE)
                             .ToList();
 
+
+                    var cnc_safe = new CncSafeAndCommunication();
                     if (allJobs.Count <= 0)
                     {
+                        cnc_safe.SendDeviceProcessContolEmptyJobStateToSavePool(true);
+
                         Thread.Sleep(200);  //暂停200ms
                         continue;
                     }
+                    
+                    cnc_safe.SendDeviceProcessContolEmptyJobStateToSavePool(false);
 
                     //统计总的数量
                     int taskSum = Convert.ToInt32(allJobs.Sum(c => c.TASK_QTY)); //计划数量
@@ -1260,11 +1266,12 @@ namespace BFM.WPF.FMS
                     continue;
                 }
                 new FMSControlService(linePKNO).Run();
+                #endregion
             }
             Console.WriteLine("!!!!!!!!!!!控制程序停止运行!!!!!!!!!!!!!!!");
 
         }
-        #endregion
+        
 
         #region 处理业务流程 curProcess
 
@@ -1664,7 +1671,8 @@ namespace BFM.WPF.FMS
             return $"动态文本【{text}】设置不正确.";
         }
 
-        #endregion 
+        #endregion
+
     }
 }
 #endregion

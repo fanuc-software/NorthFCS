@@ -120,6 +120,7 @@
     <Compile Include="CNCProgramView.xaml.cs">
       <DependentUpon>CNCProgramView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CncSafeAndCommunication.cs" />
     <Compile Include="ConfirmProductionView.xaml.cs">
       <DependentUpon>ConfirmProductionView.xaml</DependentUpon>
     </Compile>

@@ -220,10 +220,7 @@ namespace BFM.WPF.WMS
                 #endregion
 
                 #endregion
-
-
-
-
+                
                 DeviceProcessControl.PauseByLine(CBaseData.CurLinePKNO); //暂停，防止任务直接执行
 
                 #region 保存数据
@@ -459,9 +456,7 @@ namespace BFM.WPF.WMS
                 #endregion
 
                 #region 3.加工中心上料
-
-
-
+                
                 job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
                 jobOrders.Add(job);
 
@@ -493,39 +488,39 @@ namespace BFM.WPF.WMS
 
                 #endregion
 
-                #region 4.1.AGV充电
-
-
-
-                job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
-                jobOrders.Add(job);
-
-                #region --设定参数--
-
-                ParamValues.Clear();
-                ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                                                         //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
-
-                #endregion
-
-                sFormulaCode = "AGV充电";
-
-                #region 形成过程控制
-
-                formulaDetails = wsFms.UseService(s =>
-                        s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
-                    .OrderBy(c => c.PROCESS_INDEX)
-                    .ToList();
-
-                foreach (var detail in formulaDetails) //配方
+                #region 4.1.AGV充电   skip
+                if (false)
                 {
-                    MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    jobOrders.Add(job);
 
-                    processCtrols.Add(process);
+                    #region --设定参数--
+
+                    ParamValues.Clear();
+                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                                                             //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
+
+                    #endregion
+
+                    sFormulaCode = "AGV充电";
+
+                    #region 形成过程控制
+
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
+
                 }
-
-                #endregion
-
                 #endregion
 
                 #region 4.2 加工中心先下料再上料
@@ -563,37 +558,38 @@ namespace BFM.WPF.WMS
 
                 #endregion
 
-                #region 4.3.AGV充电
-
-
-
-                job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
-                jobOrders.Add(job);
-
-                #region --设定参数--
-
-                ParamValues.Clear();
-                ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
-
-                #endregion
-
-                sFormulaCode = "AGV充电";
-
-                #region 形成过程控制
-
-                formulaDetails = wsFms.UseService(s =>
-                        s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
-                    .OrderBy(c => c.PROCESS_INDEX)
-                    .ToList();
-
-                foreach (var detail in formulaDetails) //配方
+                #region 4.3.AGV充电 skip
+                if (false)
                 {
-                    MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
 
-                    processCtrols.Add(process);
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    jobOrders.Add(job);
+
+                    #region --设定参数--
+
+                    ParamValues.Clear();
+                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                                                             //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
+
+                    #endregion
+
+                    sFormulaCode = "AGV充电";
+
+                    #region 形成过程控制
+
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
                 }
-
                 #endregion
 
                 #endregion
@@ -633,40 +629,38 @@ namespace BFM.WPF.WMS
 
                 #endregion
 
-
-                #region 4.3.AGV充电
-
-
-
-                job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
-                jobOrders.Add(job);
-
-                #region --设定参数--
-
-                ParamValues.Clear();
-                ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
-
-                #endregion
-
-                sFormulaCode = "AGV充电";
-
-                #region 形成过程控制
-
-                formulaDetails = wsFms.UseService(s =>
-                        s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
-                    .OrderBy(c => c.PROCESS_INDEX)
-                    .ToList();
-
-                foreach (var detail in formulaDetails) //配方
+                #region 4.3.AGV充电 skip
+                if (false)
                 {
-                    MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    jobOrders.Add(job);
 
-                    processCtrols.Add(process);
+                    #region --设定参数--
+
+                    ParamValues.Clear();
+                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                                                             //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
+
+                    #endregion
+
+                    sFormulaCode = "AGV充电";
+
+                    #region 形成过程控制
+
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
                 }
-
-                #endregion
-
                 #endregion
 
                 #region 4.4 加工中心先下料再上料
@@ -704,45 +698,43 @@ namespace BFM.WPF.WMS
 
                 #endregion
 
-                #region 4.3.AGV充电
-
-
-
-                job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
-                jobOrders.Add(job);
-
-                #region --设定参数--
-
-                ParamValues.Clear();
-                ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
-
-                #endregion
-
-                sFormulaCode = "AGV充电";
-
-                #region 形成过程控制
-
-                formulaDetails = wsFms.UseService(s =>
-                        s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
-                    .OrderBy(c => c.PROCESS_INDEX)
-                    .ToList();
-
-                foreach (var detail in formulaDetails) //配方
+                #region 4.3.AGV充电 skip
+                if (false)
                 {
-                    MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    jobOrders.Add(job);
 
-                    processCtrols.Add(process);
+                    #region --设定参数--
+
+                    ParamValues.Clear();
+                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                                                             //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
+
+                    #endregion
+
+                    sFormulaCode = "AGV充电";
+
+                    #region 形成过程控制
+
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
+
                 }
-
-                #endregion
-
                 #endregion
 
                 #region 5.加工中心下料
-
-
-
+                
                 job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
                 jobOrders.Add(job);
 
@@ -1001,39 +993,38 @@ namespace BFM.WPF.WMS
 
                 #endregion
 
-                #region 4.1.AGV充电
-
-
-
-                job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
-                jobOrders.Add(job);
-
-                #region --设定参数--
-
-                ParamValues.Clear();
-                ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                                                         //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
-
-                #endregion
-
-                sFormulaCode = "AGV充电";
-
-                #region 形成过程控制
-
-                formulaDetails = wsFms.UseService(s =>
-                        s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
-                    .OrderBy(c => c.PROCESS_INDEX)
-                    .ToList();
-
-                foreach (var detail in formulaDetails) //配方
+                #region 4.1.AGV充电 skip
+                if (false)
                 {
-                    MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    jobOrders.Add(job);
 
-                    processCtrols.Add(process);
+                    #region --设定参数--
+
+                    ParamValues.Clear();
+                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                                                             //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
+
+                    #endregion
+
+                    sFormulaCode = "AGV充电";
+
+                    #region 形成过程控制
+
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
                 }
-
-                #endregion
-
                 #endregion
 
                 #region 4.2 加工中心先下料再上料
@@ -1071,39 +1062,38 @@ namespace BFM.WPF.WMS
 
                 #endregion
 
-                #region 4.3.AGV充电
-
-
-
-                job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
-                jobOrders.Add(job);
-
-                #region --设定参数--
-
-                ParamValues.Clear();
-                ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
-
-                #endregion
-
-                sFormulaCode = "AGV充电";
-
-                #region 形成过程控制
-
-                formulaDetails = wsFms.UseService(s =>
-                        s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
-                    .OrderBy(c => c.PROCESS_INDEX)
-                    .ToList();
-
-                foreach (var detail in formulaDetails) //配方
+                #region 4.3.AGV充电 skip
+                if (false)
                 {
-                    MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    jobOrders.Add(job);
 
-                    processCtrols.Add(process);
+                    #region --设定参数--
+
+                    ParamValues.Clear();
+                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                                                             //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
+
+                    #endregion
+
+                    sFormulaCode = "AGV充电";
+
+                    #region 形成过程控制
+
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
                 }
-
-                #endregion
-
                 #endregion
 
                 #region 4.4 加工中心先下料再上料
@@ -1141,40 +1131,41 @@ namespace BFM.WPF.WMS
 
                 #endregion
 
-
-                #region 4.3.AGV充电
-
-
-
-                job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
-                jobOrders.Add(job);
-
-                #region --设定参数--
-
-                ParamValues.Clear();
-                ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
-
-                #endregion
-
-                sFormulaCode = "AGV充电";
-
-                #region 形成过程控制
-
-                formulaDetails = wsFms.UseService(s =>
-                        s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
-                    .OrderBy(c => c.PROCESS_INDEX)
-                    .ToList();
-
-                foreach (var detail in formulaDetails) //配方
+                #region 4.3.AGV充电 skip
+                if (false)
                 {
-                    MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
 
-                    processCtrols.Add(process);
+
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    jobOrders.Add(job);
+
+                    #region --设定参数--
+
+                    ParamValues.Clear();
+                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                                                             //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
+
+                    #endregion
+
+                    sFormulaCode = "AGV充电";
+
+                    #region 形成过程控制
+
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
+
                 }
-
-                #endregion
-
                 #endregion
 
                 #region 4.4 加工中心先下料再上料
@@ -1212,39 +1203,41 @@ namespace BFM.WPF.WMS
 
                 #endregion
 
-                #region 4.3.AGV充电
-
-
-
-                job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
-                jobOrders.Add(job);
-
-                #region --设定参数--
-
-                ParamValues.Clear();
-                ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
-
-                #endregion
-
-                sFormulaCode = "AGV充电";
-
-                #region 形成过程控制
-
-                formulaDetails = wsFms.UseService(s =>
-                        s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
-                    .OrderBy(c => c.PROCESS_INDEX)
-                    .ToList();
-
-                foreach (var detail in formulaDetails) //配方
+                #region 4.3.AGV充电 skip
+                if (false)
                 {
-                    MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
 
-                    processCtrols.Add(process);
+
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    jobOrders.Add(job);
+
+                    #region --设定参数--
+
+                    ParamValues.Clear();
+                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                                                             //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
+
+                    #endregion
+
+                    sFormulaCode = "AGV充电";
+
+                    #region 形成过程控制
+
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
+
                 }
-
-                #endregion
-
                 #endregion
 
                 #region 5.加工中心下料
@@ -1316,9 +1309,7 @@ namespace BFM.WPF.WMS
                 #endregion
 
                 #endregion
-
-             
-
+                
                 DeviceProcessControl.PauseByLine(CBaseData.CurLinePKNO); //暂停，防止任务直接执行
 
                 #region 保存数据

@@ -22,34 +22,40 @@ namespace BFM.WPF.SHWMS.Service
         {
 
             var orders = mainJobViewModel.OrderNodes.Where(d => d.Sate == OrderStateEnum.Create).ToList();
-         
+
             GenerateMachiningTask generateMachiningTask = new GenerateMachiningTask();
             CncSafeAndCommunication cncSafe = new CncSafeAndCommunication();
-
-          
+            var isFinised = false;
 
             foreach (OrderViewModel item in orders)
             {
                 var totalTask = item.Items.Sum(d => d.Count);
                 int count = totalTask / MaxCount;
                 int remainder = totalTask % MaxCount;
-                count = 1;
                 item.StartJob();
+                item.VMOne.StartMachiningCount();
+                item.LatheTwo.StartMachiningCount();
+                bool isPreFinish = false;
                 for (int i = 0; i < count;)
                 {
                     var state = false;
-                    if (cncSafe.GetDeviceProcessContolEmptyJobStateFromSavePool(ref state) == 0)
+                    if (cncSafe.GetJobTaskFinishStateFromSavePool(ref isFinised) == 0)
                     {
-                        if (state)
+                        if (cncSafe.GetDeviceProcessContolEmptyJobStateFromSavePool(ref state) == 0)
                         {
-                            generateMachiningTask.GenerateMachiningTask_Piece4();
-                            i++;
+                            if (state && isFinised && !isPreFinish)
+                            {
+                                generateMachiningTask.GenerateMachiningTask_Piece4();
+                                i++;
 
+                            }
                         }
+                        isPreFinish = isFinised;
 
                     }
                     Thread.Sleep(1000);
                 }
+                item.FinishJob();
 
             }
 

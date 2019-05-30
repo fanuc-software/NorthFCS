@@ -49,6 +49,22 @@ namespace BFM.WPF.FMS
             return ret;
         }
 
+        public short GetJobTaskFinishStateFromSavePool(ref bool finish_state)
+        {
+            short ret = -1;
+            short try_count = 0;
+
+            while (ret != 0 && try_count < 5)
+            {
+                ret = ReadPmcDataByBit(12, 996, 1, ref finish_state);
+
+                try_count++;
+                if (ret != 0) Thread.Sleep(200);
+            }
+
+            return ret;
+        }
+
 
         private short WritePmcDataByBit(short type, ushort adr, ushort bit, bool data)
         {

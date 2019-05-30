@@ -8,6 +8,7 @@ using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using BFM.Common.DeviceAsset;
 using System.Threading;
+using System.Windows;
 
 namespace BFM.WPF.SHWMS.ViewModel
 {
@@ -42,6 +43,7 @@ namespace BFM.WPF.SHWMS.ViewModel
             {
                 state = value;
                 StateInfo = state == OrderStateEnum.Create ? "新订单" : state == OrderStateEnum.Executing ? "执行中" : "已完成";
+                RemoveVisibility = state == OrderStateEnum.Create ? Visibility.Visible : Visibility.Collapsed;
             }
         }
 
@@ -93,6 +95,21 @@ namespace BFM.WPF.SHWMS.ViewModel
             }
         }
 
+        private Visibility removeVisibility;
+
+        public Visibility RemoveVisibility
+        {
+            get { return removeVisibility; }
+            set
+            {
+                if (removeVisibility != value)
+                {
+                    removeVisibility = value;
+                    RaisePropertyChanged(() => RemoveVisibility);
+                }
+            }
+        }
+
 
         public List<OrderItemViewModel> Items { get; set; } = new List<OrderItemViewModel>();
 
@@ -122,15 +139,15 @@ namespace BFM.WPF.SHWMS.ViewModel
         public int TotalProgress { get; set; }
         public void StartJob()
         {
-            if (Sate != OrderStateEnum.Executing)
-            {
+            TotalProgress = Items.Sum(d => d.Count);
+            Sate = OrderStateEnum.Executing;
 
-                TotalProgress = Items.Sum(d => d.Count);
-                Sate = OrderStateEnum.Executing;
 
-              //  OrderCommandEvent?.Invoke(OrderCommandEnum.Start, this);
-            }
+        }
 
+        public void FinishJob()
+        {
+            Sate = OrderStateEnum.Finish;
 
         }
 
@@ -318,7 +335,7 @@ namespace BFM.WPF.SHWMS.ViewModel
 
             //获得加工数量的初始值
             int cout = 0;
-            var resInit=GetTotalMachiningCount(IP, ref cout);
+            var resInit = GetTotalMachiningCount(IP, ref cout);
             if (resInit == 0)
             {
                 DeviceInitValue = cout;

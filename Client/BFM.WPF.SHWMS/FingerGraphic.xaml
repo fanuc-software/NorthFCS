@@ -11,7 +11,7 @@
       Title="FingerGraphic">
     <Page.Resources>
         <Converter:ImageConvert x:Key="imageConvert"/>
-        
+
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions >
@@ -19,9 +19,9 @@
             <RowDefinition Height="400" />
         </Grid.RowDefinitions>
         <ContentControl Style="{StaticResource panel-default}">
-            
+
             <StackPanel>
-                
+
                 <ContentControl Style="{StaticResource panel-heading-primary}" Content="订单列表"/>
 
                 <ContentControl Style="{StaticResource panel-body}"  >
@@ -127,12 +127,12 @@
                                     <DataTemplate>
                                         <WrapPanel Margin="0,20,0,0" HorizontalAlignment="Right">
 
-                                            <!--<Button Style="{DynamicResource btn-danger}" Command="{Binding OrderCommand}" CommandParameter="{x:Static Converter:OrderCommandEnum.Remove}" >
+                                            <Button Visibility="{Binding RemoveVisibility }" Style="{DynamicResource btn-danger }" Command="{Binding OrderCommand}" CommandParameter="{x:Static Converter:OrderCommandEnum.Remove}" >
                                                 <Button.Content>
                                                     <Path Style="{DynamicResource glyphicon}" Data="{DynamicResource glyphicon-remove}"></Path>
 
                                                 </Button.Content>
-                                            </Button>-->
+                                            </Button>
                                         </WrapPanel>
 
 
@@ -155,11 +155,11 @@
 
                             <Button Content="循环启动" x:Name="btnCycle" Command="{Binding CycleStartCommand}" Style="{DynamicResource btn-primary}"></Button>
                         </WrapPanel>
-                  
+
                     </Grid>
                 </ContentControl>
             </StackPanel>
-            
+
         </ContentControl>
         <ContentControl Grid.Row="1" Style="{StaticResource panel-default}">
 
@@ -169,22 +169,22 @@
 
                 <ContentControl Style="{StaticResource panel-body}" >
                     <ListBox ItemsSource="{Binding OrderItems}" Height="280">
-                     
+
                         <ListBox.Template>
                             <ControlTemplate TargetType="{x:Type ListBox}">
                                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                                     <WrapPanel Orientation="Horizontal" IsItemsHost="True"  ScrollViewer.CanContentScroll="True"/>
 
                                 </ScrollViewer>
-                                
+
                             </ControlTemplate>
-                            
-                            
+
+
                         </ListBox.Template>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="0,0,7,0">
-                               
+
 
                                     <Image Height="100" Width="100" Stretch="Fill" Source="{Binding Path=Name,Converter={StaticResource imageConvert}}" />
                                     <WrapPanel HorizontalAlignment="Center">

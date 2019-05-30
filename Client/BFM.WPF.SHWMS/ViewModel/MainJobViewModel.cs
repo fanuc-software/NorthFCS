@@ -67,9 +67,7 @@ namespace BFM.WPF.SHWMS.ViewModel
                     });
                     order.VMOne.Count = order.Items.Sum(d => d.Count);
                     order.LatheTwo.Count = order.Items.Sum(d => d.Count);
-                    order.ToString();
-                    order.VMOne.StartMachiningCount();
-                    order.LatheTwo.StartMachiningCount();
+                    order.ToString();                   
                     JobOperationEvent?.Invoke(JobWorkEnum.Success, "订单添加成功！");
                     OrderItems.ForEach(d => d.Init());
                 });

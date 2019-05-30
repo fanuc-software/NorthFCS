@@ -1,6 +1,8 @@
-﻿using System;
+﻿using BFM.Common.DeviceAsset.Socket.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,6 +18,16 @@ namespace BFM.WPF.FMS
             IP = "192.168.0.231";
         }
 
+        public void ClearAgvTask()
+        {
+            SocketClient client = new SocketClient(IPAddress.Parse("192.168.0.238"), 502);
+            client.Connect();
+
+            var data = new byte[] { 0, 11, 0, 0, 0, 6, 1, 5, 0, 3, 255, 0 };
+            client.SyncSend(data);
+
+            client.DisConnect();
+        }
 
         public short SendDeviceProcessContolEmptyJobStateToSavePool(bool empty_job_state)
         {

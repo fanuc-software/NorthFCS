@@ -498,6 +498,43 @@ namespace BFM.WPF.FMS
             if (ret == 0) WPFMessageBox.ShowInfo("机器人使能已经给出.", "启动机器人");
         }
 
+        private void BtnRobotReboot_Click(object sender, RoutedEventArgs e)
+        {
+            Cursor = Cursors.Wait;
+
+            int ret = 0;
+            string error = "";
+            int iWrite = 0;
+            string tagCode = "";
+            FmsAssetTagSetting tag = null;
+
+            #region 清空GI
+            tagCode = "清空机器人GI";
+            tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
+
+            if (tag == null)
+            {
+                Cursor = Cursors.Arrow;
+                return;
+            }
+            iWrite = 0;
+            while (iWrite < ReWriteCount)
+            {
+                ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "12", out error);
+                if (ret == 0)
+                {
+                    break;
+                }
+
+                iWrite++;
+                Thread.Sleep(100);
+            }
+
+            #endregion
+
+            Cursor = Cursors.Arrow;
+        }
+
         //UI18下降沿
         private void BtnStart_Click(object sender, RoutedEventArgs e)
         {

@@ -421,7 +421,7 @@ namespace BFM.WPF.FMS
             DeviceManager deviceCommunication = new DeviceManager(device.ASSET_CODE, interfaceType, commAddress, period * 100);
 
             List<DeviceTagParam> deviceTags = new List<DeviceTagParam>();
-
+            
             foreach (var tagSetting in tagSettings)
             {
                 DeviceTagParam deviceTag = new DeviceTagParam(tagSetting.PKNO, tagSetting.TAG_CODE, 

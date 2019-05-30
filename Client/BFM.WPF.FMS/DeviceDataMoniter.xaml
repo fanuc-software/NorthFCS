@@ -21,6 +21,7 @@
         <Button Content="协作机器人开机使能" HorizontalAlignment="Left" Height="49" Margin="20,863,0,0" VerticalAlignment="Top" Width="131" Click="Button_Click"/>
         <Button Content="协作机器人重新启动&#xD;&#xA;     （UI18）" HorizontalAlignment="Left" Height="49" Margin="174,863,0,0" VerticalAlignment="Top" Width="136" Click="BtnStart_Click"/>
         <Button Content="协作机器人暂停启动&#xD;&#xA;         （UI6）" HorizontalAlignment="Left" Height="49" Margin="326,863,0,0" VerticalAlignment="Top" Width="131" Click="BtnPauseStart_Click"/>
+        <Button Content="协作机器人结束&#xD;&#xA;    （GI1=12）" HorizontalAlignment="Left" Height="49" Margin="478,863,0,0" VerticalAlignment="Top" Width="131" Click="BtnRobotReboot_Click"/>
         <!--<Button Content="AGV小车回待机位" HorizontalAlignment="Left" Height="49" Margin="481,863,0,0" VerticalAlignment="Top" Width="131" Click="BtnPauseStart_Click"/>-->
 
         <Button Content="1#机床状态复位&#xD;&#xA;  （纽威）" HorizontalAlignment="Left" Height="49" Margin="632,863,0,0" VerticalAlignment="Top" Width="120" Click="btnRestDevice1_Click"/>

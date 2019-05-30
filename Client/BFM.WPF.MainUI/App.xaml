@@ -18,6 +18,8 @@
                 <ResourceDictionary Source="pack://application:,,,/BFM.WPF.Base;component/Themes/TabControl.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/BFM.WPF.Base;component/Themes/Layout.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/BFM.WPF.Base;component/Themes/Editors.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/BFM.WPF.SHWMS;component/Bootstrap/Bootstrap.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/BFM.WPF.SHWMS;component/Bootstrap/PathGeometries/Glyphicons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

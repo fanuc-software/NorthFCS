@@ -71,7 +71,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CncSafeAndCommunication.cs" />
     <Compile Include="Service\GenerateMachiningTask.cs" />
     <Compile Include="Service\JobService.cs" />
     <Compile Include="ViewModel\ImageConvert.cs" />

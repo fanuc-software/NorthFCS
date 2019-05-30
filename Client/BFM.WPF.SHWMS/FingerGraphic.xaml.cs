@@ -48,12 +48,18 @@ namespace BFM.WPF.SHWMS
 
         private void MainJobViewModel_StartJobEvent(OrderViewModel obj)
         {
+            Dispatcher.BeginInvoke(new Action(()=> {
+                btnCycle.IsEnabled = false;
+
+
+            }));
+            Task.Factory.StartNew(() => jobService.Start());
+
         }
 
         private void FingerGraphic_Loaded(object sender, RoutedEventArgs e)
         {
             this.DataContext = mainJobViewModel;
-            Task.Factory.StartNew(() => jobService.Start());
         }
     }
 }

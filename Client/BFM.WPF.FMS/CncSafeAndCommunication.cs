@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BFM.WPF.FMS
@@ -14,8 +15,8 @@ namespace BFM.WPF.FMS
         {
             IP = "192.168.0.231";
         }
-        
-        
+
+
         public short SendDeviceProcessContolEmptyJobStateToSavePool(bool empty_job_state)
         {
             short ret = -1;
@@ -24,6 +25,7 @@ namespace BFM.WPF.FMS
             while (ret != 0 && try_count < 5)
             {
                 ret = WritePmcDataByBit(12, 996, 0, empty_job_state);
+                if (ret != 0) Thread.Sleep(200);
 
                 try_count++;
             }
@@ -38,9 +40,10 @@ namespace BFM.WPF.FMS
 
             while (ret != 0 && try_count < 5)
             {
-                ret = ReadPmcDataByBit(12, 996, 0,ref empty_job_state);
+                ret = ReadPmcDataByBit(12, 996, 0, ref empty_job_state);
 
                 try_count++;
+                if (ret != 0) Thread.Sleep(200);
             }
 
             return ret;

@@ -32,7 +32,7 @@ namespace BFM.WPF.SHWMS.Service
         public event Action<string, string> ShowTaskInfoEvent;
 
 
-        private void GenerateMachiningTask_Piece4()
+        public void GenerateMachiningTask_Piece4()
         {
             string sLathePieceNumOneTime = "4";
 

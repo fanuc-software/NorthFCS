@@ -33,7 +33,7 @@ namespace BFM.WPF.SHWMS.ViewModel
             {
                 return new RelayCommand(() =>
                 {
-
+                    StartJobEvent?.Invoke(null);
                 });
             }
         }
@@ -61,7 +61,9 @@ namespace BFM.WPF.SHWMS.ViewModel
                     OrderNodes.Add(order);
                     items.ForEach(d =>
                     {
-                        order.Items.Add(d.Clone() as OrderItemViewModel);
+                        var item= d.Clone() as OrderItemViewModel;
+                        item.MainOrder = order;
+                        order.Items.Add(item);
                     });
                     order.VMOne.Count = order.Items.Sum(d => d.Count);
                     order.LatheTwo.Count = order.Items.Sum(d => d.Count);

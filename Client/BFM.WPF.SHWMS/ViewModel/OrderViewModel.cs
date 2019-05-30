@@ -122,10 +122,15 @@ namespace BFM.WPF.SHWMS.ViewModel
         public int TotalProgress { get; set; }
         public void StartJob()
         {
-            TotalProgress = Items.Sum(d => d.Count);
-            Sate = OrderStateEnum.Executing;
+            if (Sate != OrderStateEnum.Executing)
+            {
 
-            OrderCommandEvent?.Invoke(OrderCommandEnum.Start, this);
+                TotalProgress = Items.Sum(d => d.Count);
+                Sate = OrderStateEnum.Executing;
+
+              //  OrderCommandEvent?.Invoke(OrderCommandEnum.Start, this);
+            }
+
 
         }
 
@@ -154,6 +159,8 @@ namespace BFM.WPF.SHWMS.ViewModel
 
     public class OrderItemViewModel : ViewModelBase, ICloneable
     {
+        public OrderViewModel MainOrder { get; set; }
+
         private const int MaxCount = 10;
 
         public string ItemID { get; set; }
@@ -239,7 +246,8 @@ namespace BFM.WPF.SHWMS.ViewModel
                 Count = Count,
                 ItemID = ItemID,
                 IconPath = IconPath,
-                Name = Name
+                Name = Name,
+                MainOrder = MainOrder
             };
         }
     }
@@ -305,13 +313,17 @@ namespace BFM.WPF.SHWMS.ViewModel
 
         public int Count { get; set; }
 
-        public void  StartMachiningCount()
+        public void StartMachiningCount()
         {
 
             //获得加工数量的初始值
             int cout = 0;
-            GetTotalMachiningCount(IP, ref cout);
-            DeviceInitValue = cout;
+            var resInit=GetTotalMachiningCount(IP, ref cout);
+            if (resInit == 0)
+            {
+                DeviceInitValue = cout;
+
+            }
 
             Task.Factory.StartNew(() =>
             {
@@ -320,7 +332,7 @@ namespace BFM.WPF.SHWMS.ViewModel
                 {
                     Thread.Sleep(2000);
                     cout = 0;
-                   var res= GetTotalMachiningCount(IP, ref cout);
+                    var res = GetTotalMachiningCount(IP, ref cout);
                     if (res == 0)
                     {
                         DeviceCurrentValue = cout;

@@ -565,6 +565,10 @@
     <Resource Include="images\backgroud.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Copy  "$(SolutionDir)Fanuc\*.dll" "$(ProjectDir)$(OutDir)"
+Copy  "$(SolutionDir)Fanuc\*.lib" "$(ProjectDir)$(OutDir)"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -274,17 +274,20 @@ namespace BFM.WPF.FMS
                             .OrderBy(c => c.CREATION_DATE)
                             .ToList();
 
+                    List<MesJobOrder> pageJobs =
+                        ws.UseService(s => s.GetMesJobOrders($"USE_FLAG = 1 AND RUN_STATE < 100 AND LINE_PKNO = '{linePKNO}'"))  //sl 判断是否完工
+                            .OrderBy(c => c.CREATION_DATE)
+                            .ToList();
 
                     var cnc_safe = new CncSafeAndCommunication();
-                    if (allJobs.Count <= 0)
+                    if (pageJobs.Count <= 0)
                     {
                         cnc_safe.SendDeviceProcessContolEmptyJobStateToSavePool(true);
-
-                        Thread.Sleep(200);  //暂停200ms
-                        continue;
                     }
-                    
-                    cnc_safe.SendDeviceProcessContolEmptyJobStateToSavePool(false);
+                    else
+                    {
+                        cnc_safe.SendDeviceProcessContolEmptyJobStateToSavePool(false);
+                    }
 
                     //统计总的数量
                     int taskSum = Convert.ToInt32(allJobs.Sum(c => c.TASK_QTY)); //计划数量

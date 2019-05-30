@@ -1,4 +1,5 @@
-﻿using BFM.WPF.SHWMS.ViewModel;
+﻿using BFM.WPF.FMS;
+using BFM.WPF.SHWMS.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace BFM.WPF.SHWMS.Service
     public class JobService
     {
         MainJobViewModel mainJobViewModel;
+        private const int MaxCount = 4;
         public JobService(MainJobViewModel mainJobViewModel)
         {
             this.mainJobViewModel = mainJobViewModel;
@@ -19,23 +21,53 @@ namespace BFM.WPF.SHWMS.Service
         public void Start()
         {
 
-            while (true)
-            {
+            var orders = mainJobViewModel.OrderNodes.Where(d => d.Sate == OrderStateEnum.Create).ToList();
+         
+            GenerateMachiningTask generateMachiningTask = new GenerateMachiningTask();
+            CncSafeAndCommunication cncSafe = new CncSafeAndCommunication();
 
-                Thread.Sleep(1000);
-                var orders = mainJobViewModel.OrderNodes.Where(d => d.Sate == OrderStateEnum.Create).ToList();
-                foreach (var item in orders)
+          
+
+            foreach (OrderViewModel item in orders)
+            {
+                var totalTask = item.Items.Sum(d => d.Count);
+                int count = totalTask / MaxCount;
+                int remainder = totalTask % MaxCount;
+                count = 1;
+                item.StartJob();
+                for (int i = 0; i < count;)
                 {
-                    item.StartJob();
-                    foreach (var job in item.Items)
+                    var state = false;
+                    if (cncSafe.GetDeviceProcessContolEmptyJobStateFromSavePool(ref state) == 0)
                     {
-                        while (item.WorkItem(job))
+                        if (state)
                         {
-                            Thread.Sleep(1000);
+                            generateMachiningTask.GenerateMachiningTask_Piece4();
+                            i++;
+
                         }
+
                     }
+                    Thread.Sleep(1000);
                 }
+
             }
+
+
+
+
+            //foreach (var item in orders)
+            //{
+            //    item.StartJob();
+            //    item.Items.Sum(d => d.Count);
+            //    foreach (var job in item.Items)
+            //    {
+            //        while (item.WorkItem(job))
+            //        {
+            //            Thread.Sleep(1000);
+            //        }
+            //    }
+            //}
         }
     }
 }

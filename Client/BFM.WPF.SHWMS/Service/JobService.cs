@@ -1,4 +1,8 @@
-﻿using BFM.WPF.FMS;
+﻿using BFM.Common.Base.PubData;
+using BFM.Common.Base.Utils;
+using BFM.ContractModel;
+using BFM.Server.DataAsset.PLMService;
+using BFM.WPF.FMS;
 using BFM.WPF.SHWMS.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -12,53 +16,78 @@ namespace BFM.WPF.SHWMS.Service
     public class JobService
     {
         MainJobViewModel mainJobViewModel;
+        bool isPreFinish = false;
         private const int MaxCount = 4;
+
+        public bool IsCycleStop = false;
+        private WcfClient<IPLMService> ws = new WcfClient<IPLMService>();
+
+        public event Action<string> TaskJobFinishEvent;
         public JobService(MainJobViewModel mainJobViewModel)
         {
             this.mainJobViewModel = mainJobViewModel;
         }
 
-        public void Start()
+        public void Start(CancellationTokenSource tokenSource)
         {
-
-            var orders = mainJobViewModel.OrderNodes.Where(d => d.Sate == OrderStateEnum.Create).ToList();
-
-            GenerateMachiningTask generateMachiningTask = new GenerateMachiningTask();
-            CncSafeAndCommunication cncSafe = new CncSafeAndCommunication();
-            var isFinised = false;
-
-            foreach (OrderViewModel item in orders)
+            IsCycleStop = false;
+            while (!tokenSource.IsCancellationRequested)
             {
-                var totalTask = item.Items.Sum(d => d.Count);
-                int count = totalTask / MaxCount;
-                int remainder = totalTask % MaxCount;
-                item.StartJob();
-                item.VMOne.StartMachiningCount();
-                item.LatheTwo.StartMachiningCount();
-                bool isPreFinish = false;
-                for (int i = 0; i < count;)
+                var orders = mainJobViewModel.OrderNodes.Where(d => d.Sate == OrderStateEnum.Create).ToList();
+                GenerateMachiningTask generateMachiningTask = new GenerateMachiningTask();
+                CncSafeAndCommunication cncSafe = new CncSafeAndCommunication();
+                var isFinised = false;
+
+                foreach (OrderViewModel item in orders)
                 {
-                    var state = false;
-                    if (cncSafe.GetJobTaskFinishStateFromSavePool(ref isFinised) == 0)
+                    if (IsCycleStop)
                     {
-                        if (cncSafe.GetDeviceProcessContolEmptyJobStateFromSavePool(ref state) == 0)
-                        {
-                            if (state && isFinised && !isPreFinish)
-                            {
-                                generateMachiningTask.GenerateMachiningTask_Piece4();
-                                i++;
-
-                            }
-                        }
-                        isPreFinish = isFinised;
-
+                        TaskJobFinishEvent?.Invoke("循环停止成功结束!");
+                        return;
                     }
-                    Thread.Sleep(1000);
+                    var totalTask = item.Items.Sum(d => d.Count);
+                    int count = totalTask / MaxCount;
+                    int remainder = totalTask % MaxCount;
+                    item.StartJob();
+                    item.VMOne.StartMachiningCount();
+                    item.LatheTwo.StartMachiningCount();
+                    for (int i = 0; i <= count;)
+                    {
+                        var state = false;
+                        if (cncSafe.GetJobTaskFinishStateFromSavePool(ref isFinised) == 0)
+                        {
+                            if (cncSafe.GetDeviceProcessContolEmptyJobStateFromSavePool(ref state) == 0)
+                            {
+                                if (state && isFinised && !isPreFinish)
+                                {
+                                    if (tokenSource.IsCancellationRequested)
+                                    {
+                                        item.Sate = OrderStateEnum.Cancel;
+                                        item.VMOne.StopMachiningCount();
+                                        item.LatheTwo.StopMachiningCount();
+                                        TaskJobFinishEvent?.Invoke("任务强制取消成功!");
+
+                                        return;
+                                    }
+                                    generateMachiningTask.GenerateMachiningTask_Piece4();
+                                    i++;
+
+                                }
+                            }
+                            isPreFinish = isFinised;
+
+                        }
+                     
+                        Thread.Sleep(1000);
+                    }
+                    item.FinishJob();
+                    item.VMOne.StopMachiningCount();
+                    item.LatheTwo.StopMachiningCount();
                 }
-                item.FinishJob();
 
+                Thread.Sleep(2000);
             }
-
+            TaskJobFinishEvent?.Invoke("任务强制取消成功!");
 
 
 
@@ -74,6 +103,58 @@ namespace BFM.WPF.SHWMS.Service
             //        }
             //    }
             //}
+        }
+
+
+        public void CancelJobOrder()
+        {
+            List<MesJobOrder> mesJobOrders = ws.UseService(s => s.GetMesJobOrders(
+                 $"USE_FLAG = 1 AND RUN_STATE < 100 AND LINE_PKNO = '{CBaseData.CurLinePKNO}'")).OrderBy(c => c.CREATION_DATE).ToList();
+            if (mesJobOrders == null)
+            {
+                
+                return;
+            }
+           
+            new Thread(new ThreadStart(delegate ()
+            {
+                CncSafeAndCommunication cncSafe = new CncSafeAndCommunication();
+                cncSafe.ClearAgvTask();
+                DeviceProcessControl.PauseByLine(CBaseData.CurLinePKNO); //暂停，防止任务直接执行
+                Thread.Sleep(1000);
+                List<MesJobOrder> jobs =
+                    ws.UseService(s =>
+                            s.GetMesJobOrders(
+                                $"USE_FLAG = 1 AND RUN_STATE < 100 AND LINE_PKNO = '{CBaseData.CurLinePKNO}'"))
+                        .OrderBy(c => c.CREATION_DATE).ToList();
+                foreach (MesJobOrder job in jobs)
+                {
+
+                    job.ACT_FINISH_TIME = DateTime.Now;
+                    job.RUN_STATE = 102; //手动取消
+                    ////mesJobOrder.ONCE_QTY = 1;//默认订单为1
+                    ////mesJobOrder.COMPLETE_QTY = 1;
+                    ws.UseService(s => s.UpdateMesJobOrder(job));
+
+                    Thread.Sleep(100);
+
+                    List<MesProcessCtrol> mesProcessCtrols =
+                        ws.UseService(s => s.GetMesProcessCtrols("JOB_ORDER_PKNO = " + job.PKNO + ""));
+                    if (mesProcessCtrols.Count < 0)
+                    {
+                        return;
+                    }
+
+                    foreach (var processCtrol in mesProcessCtrols)
+                    {
+                        processCtrol.PROCESS_STATE = 20; //不执行
+                        ws.UseService(s => s.UpdateMesProcessCtrol(processCtrol));
+                        Thread.Sleep(100);
+                    }
+                }
+                DeviceProcessControl.RunByLine(CBaseData.CurLinePKNO); //启动动作流程
+             
+            })).Start();
         }
     }
 }

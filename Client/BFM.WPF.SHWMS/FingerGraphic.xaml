@@ -20,145 +20,152 @@
         </Grid.RowDefinitions>
         <ContentControl Style="{StaticResource panel-default}">
 
-            <StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
 
                 <ContentControl Style="{StaticResource panel-heading-primary}" Content="订单列表"/>
 
-                <ContentControl Style="{StaticResource panel-body}"  >
-                    <DataGrid HorizontalScrollBarVisibility="Auto" AutoGenerateColumns="False" Height="Auto" MinHeight="270" RowHeight="80" IsReadOnly="True" ColumnWidth="*"  CanUserReorderColumns="False" CanUserResizeColumns="False" Width="Auto" ItemsSource="{Binding OrderNodes}" CanUserAddRows="False">
+                <ContentControl Grid.Row="1" Style="{StaticResource panel-body}"  >
+                        <DataGrid AutoGenerateColumns="False" VerticalScrollBarVisibility="Auto"   Width="Auto" RowHeight="80" IsReadOnly="True"   CanUserReorderColumns="False" CanUserResizeColumns="False"  ItemsSource="{Binding OrderNodes}" CanUserAddRows="False">
 
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding OrderID}" Header="编号" ElementStyle="{StaticResource DataGridTextCenter}"/>
-                            <DataGridTextColumn Binding="{Binding CreateTime}" Header="创建时间" ElementStyle="{StaticResource DataGridTextCenter}"/>
-                            <DataGridTextColumn Binding="{Binding StateInfo}" Header="状态" ElementStyle="{StaticResource DataGridTextCenter}"/>
-                            <!--<DataGridTextColumn Binding="{Binding Context}" Header="详情" ElementStyle="{StaticResource DataGridTextCenter}"/>-->
-                            <DataGridTemplateColumn Header="加工进度" Width="*">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="140" />
-                                                <ColumnDefinition Width="140" />
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="50" />
-                                                <RowDefinition Height="*" />
-                                            </Grid.RowDefinitions>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding OrderID}" Width="100" Header="编号" ElementStyle="{StaticResource DataGridTextCenter}"/>
+                                <DataGridTextColumn Binding="{Binding CreateTime}" Width="100" Header="创建时间" ElementStyle="{StaticResource DataGridTextCenter}"/>
+                                <DataGridTextColumn Binding="{Binding StateInfo}" Width="100" Header="状态" ElementStyle="{StaticResource DataGridTextCenter}"/>
+                                <!--<DataGridTextColumn Binding="{Binding Context}" Header="详情" ElementStyle="{StaticResource DataGridTextCenter}"/>-->
+                                <DataGridTemplateColumn Header="加工进度" Width="300">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="50" />
-                                                    <ColumnDefinition Width="70"/>
+                                                    <ColumnDefinition Width="140" />
+                                                    <ColumnDefinition Width="140" />
                                                 </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="45" />
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="50" />
+                                                        <ColumnDefinition Width="70"/>
+                                                    </Grid.ColumnDefinitions>
 
-                                                <Image  Width="50" Stretch="Uniform"  Source="{Binding Path=VMOne.ID,Converter={StaticResource imageConvert}}" />
-                                                <WrapPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                                    <Label Content="{Binding VMOne.CurrentValue}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
-                                                    <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
-                                                    <Label Content="{Binding VMOne.Count}" FontSize="14" Style="{DynamicResource code}" Background="#D9534f" Foreground="White"></Label>
+                                                    <Image  Width="40" Stretch="Uniform"  Source="{Binding Path=VMOne.ID,Converter={StaticResource imageConvert}}" />
+                                                    <WrapPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                        <Label Content="{Binding VMOne.CurrentValue}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
+                                                        <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
+                                                        <Label Content="{Binding VMOne.Count}" FontSize="14" Style="{DynamicResource code}" Background="#D9534f" Foreground="White"></Label>
 
-                                                </WrapPanel>
+                                                    </WrapPanel>
+
+                                                </Grid>
+                                                <Grid  Grid.Column="1">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="50" />
+                                                        <ColumnDefinition Width="70"/>
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <Image  Width="50" Stretch="Uniform"  Source="{Binding Path=LatheTwo.ID,Converter={StaticResource imageConvert}}" />
+                                                    <WrapPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                        <Label Content="{Binding LatheTwo.CurrentValue}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
+                                                        <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
+                                                        <Label Content="{Binding LatheTwo.Count}" FontSize="14" Style="{DynamicResource code}" Background="#D9534f" Foreground="White"></Label>
+
+                                                    </WrapPanel>
+
+                                                </Grid>
+
+                                                <ProgressBar Grid.Row="1" Grid.ColumnSpan="2"  Value="{Binding LatheTwo.Progress}" Width="Auto" Style="{DynamicResource progress-bar-info}"></ProgressBar>
 
                                             </Grid>
-                                            <Grid  Grid.Column="1">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="50" />
-                                                    <ColumnDefinition Width="70"/>
-                                                </Grid.ColumnDefinitions>
 
-                                                <Image  Width="50" Stretch="Uniform"  Source="{Binding Path=LatheTwo.ID,Converter={StaticResource imageConvert}}" />
-                                                <WrapPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                                    <Label Content="{Binding LatheTwo.CurrentValue}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
-                                                    <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
-                                                    <Label Content="{Binding LatheTwo.Count}" FontSize="14" Style="{DynamicResource code}" Background="#D9534f" Foreground="White"></Label>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="打印进度" Width="600">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <ItemsControl ItemsSource="{Binding Items}">
+                                                    <ItemsControl.ItemsPanel>
+                                                        <ItemsPanelTemplate>
+                                                            <WrapPanel />
+                                                        </ItemsPanelTemplate>
+                                                    </ItemsControl.ItemsPanel>
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Grid Margin="0,2,5,0">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="50" />
+                                                                    <ColumnDefinition Width="70"/>
+                                                                </Grid.ColumnDefinitions>
 
-                                                </WrapPanel>
+                                                                <Image  Width="50" Stretch="Uniform"  Source="{Binding Path=Name,Converter={StaticResource imageConvert}}" />
+                                                                <WrapPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                                    <Label Content="{Binding CurrentCount}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
+                                                                    <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
+                                                                    <Label Content="{Binding Count}" FontSize="14" Style="{DynamicResource code}" Background="#D9534f" Foreground="White"></Label>
 
-                                            </Grid>
-
-                                            <ProgressBar Grid.Row="1" Grid.ColumnSpan="2"  Value="{Binding LatheTwo.Progress}" Width="Auto" Style="{DynamicResource progress-bar-info}"></ProgressBar>
-
-                                        </Grid>
-
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="打印进度" Width="*">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <ItemsControl ItemsSource="{Binding Items}">
-                                                <ItemsControl.ItemsPanel>
-                                                    <ItemsPanelTemplate>
-                                                        <WrapPanel />
-                                                    </ItemsPanelTemplate>
-                                                </ItemsControl.ItemsPanel>
-                                                <ItemsControl.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <Grid Margin="0,2,5,0">
-                                                            <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition Width="50" />
-                                                                <ColumnDefinition Width="70"/>
-                                                            </Grid.ColumnDefinitions>
-
-                                                            <Image  Width="50" Stretch="Uniform"  Source="{Binding Path=Name,Converter={StaticResource imageConvert}}" />
-                                                            <WrapPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                                                <Label Content="{Binding CurrentCount}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
-                                                                <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
-                                                                <Label Content="{Binding Count}" FontSize="14" Style="{DynamicResource code}" Background="#D9534f" Foreground="White"></Label>
-
-                                                            </WrapPanel>
+                                                                </WrapPanel>
 
 
-                                                        </Grid>
-                                                    </DataTemplate>
-                                                </ItemsControl.ItemTemplate>
-                                            </ItemsControl>
-                                            <ProgressBar Margin="0,4,0,0" Value="{Binding Progress}" Width="Auto" Style="{DynamicResource progress-bar-info}"></ProgressBar>
+                                                            </Grid>
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                                <ProgressBar Margin="0,4,0,0" Value="{Binding Progress}" Width="Auto" Style="{DynamicResource progress-bar-info}"></ProgressBar>
 
-                                        </StackPanel>
-
-
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="80">
-
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <WrapPanel Margin="0,20,0,0" HorizontalAlignment="Right">
-
-                                            <Button Visibility="{Binding RemoveVisibility }" Style="{DynamicResource btn-danger }" Command="{Binding OrderCommand}" CommandParameter="{x:Static Converter:OrderCommandEnum.Remove}" >
-                                                <Button.Content>
-                                                    <Path Style="{DynamicResource glyphicon}" Data="{DynamicResource glyphicon-remove}"></Path>
-
-                                                </Button.Content>
-                                            </Button>
-                                        </WrapPanel>
+                                            </StackPanel>
 
 
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Width="100">
+
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <WrapPanel Margin="0,20,10,0" HorizontalAlignment="Right">
+
+                                                <Button Visibility="{Binding RemoveVisibility }" Style="{DynamicResource btn-danger }" Command="{Binding OrderCommand}" CommandParameter="{x:Static Converter:OrderCommandEnum.Remove}" >
+                                                    <Button.Content>
+                                                        <Path Style="{DynamicResource glyphicon}" Data="{DynamicResource glyphicon-remove}"></Path>
+
+                                                    </Button.Content>
+                                                </Button>
+                                            </WrapPanel>
+
+
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
 
                 </ContentControl>
-                <ContentControl Style="{StaticResource panel-footer-default}">
+                <ContentControl Grid.Row="2" Style="{StaticResource panel-footer-default}">
                     <Grid >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="400" />
                         </Grid.ColumnDefinitions>
                         <Label HorizontalAlignment="Center"  Content="" Style="{DynamicResource text-warning}"></Label>
                         <WrapPanel Grid.Column="1" HorizontalAlignment="Right">
-                            <Button Content="循环停止"  Style="{DynamicResource btn-danger}" Margin="0,0,10,0"></Button>
+                            <Button Content="循环停止"  x:Name="btnStopCycle" Click="BtnStopCycle_Click" Style="{DynamicResource btn-danger}" Margin="0,0,10,0"></Button>
+                            <Button Content="强制取消"  x:Name="btnCancel" Click="BtnCancel_Click" Style="{DynamicResource btn-warning}" Margin="0,0,10,0"></Button>
 
                             <Button Content="循环启动" x:Name="btnCycle" Command="{Binding CycleStartCommand}" Style="{DynamicResource btn-primary}"></Button>
                         </WrapPanel>
 
                     </Grid>
                 </ContentControl>
-            </StackPanel>
+            </Grid>
 
         </ContentControl>
         <ContentControl Grid.Row="1" Style="{StaticResource panel-default}">
@@ -183,7 +190,7 @@
                         </ListBox.Template>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Margin="0,0,7,0">
+                                <StackPanel Margin="0,0,10,0">
 
 
                                     <Image Height="100" Width="100" Stretch="Fill" Source="{Binding Path=Name,Converter={StaticResource imageConvert}}" />

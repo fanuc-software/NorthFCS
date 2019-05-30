@@ -51,9 +51,9 @@ namespace BFM.WPF.SHWMS.ViewModel
                     }
                     var order = new OrderViewModel()
                     {
-                        CreateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                        CreateTime = DateTime.Now.ToString("HH:mm:ss"),
                         Sate = OrderStateEnum.Create,
-                        OrderID = Guid.NewGuid().ToString(),
+                        OrderID = Guid.NewGuid().ToString().Substring(0,6),
                         VMOne = new LatheViewModel() { ID = "Lathe1", IP = "192.168.0.232" },
                         LatheTwo = new LatheViewModel() { ID = "Lathe2", IP = "192.168.0.231" }
                     };

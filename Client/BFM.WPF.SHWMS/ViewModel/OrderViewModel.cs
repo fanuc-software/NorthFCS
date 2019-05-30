@@ -16,6 +16,7 @@ namespace BFM.WPF.SHWMS.ViewModel
     {
         Create,
         Executing,
+        Cancel,
         Finish
     }
 
@@ -42,7 +43,7 @@ namespace BFM.WPF.SHWMS.ViewModel
             set
             {
                 state = value;
-                StateInfo = state == OrderStateEnum.Create ? "新订单" : state == OrderStateEnum.Executing ? "执行中" : "已完成";
+                StateInfo = state == OrderStateEnum.Create ? "新订单" : state == OrderStateEnum.Executing ? "执行中" : state == OrderStateEnum.Cancel ? "已取消" : "已完成";
                 RemoveVisibility = state == OrderStateEnum.Create ? Visibility.Visible : Visibility.Collapsed;
             }
         }
@@ -150,8 +151,6 @@ namespace BFM.WPF.SHWMS.ViewModel
             Sate = OrderStateEnum.Finish;
 
         }
-
-
 
         public bool WorkItem(OrderItemViewModel model)
         {
@@ -330,6 +329,8 @@ namespace BFM.WPF.SHWMS.ViewModel
 
         public int Count { get; set; }
 
+        private CancellationTokenSource token = new CancellationTokenSource();
+
         public void StartMachiningCount()
         {
 
@@ -345,7 +346,7 @@ namespace BFM.WPF.SHWMS.ViewModel
             Task.Factory.StartNew(() =>
             {
 
-                while (Progress <= 100)
+                while (Progress <= 100 && !token.IsCancellationRequested)
                 {
                     Thread.Sleep(2000);
                     cout = 0;
@@ -356,9 +357,14 @@ namespace BFM.WPF.SHWMS.ViewModel
 
                     }
                 }
-            });
+            }, token.Token);
         }
 
+
+        public void StopMachiningCount()
+        {
+            token.Cancel();
+        }
         private short GetTotalMachiningCount(string ip, ref int cout)
         {
             ushort flib;

@@ -25,14 +25,27 @@ namespace BFM.WPF.SHWMS
     {
         MainJobViewModel mainJobViewModel;
         JobService jobService;
+        private CancellationTokenSource token;
+
         public FingerGraphic()
         {
             InitializeComponent();
             mainJobViewModel = new MainJobViewModel();
             jobService = new JobService(mainJobViewModel);
+            jobService.TaskJobFinishEvent += JobService_TaskJobFinishEvent;
             this.Loaded += FingerGraphic_Loaded;
             mainJobViewModel.StartJobEvent += MainJobViewModel_StartJobEvent;
             mainJobViewModel.JobOperationEvent += MainJobViewModel_JobOperationEvent;
+        }
+
+        private void JobService_TaskJobFinishEvent(string obj)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                btnCycle.IsEnabled = true;
+
+            }));
+
         }
 
         private void MainJobViewModel_JobOperationEvent(JobWorkEnum arg1, string arg2)
@@ -48,18 +61,40 @@ namespace BFM.WPF.SHWMS
 
         private void MainJobViewModel_StartJobEvent(OrderViewModel obj)
         {
-            Dispatcher.BeginInvoke(new Action(()=> {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
                 btnCycle.IsEnabled = false;
-
+                btnCancel.IsEnabled = true;
+                btnStopCycle.IsEnabled = true;
 
             }));
-            Task.Factory.StartNew(() => jobService.Start());
+            token = new CancellationTokenSource();
+            Task.Factory.StartNew(() => jobService.Start(token), token.Token);
 
         }
 
         private void FingerGraphic_Loaded(object sender, RoutedEventArgs e)
         {
             this.DataContext = mainJobViewModel;
+            btnStopCycle.IsEnabled = false;
+            btnCancel.IsEnabled = false;
+        }
+
+        private void BtnStopCycle_Click(object sender, RoutedEventArgs e)
+        {
+            btnStopCycle.IsEnabled = false;
+            jobService.IsCycleStop = true;
+        }
+
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("确定所有订单任务吗？", "订单取消", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+            {
+                btnCancel.IsEnabled = false;
+                btnStopCycle.IsEnabled = false;
+                token.Cancel();
+            }
+
         }
     }
 }

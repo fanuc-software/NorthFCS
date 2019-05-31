@@ -275,6 +275,8 @@ namespace BFM.WPF.SHWMS.ViewModel
 
         public string IP { get; set; }
 
+        public short CountPath { get; set; } = 1;
+
         public int DeviceInitValue { get; set; }
 
 
@@ -336,7 +338,7 @@ namespace BFM.WPF.SHWMS.ViewModel
 
             //获得加工数量的初始值
             int cout = 0;
-            var resInit = GetTotalMachiningCount(IP, ref cout);
+            var resInit = GetTotalMachiningCount(IP, ref cout, CountPath);
             if (resInit == 0)
             {
                 DeviceInitValue = cout;
@@ -350,7 +352,7 @@ namespace BFM.WPF.SHWMS.ViewModel
                 {
                     Thread.Sleep(2000);
                     cout = 0;
-                    var res = GetTotalMachiningCount(IP, ref cout);
+                    var res = GetTotalMachiningCount(IP, ref cout, CountPath);
                     if (res == 0)
                     {
                         DeviceCurrentValue = cout;
@@ -365,11 +367,13 @@ namespace BFM.WPF.SHWMS.ViewModel
         {
             token.Cancel();
         }
-        private short GetTotalMachiningCount(string ip, ref int cout)
+        private short GetTotalMachiningCount(string ip, ref int cout, short cout_path)
         {
             ushort flib;
             short ret = Focas1.cnc_allclibhndl3(ip, 8193, 10, out flib);
             if (ret != 0) return ret;
+
+            Focas1.cnc_setpath(flib, cout_path);
 
             Focas1.IODBPSD_1 buf = new Focas1.IODBPSD_1();
             ret = Focas1.cnc_rdparam(flib, 6712, 0, 8, buf);

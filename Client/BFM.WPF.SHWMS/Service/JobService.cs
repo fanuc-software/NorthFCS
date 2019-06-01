@@ -69,6 +69,7 @@ namespace BFM.WPF.SHWMS.Service
 
                                         return;
                                     }
+                                    
                                     generateMachiningTask.GenerateMachiningTask_Piece4();
                                     i++;
 

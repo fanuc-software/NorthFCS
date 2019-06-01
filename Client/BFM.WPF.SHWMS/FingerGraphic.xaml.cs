@@ -36,6 +36,23 @@ namespace BFM.WPF.SHWMS
             this.Loaded += FingerGraphic_Loaded;
             mainJobViewModel.StartJobEvent += MainJobViewModel_StartJobEvent;
             mainJobViewModel.JobOperationEvent += MainJobViewModel_JobOperationEvent;
+            mainJobViewModel.MachineResetEvent += MainJobViewModel_MachineResetEvent;
+        }
+
+        private void MainJobViewModel_MachineResetEvent()
+        {
+
+            Task.Factory.StartNew(() =>
+            {
+                var state = jobService.GetJobState();
+                if (!state)
+                {
+                    Dispatcher.BeginInvoke(new Action(() => MessageBox.Show("请先清空产线任务列表")));
+                    return;
+                }
+                jobService.SendJobTaskFinish();
+            });
+         
         }
 
         private void JobService_TaskJobFinishEvent(string obj)
@@ -70,7 +87,7 @@ namespace BFM.WPF.SHWMS
             }));
             token = new CancellationTokenSource();
             Task.Factory.StartNew(() => jobService.Start(token), token.Token);
-           // Task.Factory.StartNew(() => jobService.TestStart(token), token.Token);
+            // Task.Factory.StartNew(() => jobService.TestStart(token), token.Token);
         }
 
         private void FingerGraphic_Loaded(object sender, RoutedEventArgs e)

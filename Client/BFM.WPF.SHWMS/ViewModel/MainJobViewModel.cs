@@ -25,7 +25,7 @@ namespace BFM.WPF.SHWMS.ViewModel
 
         public event Action<OrderViewModel> StartJobEvent;
 
-
+        public event Action MachineResetEvent;
         public ICommand CycleStartCommand
         {
 
@@ -37,7 +37,7 @@ namespace BFM.WPF.SHWMS.ViewModel
                 });
             }
         }
-        
+
         public ICommand AddCommand
         {
             get
@@ -56,7 +56,7 @@ namespace BFM.WPF.SHWMS.ViewModel
                         Sate = OrderStateEnum.Create,
                         OrderID = Guid.NewGuid().ToString().Substring(0, 6),
                         VMOne = new LatheViewModel() { ID = "Lathe1", IP = "192.168.0.232" },
-                        LatheTwo = new LatheViewModel() { ID = "Lathe2", IP = "192.168.0.231", CountPath = 2}
+                        LatheTwo = new LatheViewModel() { ID = "Lathe2", IP = "192.168.0.231", CountPath = 2 }
                     };
                     order.OrderCommandEvent += Order_OrderCommandEvent;
                     OrderNodes.Add(order);
@@ -75,6 +75,17 @@ namespace BFM.WPF.SHWMS.ViewModel
             }
         }
 
+
+        public ICommand MachineResetCommand
+        {
+            get
+            {
+                return new RelayCommand(() =>
+                {
+                    MachineResetEvent?.Invoke();
+                });
+            }
+        }
         private void Order_OrderCommandEvent(OrderCommandEnum arg1, OrderViewModel arg2)
         {
             if (arg1 == OrderCommandEnum.Remove)

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -97,6 +98,11 @@ namespace BFM.WPF.FMS
         private short WritePmcDataByBit(short type, ushort adr, ushort bit, bool data)
         {
             ushort flib;
+            Ping ping = new System.Net.NetworkInformation.Ping();
+            if (ping.Send(IP, 1000).Status != IPStatus.Success)
+            {
+                return -16;
+            }
             var ret = Focas1.cnc_allclibhndl3(IP, 8193, 10, out flib);
             if (ret != 0) return ret;
 
@@ -133,6 +139,11 @@ namespace BFM.WPF.FMS
         private short ReadPmcDataByBit(short type, ushort adr, ushort bit, ref bool data)
         {
             ushort flib;
+            Ping ping = new System.Net.NetworkInformation.Ping();
+            if (ping.Send(IP,1000).Status!=IPStatus.Success)
+            {
+                return -16;
+            }
             var ret = Focas1.cnc_allclibhndl3(IP, 8193, 10, out flib);
             if (ret != 0) return ret;
 

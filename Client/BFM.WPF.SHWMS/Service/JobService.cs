@@ -16,6 +16,7 @@ namespace BFM.WPF.SHWMS.Service
     public class JobService
     {
         MainJobViewModel mainJobViewModel;
+        private CncSafeAndCommunication cncSafe;
         private const int MaxCount = 4;
 
         public bool IsCycleStop = false;
@@ -25,6 +26,8 @@ namespace BFM.WPF.SHWMS.Service
         public JobService(MainJobViewModel mainJobViewModel)
         {
             this.mainJobViewModel = mainJobViewModel;
+            cncSafe = new CncSafeAndCommunication();
+
         }
 
         public void Start(CancellationTokenSource tokenSource)
@@ -36,7 +39,6 @@ namespace BFM.WPF.SHWMS.Service
                 GenerateMachiningTask generateMachiningTask = new GenerateMachiningTask();
                 Action[] actions = { () => generateMachiningTask.GenerateMachiningTask_Piece4(), () => generateMachiningTask.GenerateMachiningTask_Piece1()
                 ,()=>generateMachiningTask.GenerateMachiningTask_Piece2(),()=>generateMachiningTask.GenerateMachiningTask_Piece3()};
-                CncSafeAndCommunication cncSafe = new CncSafeAndCommunication();
                 var isFinised = false;
 
                 foreach (OrderViewModel item in orders)
@@ -53,16 +55,20 @@ namespace BFM.WPF.SHWMS.Service
                     item.VMOne.StartMachiningCount();
                     item.LatheTwo.StartMachiningCount();
                     var finishState = true;
-                    finishState= FinishJob(cncSafe, tokenSource, item, isFinised, count, actions[0]);
+                    finishState = FinishJob(tokenSource, item, isFinised, count, actions[0]);
                     if (!finishState)
                     {
                         return;
                     }
-                    finishState= FinishJob(cncSafe, tokenSource, item, isFinised, 1, actions[remainder]);
-                    if (!finishState)
+                    if (remainder > 0)
                     {
-                        return;
+                        finishState = FinishJob(tokenSource, item, isFinised, 1, actions[remainder]);
+                        if (!finishState)
+                        {
+                            return;
+                        }
                     }
+                    
                     item.FinishJob();
                     item.VMOne.StopMachiningCount();
                     item.LatheTwo.StopMachiningCount();
@@ -88,7 +94,7 @@ namespace BFM.WPF.SHWMS.Service
             //}
         }
 
-        bool FinishJob(CncSafeAndCommunication cncSafe, CancellationTokenSource tokenSource, OrderViewModel item, bool isFinised, int count, Action action)
+        bool FinishJob(CancellationTokenSource tokenSource, OrderViewModel item, bool isFinised, int count, Action action)
         {
 
             for (int i = 0; i <= count;)
@@ -174,6 +180,21 @@ namespace BFM.WPF.SHWMS.Service
             })).Start();
         }
 
+
+        public bool GetJobState()
+        {
+            bool state = false;
+            if (cncSafe.GetDeviceProcessContolEmptyJobStateFromSavePool(ref state) == 0)
+            {
+                return state;
+            }
+            return false;
+        }
+
+        public void SendJobTaskFinish()
+        {
+            cncSafe.SendJobTaskFinishStateToSavePool(true);
+        }
         public void TestStart(CancellationTokenSource tokenSource)
         {
             GenerateMachiningTask generateMachiningTask = new GenerateMachiningTask();

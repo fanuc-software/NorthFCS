@@ -493,6 +493,13 @@ namespace BFM.Common.DeviceAsset
                 }
 
                 int result = socketClient.SyncSend(data);
+                
+                {
+                    using (System.IO.StreamWriter wr = new System.IO.StreamWriter(@"d:\mod_log.txt", true))
+                    {
+                        wr.WriteLine("pkno:"+ pkno + "          data:" + data.ToString() + "      IP:" + this.ServerIP.ToString());
+                    }
+                }
 
                 if (result != 0)
                 {

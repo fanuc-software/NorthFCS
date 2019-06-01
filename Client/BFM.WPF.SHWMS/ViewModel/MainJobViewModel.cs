@@ -37,6 +37,7 @@ namespace BFM.WPF.SHWMS.ViewModel
                 });
             }
         }
+        
         public ICommand AddCommand
         {
             get

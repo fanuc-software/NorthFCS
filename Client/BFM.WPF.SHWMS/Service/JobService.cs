@@ -104,8 +104,7 @@ namespace BFM.WPF.SHWMS.Service
             //    }
             //}
         }
-
-
+        
         public void CancelJobOrder()
         {
             List<MesJobOrder> mesJobOrders = ws.UseService(s => s.GetMesJobOrders(
@@ -155,6 +154,20 @@ namespace BFM.WPF.SHWMS.Service
                 DeviceProcessControl.RunByLine(CBaseData.CurLinePKNO); //启动动作流程
              
             })).Start();
+        }
+
+        public void TestStart(CancellationTokenSource tokenSource)
+        {
+            GenerateMachiningTask generateMachiningTask = new GenerateMachiningTask();
+            CncSafeAndCommunication cncSafe = new CncSafeAndCommunication();
+
+            bool empty_state = false;
+            var ret = cncSafe.GetDeviceProcessContolEmptyJobStateFromSavePool(ref empty_state);
+            if (ret == 0 && empty_state == true)
+            {
+                generateMachiningTask.GenerateMachiningTask_Test();
+            }
+
         }
     }
 }

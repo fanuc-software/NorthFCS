@@ -71,6 +71,11 @@ namespace BFM.Common.DeviceAsset.Socket.Base
 
         #endregion
 
+        public string GetIP()
+        {
+            return _remote.ToString();
+        }
+
         #region 构造函数
 
         public SocketClient(IPAddress remoteIp, int port)

@@ -70,7 +70,7 @@ namespace BFM.WPF.SHWMS
             }));
             token = new CancellationTokenSource();
             Task.Factory.StartNew(() => jobService.Start(token), token.Token);
-
+            //Task.Factory.StartNew(() => jobService.TestStart(token), token.Token);
         }
 
         private void FingerGraphic_Loaded(object sender, RoutedEventArgs e)
@@ -96,5 +96,6 @@ namespace BFM.WPF.SHWMS
             }
 
         }
+
     }
 }

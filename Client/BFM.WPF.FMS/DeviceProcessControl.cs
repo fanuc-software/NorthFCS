@@ -771,6 +771,8 @@ namespace BFM.WPF.FMS
                             {
                                 #region 多次重写
 
+
+
                                 int iWrite = 0;
                                 while (iWrite < ReWriteCount)
                                 {
@@ -780,6 +782,8 @@ namespace BFM.WPF.FMS
                                         //Thread.Sleep(100);  //写入成功后暂停，最后不需要
                                         break;
                                     }
+
+
                                     iWrite++;
                                     Thread.Sleep(100);
                                 }

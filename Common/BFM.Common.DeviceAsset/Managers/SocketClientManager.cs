@@ -325,6 +325,8 @@ namespace BFM.Common.DeviceAsset
 
                 int result = socketClient.SyncSend(sendData);  //向设备写入数据
 
+
+
                 if (result != 0)
                 {
                     return new OperateResult("自定义TCP协议 同步写数据时，发送失败 " + ((result == 1) ? "未连接" : "发送错误"));
@@ -423,6 +425,13 @@ namespace BFM.Common.DeviceAsset
                 byte[] sendData = SockeDevice?.GetSendValueBeforeWrite(sendValue) ?? Encoding.Default.GetBytes(sendValue);   //根据协议转换
 
                 int result = socketClient.SyncSend(sendData);  //向设备写入数据
+
+                if (socketClient.GetIP() == "192.168.0.238")
+                {
+                    Console.WriteLine("result:" + result);
+                    Console.WriteLine("data" + sendData.ToString());
+                }
+
                 if (result != 0)
                 {
                     return new OperateResult("自定义TCP协议 异步写数据时，发送失败 " + ((result == 1) ? "未连接" : "发送错误"));

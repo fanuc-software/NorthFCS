@@ -34,8 +34,8 @@ namespace BFM.WPF.SHWMS.Service
         public void GenerateMachiningTask_Piece1()
         {
             string sLathePieceNumOneTime = "1";
-            string sLatheProgramNumber = "104";
-            string sLatheLoadProgramNumber = "204";
+            string sLatheProgramNumber = "111";
+            string sLatheLoadProgramNumber = "211";
 
             WcfClient<IPLMService> ws2 = new WcfClient<IPLMService>();
             string LineCode = CBaseData.CurLinePKNO;//加工单元
@@ -492,6 +492,44 @@ namespace BFM.WPF.SHWMS.Service
                     #endregion
 
                     sFormulaCode = "AGV充电";
+
+                    #region 形成过程控制
+
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
+
+                }
+                #endregion
+
+                #region 10.产线复位
+                if (true)
+                {
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    jobOrders.Add(job);
+
+                    #region --设定参数--
+
+                    ParamValues.Clear();
+                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
+                    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
+                    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
+                    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
+
+                    #endregion
+
+                    sFormulaCode = "机加工任务结束";
 
                     #region 形成过程控制
 
@@ -545,8 +583,8 @@ namespace BFM.WPF.SHWMS.Service
         public void GenerateMachiningTask_Piece2()
         {
             string sLathePieceNumOneTime = "2";
-            string sLatheProgramNumber = "105";
-            string sLatheLoadProgramNumber = "205";
+            string sLatheProgramNumber = "112";
+            string sLatheLoadProgramNumber = "212";
 
             WcfClient<IPLMService> ws2 = new WcfClient<IPLMService>();
             string LineCode = CBaseData.CurLinePKNO;//加工单元
@@ -1003,6 +1041,44 @@ namespace BFM.WPF.SHWMS.Service
                     #endregion
 
                     sFormulaCode = "AGV充电";
+
+                    #region 形成过程控制
+
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
+
+                }
+                #endregion
+
+                #region 10.产线复位
+                if (true)
+                {
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    jobOrders.Add(job);
+
+                    #region --设定参数--
+
+                    ParamValues.Clear();
+                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
+                    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
+                    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
+                    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
+
+                    #endregion
+
+                    sFormulaCode = "机加工任务结束";
 
                     #region 形成过程控制
 
@@ -1055,9 +1131,9 @@ namespace BFM.WPF.SHWMS.Service
 
         public void GenerateMachiningTask_Piece3()
         {
-            string sLathePieceNumOneTime = "4";
-            string sLatheProgramNumber = "105";
-            string sLatheLoadProgramNumber = "205";
+            string sLathePieceNumOneTime = "3";
+            string sLatheProgramNumber = "113";
+            string sLatheLoadProgramNumber = "213";
 
             WcfClient<IPLMService> ws2 = new WcfClient<IPLMService>();
             string LineCode = CBaseData.CurLinePKNO;//加工单元
@@ -1514,6 +1590,44 @@ namespace BFM.WPF.SHWMS.Service
                     #endregion
 
                     sFormulaCode = "AGV充电";
+
+                    #region 形成过程控制
+
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
+
+                }
+                #endregion
+
+                #region 10.产线复位
+                if (true)
+                {
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    jobOrders.Add(job);
+
+                    #region --设定参数--
+
+                    ParamValues.Clear();
+                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
+                    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
+                    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
+                    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
+
+                    #endregion
+
+                    sFormulaCode = "机加工任务结束";
 
                     #region 形成过程控制
 
@@ -1567,8 +1681,8 @@ namespace BFM.WPF.SHWMS.Service
         public void GenerateMachiningTask_Piece4()
         {
             string sLathePieceNumOneTime = "4";
-            string sLatheProgramNumber = "105";
-            string sLatheLoadProgramNumber = "205";
+            string sLatheProgramNumber = "114";
+            string sLatheLoadProgramNumber = "214";
 
             WcfClient<IPLMService> ws2 = new WcfClient<IPLMService>();
             string LineCode = CBaseData.CurLinePKNO;//加工单元
@@ -2025,6 +2139,44 @@ namespace BFM.WPF.SHWMS.Service
                     #endregion
 
                     sFormulaCode = "AGV充电";
+
+                    #region 形成过程控制
+
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
+
+                }
+                #endregion
+
+                #region 10.产线复位
+                if (true)
+                {
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    jobOrders.Add(job);
+
+                    #region --设定参数--
+
+                    ParamValues.Clear();
+                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
+                    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
+                    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
+                    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
+
+                    #endregion
+
+                    sFormulaCode = "机加工任务结束";
 
                     #region 形成过程控制
 

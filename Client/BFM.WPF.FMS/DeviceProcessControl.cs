@@ -275,7 +275,7 @@ namespace BFM.WPF.FMS
                             .ToList();
 
                     List<MesJobOrder> pageJobs =
-                        ws.UseService(s => s.GetMesJobOrders($"USE_FLAG = 1 AND RUN_STATE < 100 AND LINE_PKNO = '{linePKNO}' AND BATCH_N0 = '陀螺生产'"))  //sl 判断是否完工
+                        ws.UseService(s => s.GetMesJobOrders($"USE_FLAG = 1 AND RUN_STATE < 100 AND BATCH_NO = '陀螺生产' AND LINE_PKNO = '{linePKNO}'"))  //sl 判断是否完工
                             .OrderBy(c => c.CREATION_DATE)
                             .ToList();
 

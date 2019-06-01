@@ -89,7 +89,7 @@ namespace BFM.WPF.SHWMS.Service
             while (!tokenSource.IsCancellationRequested)
             {
                 Thread.Sleep(2000);
-                var orders = mainJobViewModel.OrderNodes.Where(d => d.Sate == OrderStateEnum.Create).ToList();
+                var orders = mainJobViewModel.OrderNodes.Where(d => d.Sate == OrderStateEnum.Executing).ToList();
                 foreach (var item in orders)
                 {
                     item.StartJob();

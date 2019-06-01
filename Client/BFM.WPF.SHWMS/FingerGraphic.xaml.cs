@@ -88,7 +88,7 @@ namespace BFM.WPF.SHWMS
             token = new CancellationTokenSource();
             printToken = new CancellationTokenSource();
             Task.Factory.StartNew(() => jobService.Start(token), token.Token);
-          //  Task.Factory.StartNew(() => jobService.StartPrint(printToken), printToken.Token);
+           Task.Factory.StartNew(() => jobService.StartPrint(printToken), printToken.Token);
         }
 
         private void FingerGraphic_Loaded(object sender, RoutedEventArgs e)

@@ -494,13 +494,13 @@ namespace BFM.Common.DeviceAsset
 
                 int result = socketClient.SyncSend(data);
                 
-                {
-                    using (System.IO.StreamWriter wr = new System.IO.StreamWriter(@"d:\mod_log.txt", true))
-                    {
-                        wr.WriteLine("pkno:"+ pkno + "          data:" + data.ToString() + "      IP:" + this.ServerIP.ToString());
-                    }
-                }
-
+              //  {
+                    //using (System.IO.StreamWriter wr = new System.IO.StreamWriter(@"d:\mod_log.txt", true))
+                    //{
+                    //    wr.WriteLine("pkno:"+ pkno + "          data:" + data.ToString() + "      IP:" + this.ServerIP.ToString());
+                    //}
+             //   }
+            
                 if (result != 0)
                 {
                     return new OperateResult("Modbus 同步写入数据时，发送失败，错误：" + ((result == 1) ? "未连接" : "发送错误"));

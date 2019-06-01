@@ -16,7 +16,6 @@ namespace BFM.WPF.SHWMS.Service
     public class JobService
     {
         MainJobViewModel mainJobViewModel;
-        bool isPreFinish = false;
         private const int MaxCount = 4;
 
         public bool IsCycleStop = false;
@@ -53,8 +52,17 @@ namespace BFM.WPF.SHWMS.Service
                     item.StartJob();
                     item.VMOne.StartMachiningCount();
                     item.LatheTwo.StartMachiningCount();
-                    FinishJob(cncSafe, tokenSource, item, isFinised, count, actions[0]);
-                    FinishJob(cncSafe, tokenSource, item, isFinised, 1, actions[remainder]);
+                    var finishState = true;
+                    finishState= FinishJob(cncSafe, tokenSource, item, isFinised, count, actions[0]);
+                    if (!finishState)
+                    {
+                        return;
+                    }
+                    finishState= FinishJob(cncSafe, tokenSource, item, isFinised, 1, actions[remainder]);
+                    if (!finishState)
+                    {
+                        return;
+                    }
                     item.FinishJob();
                     item.VMOne.StopMachiningCount();
                     item.LatheTwo.StopMachiningCount();
@@ -80,7 +88,7 @@ namespace BFM.WPF.SHWMS.Service
             //}
         }
 
-        void FinishJob(CncSafeAndCommunication cncSafe, CancellationTokenSource tokenSource, OrderViewModel item, bool isFinised, int count,Action action)
+        bool FinishJob(CncSafeAndCommunication cncSafe, CancellationTokenSource tokenSource, OrderViewModel item, bool isFinised, int count, Action action)
         {
 
             for (int i = 0; i <= count;)
@@ -90,7 +98,7 @@ namespace BFM.WPF.SHWMS.Service
                 {
                     if (cncSafe.GetDeviceProcessContolEmptyJobStateFromSavePool(ref state) == 0)
                     {
-                        if (state && isFinised && !isPreFinish)
+                        if (state && isFinised)
                         {
                             if (tokenSource.IsCancellationRequested)
                             {
@@ -98,20 +106,21 @@ namespace BFM.WPF.SHWMS.Service
                                 item.VMOne.StopMachiningCount();
                                 item.LatheTwo.StopMachiningCount();
                                 TaskJobFinishEvent?.Invoke("任务强制取消成功!");
-                                return;
+                                return false;
                             }
                             if (i < count)
                             {
+                                cncSafe.SendJobTaskFinishStateToSavePool(false);
                                 action();
                             }
                             i++;
                         }
                     }
-                    isPreFinish = isFinised;
 
                 }
                 Thread.Sleep(1000);
             }
+            return true;
 
         }
         public void CancelJobOrder()

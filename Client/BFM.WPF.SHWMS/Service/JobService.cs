@@ -21,6 +21,7 @@ namespace BFM.WPF.SHWMS.Service
 
         public bool IsCycleStop = false;
         private WcfClient<IPLMService> ws = new WcfClient<IPLMService>();
+        GenerateMachiningTask generateMachiningTask = new GenerateMachiningTask();
 
         public event Action<string> TaskJobFinishEvent;
         public JobService(MainJobViewModel mainJobViewModel)
@@ -36,7 +37,6 @@ namespace BFM.WPF.SHWMS.Service
             while (!tokenSource.IsCancellationRequested)
             {
                 var orders = mainJobViewModel.OrderNodes.Where(d => d.Sate == OrderStateEnum.Create).ToList();
-                GenerateMachiningTask generateMachiningTask = new GenerateMachiningTask();
                 Action[] actions = { () => generateMachiningTask.GenerateMachiningTask_Piece4(), () => generateMachiningTask.GenerateMachiningTask_Piece1()
                 ,()=>generateMachiningTask.GenerateMachiningTask_Piece2(),()=>generateMachiningTask.GenerateMachiningTask_Piece3()};
                 var isFinised = false;
@@ -68,7 +68,7 @@ namespace BFM.WPF.SHWMS.Service
                             return;
                         }
                     }
-                    
+
                     item.FinishJob();
                     item.VMOne.StopMachiningCount();
                     item.LatheTwo.StopMachiningCount();
@@ -80,18 +80,45 @@ namespace BFM.WPF.SHWMS.Service
 
 
 
-            //foreach (var item in orders)
-            //{
-            //    item.StartJob();
-            //    item.Items.Sum(d => d.Count);
-            //    foreach (var job in item.Items)
-            //    {
-            //        while (item.WorkItem(job))
-            //        {
-            //            Thread.Sleep(1000);
-            //        }
-            //    }
-            //}
+
+        }
+
+        public void StartPrint(CancellationTokenSource tokenSource)
+        {
+
+            while (!tokenSource.IsCancellationRequested)
+            {
+                Thread.Sleep(2000);
+                var orders = mainJobViewModel.OrderNodes.Where(d => d.Sate == OrderStateEnum.Create).ToList();
+                foreach (var item in orders)
+                {
+                    item.StartJob();
+                    item.Items.Sum(d => d.Count);
+                    foreach (var job in item.Items)
+                    {
+                        while (true)
+                        {
+                            if (tokenSource.IsCancellationRequested)
+                            {
+                                return;
+                            }
+                            if (generateMachiningTask.IsAssembleFinished())
+                            {
+                                generateMachiningTask.Btn_AssemblyClick(job.Name);
+                                var isFinished = item.WorkItem(job);
+                                if (!isFinished)
+                                {
+                                    break;
+                                }
+                                Thread.Sleep(1000 * 60);
+
+                            }
+                            Thread.Sleep(10000);
+                        }
+                    }
+                }
+
+            }
         }
 
         bool FinishJob(CancellationTokenSource tokenSource, OrderViewModel item, bool isFinised, int count, Action action)

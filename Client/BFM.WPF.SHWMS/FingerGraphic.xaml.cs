@@ -26,7 +26,7 @@ namespace BFM.WPF.SHWMS
         MainJobViewModel mainJobViewModel;
         JobService jobService;
         private CancellationTokenSource token;
-
+        private CancellationTokenSource printToken;
         public FingerGraphic()
         {
             InitializeComponent();
@@ -86,8 +86,9 @@ namespace BFM.WPF.SHWMS
 
             }));
             token = new CancellationTokenSource();
+            printToken = new CancellationTokenSource();
             Task.Factory.StartNew(() => jobService.Start(token), token.Token);
-            // Task.Factory.StartNew(() => jobService.TestStart(token), token.Token);
+          //  Task.Factory.StartNew(() => jobService.StartPrint(printToken), printToken.Token);
         }
 
         private void FingerGraphic_Loaded(object sender, RoutedEventArgs e)
@@ -110,6 +111,7 @@ namespace BFM.WPF.SHWMS
                 btnCancel.IsEnabled = false;
                 btnStopCycle.IsEnabled = false;
                 token.Cancel();
+                printToken.Cancel();
             }
 
         }

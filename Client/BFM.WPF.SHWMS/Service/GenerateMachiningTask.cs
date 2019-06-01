@@ -1983,7 +1983,7 @@ namespace BFM.WPF.SHWMS.Service
 
                 }
                 #endregion
-                 
+
                 #region 4.4 加工中心先下料再上料 SKIP
                 if (false)
                 {
@@ -2264,7 +2264,7 @@ namespace BFM.WPF.SHWMS.Service
                 List<RsItemMaster> items = wsRsm.UseService(s => s.GetRsItemMasters("USE_FLAG = 1"));
 
                 RsItemMaster gyroscope = items.FirstOrDefault(c => c.ITEM_NAME == "指尖陀螺"); //产品信息
-                
+
                 #region 4.3.AGV充电 skip
                 if (true)
                 {
@@ -2300,7 +2300,7 @@ namespace BFM.WPF.SHWMS.Service
 
                 }
                 #endregion
-                
+
                 DeviceProcessControl.PauseByLine(CBaseData.CurLinePKNO); //暂停，防止任务直接执行
 
                 #region 保存数据
@@ -2419,5 +2419,118 @@ namespace BFM.WPF.SHWMS.Service
             };
         }
 
+
+        public bool IsAssembleFinished()
+        {
+            WcfClient<IPLMService> ws2 = new WcfClient<IPLMService>();
+
+            string LineCode = CBaseData.CurLinePKNO + "1";//装配单元
+            return
+               ws2.UseService(s =>
+                       s.GetMesJobOrders(
+                           $"USE_FLAG = 1 AND RUN_STATE < 100 AND LINE_PKNO = '{LineCode}' AND BATCH_NO = '装配单元生产'"))
+                   .Count() <=0;
+
+        }
+        public void Btn_AssemblyClick(string LaserPicName)
+        {
+            WcfClient<IPLMService> ws2 = new WcfClient<IPLMService>();
+            string LineCode = CBaseData.CurLinePKNO + "1";//装配单元
+            List<MesJobOrder> mesJobOrders =
+                ws2.UseService(s =>
+                        s.GetMesJobOrders(
+                            $"USE_FLAG = 1 AND RUN_STATE < 100 AND LINE_PKNO = '{LineCode}'"))
+                    .OrderBy(c => c.CREATION_DATE).ToList();
+            if (mesJobOrders.Count > 10)
+            {
+                ShowTaskInfoEvent?.Invoke("当前订单超过10个，请等待加工完成", "装配工单");
+
+                return;
+            }
+            //后台执行添加
+            new Thread(delegate ()
+            {
+                Thread.Sleep(1000);
+
+                DateTime jobOrderTime = DateTime.Now.AddSeconds(-10);
+                int iJobOrderIndex = 0;
+
+                List<MesJobOrder> jobOrders = new List<MesJobOrder>(); //所有订单
+                List<MesProcessCtrol> processCtrols = new List<MesProcessCtrol>(); //控制流程
+                List<WmsAllocationInfo> allocationInfos = new List<WmsAllocationInfo>(); //需要修改的货位
+
+                Dictionary<string, string> ParamValues = new Dictionary<string, string>();
+                MesJobOrder job = null;
+                string sFormulaCode = "";
+                List<FmsActionFormulaDetail> formulaDetails;
+
+
+                #region 指尖陀螺装配
+
+                List<RsItemMaster> items = wsRsm.UseService(s => s.GetRsItemMasters("USE_FLAG = 1"));
+
+                RsItemMaster gyroscope = items.FirstOrDefault(c => c.ITEM_NAME == "指尖陀螺"); //产品信息
+
+                job = BuildNewJobOrder(gyroscope.PKNO, 2, "装配单元生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                jobOrders.Add(job);
+
+                #region --设定参数--
+
+                ParamValues.Clear();
+                ParamValues.Add("{图片名称}", LaserPicName); //生产设备
+
+
+                #endregion
+
+                sFormulaCode = "装配单元生产";
+
+                #region 形成过程控制
+
+                formulaDetails = wsFms.UseService(s =>
+                        s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                    .OrderBy(c => c.PROCESS_INDEX)
+                    .ToList();
+
+                foreach (var detail in formulaDetails) //配方
+                {
+                    MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                    processCtrols.Add(process);
+                }
+
+                #endregion
+
+                #endregion
+
+                DeviceProcessControl.PauseByLine(CBaseData.CurLinePKNO); //暂停，防止任务直接执行
+
+                #region 保存数据
+
+                foreach (var allocationInfo in allocationInfos)
+                {
+                    ws.UseService(s => s.UpdateWmsAllocationInfo(allocationInfo));
+                    Thread.Sleep(100);
+                }
+
+                foreach (var ctrol in processCtrols)
+                {
+                    wsPlm.UseService(s => s.AddMesProcessCtrol(ctrol));
+                    Thread.Sleep(100);
+                }
+
+                foreach (var jobOrder in jobOrders) //订单
+                {
+                    wsPlm.UseService(s => s.AddMesJobOrder(jobOrder));
+                    Thread.Sleep(100);
+                }
+
+                #endregion
+
+                DeviceProcessControl.RunByLine(CBaseData.CurLinePKNO); //启动动作流程
+
+                ShowTaskInfoEvent?.Invoke("FCS订单已下达", "指尖陀螺加工");
+
+            }).Start();
+        }
     }
 }

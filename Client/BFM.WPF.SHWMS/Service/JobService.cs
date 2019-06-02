@@ -85,6 +85,7 @@ namespace BFM.WPF.SHWMS.Service
 
         public void StartPrint(CancellationTokenSource tokenSource)
         {
+            var isFirst = true;
 
             while (!tokenSource.IsCancellationRequested)
             {
@@ -104,7 +105,11 @@ namespace BFM.WPF.SHWMS.Service
                             }
                             if (generateMachiningTask.IsAssembleFinished())
                             {
-                                generateMachiningTask.Btn_AssemblyClick(job.Name);
+                                if (isFirst)
+                                {
+                                    generateMachiningTask.Btn_AssemblyClick(job.Name);
+                                    isFirst = false;
+                                }
                                 var isFinished = item.WorkItem(job);
                                 if (!isFinished)
                                 {

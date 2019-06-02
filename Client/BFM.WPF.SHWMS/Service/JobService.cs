@@ -113,7 +113,7 @@ namespace BFM.WPF.SHWMS.Service
                                 Thread.Sleep(1000 * 60);
 
                             }
-                            Thread.Sleep(10000);
+                            Thread.Sleep(1000 * 60 * 10);
                         }
                     }
                 }

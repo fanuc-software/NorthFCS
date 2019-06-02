@@ -162,10 +162,10 @@ namespace BFM.WPF.SHWMS.ViewModel
             model.CurrentCount++;
             CurrentTotal++;
             Progress = Convert.ToInt32(CurrentTotal * 100.0 / TotalProgress);
-            if (CurrentTotal == TotalProgress)
-            {
-                Sate = OrderStateEnum.Finish;
-            }
+            //if (CurrentTotal == TotalProgress)
+            //{
+            //    Sate = OrderStateEnum.Finish;
+            //}
             return true;
         }
         public event Action<OrderCommandEnum, OrderViewModel> OrderCommandEvent;

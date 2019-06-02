@@ -80,7 +80,7 @@
 
                                             </Grid>
 
-                                            <ProgressBar Grid.Row="1" Grid.ColumnSpan="2"  Value="{Binding LatheTwo.Progress}" Width="Auto" Style="{DynamicResource progress-bar-info}"></ProgressBar>
+                                            <ProgressBar Grid.Row="1" Grid.ColumnSpan="2"  Value="{Binding VMOne.Progress}" Width="Auto" Style="{DynamicResource progress-bar-info}"></ProgressBar>
 
                                         </Grid>
 

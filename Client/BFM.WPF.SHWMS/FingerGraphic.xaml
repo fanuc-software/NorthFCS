@@ -37,7 +37,7 @@
                             <DataGridTextColumn Binding="{Binding CreateTime}" Width="100" Header="创建时间" ElementStyle="{StaticResource DataGridTextCenter}"/>
                             <DataGridTextColumn Binding="{Binding StateInfo}" Width="100" Header="状态" ElementStyle="{StaticResource DataGridTextCenter}"/>
                             <!--<DataGridTextColumn Binding="{Binding Context}" Header="详情" ElementStyle="{StaticResource DataGridTextCenter}"/>-->
-                            <DataGridTemplateColumn Header="加工进度" Width="300">
+                            <DataGridTemplateColumn Header="加工进度" Width="400">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Grid>
@@ -55,7 +55,7 @@
                                                     <ColumnDefinition Width="70"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <Image  Width="40" Stretch="Uniform"  Source="{Binding Path=VMOne.ID,Converter={StaticResource imageConvert}}" />
+                                                <Image  Width="40" Height="40" Stretch="Uniform"  Source="{Binding Path=VMOne.ID,Converter={StaticResource imageConvert}}" />
                                                 <WrapPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                                                     <Label Content="{Binding VMOne.CurrentValue}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
                                                     <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
@@ -70,7 +70,7 @@
                                                     <ColumnDefinition Width="70"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <Image  Width="50" Stretch="Uniform"  Source="{Binding Path=LatheTwo.ID,Converter={StaticResource imageConvert}}" />
+                                                <Image  Width="40" Height="40"  Stretch="Uniform"  Source="{Binding Path=LatheTwo.ID,Converter={StaticResource imageConvert}}" />
                                                 <WrapPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                                                     <Label Content="{Binding LatheTwo.CurrentValue}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
                                                     <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
@@ -87,7 +87,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="打印进度" Width="600">
+                            <DataGridTemplateColumn Header="打印进度" Width="400">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel>

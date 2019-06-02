@@ -204,7 +204,21 @@ namespace BFM.WPF.SHWMS.Service
 
                     sFormulaCode = "加工中心下料";
 
+                    #region 形成过程控制
 
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
                 }
 
                 #endregion
@@ -638,7 +652,21 @@ namespace BFM.WPF.SHWMS.Service
 
                     sFormulaCode = "加工中心下料";
 
+                    #region 形成过程控制
 
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
                 }
 
                 #endregion
@@ -1147,7 +1175,21 @@ namespace BFM.WPF.SHWMS.Service
 
                     sFormulaCode = "加工中心下料";
 
+                    #region 形成过程控制
 
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
                 }
 
                 #endregion
@@ -1732,7 +1774,21 @@ namespace BFM.WPF.SHWMS.Service
 
                     sFormulaCode = "加工中心下料";
 
+                    #region 形成过程控制
 
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
                 }
 
                 #endregion

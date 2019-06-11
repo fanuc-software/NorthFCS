@@ -13,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace BFM.WPF.SHWMS.Service
 {
-    public class JobService
+    public class JobService<T> where T:BaseOrderViewModel
     {
-        MainJobViewModel mainJobViewModel;
+        BaseJobViewModel<T> mainJobViewModel;
         private CncSafeAndCommunication cncSafe;
         private const int MaxCount = 4;
 
@@ -24,7 +24,11 @@ namespace BFM.WPF.SHWMS.Service
         GenerateMachiningTask generateMachiningTask = new GenerateMachiningTask();
 
         public event Action<string> TaskJobFinishEvent;
-        public JobService(MainJobViewModel mainJobViewModel)
+
+        public event Action<T> StartMachiningCountEvent;
+        public event Action<T> StopMachiningCountEvent;
+
+        public JobService(BaseJobViewModel<T> mainJobViewModel)
         {
             this.mainJobViewModel = mainJobViewModel;
             cncSafe = new CncSafeAndCommunication();
@@ -41,7 +45,7 @@ namespace BFM.WPF.SHWMS.Service
                 ,()=>generateMachiningTask.GenerateMachiningTask_Piece2(),()=>generateMachiningTask.GenerateMachiningTask_Piece3()};
                 var isFinised = false;
 
-                foreach (OrderViewModel item in orders)
+                foreach (T item in orders)
                 {
                     if (IsCycleStop)
                     {
@@ -52,8 +56,7 @@ namespace BFM.WPF.SHWMS.Service
                     int count = totalTask / MaxCount;
                     int remainder = totalTask % MaxCount;
                     item.StartJob();
-                    item.VMOne.StartMachiningCount();
-                    item.LatheTwo.StartMachiningCount();
+                    StartMachiningCountEvent?.Invoke(item);               
                     var finishState = true;
                     finishState = FinishJob(tokenSource, item, isFinised, count, actions[0]);
                     if (!finishState)
@@ -70,8 +73,9 @@ namespace BFM.WPF.SHWMS.Service
                     }
 
                     item.FinishJob();
-                    item.VMOne.StopMachiningCount();
-                    item.LatheTwo.StopMachiningCount();
+                    StopMachiningCountEvent?.Invoke(item);
+
+                
                 }
 
                 Thread.Sleep(2000);
@@ -126,7 +130,7 @@ namespace BFM.WPF.SHWMS.Service
             }
         }
 
-        bool FinishJob(CancellationTokenSource tokenSource, OrderViewModel item, bool isFinised, int count, Action action)
+        bool FinishJob(CancellationTokenSource tokenSource, T item, bool isFinised, int count, Action action)
         {
 
             for (int i = 0; i <= count;)
@@ -141,8 +145,8 @@ namespace BFM.WPF.SHWMS.Service
                             if (tokenSource.IsCancellationRequested)
                             {
                                 item.Sate = OrderStateEnum.Cancel;
-                                item.VMOne.StopMachiningCount();
-                                item.LatheTwo.StopMachiningCount();
+                                StopMachiningCountEvent?.Invoke(item);
+                              
                                 TaskJobFinishEvent?.Invoke("任务强制取消成功!");
                                 return false;
                             }

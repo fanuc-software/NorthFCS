@@ -1223,6 +1223,29 @@ namespace BFM.WPF.FMS
 
                 #endregion
 
+                tagAddress = "E540";
+                #region 初始化504程序
+
+                tag = DeviceMonitor.GetTagSettings($"ASSET_CODE = '{assetCode}' AND TAG_ADDRESS = '{tagAddress}'").FirstOrDefault();
+
+                if (tag == null)
+                {
+                    Cursor = Cursors.Arrow;
+                    return;
+                }
+                iWrite = 0;
+                while (iWrite < ReWriteCount)
+                {
+                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "101", out error);
+                    if (ret == 0)
+                    {
+                        break;
+                    }
+
+                    iWrite++;
+                    Thread.Sleep(100);
+                }
+                #endregion
 
                 tagAddress = "E520.0";
                 #region 初始化开始状态

@@ -72,10 +72,14 @@
   <ItemGroup>
     <Compile Include="Service\GenerateMachiningTask.cs" />
     <Compile Include="Service\JobService.cs" />
+    <Compile Include="ViewModel\BaseDeviceViewModel.cs" />
+    <Compile Include="ViewModel\BaseJobViewModel.cs" />
+    <Compile Include="ViewModel\BaseOrderViewModel.cs" />
+    <Compile Include="ViewModel\Finger\FingerJobViewModel.cs" />
+    <Compile Include="ViewModel\Finger\FingerOrderViewModel.cs" />
     <Compile Include="ViewModel\ImageConvert.cs" />
-    <Compile Include="ViewModel\MainJobViewModel.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\OrderViewModel.cs" />
+    <Compile Include="ViewModel\OrderItemViewModel.cs" />
+    <Compile Include="ViewModel\OrderStateEnum.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="BootStrap\BaseStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -228,5 +232,6 @@
     <Resource Include="SHImage\Lathe2.png" />
     <Resource Include="SHImage\Lathe1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

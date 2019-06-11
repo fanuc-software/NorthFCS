@@ -1,5 +1,6 @@
 ﻿using BFM.WPF.SHWMS.Service;
 using BFM.WPF.SHWMS.ViewModel;
+using BFM.WPF.SHWMS.ViewModel.Finger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,16 +24,19 @@ namespace BFM.WPF.SHWMS
     /// </summary>
     public partial class FingerGraphic : Page
     {
-        MainJobViewModel mainJobViewModel;
-        JobService jobService;
+        FingerJobViewModel mainJobViewModel;
+        JobService<FingerOrderViewModel> jobService;
         private CancellationTokenSource token;
         private CancellationTokenSource printToken;
         public FingerGraphic()
         {
             InitializeComponent();
-            mainJobViewModel = new MainJobViewModel();
-            jobService = new JobService(mainJobViewModel);
+            mainJobViewModel = new FingerJobViewModel();
+            jobService = new JobService<FingerOrderViewModel>(mainJobViewModel);
             jobService.TaskJobFinishEvent += JobService_TaskJobFinishEvent;
+            jobService.StartMachiningCountEvent += (s) => { s.VMOne.StartMachiningCount(); s.LatheTwo.StartMachiningCount(); };
+            jobService.StopMachiningCountEvent += (s) => { s.VMOne.StopMachiningCount(); s.LatheTwo.StopMachiningCount(); };
+
             this.Loaded += FingerGraphic_Loaded;
             mainJobViewModel.StartJobEvent += MainJobViewModel_StartJobEvent;
             mainJobViewModel.JobOperationEvent += MainJobViewModel_JobOperationEvent;
@@ -52,7 +56,7 @@ namespace BFM.WPF.SHWMS
                 }
                 jobService.SendJobTaskFinish();
             });
-         
+
         }
 
         private void JobService_TaskJobFinishEvent(string obj)
@@ -76,7 +80,7 @@ namespace BFM.WPF.SHWMS
             timer.Start();
         }
 
-        private void MainJobViewModel_StartJobEvent(OrderViewModel obj)
+        private void MainJobViewModel_StartJobEvent(FingerOrderViewModel obj)
         {
             Dispatcher.BeginInvoke(new Action(() =>
             {
@@ -88,7 +92,7 @@ namespace BFM.WPF.SHWMS
             token = new CancellationTokenSource();
             printToken = new CancellationTokenSource();
             Task.Factory.StartNew(() => jobService.Start(token), token.Token);
-           Task.Factory.StartNew(() => jobService.StartPrint(printToken), printToken.Token);
+            Task.Factory.StartNew(() => jobService.StartPrint(printToken), printToken.Token);
         }
 
         private void FingerGraphic_Loaded(object sender, RoutedEventArgs e)

@@ -1,0 +1,129 @@
+﻿<Page x:Class="BFM.WPF.SHWMS.PracticeGraphic"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:Converter="clr-namespace:BFM.WPF.SHWMS.ViewModel"
+
+      xmlns:local="clr-namespace:BFM.WPF.SHWMS"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PracticeGraphic">
+    <Page.Resources>
+        <Converter:ImageConvert x:Key="imageConvert"/>
+
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ContentControl Style="{StaticResource panel-default}">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <ContentControl Style="{StaticResource panel-heading-primary}" Content="订单列表"/>
+
+                <ContentControl Grid.Row="1" Style="{StaticResource panel-body}"  >
+                    <DataGrid AutoGenerateColumns="False" VerticalScrollBarVisibility="Auto"   Width="Auto" RowHeight="80" IsReadOnly="True"   CanUserReorderColumns="False" CanUserResizeColumns="False"  ItemsSource="{Binding OrderNodes}" CanUserAddRows="False">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding OrderID}" Width="100" Header="编号" ElementStyle="{StaticResource DataGridTextCenter}"/>
+                            <DataGridTextColumn Binding="{Binding CreateTime}" Width="100" Header="创建时间" ElementStyle="{StaticResource DataGridTextCenter}"/>
+                            <DataGridTextColumn Binding="{Binding StateInfo}" Width="100" Header="状态" ElementStyle="{StaticResource DataGridTextCenter}"/>
+                            <!--<DataGridTextColumn Binding="{Binding Context}" Header="详情" ElementStyle="{StaticResource DataGridTextCenter}"/>-->
+                            <DataGridTemplateColumn Header="加工进度" Width="400">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="140" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="45" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="50" />
+                                                    <ColumnDefinition Width="70"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Image  Width="40" Height="40" Stretch="Uniform"  Source="{Binding Path=VMOne.ID,Converter={StaticResource imageConvert}}" />
+                                                <WrapPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                    <Label Content="{Binding VMOne.CurrentValue}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
+                                                    <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
+                                                    <Label Content="{Binding VMOne.Count}" FontSize="14" Style="{DynamicResource code}" Background="#D9534f" Foreground="White"></Label>
+
+                                                </WrapPanel>
+
+                                            </Grid>
+
+
+                                            <ProgressBar Grid.Row="1"  Value="{Binding VMOne.Progress}" Width="Auto" Style="{DynamicResource progress-bar-info}"></ProgressBar>
+
+                                        </Grid>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="100">
+
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <WrapPanel Margin="0,20,10,0" HorizontalAlignment="Right">
+
+                                            <Button Visibility="{Binding RemoveVisibility }" Style="{DynamicResource btn-danger }" Command="{Binding OrderCommand}" CommandParameter="{x:Static Converter:OrderCommandEnum.Remove}" >
+                                                <Button.Content>
+                                                    <Path Style="{DynamicResource glyphicon}" Data="{DynamicResource glyphicon-remove}"></Path>
+
+                                                </Button.Content>
+                                            </Button>
+                                        </WrapPanel>
+
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+
+                </ContentControl>
+                <ContentControl Grid.Row="2" Style="{StaticResource panel-footer-default}">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="400" />
+                        </Grid.ColumnDefinitions>
+                        <Label HorizontalAlignment="Center"  Content="" Style="{DynamicResource text-warning}"></Label>
+                        <Grid Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                        <Label HorizontalAlignment="Left" x:Name="machineBlock" Content="" Foreground="Red"></Label>
+
+                        <WrapPanel Grid.Column="1" HorizontalAlignment="Right">
+                            <!--<Button Content="机加工复位" x:Name="btnReset" Command="{Binding MachineResetCommand}"  Style="{DynamicResource btn-info}" Margin="0,0,10,0" />
+                            <Button Content="循环停止"  x:Name="btnStopCycle" Click="BtnStopCycle_Click" Style="{DynamicResource btn-danger}" Margin="0,0,10,0"></Button>
+                            <Button Content="强制取消"  x:Name="btnCancel" Click="BtnCancel_Click" Style="{DynamicResource btn-warning}" Margin="0,0,10,0"></Button>-->
+                            <Button Content="新建订单"  Command="{Binding AddCommand}" Style="{DynamicResource btn-primary}" Margin="0,0,10,0"></Button>
+
+                            <Button Content="循环启动" x:Name="btnCycle" Command="{Binding CycleStartCommand}" Style="{DynamicResource btn-info}"></Button>
+                        </WrapPanel>
+
+
+                    </Grid>
+                </ContentControl>
+            </Grid>
+
+        </ContentControl>
+
+    </Grid>
+</Page>

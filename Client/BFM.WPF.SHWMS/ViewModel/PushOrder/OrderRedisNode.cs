@@ -12,7 +12,7 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
         DOWORK,
         DONE
     }
-    public class OrderRedisNode
+    public class OrderItem
     {
         public string Id { get; set; }
 

@@ -63,9 +63,9 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
             {
                 using (var redisClient = managerPool.GetClient())
                 {
-                    var redisTodo = redisClient.As<OrderRedisNode>();
+                    var redisTodo = redisClient.As<OrderItem>();
 
-                    redisTodo.Store(new OrderRedisNode()
+                    redisTodo.Store(new OrderItem()
                     {
                         ActualQuantity = 0,
                         Id = order.OrderID,
@@ -121,7 +121,7 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                     IRedisSubscription subscription = redisClient.CreateSubscription();
                     subscription.OnMessage = (channel, mes) =>
                     {
-                        var orderItem = redisClient.GetById<OrderRedisNode>(mes);
+                        var orderItem = GetOrderItem(mes);
                         var order = OrderNodes.FirstOrDefault(d => d.OrderID == orderItem.Id);
                         if (order != null)
                         {
@@ -137,7 +137,6 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                                 order.Progress = 100;
                             }
                         }
-
                     };
                     subscription.SubscribeToChannels(redisChannel);
                     autoReset.WaitOne();
@@ -148,6 +147,17 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
 
         }
 
+
+        private OrderItem GetOrderItem(object id)
+        {
+            using (var redisClient = managerPool.GetClient())
+            {
+                var high = redisClient.As<OrderItem>();
+                return high.GetById(id);
+
+            }
+
+        }
 
     }
 }

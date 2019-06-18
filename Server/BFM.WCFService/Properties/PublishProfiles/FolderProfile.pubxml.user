@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+此文件由 Web 项目的发布/打包过程使用。可以通过编辑此 MSBuild 文件
+自定义此过程的行为。为了解与此相关的更多内容，请访问 https://go.microsoft.com/fwlink/?LinkID=208121。 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>F:\Work\Fanuc\GITHUB\SH-NorthFCS\Server\BFM.WCFService\bin\Release\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Autofac.dll">
+      <publishTime>05/09/2018 11:57:54</publishTime>
+    </File>
+    <File Include="bin/BFM.BLL.dll">
+      <publishTime>06/18/2019 10:45:04</publishTime>
+    </File>
+    <File Include="bin/BFM.BLL.dll.config">
+      <publishTime>04/23/2019 21:56:33</publishTime>
+    </File>
+    <File Include="bin/BFM.BLL.pdb">
+      <publishTime>06/18/2019 10:45:04</publishTime>
+    </File>
+    <File Include="bin/BFM.Common.Base.dll">
+      <publishTime>06/18/2019 10:45:03</publishTime>
+    </File>
+    <File Include="bin/BFM.Common.DataBaseAsset.dll">
+      <publishTime>06/18/2019 10:45:03</publishTime>
+    </File>
+    <File Include="bin/BFM.Common.DataBaseAsset.dll.config">
+      <publishTime>05/20/2019 16:47:15</publishTime>
+    </File>
+    <File Include="bin/BFM.ContractModel.dll">
+      <publishTime>06/18/2019 10:45:02</publishTime>
+    </File>
+    <File Include="bin/BFM.DAL.dll">
+      <publishTime>06/18/2019 10:45:04</publishTime>
+    </File>
+    <File Include="bin/BFM.DAL.dll.config">
+      <publishTime>04/23/2019 21:56:23</publishTime>
+    </File>
+    <File Include="bin/BFM.DAL.pdb">
+      <publishTime>06/18/2019 10:45:04</publishTime>
+    </File>
+    <File Include="bin/BFM.WCFService.dll">
+      <publishTime>06/18/2019 10:45:08</publishTime>
+    </File>
+    <File Include="bin/BFM.WCFService.pdb">
+      <publishTime>06/18/2019 10:45:08</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/23/2017 13:15:18</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>10/23/2017 13:15:20</publishTime>
+    </File>
+    <File Include="bin/ExpressionSerialization.dll">
+      <publishTime>11/20/2018 08:59:46</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>06/17/2016 17:36:52</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.Entity.EF6.dll">
+      <publishTime>06/17/2016 17:36:54</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/20/2018 08:59:46</publishTime>
+    </File>
+    <File Include="bin/NLog.config">
+      <publishTime>01/22/2019 09:37:50</publishTime>
+    </File>
+    <File Include="bin/NLog.dll">
+      <publishTime>04/30/2019 19:48:12</publishTime>
+    </File>
+    <File Include="bin/Oracle.ManagedDataAccess.dll">
+      <publishTime>08/24/2018 15:44:36</publishTime>
+    </File>
+    <File Include="bin/Oracle.ManagedDataAccess.EntityFramework.dll">
+      <publishTime>08/24/2018 15:44:38</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/System.Linq.Dynamic.dll">
+      <publishTime>10/15/2016 20:49:24</publishTime>
+    </File>
+    <File Include="DAService.svc">
+      <publishTime>11/12/2018 15:19:34</publishTime>
+    </File>
+    <File Include="EAMService.svc">
+      <publishTime>11/12/2018 15:19:34</publishTime>
+    </File>
+    <File Include="FMSService.svc">
+      <publishTime>11/12/2018 15:19:34</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/20/2018 11:29:48</publishTime>
+    </File>
+    <File Include="PLMService.svc">
+      <publishTime>12/12/2018 13:50:56</publishTime>
+    </File>
+    <File Include="QMSService.svc">
+      <publishTime>11/28/2018 13:51:16</publishTime>
+    </File>
+    <File Include="RSMService.svc">
+      <publishTime>11/12/2018 15:19:34</publishTime>
+    </File>
+    <File Include="SDMService.svc">
+      <publishTime>11/12/2018 15:19:34</publishTime>
+    </File>
+    <File Include="SQLService.svc">
+      <publishTime>11/12/2018 15:19:34</publishTime>
+    </File>
+    <File Include="TMSService.svc">
+      <publishTime>12/12/2018 13:46:26</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/18/2019 10:45:09</publishTime>
+    </File>
+    <File Include="WMSService.svc">
+      <publishTime>11/12/2018 15:19:34</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

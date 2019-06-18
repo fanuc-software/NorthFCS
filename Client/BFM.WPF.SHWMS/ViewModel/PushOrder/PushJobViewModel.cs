@@ -18,7 +18,7 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
         public ICommand CycleStopCommand => new RelayCommand(CycleStop);
         public override ICommand AddCommand => new RelayCommand(AddOrder);
 
-        public override ICommand MachineResetCommand => throw new NotImplementedException();
+        public override ICommand MachineResetCommand => new RelayCommand(new Action(() => { }));
 
         public override event Action<JobWorkEnum, string> JobOperationEvent;
         public override event Action<PushOrderViewModel> StartJobEvent;

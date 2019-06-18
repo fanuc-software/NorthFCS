@@ -30,7 +30,7 @@ namespace BFM.WPF.SHWMS
 
         private void OrderWindow_Loaded(object sender, RoutedEventArgs e)
         {
-
+            this.DataContext = this;
         }
 
         private void Btn_minus_Click(object sender, RoutedEventArgs e)

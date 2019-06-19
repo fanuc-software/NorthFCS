@@ -71,7 +71,7 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                         Id = order.OrderID,
                         Quantity = order.Items.Sum(d => d.Count),
                         State = OrderItemStateEnum.NEW,
-                        Type = 0,
+                        Type = orderItem.Type,
                         CreateDateTime = DateTime.Now
                     });
                     redisClient.PublishMessage(redisChannel, order.OrderID);

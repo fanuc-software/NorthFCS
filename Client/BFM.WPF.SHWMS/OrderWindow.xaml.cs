@@ -21,7 +21,7 @@ namespace BFM.WPF.SHWMS
     {
         public string ImagePath { set; get; }
 
-        public event Action<int> OrderItemNumEvent;
+        public event Action<int, int> OrderItemNumEvent;
         public OrderWindow()
         {
             InitializeComponent();
@@ -56,7 +56,7 @@ namespace BFM.WPF.SHWMS
 
         private void Btn_ok_Click(object sender, RoutedEventArgs e)
         {
-            OrderItemNumEvent?.Invoke(Convert.ToInt32(label_count.Content));
+            OrderItemNumEvent?.Invoke(Convert.ToInt32(label_count.Content), comboxBox.SelectedIndex + 1);
             this.Close();
         }
 

@@ -7,7 +7,7 @@
 
         xmlns:local="clr-namespace:BFM.WPF.SHWMS"
         mc:Ignorable="d"
-        Title="Window" Height="250" Width="400" WindowStartupLocation="CenterScreen"   WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+        Title="新建订单" Height="250" Width="400" WindowStartupLocation="CenterScreen"   WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
     <Window.Resources>
         <Converter:ImageConvert x:Key="imageConvert"/>
 
@@ -41,6 +41,14 @@
 
         <WrapPanel Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Right" VerticalAlignment="Center" >
 
+            <ComboBox x:Name="comboxBox" Style="{x:Null}" Margin="0,0,50,0">
+                <ComboBoxItem  IsSelected="True">法兰盘(加工)</ComboBoxItem>
+                <ComboBoxItem  >法兰盘(演示)</ComboBoxItem>
+
+                <ComboBoxItem  >图章</ComboBoxItem>
+
+            </ComboBox>
+            
             <Button Style="{DynamicResource btn-primary}" x:Name="btn_ok"  Click="Btn_ok_Click" Content="确定" />
 
             <Button Style="{DynamicResource btn-danger}"  x:Name="btn_cancel" Click="Btn_cancel_Click" Margin="10,0,10,0" Content="取消" />

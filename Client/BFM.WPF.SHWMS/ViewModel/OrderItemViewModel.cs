@@ -20,6 +20,8 @@ namespace BFM.WPF.SHWMS.ViewModel
         public string Name { get; set; }
 
 
+        public int Type { get; set; }
+
         public string IconPath { get; set; }
 
 

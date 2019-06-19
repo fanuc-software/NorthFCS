@@ -44,7 +44,12 @@ namespace BFM.WPF.SHWMS
         {
             var order = new OrderItemViewModel() { IconPath = "六方体", ItemID = new Guid().ToString("N"), Name = "六方体" };
             var orderWindow = new OrderWindow() { ImagePath = "六方体" };
-            orderWindow.OrderItemNumEvent += (s) => order.Count = s;
+            orderWindow.OrderItemNumEvent += (s, type) =>
+            {
+                order.Count = s;
+                order.Type = type;
+
+            };
             orderWindow.ShowDialog();
             return order.Count > 0 ? order : null;
         }

@@ -10,6 +10,6 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
     {
         public BaseDeviceViewModel VMOne { get; set; }
 
-
+        public string Name { get; set; }
     }
 }

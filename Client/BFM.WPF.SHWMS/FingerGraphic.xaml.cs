@@ -25,14 +25,14 @@ namespace BFM.WPF.SHWMS
     public partial class FingerGraphic : Page
     {
         FingerJobViewModel mainJobViewModel;
-        JobService<FingerOrderViewModel> jobService;
+        JobService<FingerOrderViewModel, GenerateMachiningTask> jobService;
         private CancellationTokenSource token;
         private CancellationTokenSource printToken;
         public FingerGraphic()
         {
             InitializeComponent();
             mainJobViewModel = new FingerJobViewModel();
-            jobService = new JobService<FingerOrderViewModel>(mainJobViewModel);
+            jobService = new JobService<FingerOrderViewModel, GenerateMachiningTask>(mainJobViewModel, new GenerateMachiningTask());
             jobService.TaskJobFinishEvent += JobService_TaskJobFinishEvent;
             jobService.StartMachiningCountEvent += (s) => { s.VMOne.StartMachiningCount(); s.LatheTwo.StartMachiningCount(); };
             jobService.StopMachiningCountEvent += (s) => { s.VMOne.StopMachiningCount(); s.LatheTwo.StopMachiningCount(); };

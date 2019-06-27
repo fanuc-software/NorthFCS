@@ -43,11 +43,13 @@ namespace BFM.WPF.SHWMS
         private OrderItemViewModel MainJobViewModel_GetOrderItemEvent()
         {
             var order = new OrderItemViewModel() { IconPath = "六方体", ItemID = new Guid().ToString("N"), Name = "六方体" };
-            var orderWindow = new OrderWindow() { ImagePath = "六方体" };
-            orderWindow.OrderItemNumEvent += (s, type) =>
+            var orderWindow = new OrderWindow();
+            orderWindow.OrderItemNumEvent += (s, type, name) =>
             {
                 order.Count = s;
                 order.Type = type;
+                order.IconPath = name;
+                order.Name = name;
 
             };
             orderWindow.ShowDialog();

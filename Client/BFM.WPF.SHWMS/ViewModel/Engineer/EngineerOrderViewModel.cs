@@ -10,5 +10,7 @@ namespace BFM.WPF.SHWMS.ViewModel.Engineer
     {
         public BaseDeviceViewModel VMOne { get; set; }
 
+        public string Name { get; set; }
+
     }
 }

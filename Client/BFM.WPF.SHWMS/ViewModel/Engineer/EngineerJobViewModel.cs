@@ -14,7 +14,7 @@ namespace BFM.WPF.SHWMS.ViewModel.Engineer
 
         public override ICommand AddCommand => new RelayCommand(AppendOrder);
 
-        public override ICommand MachineResetCommand => throw new NotImplementedException();
+        public override ICommand MachineResetCommand => new RelayCommand(() => MachineResetEvent?.Invoke());
 
         public override event Action<JobWorkEnum, string> JobOperationEvent;
         public override event Action<EngineerOrderViewModel> StartJobEvent;
@@ -34,12 +34,13 @@ namespace BFM.WPF.SHWMS.ViewModel.Engineer
             {
                 CreateTime = DateTime.Now.ToString("HH:mm:ss"),
                 Sate = OrderStateEnum.Create,
+                Name = orderItem.Name,
                 OrderID = Guid.NewGuid().ToString().Substring(0, 6),
                 VMOne = new BaseDeviceViewModel() { ID = "Lathe1", IP = "192.168.0.232" },
-                Items=new List<OrderItemViewModel>() { orderItem} 
+                Items = new List<OrderItemViewModel>() { orderItem }
             };
             orderItem.MainOrder = order;
-            order.OrderCommandEvent += Order_OrderCommandEvent; 
+            order.OrderCommandEvent += Order_OrderCommandEvent;
             OrderNodes.Add(order);
             order.VMOne.Count = order.Items.Sum(d => d.Count);
             JobOperationEvent?.Invoke(JobWorkEnum.Success, "订单添加成功！");

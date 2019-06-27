@@ -12,11 +12,22 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
         DOWORK,
         DONE
     }
+
+    public enum ProductTypeEnum
+    {
+        Teacaddy,
+        Brakedisc,
+        Phoneshell,
+        Flange,
+        Seal
+
+    }
     public class OrderItem
     {
         public string Id { get; set; }
 
         public int Type { get; set; }
+        public ProductTypeEnum ProductType { get; set; }
 
         public int Quantity { get; set; }
         public int ActualQuantity { get; set; }

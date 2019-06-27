@@ -16,7 +16,7 @@ namespace BFM.WPF.FMS
 
         public CncSafeAndCommunication()
         {
-            IP = "192.168.0.231";
+            IP = "192.168.1.124";
         }
 
         public void ClearAgvTask()

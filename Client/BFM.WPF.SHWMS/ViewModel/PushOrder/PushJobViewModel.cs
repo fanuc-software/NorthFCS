@@ -51,6 +51,7 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
             {
                 CreateTime = DateTime.Now.ToString("HH:mm:ss"),
                 Sate = OrderStateEnum.Create,
+                Name = orderItem.Name,
                 OrderID = Guid.NewGuid().ToString().Substring(0, 6),
                 VMOne = new BaseDeviceViewModel() { ID = "Lathe1", IP = "192.168.0.232" },
                 Items = new List<OrderItemViewModel>() { orderItem }

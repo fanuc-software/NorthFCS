@@ -548,8 +548,8 @@ namespace BFM.WPF.FMS
                 string tagCode = "";
                 FmsAssetTagSetting tag = null;
                 #region 清空相关DI
-                #region 清空DI271
-                tagCode = "DI271";
+                #region 清空DI171
+                tagCode = "DI171";
                 tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
 
                 if (tag == null)
@@ -572,8 +572,8 @@ namespace BFM.WPF.FMS
 
                 #endregion
 
-                #region 清空DI272
-                tagCode = "DI272";
+                #region 清空DI172
+                tagCode = "DI172";
                 tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
 
                 if (tag == null)
@@ -595,8 +595,8 @@ namespace BFM.WPF.FMS
                 }
 
                 #endregion
-                #region 清空DI275
-                tagCode = "DI275";
+                #region 清空DI175
+                tagCode = "DI175";
                 tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
 
                 if (tag == null)
@@ -618,32 +618,8 @@ namespace BFM.WPF.FMS
                 }
 
                 #endregion
-                #region 清空DI276
-                tagCode = "DI276";
-                tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
-
-                if (tag == null)
-                {
-                    Cursor = Cursors.Arrow;
-                    return;
-                }
-                iWrite = 0;
-                while (iWrite < ReWriteCount)
-                {
-                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
-                    if (ret == 0)
-                    {
-                        break;
-                    }
-
-                    iWrite++;
-                    Thread.Sleep(100);
-                }
-
-                #endregion
-
-                #region 清空DI277
-                tagCode = "DI277";
+                #region 清空DI176
+                tagCode = "DI176";
                 tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
 
                 if (tag == null)
@@ -666,8 +642,8 @@ namespace BFM.WPF.FMS
 
                 #endregion
 
-                #region AGV寄存器清空
-                tagCode = "1005";
+                #region 清空GI1
+                tagCode = "GI1";
                 tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
 
                 if (tag == null)
@@ -678,7 +654,7 @@ namespace BFM.WPF.FMS
                 iWrite = 0;
                 while (iWrite < ReWriteCount)
                 {
-                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "1", out error);
+                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
                     if (ret == 0)
                     {
                         break;
@@ -689,6 +665,31 @@ namespace BFM.WPF.FMS
                 }
 
                 #endregion
+                #region 清空GI4
+                tagCode = "GI4";
+                tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
+
+                if (tag == null)
+                {
+                    Cursor = Cursors.Arrow;
+                    return;
+                }
+                iWrite = 0;
+                while (iWrite < ReWriteCount)
+                {
+                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
+                    if (ret == 0)
+                    {
+                        break;
+                    }
+
+                    iWrite++;
+                    Thread.Sleep(100);
+                }
+
+                #endregion
+
+
                 #endregion
                 tagCode = "清空机器人GI";
                 #region 清空GI

@@ -7,7 +7,7 @@
 
         xmlns:local="clr-namespace:BFM.WPF.SHWMS"
         mc:Ignorable="d"
-        Title="新建订单" Height="250" Width="400" WindowStartupLocation="CenterScreen"   WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+        Title="新建订单" Height="300" Width="450" WindowStartupLocation="CenterScreen"   WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
     <Window.Resources>
         <Converter:ImageConvert x:Key="imageConvert"/>
 
@@ -21,9 +21,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
             <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Image Grid.Column="1"  Width="100" Stretch="Uniform"  Source="{Binding Path=ImagePath,Converter={StaticResource imageConvert}}" />
+        <Image Grid.Column="1"  Width="100" Stretch="Uniform"  x:Name="imagePath" />
         <WrapPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Style="{DynamicResource btn-primary}" x:Name="btn_minus" Click="Btn_minus_Click">
                 <Button.Content>
@@ -39,16 +41,31 @@
             </Button>
         </WrapPanel>
 
-        <WrapPanel Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Right" VerticalAlignment="Center" >
+        <WrapPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-            <ComboBox x:Name="comboxBox" Style="{x:Null}" Margin="0,0,50,0">
-                <ComboBoxItem  IsSelected="True">法兰盘(加工)</ComboBoxItem>
-                <ComboBoxItem  >法兰盘(演示)</ComboBoxItem>
+            <ItemsControl ItemsSource="{Binding ImageNodes}" >
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <Button Visibility="{Binding DefaultShow}" Style="{DynamicResource btn-success}" Tag="{Binding Tag}" Margin="5,0,0,0" Content="{Binding Name}" Command="{Binding ClickCommand}" CommandParameter="{Binding .}" />
+                            <Button Visibility="{Binding ActiveShow}" Style="{DynamicResource btn-primary}" Tag="{Binding Tag}" Margin="5,0,0,0" Content="{Binding Name}" Command="{Binding ClickCommand}" CommandParameter="{Binding .}" />
 
-                <ComboBoxItem  >图章</ComboBoxItem>
+                        </WrapPanel>
+                      
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
 
-            </ComboBox>
-            
+
+
+        </WrapPanel>
+        <WrapPanel Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Right" VerticalAlignment="Center" >
+
             <Button Style="{DynamicResource btn-primary}" x:Name="btn_ok"  Click="Btn_ok_Click" Content="确定" />
 
             <Button Style="{DynamicResource btn-danger}"  x:Name="btn_cancel" Click="Btn_cancel_Click" Margin="10,0,10,0" Content="取消" />

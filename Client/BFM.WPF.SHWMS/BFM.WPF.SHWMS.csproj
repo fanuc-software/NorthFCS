@@ -110,7 +110,9 @@
     <Compile Include="PracticeGraphic.xaml.cs">
       <DependentUpon>PracticeGraphic.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Service\Generate3CMachiningTask.cs" />
     <Compile Include="Service\GenerateMachiningTask.cs" />
+    <Compile Include="Service\IMachiningTask.cs" />
     <Compile Include="Service\JobService.cs" />
     <Compile Include="ViewModel\BaseDeviceViewModel.cs" />
     <Compile Include="ViewModel\BaseJobViewModel.cs" />
@@ -296,6 +298,13 @@
     <Resource Include="SHImage\Lathe2.png" />
     <Resource Include="SHImage\Lathe1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="SHImage\刹车盘.png" />
+    <Resource Include="SHImage\图章.png" />
+    <Resource Include="SHImage\手机壳.png" />
+    <Resource Include="SHImage\法兰盘%28加工%29.png" />
+    <Resource Include="SHImage\法兰盘%28演示%29.png" />
+    <Resource Include="SHImage\茶叶罐.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

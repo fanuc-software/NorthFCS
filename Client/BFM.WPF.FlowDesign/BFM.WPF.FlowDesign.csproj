@@ -83,7 +83,7 @@
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>EB71581444B06E100819C0ABC2BF2EBA02DDB187</ManifestCertificateThumbprint>
@@ -222,7 +222,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="BFM.WPF.FlowDesign_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsAssetCommParam.datasource" />
     <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsAssetTagSetting.datasource" />
     <None Include="Properties\DataSources\UnivMes.BFM.ContractModel.FmsSamplingRecord.datasource" />

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace BFM.WPF.SHWMS.Service
 {
-    public class JobService<T> where T:BaseOrderViewModel
+    public class JobService<T, U> where T : BaseOrderViewModel where U : IMachiningTask
     {
         BaseJobViewModel<T> mainJobViewModel;
         private CncSafeAndCommunication cncSafe;
@@ -21,18 +21,18 @@ namespace BFM.WPF.SHWMS.Service
 
         public bool IsCycleStop = false;
         private WcfClient<IPLMService> ws = new WcfClient<IPLMService>();
-        GenerateMachiningTask generateMachiningTask = new GenerateMachiningTask();
+        IMachiningTask generateMachiningTask = null;
 
         public event Action<string> TaskJobFinishEvent;
 
         public event Action<T> StartMachiningCountEvent;
         public event Action<T> StopMachiningCountEvent;
 
-        public JobService(BaseJobViewModel<T> mainJobViewModel)
+        public JobService(BaseJobViewModel<T> mainJobViewModel, U Service)
         {
             this.mainJobViewModel = mainJobViewModel;
             cncSafe = new CncSafeAndCommunication();
-
+            generateMachiningTask = Service;
         }
 
         public void Start(CancellationTokenSource tokenSource)
@@ -56,7 +56,7 @@ namespace BFM.WPF.SHWMS.Service
                     int count = totalTask / MaxCount;
                     int remainder = totalTask % MaxCount;
                     item.StartJob();
-                    StartMachiningCountEvent?.Invoke(item);               
+                    StartMachiningCountEvent?.Invoke(item);
                     var finishState = true;
                     finishState = FinishJob(tokenSource, item, isFinised, count, actions[0]);
                     if (!finishState)
@@ -75,7 +75,7 @@ namespace BFM.WPF.SHWMS.Service
                     item.FinishJob();
                     StopMachiningCountEvent?.Invoke(item);
 
-                
+
                 }
 
                 Thread.Sleep(2000);
@@ -146,7 +146,7 @@ namespace BFM.WPF.SHWMS.Service
                             {
                                 item.Sate = OrderStateEnum.Cancel;
                                 StopMachiningCountEvent?.Invoke(item);
-                              
+
                                 TaskJobFinishEvent?.Invoke("任务强制取消成功!");
                                 return false;
                             }

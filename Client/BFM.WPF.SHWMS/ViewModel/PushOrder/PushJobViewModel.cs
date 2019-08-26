@@ -16,7 +16,7 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
         public override ICommand CycleStartCommand => new RelayCommand(CycleStart);
 
         public ICommand CycleStopCommand => new RelayCommand(CycleStop);
-        public override ICommand AddCommand => new RelayCommand(AddOrder);
+        public override ICommand AddCommand => new RelayCommand(new Action(() => AddOrder(GetOrderViewModel)));
 
         public override ICommand MachineResetCommand => new RelayCommand(new Action(() => { }));
 
@@ -40,13 +40,32 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
 
         }
 
-        private void AddOrder()
+        private PushOrderViewModel GetMesOrderViewModel(OrderItem item)
+        {
+            var orderItem = new OrderItemViewModel()
+            {
+
+            };
+            var order = new PushOrderViewModel()
+            {
+                CreateTime = DateTime.Now.ToString("HH:mm:ss"),
+                Sate = OrderStateEnum.Create,
+                Name = "",
+                OrderID = Guid.NewGuid().ToString().Substring(0, 6),
+                VMOne = new BaseDeviceViewModel() { ID = "Lathe1", IP = "192.168.0.232" },
+                Items = new List<OrderItemViewModel>() { orderItem }
+            };
+            orderItem.MainOrder = order;
+
+            return order;
+        }
+        private PushOrderViewModel GetOrderViewModel()
         {
             var orderItem = GetOrderItemEvent?.Invoke();
             if (orderItem == null)
             {
-                return;
-            }
+                return null;
+            }           
             var order = new PushOrderViewModel()
             {
                 CreateTime = DateTime.Now.ToString("HH:mm:ss"),
@@ -57,8 +76,19 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                 Items = new List<OrderItemViewModel>() { orderItem }
             };
             orderItem.MainOrder = order;
+
+            return order;
+        }
+        private void AddOrder(Func<PushOrderViewModel> action)
+        {
+            var order = action();
+            if (order == null)
+            {
+                return;
+            }
             order.OrderCommandEvent += Order_OrderCommandEvent;
             OrderNodes.Add(order);
+            
             order.VMOne.Count = order.Items.Sum(d => d.Count);
             try
             {
@@ -72,7 +102,7 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                         Id = order.OrderID,
                         Quantity = order.Items.Sum(d => d.Count),
                         State = OrderItemStateEnum.NEW,
-                        Type = orderItem.Type,
+                        Type = order.Items[0].Type,
                         CreateDateTime = DateTime.Now
                     });
                     redisClient.PublishMessage(redisChannel, order.OrderID);
@@ -136,6 +166,10 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                             {
                                 order.Sate = OrderStateEnum.Finish;
                                 order.Progress = 100;
+                            }
+                            else if (orderItem.State == OrderItemStateEnum.NEW)
+                            {
+                                AddOrder(() => GetMesOrderViewModel(orderItem));
                             }
                         }
                     };

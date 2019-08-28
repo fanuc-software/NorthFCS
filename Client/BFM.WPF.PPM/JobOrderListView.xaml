@@ -55,7 +55,7 @@
                                 </dxg:GridControl.View>
                             <dxg:GridColumn FieldName="JOB_ORDER_NO" Header="工单编号" Width="100"/>
                             <dxg:GridColumn Binding="{Binding Path=JOB_ORDER_TYPE, Converter={StaticResource EnumInfoConverter}, ConverterParameter='1：原料入库；2：加工；3：成品出库；4：转换；5：换刀'}" Header="工单类型" Width="80"/>
-                                <dxg:GridColumn Binding="{Binding Path=ITEM_PKNO, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='RS_ITEM_MASTER;PKNO;ITEM_NAME'}" Header="项目名称" Width="80"/>
+                                <!--<dxg:GridColumn Binding="{Binding Path=ITEM_PKNO, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='RS_ITEM_MASTER;PKNO;ITEM_NAME'}" Header="项目名称" Width="80" />-->
                                 <dxg:GridColumn Binding="{Binding Path=ITEM_PKNO, Converter={StaticResource ForeignInfoConverter}, ConverterParameter='RS_ITEM_MASTER;PKNO;ITEM_NORM'}" Header="项目型号" Width="80"/>
                             <dxg:GridColumn FieldName="BATCH_NO" Header="批次号" Width="80"/>
                                 <dxg:GridColumn FieldName="PROCESS_INFO" Header="生产执行信息" Width="800"/>

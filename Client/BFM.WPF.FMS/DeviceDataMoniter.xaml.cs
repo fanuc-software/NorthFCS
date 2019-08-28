@@ -547,174 +547,174 @@ namespace BFM.WPF.FMS
                 int iWrite = 0;
                 string tagCode = "";
                 FmsAssetTagSetting tag = null;
-                #region 清空相关DI
-                #region 清空DI171
-                tagCode = "DI171";
-                tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
+                //#region 清空相关DI
+                //#region 清空DI171
+                //tagCode = "DI171";
+                //tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
 
-                if (tag == null)
-                {
-                    Cursor = Cursors.Arrow;
-                    return;
-                }
-                iWrite = 0;
-                while (iWrite < ReWriteCount)
-                {
-                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
-                    if (ret == 0)
-                    {
-                        break;
-                    }
+                //if (tag == null)
+                //{
+                //    Cursor = Cursors.Arrow;
+                //    return;
+                //}
+                //iWrite = 0;
+                //while (iWrite < ReWriteCount)
+                //{
+                //    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
+                //    if (ret == 0)
+                //    {
+                //        break;
+                //    }
 
-                    iWrite++;
-                    Thread.Sleep(100);
-                }
+                //    iWrite++;
+                //    Thread.Sleep(100);
+                //}
 
-                #endregion
+                //#endregion
 
-                #region 清空DI172
-                tagCode = "DI172";
-                tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
+                //#region 清空DI172
+                //tagCode = "DI172";
+                //tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
 
-                if (tag == null)
-                {
-                    Cursor = Cursors.Arrow;
-                    return;
-                }
-                iWrite = 0;
-                while (iWrite < ReWriteCount)
-                {
-                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
-                    if (ret == 0)
-                    {
-                        break;
-                    }
+                //if (tag == null)
+                //{
+                //    Cursor = Cursors.Arrow;
+                //    return;
+                //}
+                //iWrite = 0;
+                //while (iWrite < ReWriteCount)
+                //{
+                //    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
+                //    if (ret == 0)
+                //    {
+                //        break;
+                //    }
 
-                    iWrite++;
-                    Thread.Sleep(100);
-                }
+                //    iWrite++;
+                //    Thread.Sleep(100);
+                //}
 
-                #endregion
-                #region 清空DI175
-                tagCode = "DI175";
-                tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
+                //#endregion
+                //#region 清空DI175
+                //tagCode = "DI175";
+                //tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
 
-                if (tag == null)
-                {
-                    Cursor = Cursors.Arrow;
-                    return;
-                }
-                iWrite = 0;
-                while (iWrite < ReWriteCount)
-                {
-                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
-                    if (ret == 0)
-                    {
-                        break;
-                    }
+                //if (tag == null)
+                //{
+                //    Cursor = Cursors.Arrow;
+                //    return;
+                //}
+                //iWrite = 0;
+                //while (iWrite < ReWriteCount)
+                //{
+                //    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
+                //    if (ret == 0)
+                //    {
+                //        break;
+                //    }
 
-                    iWrite++;
-                    Thread.Sleep(100);
-                }
+                //    iWrite++;
+                //    Thread.Sleep(100);
+                //}
 
-                #endregion
-                #region 清空DI176
-                tagCode = "DI176";
-                tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
+                //#endregion
+                //#region 清空DI176
+                //tagCode = "DI176";
+                //tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
 
-                if (tag == null)
-                {
-                    Cursor = Cursors.Arrow;
-                    return;
-                }
-                iWrite = 0;
-                while (iWrite < ReWriteCount)
-                {
-                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
-                    if (ret == 0)
-                    {
-                        break;
-                    }
+                //if (tag == null)
+                //{
+                //    Cursor = Cursors.Arrow;
+                //    return;
+                //}
+                //iWrite = 0;
+                //while (iWrite < ReWriteCount)
+                //{
+                //    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
+                //    if (ret == 0)
+                //    {
+                //        break;
+                //    }
 
-                    iWrite++;
-                    Thread.Sleep(100);
-                }
+                //    iWrite++;
+                //    Thread.Sleep(100);
+                //}
 
-                #endregion
+                //#endregion
 
-                #region 清空GI1
-                tagCode = "GI1";
-                tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
+                //#region 清空GI1
+                //tagCode = "GI1";
+                //tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
 
-                if (tag == null)
-                {
-                    Cursor = Cursors.Arrow;
-                    return;
-                }
-                iWrite = 0;
-                while (iWrite < ReWriteCount)
-                {
-                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
-                    if (ret == 0)
-                    {
-                        break;
-                    }
+                //if (tag == null)
+                //{
+                //    Cursor = Cursors.Arrow;
+                //    return;
+                //}
+                //iWrite = 0;
+                //while (iWrite < ReWriteCount)
+                //{
+                //    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
+                //    if (ret == 0)
+                //    {
+                //        break;
+                //    }
 
-                    iWrite++;
-                    Thread.Sleep(100);
-                }
+                //    iWrite++;
+                //    Thread.Sleep(100);
+                //}
 
-                #endregion
-                #region 清空GI4
-                tagCode = "GI4";
-                tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
+                //#endregion
+                //#region 清空GI4
+                //tagCode = "GI4";
+                //tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
 
-                if (tag == null)
-                {
-                    Cursor = Cursors.Arrow;
-                    return;
-                }
-                iWrite = 0;
-                while (iWrite < ReWriteCount)
-                {
-                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
-                    if (ret == 0)
-                    {
-                        break;
-                    }
+                //if (tag == null)
+                //{
+                //    Cursor = Cursors.Arrow;
+                //    return;
+                //}
+                //iWrite = 0;
+                //while (iWrite < ReWriteCount)
+                //{
+                //    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
+                //    if (ret == 0)
+                //    {
+                //        break;
+                //    }
 
-                    iWrite++;
-                    Thread.Sleep(100);
-                }
+                //    iWrite++;
+                //    Thread.Sleep(100);
+                //}
 
-                #endregion
+                //#endregion
 
 
-                #endregion
-                tagCode = "清空机器人GI";
-                #region 清空GI
+                //#endregion
+                //tagCode = "清空机器人GI";
+                //#region 清空GI
 
-                tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
+                //tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
 
-                if (tag == null)
-                {
-                    Cursor = Cursors.Arrow;
-                    return;
-                }
-                iWrite = 0;
-                while (iWrite < ReWriteCount)
-                {
-                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
-                    if (ret == 0)
-                    {
-                        break;
-                    }
+                //if (tag == null)
+                //{
+                //    Cursor = Cursors.Arrow;
+                //    return;
+                //}
+                //iWrite = 0;
+                //while (iWrite < ReWriteCount)
+                //{
+                //    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
+                //    if (ret == 0)
+                //    {
+                //        break;
+                //    }
 
-                    iWrite++;
-                    Thread.Sleep(100);
-                }
+                //    iWrite++;
+                //    Thread.Sleep(100);
+                //}
 
-                #endregion
+                //#endregion
 
 
                 tagCode = "UI5";

@@ -40,7 +40,7 @@ namespace BFM.WPF.EAM.AM
 
         private void GetPage()
         {
-            List<AmAssetMasterN> source = ws.UseService(s => s.GetAmAssetMasterNs(""));
+            List<AmAssetMasterN> source = ws.UseService(s => s.GetAmAssetMasterNs("USE_FLAG = 1"));
             //GetImage(source);
             gridItem.ItemsSource = source.OrderBy(s => s.CREATION_DATE);
         }

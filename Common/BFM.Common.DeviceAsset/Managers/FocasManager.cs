@@ -377,6 +377,65 @@ namespace BFM.Common.DeviceAsset
 
         #endregion
 
+        public OperateResult SetPath(short pathnum)
+        {
+           
+            if (ServerIP == null)
+            {
+                return new OperateResult<string>("设备未初始化，请先初始化。");
+            }
+
+            try
+            {
+                string error = "";
+                ushort handel = GetFocasHandle(out error); //获取 连接Focas的Handel
+
+                if (!string.IsNullOrEmpty(error))
+                {
+                    return new OperateResult<string>(handel, error);
+                }
+
+                OperateResult<string> setresult = SelectPath(handel, pathnum);
+              
+                return setresult;
+            }
+            catch (Exception ex)
+            {
+                string error = $"读取 设备IP({ServerIP}) 通道为({pathnum}) 失败，错误为({ex.Message.ToString()})";
+                Console.WriteLine(error);
+                return new OperateResult<string>(error);
+            }
+        }
+
+        //public OperateResult GetPath(out short pahtnum,  out short pathcount)
+        //{
+
+        //    if (ServerIP == null)
+        //    {
+        //        return new OperateResult<string>("设备未初始化，请先初始化。");
+        //    }
+
+        //    try
+        //    {
+        //        string error = "";
+        //        ushort handel = GetFocasHandle(out error); //获取 连接Focas的Handel
+              
+        //        if (!string.IsNullOrEmpty(error))
+        //        {
+        //            return new OperateResult<string>(handel, error);
+        //        }
+
+        //        OperateResult<string> setresult = GetPath(handel, pathnum);
+
+        //        return setresult;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        string error = $"读取 设备IP({ServerIP}) 通道为({pathnum}) 失败，错误为({ex.Message.ToString()})";
+        //        Console.WriteLine(error);
+        //        return new OperateResult<string>(error);
+        //    }
+        //}
         //释放
         public void Dispose()
         {
@@ -626,6 +685,39 @@ namespace BFM.Common.DeviceAsset
             return new OperateResult<string>(error);
         }
 
+        #region 通道切换
+        private OperateResult<string> SelectPath(ushort handle, short pathnum)
+        {
+            string error = ""; //错误信息
+            string dataValue = "";
+
+            short nRet = Focas1.cnc_setpath(handle, pathnum);
+         
+
+            if (string.IsNullOrEmpty(error)&& nRet == Focas1.EW_OK)
+            {
+                return OperateResult.CreateSuccessResult<string>(dataValue);
+            }
+
+            return new OperateResult<string>(error);
+        }
+
+        private OperateResult<string> GetPath(ushort handle, out short pathnum,short pathcount)
+        {
+            string error = ""; //错误信息
+            string dataValue = "";
+          
+            short nRet = Focas1.cnc_getpath(handle, out pathnum, out pathcount);
+
+
+            if (string.IsNullOrEmpty(error) && nRet == Focas1.EW_OK)
+            {
+                return OperateResult.CreateSuccessResult<string>(dataValue);
+            }
+
+            return new OperateResult<string>(error);
+        }
+        #endregion
         #region Handle 相关
 
         /// <summary>

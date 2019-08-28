@@ -39,6 +39,7 @@ namespace BFM.WPF.SHWMS
             mainJobViewModel.MachineResetEvent += MainJobViewModel_MachineResetEvent;
             mainJobViewModel.GetOrderItemEvent += MainJobViewModel_GetOrderItemEvent;
             this.DataContext = mainJobViewModel;
+            mainJobViewModel.CycleStart();
         }
 
         private OrderItemViewModel MainJobViewModel_GetOrderItemEvent()

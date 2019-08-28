@@ -125,6 +125,7 @@
     <Compile Include="ViewModel\OrderItemViewModel.cs" />
     <Compile Include="ViewModel\OrderStateEnum.cs" />
     <Compile Include="ViewModel\PushOrder\OrderRedisNode.cs" />
+    <Compile Include="ViewModel\PushOrder\PushDeviceViewModel.cs" />
     <Compile Include="ViewModel\PushOrder\PushJobViewModel.cs" />
     <Compile Include="ViewModel\PushOrder\PushOrderViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -276,6 +277,10 @@
     <ProjectReference Include="..\..\Common\BFM.Common.DeviceAsset\BFM.Common.DeviceAsset.csproj">
       <Project>{dff3af8f-434d-43d8-ba91-4f0bf47b8e40}</Project>
       <Name>BFM.Common.DeviceAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\HslCommunication\HslCommunication_Net45\HslCommunication_Net45.csproj">
+      <Project>{7F8029DA-1B94-4B1D-B91F-5B21DBF2F3A2}</Project>
+      <Name>HslCommunication_Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Contract\BFM.ContractModel\BFM.ContractModel.csproj">
       <Project>{d65e3c3e-0f32-426b-a60c-42485ad5110e}</Project>

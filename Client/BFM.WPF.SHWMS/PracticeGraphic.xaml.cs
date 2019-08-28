@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BFM.WPF.SHWMS.ViewModel;
+using BFM.WPF.SHWMS.ViewModel.PushOrder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,51 @@ namespace BFM.WPF.SHWMS
     /// </summary>
     public partial class PracticeGraphic : Page
     {
+        PushDeviceViewModel mainJobViewModel;
+
         public PracticeGraphic()
         {
             InitializeComponent();
+            this.Loaded += IntellectGraphic_Loaded;
+        }
+
+        private void IntellectGraphic_Loaded(object sender, RoutedEventArgs e)
+        {
+            mainJobViewModel = new PushDeviceViewModel("Practice");
+            mainJobViewModel.StartJobEvent += MainJobViewModel_StartJobEvent;
+            mainJobViewModel.JobOperationEvent += MainJobViewModel_JobOperationEvent;
+            mainJobViewModel.MachineResetEvent += MainJobViewModel_MachineResetEvent;
+            mainJobViewModel.GetOrderItemEvent += MainJobViewModel_GetOrderItemEvent;
+            this.DataContext = mainJobViewModel;
+        }
+
+        private OrderItemViewModel MainJobViewModel_GetOrderItemEvent()
+        {
+            var order = new OrderItemViewModel() { IconPath = "六方体", ItemID = new Guid().ToString("N"), Name = "六方体" };
+            var orderWindow = new OrderWindow();
+            orderWindow.OrderItemNumEvent += (s, type, name) =>
+            {
+                order.Count = s;
+                order.Type = type;
+                order.IconPath = name;
+                order.Name = name;
+
+            };
+            orderWindow.ShowDialog();
+            return order.Count > 0 ? order : null;
+        }
+
+        private void MainJobViewModel_MachineResetEvent()
+        {
+        }
+
+        private void MainJobViewModel_JobOperationEvent(JobWorkEnum arg1, string arg2)
+        {
+        }
+
+        private void MainJobViewModel_StartJobEvent(PushOrderViewModel obj)
+        {
+
         }
     }
 }

@@ -8,9 +8,9 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
 {
     public enum OrderItemStateEnum
     {
-        NEW,
-        DOWORK,
-        DONE
+        NEW = 1,
+        DOWORK = 2,
+        DONE = 3
     }
 
     public enum ProductTypeEnum
@@ -34,6 +34,8 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
 
         public OrderItemStateEnum State { get; set; }
 
+        public string StartTime { get; set; }
+        public string FinishTime { get; set; }
         public DateTime CreateDateTime { get; set; }
     }
 }

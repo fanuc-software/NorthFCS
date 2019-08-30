@@ -25,11 +25,18 @@ namespace BFM.WPF.SHWMS
         {
             InitializeComponent();
             this.Loaded += EngineerGraphic_Loaded;
+            this.Unloaded += EngineerGraphic_Unloaded;
+        }
+
+        private void EngineerGraphic_Unloaded(object sender, RoutedEventArgs e)
+        {
+            mainJobViewModel.CycleStop();
         }
 
         private void EngineerGraphic_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
             mainJobViewModel = new EngineerJobViewModel();
+            mainJobViewModel.OrderAddOrderEvent += MainJobViewModel_OrderAddOrderEvent;
             jobService = new JobService<EngineerOrderViewModel, Generate3CMachiningTask>(mainJobViewModel, new Generate3CMachiningTask());
             jobService.TaskJobFinishEvent += JobService_TaskJobFinishEvent;
             jobService.StartMachiningCountEvent += (s) => s.VMOne.StartMachiningCount();
@@ -40,6 +47,11 @@ namespace BFM.WPF.SHWMS
             mainJobViewModel.GetOrderItemEvent += MainJobViewModel_GetOrderItemEvent;
             this.DataContext = mainJobViewModel;
             mainJobViewModel.CycleStart();
+        }
+
+        private void MainJobViewModel_OrderAddOrderEvent(EngineerOrderViewModel obj)
+        {
+            Dispatcher.BeginInvoke(new Action(() => mainJobViewModel.OrderNodes.Add(obj)));
         }
 
         private OrderItemViewModel MainJobViewModel_GetOrderItemEvent()

@@ -1,5 +1,6 @@
 ﻿using BFM.WPF.SHWMS.ViewModel.PushOrder;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Threading;
 using ServiceStack.Redis;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,6 @@ namespace BFM.WPF.SHWMS.ViewModel.Engineer
         private static string host;
         private string redisChannel;
         private RedisManagerPool managerPool;
-        private AutoResetEvent autoReset = new AutoResetEvent(false);
 
         public override ICommand CycleStartCommand => new RelayCommand(() => StartJobEvent?.Invoke(null));
 
@@ -31,7 +31,8 @@ namespace BFM.WPF.SHWMS.ViewModel.Engineer
 
         public event Func<OrderItemViewModel> GetOrderItemEvent;
         Dictionary<ProductTypeEnum, string> dict = new Dictionary<ProductTypeEnum, string>();
-
+        public event Action<EngineerOrderViewModel> OrderAddOrderEvent;
+        IRedisSubscription subscription;
         static EngineerJobViewModel()
         {
             host = ConfigurationManager.AppSettings["RedisHost"];
@@ -65,7 +66,8 @@ namespace BFM.WPF.SHWMS.ViewModel.Engineer
             };
             orderItem.MainOrder = order;
             order.OrderCommandEvent += Order_OrderCommandEvent;
-            OrderNodes.Add(order);
+            OrderAddOrderEvent?.Invoke(order);
+            // OrderNodes.Add(order);
             order.VMOne.Count = order.Items.Sum(d => d.Count);
 
             try
@@ -103,7 +105,7 @@ namespace BFM.WPF.SHWMS.ViewModel.Engineer
             {
                 using (var redisClient = managerPool.GetClient())
                 {
-                    IRedisSubscription subscription = redisClient.CreateSubscription();
+                    subscription = redisClient.CreateSubscription();
                     subscription.OnMessage = (channel, id) =>
                     {
                         string mes = id.Replace("\"", "").Trim();
@@ -115,20 +117,34 @@ namespace BFM.WPF.SHWMS.ViewModel.Engineer
                         var order = OrderNodes.FirstOrDefault(d => d.OrderID == orderItem.Id);
                         if (order == null)
                         {
-
                             GetMesOrderViewModel(orderItem);
+
+
+
                         }
 
                     };
                     subscription.SubscribeToChannels(redisChannel);
-                    autoReset.WaitOne();
                 }
 
             });
 
 
         }
+        public void CycleStop()
+        {
+            Task.Factory.StartNew(() =>
+            {
+                if (subscription != null)
+                {
+                    subscription.UnSubscribeFromChannels(redisChannel);
 
+                }
+            });
+
+
+
+        }
         private void GetMesOrderViewModel(OrderItem item)
         {
 

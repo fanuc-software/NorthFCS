@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Threading;
 using ServiceStack.Redis;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
     public class PushJobViewModel : BaseJobViewModel<PushOrderViewModel>
     {
         public override ICommand CycleStartCommand => new RelayCommand(CycleStart);
-
+        IRedisSubscription subscription;
         public ICommand CycleStopCommand => new RelayCommand(CycleStop);
         public override ICommand AddCommand => new RelayCommand(new Action(() => AddOrder(GetOrderViewModel)));
 
@@ -26,10 +27,10 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
         static string host;
         private RedisManagerPool managerPool;
         public event Func<OrderItemViewModel> GetOrderItemEvent;
+        public event Action<PushOrderViewModel> OrderAddOrderEvent;
         string redisChannel = "";
         Dictionary<ProductTypeEnum, string> dict = new Dictionary<ProductTypeEnum, string>();
 
-        private AutoResetEvent autoReset = new AutoResetEvent(false);
         static PushJobViewModel()
         {
             host = ConfigurationManager.AppSettings["RedisHost"];
@@ -63,7 +64,7 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
             {
                 CreateTime = DateTime.Now.ToString("HH:mm:ss"),
                 Sate = OrderStateEnum.Create,
-                Name = "",
+                Name = name,
                 OrderID = Guid.NewGuid().ToString().Substring(0, 6),
                 VMOne = new BaseDeviceViewModel() { ID = "Lathe1", IP = "192.168.0.232" },
                 Items = new List<OrderItemViewModel>() { orderItem }
@@ -100,7 +101,7 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                 return;
             }
             order.OrderCommandEvent += Order_OrderCommandEvent;
-            OrderNodes.Add(order);
+            OrderAddOrderEvent?.Invoke(order);
 
             order.VMOne.Count = order.Items.Sum(d => d.Count);
             try
@@ -147,22 +148,28 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
         }
 
 
-        private void CycleStop()
+        public void CycleStop()
         {
-            using (var redisClient = managerPool.GetClient())
+            Task.Factory.StartNew(() =>
             {
-                IRedisSubscription subscription = redisClient.CreateSubscription();
-                subscription.UnSubscribeFromChannels(redisChannel);
-                autoReset.Set();
-            }
+                if (subscription != null)
+                {
+                    subscription.UnSubscribeFromChannels(redisChannel);
+
+                }
+            });
+           
+
+
         }
         private void CycleStart()
         {
+            StartJobEvent?.Invoke(null);
             Task.Factory.StartNew(() =>
             {
                 using (var redisClient = managerPool.GetClient())
                 {
-                    IRedisSubscription subscription = redisClient.CreateSubscription();
+                    subscription = redisClient.CreateSubscription();
                     subscription.OnMessage = (channel, id) =>
                     {
                         string mes = id.Replace("\"", "").Trim();
@@ -196,14 +203,15 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                         else
                         {
                             AddOrder(() => GetMesOrderViewModel(orderItem));
+
                         }
                     };
                     subscription.SubscribeToChannels(redisChannel);
-                    autoReset.WaitOne();
+                 
+                   
                 }
 
             });
-
 
         }
 

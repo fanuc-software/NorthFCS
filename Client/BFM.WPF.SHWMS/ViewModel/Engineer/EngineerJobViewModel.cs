@@ -137,7 +137,16 @@ namespace BFM.WPF.SHWMS.ViewModel.Engineer
             {
                 if (subscription != null)
                 {
-                    subscription.UnSubscribeFromChannels(redisChannel);
+                    try
+                    {
+                        subscription.UnSubscribeFromChannels(redisChannel);
+
+                    }
+                    catch (Exception)
+                    {
+
+
+                    }
 
                 }
             });
@@ -163,13 +172,14 @@ namespace BFM.WPF.SHWMS.ViewModel.Engineer
                 CreateTime = DateTime.Now.ToString("HH:mm:ss"),
                 Sate = OrderStateEnum.Create,
                 Name = orderItem.Name,
-                OrderID = Guid.NewGuid().ToString().Substring(0, 6),
+                OrderID = item.Id,
                 VMOne = new BaseDeviceViewModel() { ID = "Lathe1", IP = "192.168.0.232" },
                 Items = new List<OrderItemViewModel>() { orderItem }
             };
             orderItem.MainOrder = order;
             order.OrderCommandEvent += Order_OrderCommandEvent;
-            OrderNodes.Add(order);
+            OrderAddOrderEvent?.Invoke(order);
+
             order.VMOne.Count = order.Items.Sum(d => d.Count);
 
 

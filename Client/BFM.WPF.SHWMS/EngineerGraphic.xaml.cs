@@ -51,7 +51,15 @@ namespace BFM.WPF.SHWMS
 
         private void MainJobViewModel_OrderAddOrderEvent(EngineerOrderViewModel obj)
         {
-            Dispatcher.BeginInvoke(new Action(() => mainJobViewModel.OrderNodes.Add(obj)));
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                var order = mainJobViewModel.OrderNodes.FirstOrDefault(d => d.OrderID == obj.OrderID);
+                if (order == null)
+                {
+                    mainJobViewModel.OrderNodes.Add(obj);
+
+                }
+            }));
         }
 
         private OrderItemViewModel MainJobViewModel_GetOrderItemEvent()

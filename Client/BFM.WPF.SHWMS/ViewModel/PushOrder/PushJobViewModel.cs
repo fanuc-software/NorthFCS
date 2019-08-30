@@ -65,7 +65,7 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                 CreateTime = DateTime.Now.ToString("HH:mm:ss"),
                 Sate = OrderStateEnum.Create,
                 Name = name,
-                OrderID = Guid.NewGuid().ToString().Substring(0, 6),
+                OrderID = item.Id,
                 VMOne = new BaseDeviceViewModel() { ID = "Lathe1", IP = "192.168.0.232" },
                 Items = new List<OrderItemViewModel>() { orderItem }
             };
@@ -154,7 +154,16 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
             {
                 if (subscription != null)
                 {
-                    subscription.UnSubscribeFromChannels(redisChannel);
+                    try
+                    {
+                        subscription.UnSubscribeFromChannels(redisChannel);
+
+                    }
+                    catch (Exception)
+                    {
+
+                      
+                    }
 
                 }
             });

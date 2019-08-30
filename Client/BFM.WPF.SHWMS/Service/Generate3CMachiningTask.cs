@@ -71,24 +71,332 @@ namespace BFM.WPF.SHWMS.Service
 
                 RsItemMaster gyroscope = items.FirstOrDefault(c => c.ITEM_NAME == "指尖陀螺"); //产品信息
 
-                #region 2.车床上料
+                #region 原一件的配方，现注销，bysgl20190826
+
+
+
+
+                //#region 2.车床上料
+                //if (true)
+                //{
+                //    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                //    jobOrders.Add(job);
+
+                //    #region --设定参数--
+
+                //    ParamValues.Clear();
+                //    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                //    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
+                //    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
+                //    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
+                //    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
+
+                //    #endregion
+
+                //    sFormulaCode = "车床上料";
+
+                //    #region 形成过程控制
+
+                //    formulaDetails = wsFms.UseService(s =>
+                //            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                //        .OrderBy(c => c.PROCESS_INDEX)
+                //        .ToList();
+
+                //    foreach (var detail in formulaDetails) //配方
+                //    {
+                //        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                //        processCtrols.Add(process);
+                //    }
+
+                //    #endregion
+                //}
+
+                //#endregion
+
+                //#region 3.加工中心上料
+                //if (true)
+                //{
+                //    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                //    jobOrders.Add(job);
+
+                //    #region --设定参数--
+
+                //    ParamValues.Clear();
+                //    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                //    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
+                //    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
+                //    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
+                //    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
+
+                //    #endregion
+
+                //    sFormulaCode = "加工中心上料";
+
+                //    #region 形成过程控制
+
+                //    formulaDetails = wsFms.UseService(s =>
+                //            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                //        .OrderBy(c => c.PROCESS_INDEX)
+                //        .ToList();
+
+                //    foreach (var detail in formulaDetails) //配方
+                //    {
+                //        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                //        processCtrols.Add(process);
+                //    }
+
+                //    #endregion
+
+                //}
+                //#endregion
+
+                //#region 4.1.AGV充电
+                //if (true)
+                //{
+                //    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                //    jobOrders.Add(job);
+
+                //    #region --设定参数--
+
+                //    ParamValues.Clear();
+                //    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                //    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
+                //    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
+                //    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
+                //    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
+
+                //    #endregion
+
+                //    sFormulaCode = "AGV充电";
+
+                //    #region 形成过程控制
+
+                //    formulaDetails = wsFms.UseService(s =>
+                //            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                //        .OrderBy(c => c.PROCESS_INDEX)
+                //        .ToList();
+
+                //    foreach (var detail in formulaDetails) //配方
+                //    {
+                //        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                //        processCtrols.Add(process);
+                //    }
+
+                //    #endregion
+                //}
+
+                //#endregion
+
+                //#region 5.加工中心下料
+                //if (true)
+                //{
+                //    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                //    jobOrders.Add(job);
+
+                //    #region --设定参数--
+
+                //    ParamValues.Clear();
+                //    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                //    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
+                //    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
+                //    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
+                //    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
+
+                //    #endregion
+
+                //    sFormulaCode = "加工中心下料";
+
+                //    #region 形成过程控制
+
+                //    formulaDetails = wsFms.UseService(s =>
+                //            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                //        .OrderBy(c => c.PROCESS_INDEX)
+                //        .ToList();
+
+                //    foreach (var detail in formulaDetails) //配方
+                //    {
+                //        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                //        processCtrols.Add(process);
+                //    }
+
+                //    #endregion
+                //}
+
+                //#endregion
+
+                //#region 6.车床下料
+                //if (true)
+                //{
+                //    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                //    jobOrders.Add(job);
+
+                //    #region --设定参数--
+
+                //    ParamValues.Clear();
+                //    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                //    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
+                //    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
+                //    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
+                //    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
+
+                //    #endregion
+
+                //    sFormulaCode = "车床下料";
+
+                //    #region 形成过程控制
+
+                //    formulaDetails = wsFms.UseService(s =>
+                //            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                //        .OrderBy(c => c.PROCESS_INDEX)
+                //        .ToList();
+
+                //    foreach (var detail in formulaDetails) //配方
+                //    {
+                //        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                //        processCtrols.Add(process);
+                //    }
+
+                //    #endregion
+                //}
+                //#endregion
+
+                //#region 7.装配单元芯轴六方体上料
+
+
+
+                //job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                //jobOrders.Add(job);
+
+                //#region --设定参数--
+
+                //ParamValues.Clear();
+                //ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                //ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
+                //ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
+                //ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
+                ////ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
+
+                //#endregion
+
+                //sFormulaCode = "装配单元芯轴六方体上料";
+
+                //#region 形成过程控制
+
+                //formulaDetails = wsFms.UseService(s =>
+                //        s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                //    .OrderBy(c => c.PROCESS_INDEX)
+                //    .ToList();
+
+                //foreach (var detail in formulaDetails) //配方
+                //{
+                //    MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                //    processCtrols.Add(process);
+                //}
+
+                //#endregion
+
+                //#endregion
+
+                //#region 8.AGV充电
+                //if (true)
+                //{
+                //    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                //    jobOrders.Add(job);
+
+                //    #region --设定参数--
+
+                //    ParamValues.Clear();
+                //    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                //    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
+                //    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
+                //    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
+                //    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
+
+                //    #endregion
+
+                //    sFormulaCode = "AGV充电";
+
+                //    #region 形成过程控制
+
+                //    formulaDetails = wsFms.UseService(s =>
+                //            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                //        .OrderBy(c => c.PROCESS_INDEX)
+                //        .ToList();
+
+                //    foreach (var detail in formulaDetails) //配方
+                //    {
+                //        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                //        processCtrols.Add(process);
+                //    }
+
+                //    #endregion
+
+                //}
+                //#endregion
+
+                //#region 10.产线复位
+                //if (true)
+                //{
+                //    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                //    jobOrders.Add(job);
+
+                //    #region --设定参数--
+
+                //    ParamValues.Clear();
+                //    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
+                //    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
+                //    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
+                //    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
+                //    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
+
+                //    #endregion
+
+                //    sFormulaCode = "机加工任务结束";
+
+                //    #region 形成过程控制
+
+                //    formulaDetails = wsFms.UseService(s =>
+                //            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                //        .OrderBy(c => c.PROCESS_INDEX)
+                //        .ToList();
+
+                //    foreach (var detail in formulaDetails) //配方
+                //    {
+                //        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                //        processCtrols.Add(process);
+                //    }
+
+                //    #endregion
+
+                //}
+                //#endregion
+
+                #endregion
+
+
+                #region 1.CNC1上料
                 if (true)
                 {
-                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "手机壳", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
                     jobOrders.Add(job);
 
                     #region --设定参数--
 
                     ParamValues.Clear();
-                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
-                    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
-                    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
+
                     //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
 
                     #endregion
 
-                    sFormulaCode = "车床上料";
+                    sFormulaCode = "CNC1上料";
 
                     #region 形成过程控制
 
@@ -109,24 +417,15 @@ namespace BFM.WPF.SHWMS.Service
 
                 #endregion
 
-                #region 3.加工中心上料
+                #region 2 CNC1只下料
                 if (true)
                 {
-                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "手机壳生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
                     jobOrders.Add(job);
 
-                    #region --设定参数--
 
-                    ParamValues.Clear();
-                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
-                    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
-                    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
-                    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
 
-                    #endregion
-
-                    sFormulaCode = "加工中心上料";
+                    sFormulaCode = "CNC1只下料";
 
                     #region 形成过程控制
 
@@ -147,24 +446,15 @@ namespace BFM.WPF.SHWMS.Service
                 }
                 #endregion
 
-                #region 4.1.AGV充电
+                #region 3.CNC2只上料
                 if (true)
                 {
-                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "手机壳生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
                     jobOrders.Add(job);
 
-                    #region --设定参数--
 
-                    ParamValues.Clear();
-                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
-                    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
-                    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
-                    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
 
-                    #endregion
-
-                    sFormulaCode = "AGV充电";
+                    sFormulaCode = "CNC2只上料";
 
                     #region 形成过程控制
 
@@ -185,24 +475,15 @@ namespace BFM.WPF.SHWMS.Service
 
                 #endregion
 
-                #region 5.加工中心下料
+                #region 4.CNC2只下料
                 if (true)
                 {
-                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "手机壳生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
                     jobOrders.Add(job);
 
-                    #region --设定参数--
 
-                    ParamValues.Clear();
-                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
-                    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
-                    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
-                    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
 
-                    #endregion
-
-                    sFormulaCode = "加工中心下料";
+                    sFormulaCode = "CNC2只下料";
 
                     #region 形成过程控制
 
@@ -223,137 +504,14 @@ namespace BFM.WPF.SHWMS.Service
 
                 #endregion
 
-                #region 6.车床下料
+                #region 5 入成品料箱
                 if (true)
                 {
-                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "手机壳生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
                     jobOrders.Add(job);
 
-                    #region --设定参数--
 
-                    ParamValues.Clear();
-                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
-                    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
-                    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
-                    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text);
-
-                    #endregion
-
-                    sFormulaCode = "车床下料";
-
-                    #region 形成过程控制
-
-                    formulaDetails = wsFms.UseService(s =>
-                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
-                        .OrderBy(c => c.PROCESS_INDEX)
-                        .ToList();
-
-                    foreach (var detail in formulaDetails) //配方
-                    {
-                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
-
-                        processCtrols.Add(process);
-                    }
-
-                    #endregion
-                }
-                #endregion
-
-                #region 7.装配单元芯轴六方体上料
-
-
-
-                job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
-                jobOrders.Add(job);
-
-                #region --设定参数--
-
-                ParamValues.Clear();
-                ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
-                ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
-                ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
-                //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
-
-                #endregion
-
-                sFormulaCode = "装配单元芯轴六方体上料";
-
-                #region 形成过程控制
-
-                formulaDetails = wsFms.UseService(s =>
-                        s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
-                    .OrderBy(c => c.PROCESS_INDEX)
-                    .ToList();
-
-                foreach (var detail in formulaDetails) //配方
-                {
-                    MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
-
-                    processCtrols.Add(process);
-                }
-
-                #endregion
-
-                #endregion
-
-                #region 8.AGV充电
-                if (true)
-                {
-                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
-                    jobOrders.Add(job);
-
-                    #region --设定参数--
-
-                    ParamValues.Clear();
-                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
-                    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
-                    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
-                    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
-
-                    #endregion
-
-                    sFormulaCode = "AGV充电";
-
-                    #region 形成过程控制
-
-                    formulaDetails = wsFms.UseService(s =>
-                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
-                        .OrderBy(c => c.PROCESS_INDEX)
-                        .ToList();
-
-                    foreach (var detail in formulaDetails) //配方
-                    {
-                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
-
-                        processCtrols.Add(process);
-                    }
-
-                    #endregion
-
-                }
-                #endregion
-
-                #region 10.产线复位
-                if (true)
-                {
-                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "陀螺生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
-                    jobOrders.Add(job);
-
-                    #region --设定参数--
-
-                    ParamValues.Clear();
-                    ParamValues.Add("{图片名称}", LaserPicName); //定制图片
-                    ParamValues.Add("{车床上下料参数}", sLathePieceNumOneTime);
-                    ParamValues.Add("{车床加工程序号}", sLatheProgramNumber);
-                    ParamValues.Add("{车床LOAD轴程序号}", sLatheLoadProgramNumber);
-                    //ParamValues.Add("{加工数量}", this.txt_Qty2.Text); //生产设备
-
-                    #endregion
-
-                    sFormulaCode = "机加工任务结束";
+                    sFormulaCode = "入成品料箱";
 
                     #region 形成过程控制
 

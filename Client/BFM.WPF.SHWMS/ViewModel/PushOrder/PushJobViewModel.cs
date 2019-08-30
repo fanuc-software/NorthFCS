@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Threading;
 using ServiceStack.Redis;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
     public class PushJobViewModel : BaseJobViewModel<PushOrderViewModel>
     {
         public override ICommand CycleStartCommand => new RelayCommand(CycleStart);
-
+        IRedisSubscription subscription;
         public ICommand CycleStopCommand => new RelayCommand(CycleStop);
         public override ICommand AddCommand => new RelayCommand(new Action(() => AddOrder(GetOrderViewModel)));
 
@@ -26,9 +27,10 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
         static string host;
         private RedisManagerPool managerPool;
         public event Func<OrderItemViewModel> GetOrderItemEvent;
+        public event Action<PushOrderViewModel> OrderAddOrderEvent;
         string redisChannel = "";
+        Dictionary<ProductTypeEnum, string> dict = new Dictionary<ProductTypeEnum, string>();
 
-        private AutoResetEvent autoReset = new AutoResetEvent(false);
         static PushJobViewModel()
         {
             host = ConfigurationManager.AppSettings["RedisHost"];
@@ -37,20 +39,32 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
         {
             redisChannel = channel;
             managerPool = new RedisManagerPool(host);
-
+            dict.Add(ProductTypeEnum.Teacaddy, "茶叶罐");
+            dict.Add(ProductTypeEnum.Brakedisc, "刹车盘");
+            dict.Add(ProductTypeEnum.Phoneshell, "手机壳");
+            dict.Add(ProductTypeEnum.Flange, "法兰盘(加工)");
+            dict.Add(ProductTypeEnum.Seal, "图章");
+            //   var obj = GetOrderItem("N190806168");
         }
 
         private PushOrderViewModel GetMesOrderViewModel(OrderItem item)
         {
+
+            string name = dict.ContainsKey(item.ProductType) ? dict[item.ProductType] : "六分体";
             var orderItem = new OrderItemViewModel()
             {
+                Count = item.Quantity,
+                ItemID = item.Id,
+                Type = item.Type,
+                Name = name,
+                IconPath = name
 
             };
             var order = new PushOrderViewModel()
             {
                 CreateTime = DateTime.Now.ToString("HH:mm:ss"),
                 Sate = OrderStateEnum.Create,
-                Name = "",
+                Name = name,
                 OrderID = Guid.NewGuid().ToString().Substring(0, 6),
                 VMOne = new BaseDeviceViewModel() { ID = "Lathe1", IP = "192.168.0.232" },
                 Items = new List<OrderItemViewModel>() { orderItem }
@@ -65,7 +79,7 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
             if (orderItem == null)
             {
                 return null;
-            }           
+            }
             var order = new PushOrderViewModel()
             {
                 CreateTime = DateTime.Now.ToString("HH:mm:ss"),
@@ -87,8 +101,8 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                 return;
             }
             order.OrderCommandEvent += Order_OrderCommandEvent;
-            OrderNodes.Add(order);
-            
+            OrderAddOrderEvent?.Invoke(order);
+
             order.VMOne.Count = order.Items.Sum(d => d.Count);
             try
             {
@@ -134,31 +148,45 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
         }
 
 
-        private void CycleStop()
+        public void CycleStop()
         {
-            using (var redisClient = managerPool.GetClient())
+            Task.Factory.StartNew(() =>
             {
-                IRedisSubscription subscription = redisClient.CreateSubscription();
-                subscription.UnSubscribeFromChannels(redisChannel);
-                autoReset.Set();
-            }
+                if (subscription != null)
+                {
+                    subscription.UnSubscribeFromChannels(redisChannel);
+
+                }
+            });
+           
+
+
         }
         private void CycleStart()
         {
+            StartJobEvent?.Invoke(null);
             Task.Factory.StartNew(() =>
             {
                 using (var redisClient = managerPool.GetClient())
                 {
-                    IRedisSubscription subscription = redisClient.CreateSubscription();
-                    subscription.OnMessage = (channel, mes) =>
+                    subscription = redisClient.CreateSubscription();
+                    subscription.OnMessage = (channel, id) =>
                     {
+                        string mes = id.Replace("\"", "").Trim();
                         var orderItem = GetOrderItem(mes);
+                        if (orderItem == null)
+                        {
+                            return;
+                        }
                         var order = OrderNodes.FirstOrDefault(d => d.OrderID == orderItem.Id);
                         if (order != null)
                         {
                             if (orderItem.State == OrderItemStateEnum.DOWORK)
                             {
+
                                 order.StartJob();
+                                orderItem.StartTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                                UpdateOrderItem(orderItem);
                                 order.CurrentTotal = orderItem.ActualQuantity;
                                 order.Progress = Convert.ToInt32(orderItem.ActualQuantity * 100.0 / order.TotalProgress);
                             }
@@ -166,19 +194,24 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                             {
                                 order.Sate = OrderStateEnum.Finish;
                                 order.Progress = 100;
+                                orderItem.FinishTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                                UpdateOrderItem(orderItem);
+
                             }
-                            else if (orderItem.State == OrderItemStateEnum.NEW)
-                            {
-                                AddOrder(() => GetMesOrderViewModel(orderItem));
-                            }
+
+                        }
+                        else
+                        {
+                            AddOrder(() => GetMesOrderViewModel(orderItem));
+
                         }
                     };
                     subscription.SubscribeToChannels(redisChannel);
-                    autoReset.WaitOne();
+                 
+                   
                 }
 
             });
-
 
         }
 
@@ -192,6 +225,16 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
 
             }
 
+        }
+
+        private void UpdateOrderItem(OrderItem item)
+        {
+            using (var redisClient = managerPool.GetClient())
+            {
+                var high = redisClient.As<OrderItem>();
+                high.Store(item);
+
+            }
         }
 
     }

@@ -55,6 +55,8 @@ namespace BFM.WPF.SHWMS.Service
                     var totalTask = item.Items.Sum(d => d.Count);
                     int count = totalTask / MaxCount;
                     int remainder = totalTask % MaxCount;
+
+                    mainJobViewModel.Start(item);
                     item.StartJob();
                     StartMachiningCountEvent?.Invoke(item);
                     var finishState = true;
@@ -71,7 +73,7 @@ namespace BFM.WPF.SHWMS.Service
                             return;
                         }
                     }
-
+                    mainJobViewModel.Finished(item);
                     item.FinishJob();
                     StopMachiningCountEvent?.Invoke(item);
 

@@ -34,6 +34,8 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
 
         public OrderItemStateEnum State { get; set; }
 
+        public string StartTime { get; set; }
+        public string FinishTime { get; set; }
         public DateTime CreateDateTime { get; set; }
     }
 }

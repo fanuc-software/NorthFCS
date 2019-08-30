@@ -24,10 +24,17 @@ namespace BFM.WPF.SHWMS.ViewModel
 
 
         public abstract ICommand AddCommand { get; }
-       
 
+        public virtual void Start(T model)
+        {
 
+        }
+
+        public virtual void Finished(T model)
+        {
+
+        }
         public abstract ICommand MachineResetCommand { get; }
-      
+
     }
 }

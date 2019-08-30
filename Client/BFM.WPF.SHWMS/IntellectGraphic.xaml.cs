@@ -28,7 +28,10 @@ namespace BFM.WPF.SHWMS
         {
             InitializeComponent();
             this.Loaded += IntellectGraphic_Loaded;
+            this.Unloaded += (s, e) => mainJobViewModel.CycleStop();
         }
+
+     
 
         private void IntellectGraphic_Loaded(object sender, RoutedEventArgs e)
         {
@@ -36,8 +39,17 @@ namespace BFM.WPF.SHWMS
             mainJobViewModel.StartJobEvent += MainJobViewModel_StartJobEvent;
             mainJobViewModel.JobOperationEvent += MainJobViewModel_JobOperationEvent;
             mainJobViewModel.MachineResetEvent += MainJobViewModel_MachineResetEvent;
+            mainJobViewModel.OrderAddOrderEvent += MainJobViewModel_OrderAddOrderEvent;
             mainJobViewModel.GetOrderItemEvent += MainJobViewModel_GetOrderItemEvent;
             this.DataContext = mainJobViewModel;
+
+        }
+
+     
+
+        private void MainJobViewModel_OrderAddOrderEvent(PushOrderViewModel obj)
+        {
+            Dispatcher.BeginInvoke(new Action(() => mainJobViewModel.OrderNodes.Add(obj)));
         }
 
         private OrderItemViewModel MainJobViewModel_GetOrderItemEvent()
@@ -66,7 +78,7 @@ namespace BFM.WPF.SHWMS
 
         private void MainJobViewModel_StartJobEvent(PushOrderViewModel obj)
         {
-
+            btnCycle.IsEnabled = false;
         }
     }
 }

@@ -134,7 +134,33 @@ namespace BFM.WPF.SHWMS.Service
 
         bool FinishJob(CancellationTokenSource tokenSource, T item, bool isFinised, int count, Action action)
         {
+            #region 测试用代码
 
+            //isFinised = true;
+            //for (int i = 0; i <= count;)
+            //{
+            //    if ( isFinised)
+            //    {
+            //        if (tokenSource.IsCancellationRequested)
+            //        {
+            //            item.Sate = OrderStateEnum.Cancel;
+            //            StopMachiningCountEvent?.Invoke(item);
+
+            //            TaskJobFinishEvent?.Invoke("任务强制取消成功!");
+            //            return false;
+            //        }
+            //        if (i < count)
+            //        {
+
+            //            action();
+            //        }
+            //        i++;
+            //    }
+            //    Thread.Sleep(1000);
+            //}
+
+            //return true;
+            #endregion
             for (int i = 0; i <= count;)
             {
                 var state = false;

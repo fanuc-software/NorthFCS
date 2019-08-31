@@ -307,6 +307,7 @@
     </EmbeddedResource>
     <None Include="App.config">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Content Include="Configs\system.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

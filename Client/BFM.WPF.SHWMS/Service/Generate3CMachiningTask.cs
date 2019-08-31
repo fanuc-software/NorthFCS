@@ -1692,6 +1692,34 @@ namespace BFM.WPF.SHWMS.Service
 
                 }
                 #endregion
+
+                #region 15 多次循环重置信号
+                if (true)
+                {
+                    job = BuildNewJobOrder(gyroscope.PKNO, 2, "手机壳生产", jobOrderTime.AddSeconds(iJobOrderIndex++)); //--形成订单--
+                    jobOrders.Add(job);
+
+
+                    sFormulaCode = "多次循环重置信号";
+
+                    #region 形成过程控制
+
+                    formulaDetails = wsFms.UseService(s =>
+                            s.GetFmsActionFormulaDetails($"FORMULA_CODE = '{sFormulaCode}' AND USE_FLAG= 1"))
+                        .OrderBy(c => c.PROCESS_INDEX)
+                        .ToList();
+
+                    foreach (var detail in formulaDetails) //配方
+                    {
+                        MesProcessCtrol process = BuildNewProcess(job, detail, ParamValues);
+
+                        processCtrols.Add(process);
+                    }
+
+                    #endregion
+
+                }
+                #endregion
                 DeviceProcessControl.PauseByLine(CBaseData.CurLinePKNO); //暂停，防止任务直接执行
 
                 #region 保存数据

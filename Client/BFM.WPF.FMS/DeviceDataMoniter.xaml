@@ -21,6 +21,8 @@
         <Button Content="机器人开机使能" HorizontalAlignment="Left" Height="49" Margin="20,863,0,0" VerticalAlignment="Top" Width="131" Click="Button_Click"/>
         <Button Content="机器人重新启动&#xD;&#xA;     （UI18）" HorizontalAlignment="Left" Height="49" Margin="174,863,0,0" VerticalAlignment="Top" Width="136" Click="BtnStart_Click"/>
         <Button Content="机器人暂停启动&#xD;&#xA;         （UI6）" HorizontalAlignment="Left" Height="49" Margin="326,863,0,0" VerticalAlignment="Top" Width="131" Click="BtnPauseStart_Click"/>
+        <Button Content="机器人复位（DI118）" HorizontalAlignment="Left" Height="49" Margin="476,863,0,0" VerticalAlignment="Top" Width="171" x:Name="btn_reset" Click="Btn_reset_Click"/>
+
         <!--<Button Content="机器人结束&#xD;&#xA;    （GI1=12）" Visibility="Hidden" HorizontalAlignment="Left" Height="49" Margin="478,863,0,0" VerticalAlignment="Top" Width="131" Click="BtnRobotReboot_Click"/>-->
         <!--<Button Content="AGV小车回待机位" HorizontalAlignment="Left" Height="49" Margin="481,863,0,0" VerticalAlignment="Top" Width="131" Click="BtnPauseStart_Click"/>-->
 

@@ -54,6 +54,7 @@ namespace BFM.WPF.MainUI
 
             try
             {
+                startRedis();
                 WcfClient<ISDMService> _SDMService = new WcfClient<ISDMService>();
                 List<SysUser> mSysUsers = _SDMService.UseService(s => s.GetSysUsers("USE_FLAG = 1")).ToList();
             }
@@ -92,6 +93,36 @@ namespace BFM.WPF.MainUI
                         $"系统错误，请核实。" + Environment.NewLine +
                         $"错误为：" + ex.Message, "系统错误");
             }
+        }
+
+        private void startRedis()
+        {
+            try
+            {
+                System.Diagnostics.Process p = new System.Diagnostics.Process();
+                p.StartInfo.FileName = "cmd.exe";
+                p.StartInfo.UseShellExecute = false;    //是否使用操作系统shell启动
+                p.StartInfo.RedirectStandardInput = true;//接受来自调用程序的输入信息
+                p.StartInfo.RedirectStandardOutput = true;//由调用程序获取输出信息
+                p.StartInfo.RedirectStandardError = true;//重定向标准错误输出
+                p.StartInfo.CreateNoWindow = true;//不显示程序窗口
+                p.Start();//启动程序
+
+                //向cmd窗口发送输入信息
+                var startcmd = @"net start redis";
+
+                p.StandardInput.WriteLine(startcmd);
+
+                p.StandardInput.AutoFlush = true;
+                p.WaitForExit(1000);//等待程序执行完退出进程
+                p.Close();
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+
         }
 
         protected override void OnExit(ExitEventArgs e)

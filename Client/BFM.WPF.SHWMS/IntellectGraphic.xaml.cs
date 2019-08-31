@@ -31,7 +31,7 @@ namespace BFM.WPF.SHWMS
             this.Unloaded += (s, e) => mainJobViewModel.CycleStop();
         }
 
-     
+
 
         private void IntellectGraphic_Loaded(object sender, RoutedEventArgs e)
         {
@@ -45,11 +45,18 @@ namespace BFM.WPF.SHWMS
 
         }
 
-     
+
 
         private void MainJobViewModel_OrderAddOrderEvent(PushOrderViewModel obj)
         {
-            Dispatcher.BeginInvoke(new Action(() => mainJobViewModel.OrderNodes.Add(obj)));
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                var model = mainJobViewModel.OrderNodes.FirstOrDefault(d => d.OrderID == obj.OrderID);
+                if (model == null) {
+                    mainJobViewModel.OrderNodes.Add(obj);
+
+                }
+            }));
         }
 
         private OrderItemViewModel MainJobViewModel_GetOrderItemEvent()

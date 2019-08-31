@@ -379,7 +379,7 @@ namespace BFM.WPF.FMS
             string tagCode = "UI1";
 
 
-            
+
             tagCode = "UI1";
             #region 给出使能
 
@@ -1531,5 +1531,56 @@ namespace BFM.WPF.FMS
                 Cursor = Cursors.Arrow;
             }
         }
+
+        private void Btn_reset_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string tagCode = "DI118";
+                var tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
+
+                if (tag == null)
+                {
+                    Cursor = Cursors.Arrow;
+                    return;
+                }
+                var iWrite = 0;
+                int ret = 0;
+                string error = "";
+                while (iWrite < ReWriteCount)
+                {
+                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "1", out error);
+                    if (ret == 0)
+                    {
+                        break;
+                    }
+
+                    iWrite++;
+                    Thread.Sleep(100);
+                }
+                Thread.Sleep(3000);
+
+                while (iWrite < ReWriteCount)
+                {
+                    ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, "0", out error);
+                    if (ret == 0)
+                    {
+                        break;
+                    }
+
+                    iWrite++;
+                    Thread.Sleep(100);
+                }
+                if (ret == 0) WPFMessageBox.ShowInfo("复位FCS警告成功.", "复位FCS");
+            }
+            catch (Exception ex)
+            {
+
+                WPFMessageBox.ShowInfo(ex.Message, "复位FCS错误");
+            }
+          
+
+        }
     }
 }
+

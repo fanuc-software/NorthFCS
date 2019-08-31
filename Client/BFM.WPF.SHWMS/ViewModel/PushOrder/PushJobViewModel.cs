@@ -162,12 +162,12 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                     catch (Exception)
                     {
 
-                      
+
                     }
 
                 }
             });
-           
+
 
 
         }
@@ -192,12 +192,23 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                         {
                             if (orderItem.State == OrderItemStateEnum.DOWORK)
                             {
+                                if (!order.IsStart) {
+                                    order.StartJob();
+                                    orderItem.StartTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-                                order.StartJob();
-                                orderItem.StartTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                                UpdateOrderItem(orderItem);
+                                }
+                                order.VMOne.CurrentValue = orderItem.ActualQuantity;
+                                order.VMOne.Progress = Convert.ToInt32(orderItem.ActualQuantity * 100.0 / orderItem.Quantity);
                                 order.CurrentTotal = orderItem.ActualQuantity;
-                                order.Progress = Convert.ToInt32(orderItem.ActualQuantity * 100.0 / order.TotalProgress);
+                                order.Progress = Convert.ToInt32(orderItem.ActualQuantity * 100.0 / orderItem.Quantity);
+                                if (orderItem.ActualQuantity == orderItem.Quantity)
+                                {
+                                    order.Sate = OrderStateEnum.Finish;
+                                    order.Progress = 100;
+                                    orderItem.FinishTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                                }
+                                UpdateOrderItem(orderItem);
+
                             }
                             else if (orderItem.State == OrderItemStateEnum.DONE)
                             {
@@ -216,8 +227,8 @@ namespace BFM.WPF.SHWMS.ViewModel.PushOrder
                         }
                     };
                     subscription.SubscribeToChannels(redisChannel);
-                 
-                   
+
+
                 }
 
             });

@@ -107,10 +107,12 @@ namespace BFM.WPF.SHWMS.ViewModel
 
         public List<OrderItemViewModel> Items { get; set; } = new List<OrderItemViewModel>();
 
+        public bool IsStart { get; set; }
         public virtual void StartJob()
         {
             TotalProgress = Items.Sum(d => d.Count);
             Sate = OrderStateEnum.Executing;
+            IsStart = true;
 
 
         }

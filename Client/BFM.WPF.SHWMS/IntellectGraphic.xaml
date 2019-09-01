@@ -45,7 +45,9 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="加工进度" >
+                            <DataGridTextColumn Header="加工数量" Binding="{Binding VMOne.Count}" ElementStyle="{StaticResource DataGridTextCenter}"/>
+
+                            <!--<DataGridTemplateColumn Header="加工数量" >
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Grid>
@@ -62,10 +64,10 @@
                                                     <ColumnDefinition Width="70"/>
                                                 </Grid.ColumnDefinitions>
 
-                                                <!--<Image  Width="40" Height="40" Stretch="Uniform"  Source="{Binding Path=VMOne.ID,Converter={StaticResource imageConvert}}" />-->
+                                                --><!--<Image  Width="40" Height="40" Stretch="Uniform"  Source="{Binding Path=VMOne.ID,Converter={StaticResource imageConvert}}" />--><!--
                                                 <WrapPanel Grid.ColumnSpan="2" Grid.Column="0" VerticalAlignment="Center">
-                                                    <Label  Content="{Binding VMOne.CurrentValue}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
-                                                    <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>
+                                                    --><!--<Label  Content="{Binding VMOne.CurrentValue}" FontSize="14" Style="{DynamicResource code}" Background="Green" Foreground="White"></Label>
+                                                    <Label Content=" / " FontSize="14" Margin="0,2,0,0"></Label>--><!--
                                                     <Label Content="{Binding VMOne.Count}" FontSize="14" Style="{DynamicResource code}" Background="#D9534f" Foreground="White"></Label>
 
                                                 </WrapPanel>
@@ -73,13 +75,13 @@
                                             </Grid>
 
 
-                                            <ProgressBar Grid.Row="1"  Value="{Binding VMOne.Progress}" Width="Auto" Style="{DynamicResource progress-bar-info}"></ProgressBar>
+                                            --><!--<ProgressBar Grid.Row="1"  Value="{Binding VMOne.Progress}" Width="Auto" Style="{DynamicResource progress-bar-info}"></ProgressBar>--><!--
 
                                         </Grid>
 
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
+                            </DataGridTemplateColumn>-->
                             <DataGridTemplateColumn >
 
                                 <DataGridTemplateColumn.CellTemplate>

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +13,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BFM.ContractModel;
+using BFM.WPF.FMS;
+using BFM.WPF.SHWMS.Service;
 
 namespace BFM.WPF.SHWMS
 {
@@ -85,9 +89,42 @@ namespace BFM.WPF.SHWMS
         private void Btn_ok_Click(object sender, RoutedEventArgs e)
         {
             OrderItemNumEvent?.Invoke(Convert.ToInt32(label_count.Content), currentNode.Tag, currentNode.Name);
+            SetDataToRebot(Convert.ToInt32(label_count.Content), "GI5");
             this.Close();
         }
+        public void SetDataToRebot(int itemCount, string tagCode)
+        {
 
+            int ret = 0;
+            string error = "";
+            int iWrite = 0;
+            // string tagCode = "";
+            FmsAssetTagSetting tag = null;
+
+            #region 写入GI信号，GI为当前生产的个数
+            //tagCode = "DI171";
+            tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
+
+            if (tag == null)
+            {
+
+                return;
+            }
+            iWrite = 0;
+            while (iWrite < 3)
+            {
+                ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, itemCount.ToString(), out error);
+                if (ret == 0)
+                {
+                    break;
+                }
+
+                iWrite++;
+                Thread.Sleep(100);
+            }
+
+            #endregion
+        }
         private void Btn_cancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -55,7 +55,7 @@ namespace BFM.WPF.SHWMS.Service
                     var totalTask = item.Items.Sum(d => d.Count);
                     int count = totalTask / MaxCount;
                     int remainder = totalTask % MaxCount;
-
+                    SetDataToRebot(totalTask,"GI5");
                     mainJobViewModel.Start(item);
                     item.StartJob();
                     StartMachiningCountEvent?.Invoke(item);
@@ -87,6 +87,39 @@ namespace BFM.WPF.SHWMS.Service
 
 
 
+        }
+        public void SetDataToRebot(int itemCount, string tagCode )
+        {
+
+            int ret = 0;
+            string error = "";
+            int iWrite = 0;
+           // string tagCode = "";
+            FmsAssetTagSetting tag = null;
+
+            #region 写入GI信号，GI为当前生产的个数
+            //tagCode = "DI171";
+            tag = DeviceMonitor.GetTagSettings($"TAG_CODE = '{tagCode}'").FirstOrDefault();
+
+            if (tag == null)
+            {
+
+                return;
+            }
+            iWrite = 0;
+            while (iWrite < 3)
+            {
+                ret = DeviceMonitor.WriteTagToDevice(tag.PKNO, itemCount.ToString(), out error);
+                if (ret == 0)
+                {
+                    break;
+                }
+
+                iWrite++;
+                Thread.Sleep(100);
+            }
+
+            #endregion
         }
 
         public void StartPrint(CancellationTokenSource tokenSource)

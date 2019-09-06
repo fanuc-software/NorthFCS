@@ -379,5 +379,23 @@ namespace BFM.WPF.PPM
             gridItem.ItemsSource = process;
 
         }
+
+        private void BtnWorkInstruction_Click(object sender, RoutedEventArgs e)
+        {
+            Cursor = Cursors.Wait;
+
+            PmTaskLine pmTaskLineEntity = new PmTaskLine()
+            {
+                
+            };
+
+            WorkInstruction editForm = new WorkInstruction(pmTaskLineEntity);
+
+            Cursor = Cursors.Arrow;
+
+             editForm.ShowDialog();
+
+            
+        }
     }
 }

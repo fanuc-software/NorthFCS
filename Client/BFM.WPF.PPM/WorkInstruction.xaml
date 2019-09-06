@@ -1,0 +1,60 @@
+﻿<Window x:Class="BFM.WPF.PPM.WorkInstruction"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    xmlns:local="clr-namespace:BFM.WPF.PPM"
+                    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+                    xmlns:controls="clr-namespace:BFM.WPF.Base.Controls;assembly=BFM.WPF.Base"
+                    WindowStartupLocation="CenterScreen"
+                    mc:Ignorable="d" 
+                    d:DesignHeight="700" d:DesignWidth="1400"
+        Title="工作指导书" >
+    <Grid Background="#EFF3F6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="28" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="32"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="32" />
+                <ColumnDefinition  />
+            </Grid.ColumnDefinitions>
+            <Border  Visibility="Hidden">
+                <DockPanel >
+                    <Grid DockPanel.Dock="Top" Height="80">
+                        <TextBlock  Text="操作" Foreground="#15324f" FontSize="30" HorizontalAlignment="Left"  Margin="20,0,0,0" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </Grid>
+                    <dxg:TreeListControl x:Name="treeList"  EnableSmartColumnsGeneration="True" Margin="5,0,2,0" 
+                                         SelectedItemChanged="treeList_SelectedItemChanged" >
+                        <dxg:TreeListControl.View>
+                            <dxg:TreeListView AutoExpandAllNodes="True" AutoWidth="True" NavigationStyle="Row"  
+                                              KeyFieldName="ProcessSegmentId"  >
+                            </dxg:TreeListView>
+                        </dxg:TreeListControl.View>
+                        <dxg:TreeListColumn FieldName="FileUnid" Header="作业指导书信息"/>
+                    </dxg:TreeListControl>
+                </DockPanel>
+            </Border>
+
+            <Border Grid.Column="2" >
+                <DockPanel >
+                    <Grid DockPanel.Dock="Top" Height="80">
+                        <TextBlock  Text="作业指导书" Foreground="#15324f" FontSize="30" HorizontalAlignment="Left"  Margin="20,0,0,0" VerticalAlignment="Center" FontWeight="Bold"/>
+                        <Border Height="1" Width="Auto" Background="#EFF3F6" VerticalAlignment="Bottom"></Border>
+                    </Grid>
+                    <Image Margin="20" x:Name="textImage" Source="pack://application:,,,/BFM.WPF.PPM;component/Image/workingImage.png"></Image>
+                </DockPanel>
+            </Border>
+        </Grid>
+
+    </Grid>
+</Window>

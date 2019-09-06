@@ -37,7 +37,7 @@
                         <controls:ImageButtonWithIcon DockPanel.Dock="Left" Content="刷新全部 " Icon="/BFM.WPF.EAM;component/Images/1.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/1.ico"  Width="140" Height="40"   Margin="20,-10,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left" Click="Btnrefresh_Click"/>
                         <controls:ImageButtonWithIcon DockPanel.Dock="Left" x:Name="btnautorefresh" Content="关闭自动更新明细" Icon="/BFM.WPF.EAM;component/Images/23.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/23.ico"  Width="200" Height="40"   Margin="20.2,-9.8,-16.6,0.2"  VerticalAlignment="Center"   HorizontalAlignment="Left" Click="Btnautorefresh_Click"/>
                         <controls:ImageButtonWithIcon DockPanel.Dock="Left" Content="取消所有订单" Icon="/BFM.WPF.EAM;component/Images/23.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/23.ico"  Width="160" Height="40"   Margin="20.2,-9.8,-16.6,0.2"  VerticalAlignment="Center"   HorizontalAlignment="Left" Click="btnCancelAll_Click"/>
-
+                        <controls:ImageButtonWithIcon DockPanel.Dock="Left" Content="作业指导书 " Icon="/BFM.WPF.EAM;component/Images/1.ico" SelectedIcon="/BFM.WPF.EAM;component/Images/1.ico"  Width="140" Height="40"   Margin="20,-10,0,0"  VerticalAlignment="Center"   HorizontalAlignment="Left" Click="BtnWorkInstruction_Click"/>
                         <!--<dxlc:LayoutItem Label="计划信息">
                             <TextBox Name="plan" />
                         </dxlc:LayoutItem>-->

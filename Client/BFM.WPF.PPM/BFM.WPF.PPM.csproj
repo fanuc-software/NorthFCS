@@ -119,6 +119,9 @@
       <DependentUpon>TaskLineMang.xaml</DependentUpon>
     </Compile>
     <Compile Include="VersionInfo.cs" />
+    <Compile Include="WorkInstruction.xaml.cs">
+      <DependentUpon>WorkInstruction.xaml</DependentUpon>
+    </Compile>
     <Page Include="JobOrderListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -152,6 +155,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="TaskLineMang.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkInstruction.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
